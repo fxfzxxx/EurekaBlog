@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>如何简单快速地搭建一个静态博客 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="迅速搭建一个有着基本功能的博客.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"如何简单快速地搭建一个静态博客",
+      "item":"/posts/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/"
+    },
+    "headline": "如何简单快速地搭建一个静态博客 | Aaron 的博客",
+    "image": "/images/home.jpg",
+    "datePublished": "2021-11-26T00:00:00+00:00",
+    "dateModified": "2021-11-26T00:00:00+00:00",
+    "wordCount":  1471 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "迅速搭建一个有着基本功能的博客."
+}
+</script><meta property="og:title" content="如何简单快速地搭建一个静态博客 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:description" content="迅速搭建一个有着基本功能的博客." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-26T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-11-26T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="image" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/featured-image/" />
+
+
+
+<meta property="og:see_also" content="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/markdown-syntax/" />
+
+
+
+<meta property="og:see_also" content="/posts/placeholder-text/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">如何简单快速地搭建一个静态博客</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-26</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>3 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/home.jpg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="博客的作用">博客的作用:</h2>
+<ol>
+<li>
+<p>浪费时间</p>
+</li>
+<li>
+<p>装逼</p>
+</li>
+<li>
+<p>感动自己</p>
+</li>
+</ol>
+<hr>
+<p>为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为博客. 说实话, 本来以为不难, 结果属实有点费劲嗷. 弄了整整一天, 才算是有点结果. 所以也证明了, 没事不要做感动自己的事.😇</p>
+<h2 id="用到的软件和技术">用到的软件和技术</h2>
+<ol>
+<li>Typora: Markdown 编辑器, md 格式文本是快速搭建博客的基础, 请习惯 md 记笔记的方式.</li>
+<li>Hugo: 渲染器, 能够把 md 格式的文本渲染成目标主题的 html 静态页面.</li>
+<li>git 和 GitHub: 把渲染好的页面上传到 GitHub 仓库.</li>
+<li>Netlify: 部署工具, 把 git 仓库部署在 Netlify 注册的账号中.</li>
+<li>PicGo: 上传图片到图床的开源工具, 配合 Typora 使用.</li>
+</ol>
+<h2 id="流程和细节">流程和细节</h2>
+<p>我用的是 mac , 所以流程基于 macOS. 不过 Windows 和 Linux 也大差不差.😉</p>
+<ol>
+<li>首先需要安装 <code>Homebrew</code> , 然后在终端任意目录输入 <code>brew install hugo</code>
+<ul>
+<li>安装完成后在任意目录打开终端输入 <code>hugo version</code> 测试是否成功安装.</li>
+</ul>
+</li>
+<li>在终端任意目录输入 <code>hugo new site quickstart</code>.
+<ul>
+<li>此时会在当前目录下生成一个 <code>quickstart</code> 文件夹.</li>
+<li>该文件夹下包含了静态网站的所有文件</li>
+</ul>
+</li>
+<li>需要安装 <code>git</code> , 安装完成后在刚才的目录下输入如下代码来设置网站的主题</li>
+</ol>
+<pre><code class="language-shell"># 切换到 quickstart 目录
+cd quickstart
+# 在 quickstart 目录内初始化 git
+git init
+# 创建一个 git 子模块(具体为啥是子模块, 还没研究明白), 并保存在 themes 文件夹内
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+# 更改 quickstart 目录下 config.toml 的内容
+echo theme = \&quot;ananke\&quot; &gt;&gt; config.toml
+</code></pre>
+<ol start="4">
+<li>将已经写好的 <code>.md</code> 文件, 放入 <code>quickstart/content/post</code> 目录下, 并且在终端当前目录输入 <code>hugo</code>.
+<ul>
+<li>此时, <code>.md</code> 文件就已经被 hugo 渲染成了带有目标主题的静态 <code>html</code> 页面.</li>
+<li>渲染好的页面会存在固定文件夹内, 此项目是在 <code>public</code> 下.</li>
+</ul>
+</li>
+<li>开启 <code>hugo</code> 服务, 来预览刚刚渲染好的页面, 在终端 <code>quickstart</code> 目录下输入 <code>hugo server -D</code>.
+<ul>
+<li>在浏览器输入地址 <code>http://localhost:1313/</code> 查看自己的博客.</li>
+</ul>
+</li>
+<li>用任意文本编辑器打开 <code>quickstart</code> 目录下的 <code>config.toml</code> 文件.
+<ul>
+<li>后期按需求进行更改</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-shell">## 自己购买的域名前缀
+baseURL = &quot;https://example.org/&quot;
+languageCode = &quot;en-us&quot;
+## 博客的名称
+title = &quot;My New Hugo Site&quot;
+## 上面刚刚更改过的主题
+theme = &quot;ananke&quot;
+</code></pre>
+<hr>
+<h3 id="小结">小结</h3>
+<p>此时, 渲染功能已经设置好了. 每次只需要将写好的 <code>.md</code> 文件复制一份到 <code>post</code> 文件夹下, 再在终端运行 <code>hugo</code> 就可以了. 但是, 渲染好的博客只能在本地浏览. 如果想要公开博客, 就需要完成博客的<strong>部署</strong>.😋</p>
+<hr>
+<ol start="7">
+<li>
+<p>将博客托管到 <code>GitHub</code> , 确保自己有<code>GitHub</code> 账号, 并且在当前电脑创建过 <code>ssh-key</code>.</p>
+<ul>
+<li>首先在 <code>GitHub</code> 中创建仓库 <code>hugo-quickstart</code> .</li>
+<li>然后在本地的 <code>quickstart</code> 中打开终端, 输入一套:</li>
+</ul>
+<pre><code class="language-shell"># 1. 初始化 git 仓库
+git init
+# 2. 添加所有文件到 git 仓库 stage
+git add .
+# 3. commit 所有文件变化
+git commit - m&quot;Initialize the blog.&quot;
+# 4. 添加刚才在 GitHub 中创建的远程仓库
+git remote add origin git@github.com:xxxxxx/hugo-quickstart.git
+# 5. 把本地的 master 分支推送到远程并 通过 -u 参数与远程的 master 分支关联
+git push -u origin master
+</code></pre>
+<ul>
+<li>之后每次添加或更改内容, 实际上就是重复上面的步骤 4 , 然后再重复步骤  7 的命令的 2, 3, 5. 这样就能实时的把渲染好的页面都同步到远程的 <code>GitHub</code> 仓库中.</li>
+<li>因为之后存在这种重复的步骤, 我们可以写一个简单的脚本程序 <code>deploy.sh</code> 来避免重复性的工作.😉</li>
+</ul>
+<pre><code class="language-shell">#!/bin/bash
+
+echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+
+# 渲染页面
+hugo
+# stage 所有文件变化
+git add .
+# 日期变量
+msg=&quot;rebuilding site `date`&quot;
+
+if [ $# -eq 1 ]
+
+  then msg=&quot;$1&quot;
+
+fi
+# commit 文件变化, 并输出日期
+git commit -m &quot;$msg&quot;
+# 推送到远程仓库
+git push origin master
+</code></pre>
+<ul>
+<li>在 <code>quickstart</code> 目录下打开终端, 并且输入 <code>./deploy.sh</code> 即可运行上面的脚本程序.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><strong>注意</strong>😅: <code>macOS</code> 首次使用脚本程序, 可能遇到权限不够的情况, 需要怎加权限. 在 <code>quickstart</code> 目录打开终端, 输入 <code>chmod a+x ./文件名</code>.</li>
+</ul>
+<ol start="8">
+<li>申请 Netlify 免费空间, 到官网可以直接使用 GitHub 账号绑定注册. 然后, 需要创建一个新站点并绑定在 GitHub 中的 hugo-quickstart 仓库.
+<ul>
+<li>所有选项都跟随默认.</li>
+<li>Netlify 会随时监控 GitHub 中 hugo-quickstart 的变化, 并实时部署和更新博客.</li>
+<li>Netlify 可以给博客设置域名和 <code>https</code> 加密证书, 这些额外的功能这里不再赘述.</li>
+</ul>
+</li>
+<li>访问 Netlify 给的网站地址, 就可以进入到自己博客了.</li>
+</ol>
+<hr>
+<h2 id="大功告成">大功告成🍺</h2>
+<p>至此, 一个简单的博客就搭建好了. 以上所有步骤实际上是设置了一套自动化程序. 现在我们需要做的, 已经缩减到了必不可少的三步:</p>
+<ol>
+<li>通过例如 Typora 的 <code>Markdown</code> 编辑器撰写笔记或者博客内容, 并存储为 <code>.md</code> 后缀的文件.</li>
+<li>把写好的 <code>.md</code> 文件复制到 <code>quickstart/content/post</code> 文件夹内.</li>
+<li>回到 <code>quickstart</code> 目录下, 打开终段并输入 <code>./deploy.sh</code> 来运行脚本程序.</li>
+</ol>
+<p>往复循环以上三步, 就做到更新我们的博客.</p>
+<p>27/11/2021</p>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/image/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#image</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/icon.png" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" class="block">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/diagram-support/" class="block">Diagram Support</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+        <br />
+        
+        <a href="/posts/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        <br />
+        
+        <a href="/posts/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/featured-image/">Featured Image</a>
+        <br />
+        
+        <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/markdown-syntax/">Markdown Syntax Guide</a>
+        <br />
+        
+        <a href="/posts/placeholder-text/">Placeholder Text</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#博客的作用">博客的作用:</a></li>
+    <li><a href="#用到的软件和技术">用到的软件和技术</a></li>
+    <li><a href="#流程和细节">流程和细节</a>
+      <ul>
+        <li><a href="#小结">小结</a></li>
+      </ul>
+    </li>
+    <li><a href="#大功告成">大功告成🍺</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/featured-image/">Featured Image</a>
+            <br />
+            
+            <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">C. Wang</a> and <a href="https://www.ruiqima.com/">R. Ma</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

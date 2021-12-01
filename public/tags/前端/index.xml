@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端 on Aaron 的博客</title>
+    <link>/tags/%E5%89%8D%E7%AB%AF/</link>
+    <description>Recent content in 前端 on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
+</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E5%89%8D%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. fs 内置模块</title>
+      <link>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</guid>
+      <description>fs - file system node 内置的一个模块 里面存放的都是操作文件相关的方法 使用的时候不需要自己定义，但是需要导入 const fs = require(&#39;fs&#39;) readFile() 异步读取文件 语法: readFile( 路径, 格式， 回调函数) 路径</description>
+    </item>
+    
+    <item>
+      <title>2. 第三方模块</title>
+      <link>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</guid>
+      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模块 下载: npm i moment 导入: require(&amp;lsquo;moment&amp;rsquo;) 导入的时候, 直接书</description>
+    </item>
+    
+    <item>
+      <title>3. 自定义模块</title>
+      <link>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</guid>
+      <description>/* 每一个 js 文件天生自带一个变量叫做 module Module { id: &#39;.&#39;, // 当前文件的存储路径 path: &#39;E:\\BK_GP_20\\05_第五周\\05_DAY\\01_代码\\05_自</description>
+    </item>
+    
+    <item>
+      <title>4. 了解 npm</title>
+      <link>/docs/node.js/npm/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/npm/</guid>
+      <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具 也是电脑中的一个软件 没有图标 npm 的安装 当安</description>
+    </item>
+    
+    <item>
+      <title>5. 了解 nrm</title>
+      <link>/docs/node.js/nrm/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/nrm/</guid>
+      <description>npm 的下载地址 默认在国外 下载会比较慢, 容易丢包 解决办法: 换一个国内的下载地址 npm 地址 npm 的原始地址 yarn 地址 国外的地址 cnpm 地址, 中国国家做的 镜像地址, 和npm服务</description>
+    </item>
+    
+    <item>
+      <title>了解node</title>
+      <link>/docs/node.js/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/</guid>
+      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候必须告诉软件需要运行哪一个文件 node 没有可视</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,16 @@
+main:
+  - name: 关于
+    url: '#about'
+    weight: 6
+  - name: 科技
+    url: /categories/Technology
+    weight: 2
+  - name: 文档
+    url: /docs/
+    weight: 5
+  - name: 政经
+    url: /categories/politics
+    weight: 4
+  - name: 艺术
+    url: /categories/arts
+    weight: 4

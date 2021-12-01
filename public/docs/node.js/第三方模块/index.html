@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>2. 第三方模块 | 了解node | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_32x32_fill_box_center_3.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_hu64421c6c7700f606f0ad45d807017b09_5843_180x180_fill_box_center_3.png">
+
+<meta name="description"
+  content="第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模块 下载: npm i moment 导入: require(&lsquo;moment&rsquo;) 导入的时候, 直接书">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"文档",
+      "item":"/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"了解node",
+      "item":"/docs/node.js/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"2. 第三方模块",
+      "item":"/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/"
+    },
+    "headline": "2. 第三方模块 | 了解node | Aaron 的博客",
+    "image": "/images/nodejs.jpeg",
+    "datePublished": "2021-11-30T00:00:00+00:00",
+    "dateModified": "2021-11-30T00:00:00+00:00",
+    "wordCount":  524 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "C. Wang",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模块 下载: npm i moment 导入: require(\u0026lsquo;moment\u0026rsquo;) 导入的时候, 直接书"
+}
+</script><meta property="og:title" content="2. 第三方模块 | 了解node | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/" />
+
+
+
+
+<meta property="og:description" content="第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模块 下载: npm i moment 导入: require(&lsquo;moment&rsquo;) 导入的时候, 直接书" />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-30T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-11-30T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+<meta property="article:tag" content="前端" />
+
+<meta property="article:tag" content="node.js" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" />
+
+
+
+
+
+<meta property="og:see_also" content="/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/" />
+
+
+
+<meta property="og:see_also" content="/docs/node.js/npm/" />
+
+
+
+<meta property="og:see_also" content="/docs/node.js/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文档</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-r">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">Table of Contents</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/docs/node.js/">了解node</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="pl-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/">1. fs 内置模块</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/">2. 第三方模块</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/">3. 自定义模块</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/docs/node.js/npm/">4. 了解 npm</a>
+        </div>
+        
+    </li>
+    
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" hover:text-eureka"
+                href="/docs/node.js/nrm/">5. 了解 nrm</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 pl-6 ml-0 mr-auto">
+                <h1 class="font-bold text-3xl text-primary-text">2. 第三方模块</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-30</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2 min read</span>
+    </div>
+    
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" class="hover:text-eureka">自学笔记</a>
+        
+    </div>
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="my-4">
+                        <img src="/images/nodejs.jpeg" class="w-full" alt="Featured Image">
+                    </div>
+                    
+                    <div class="content">
+                        <ul>
+<li>第三方模块就是别人写好的内容, 拿来之际额用]</li>
+<li>大部分都是为了完成某一单一功能类的插件</li>
+</ul>
+<h2 id="moment">moment</h2>
+<ul>
+<li>专门用来处理时间 的第三方模块</li>
+<li>下载: npm i moment</li>
+<li>导入: require(&lsquo;moment&rsquo;)
+<ul>
+<li>导入的时候, 直接书写第三方包的名称 字符串</li>
+<li>先去内置模块寻找, 如果没有</li>
+<li>就跳转到 node_modules 里面找</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">
+$ node moment22.js
+Module {
+  id: '.',
+  path: 'D:\\Languages\\JavaScript\\nodejs',
+  exports: {},
+  parent: null,
+  filename: 'D:\\Languages\\JavaScript\\nodejs\\moment22.js',
+  loaded: false,
+  children: [],
+  paths: [
+    'D:\\Languages\\JavaScript\\nodejs\\node_modules',
+    'D:\\Languages\\JavaScript\\node_modules',
+    'D:\\Languages\\node_modules',
+    'D:\\node_modules'
+  ]
+}
+</code></pre>
+<ul>
+<li>path 里面所有的 node_modules 文件夹 里面的 包 都能读取到</li>
+<li>使用:
+<ul>
+<li>第三包的使用, 直接去官网看文档, 按照规则使用</li>
+<li>node 获取的时间, 都是服务器时间</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">const moment = require('moment')
+moment.locale('zh-cn') // 设置语言包
+const time = new Date()
+const res = moment(time).format('MMMM Do YYYY, h:mm:ss a')
+console.log(res)
+</code></pre>
+<h2 id="mysql">mysql</h2>
+<ul>
+<li>
+<p>node 和 mysql 数据库连接, 并进行增删改查的操作</p>
+</li>
+<li>
+<p>下载: npm i mysql</p>
+</li>
+<li>
+<p>导入: require(&lsquo;mysql&rsquo;)</p>
+</li>
+<li>
+<p>使用:</p>
+<ul>
+<li>
+<p>连接数据库</p>
+<ul>
+<li>
+<p>前提: 保证数据库服务器的开启</p>
+</li>
+<li>
+<p>语法:</p>
+<ul>
+<li>mysql.createConnect({ 配置信息 })
+<ul>
+<li>连接, 操作, 关闭</li>
+</ul>
+</li>
+<li>mysql.createPool({ 配置信息 })
+<ul>
+<li>连接, 操作, 操作&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>执行 sql 语句</p>
+<ul>
+<li>使用 连接 信息 去调用执行 sql 语句的方法</li>
+<li>一个方法, 执行不同的 sql 语句</li>
+<li>方法
+<ul>
+<li>db.query( sql 语句, 回调函数)  由于sql语句里变量的填入不方便 反引号需要转义 引入下面的方法</li>
+<li>db.query( sql 语句, 数组, 回调函数)
+<ul>
+<li>sql 语句里 以 问好形式 留下坑</li>
+<li>数组里的每一项去填补留下的坑</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-js">const mysql = require('mysql')
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    port:3306,
+    user: 'root',
+    password: 'root',
+    database: 'gp20'
+})
+const username = fx
+const password = 1234
+db.query('SELECT * FROM `users`',(err,info) =&gt; {
+    if(err) return console.log(err)
+    console.log(info)
+})
+
+db.query('SELECT * FROM `users` WHERE `username` =? AND `password`=?',[username,password],(err,info) =&gt; {
+    if(err) return console.log(err)
+    console.log(info)
+})
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="superagent">superagent()</h2>
+<ul>
+<li>专门用来在 node 里面发送请求得到 第三方</li>
+</ul>
+<h2 id="cherrio">cherrio()</h2>
+<ul>
+<li>专门把 html 解构解析成一个 像jquery 函数一样方法 的 第三方</li>
+</ul>
+
+                    </div>
+                    
+                    <div class="my-4">
+    
+    <a href="/tags/%E5%89%8D%E7%AB%AF/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#前端</a>
+    
+    <a href="/tags/node.js/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#node.js</a>
+    
+</div>
+                    
+                    
+                    <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/icon.png" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+                    
+
+                    
+
+
+
+                    
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/" class="block">1. fs 内置模块</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/" class="block">3. 自定义模块</a>
+        
+    </div>
+</div>
+
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#moment">moment</a></li>
+    <li><a href="#mysql">mysql</a></li>
+    <li><a href="#superagent">superagent()</a></li>
+    <li><a href="#cherrio">cherrio()</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://www.wangchucheng.com/">C. Wang</a> and <a href="https://www.ruiqima.com/">R. Ma</a>
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
