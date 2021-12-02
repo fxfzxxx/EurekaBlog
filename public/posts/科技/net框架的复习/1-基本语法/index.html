@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>C#复习之基本语法 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="基本语法和面向对象的一些内容.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"C#复习之基本语法",
+      "item":"/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"
+    },
+    "headline": "C#复习之基本语法 | Aaron 的博客",
+    "image": "/images/net.jpg",
+    "datePublished": "2021-12-02T00:00:00+00:00",
+    "dateModified": "2021-12-02T00:00:00+00:00",
+    "wordCount":  3041 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "基本语法和面向对象的一些内容."
+}
+</script><meta property="og:title" content="C#复习之基本语法 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+<meta property="og:description" content="基本语法和面向对象的一些内容." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-02T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-12-02T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="recent" />
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/" />
+
+
+
+<meta property="og:see_also" content="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" />
+
+
+
+
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">C#复习之基本语法</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-02</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>7 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/all/" class="hover:text-eureka">All</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+        
+        <span>, </span>
+        <a href="/series/c-net/" class="hover:text-eureka">C-NET</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/net.jpg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="变量">变量</h2>
+<ul>
+<li>byte 8bit</li>
+<li>int 32bit</li>
+<li>short 16bit</li>
+<li>long 64bit</li>
+<li>ushort 16 无符号</li>
+<li>uint 32bit</li>
+<li>ulong 64bit</li>
+<li>float
+<ul>
+<li>float fl</li>
+<li>fl = 10.0f</li>
+</ul>
+</li>
+<li>double</li>
+<li>decimal 货币类型</li>
+<li>char 键盘, 不能为空, 单引号</li>
+</ul>
+<h3 id="溢出">溢出</h3>
+<p>byte a;</p>
+<p>a = 1000; 变量溢出</p>
+<h3 id="数据类型转换">数据类型转换</h3>
+<h4 id="1-整数与浮点数">1. 整数与浮点数</h4>
+<ul>
+<li>小进大 int 自动转换</li>
+<li>大进小需要进行强制转换</li>
+</ul>
+<pre><code class="language-c#">// 牵扯到一个变量名称问题
+// CTS: Common Title Syetem
+// int 会自动转化成 Int32
+// 所以 int a 和 Int32 a 都可以用来生成变量
+</code></pre>
+<ul>
+<li><code>int.Parse</code></li>
+<li><code>Convert.ToInt32(s)</code> 数据类型 转化成通用变量</li>
+</ul>
+<h4 id="2-字符串与其他类型转换">2. 字符串与其他类型转换</h4>
+<ul>
+<li>跟上面一样</li>
+</ul>
+<h2 id="基本运算">基本运算</h2>
+<h3 id="移位运算">移位运算</h3>
+<pre><code class="language-c#">int a = 5;
+b = a &gt;&gt; 2; 
+</code></pre>
+<ul>
+<li>首先把 a 转换成 2 进制, 可以得到 a=101</li>
+<li>把 101 右侧看成一堵墙, 即 101|</li>
+<li>往右移位就把整体往右移动两位</li>
+<li>整体变为 1|01, 只读取墙左边的数值</li>
+<li>最后 a 变为 1</li>
+</ul>
+<pre><code class="language-c#">b = a &lt;&lt; 2; // 10100 =&gt; 20
+</code></pre>
+<h3 id="-和-equals-的区别">== 和 Equals 的区别</h3>
+<ul>
+<li>实际上字符串就是一串字符的数组</li>
+</ul>
+<pre><code class="language-c#">String a = new String(new char[]{'a','b','c'});
+String b = new String(new char[]{'a','b','c'));
+                                 
+// a == b 是错误的 因为 a 和 b 的地址不一样. (验证后发现都是对的)
+// a.Equal(b) 是对的
+
+</code></pre>
+<h3 id="疑问未解决">疑问(未解决)</h3>
+<pre><code class="language-c#">#region == 和 Equals 的区别
+String a = new string(new char[] { 'a' });
+String b = &quot;a&quot;;
+Console.WriteLine(a == b);
+Console.WriteLine(a.Equals(b));
+#endregion
+// 输出都是 true 
+</code></pre>
+<h2 id="循环">循环</h2>
+<h3 id="for-循环">for 循环</h3>
+<pre><code class="language-c#">for(int i = 0; i &lt; 10; i++){
+  
+}
+  
+// 里面的执行顺序是转圈 i&lt;10 -&gt; {} -&gt; i++ -&gt; i&lt;10 -&gt; {} -&gt;... 
+</code></pre>
+<h3 id="foreach-循环">foreach 循环</h3>
+<ul>
+<li>迭代只读</li>
+<li>效率比 for 要高</li>
+</ul>
+<pre><code class="language-c#">foreach (int item in scores) {
+  item += 10; // 不合法
+}
+</code></pre>
+<h3 id="数组">数组</h3>
+<ul>
+<li>二维数组初始化</li>
+</ul>
+<pre><code class="language-c#">int[,] a = new int[3,4];
+a[2,2] = 10;
+// 数组长度
+a.Getlength(0) // 一维长度
+a.Getlength(1) // 二维  长度
+</code></pre>
+<h2 id="字符串">字符串</h2>
+<ul>
+<li>字符串初始化</li>
+</ul>
+<pre><code class="language-c#">String s1 = &quot;abc&quot;;
+String s2 = new String(new char[]{'a','b','c'});
+</code></pre>
+<ul>
+<li>字符串方法</li>
+</ul>
+<pre><code class="language-c#">s1.CompareTo(s2) // 如果是 0, 就是相等.
+s1.Equals(s2) // 相等 true, 区分大小写.
+s1 = s1.Trim() // 去掉空格.
+s1 = s1.ToUpper() // 大写
+s1 = s1.ToLower() // 小写
+s1 = s1.Replace('a','c') // c 把 a 换了
+s1 = s1.Substring(2); // 从 2 往后截取
+s1 = s1.Substring(2,3) // 从 2 往后截取 3 个长度.
+String[] s1 = s2.spit(''); // 以参数为分割, 返回到字符串数组里.
+int index = s1.IndexOf(&quot; &quot;) // 定位
+</code></pre>
+<ul>
+<li>字符串拼接的效率</li>
+</ul>
+<pre><code class="language-c#">s += a; // 效率低
+
+StringBuilder sb = new StringBuilder();
+sb.Append(&quot;a&quot;); // 效率高
+</code></pre>
+<h2 id="面向对象">面向对象</h2>
+<ul>
+<li>枚举类型是值类型, 读取速度要快很多.</li>
+<li>因为是值类型所以可以和整形数相互转换.</li>
+<li>注意: 枚举是和类平行的, 写的时候写在类的外面</li>
+</ul>
+<pre><code class="language-c#">enum Color {
+  red, Blue, Green, Yellow, 红
+};
+
+Color red = Color.红;
+int a = Convert.ToInt32(Color.蓝)
+</code></pre>
+<h3 id="oop">OOP</h3>
+<ul>
+<li>OOP = OOA + OOD + OOP</li>
+<li>封装, 继承, 多态</li>
+</ul>
+<h3 id="1-封装">1. 封装</h3>
+<h4 id="封装字段">封装字段</h4>
+<ul>
+<li>私有字段无法被类的外部直接访问, 所以需要封装成属性.</li>
+</ul>
+<pre><code class="language-c#">private int age;
+public int Age {
+  get { return age;}
+  set { return age = value;}
+}
+</code></pre>
+<ul>
+<li>C# 3.0 之后出现了自动属性
+<ul>
+<li>只有属性, 没有字段.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c#"> public int Age {get;set;}
+</code></pre>
+<ul>
+<li>自动属性更简洁, 但是想要在 set 里面加条件判断的话, 需要用复杂点的那个.</li>
+</ul>
+<pre><code class="language-c#">public int Age {
+  get { return age;}
+  set { 
+    if (value &lt; 0 || value &gt; 130) {
+      age = 20
+    }
+   // age = value;
+  		}
+}
+</code></pre>
+<h5 id="疑问未解决-1">疑问(未解决)</h5>
+<ul>
+<li>这里有一个疑问, 就是为什么不直接用 public 字段, 而是 private 字段封装成属性加 get , set.
+<ul>
+<li>感觉起到的效果差不多</li>
+<li>唯一的区别就是, 如果属性不加 set, 可以设置为只读.</li>
+</ul>
+</li>
+</ul>
+<h4 id="构造方法">构造方法</h4>
+<ul>
+<li>
+<p>作用: 实例化对象时, 对其进行初始化.</p>
+</li>
+<li>
+<p>如果不定义, 就是默认无参构造方法.(基本要保证有一个无参, 一个有参)</p>
+</li>
+<li>
+<p>特点:</p>
+<ol>
+<li>
+<p>与类同名</p>
+</li>
+<li>
+<p>没有返回值关键字(void 也不行)</p>
+</li>
+<li>
+<p>可以定义多个构造方法( <strong>重载</strong>: 名字相同, 参数不同)</p>
+</li>
+<li>
+<p>this 关键字, 对当前实例对象的引用</p>
+</li>
+<li>
+<p>私有构造函数不能创建对象</p>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="析构方法">析构方法</h4>
+<ul>
+<li>对象被销毁前执行, 做一些善后工作.</li>
+<li>特点:
+<ol>
+<li>类只能定义一个析构方法.</li>
+<li>无访问修饰符, 没有参数, 没有返回值.</li>
+<li>波浪号开头.</li>
+<li>对象销毁前, 自动调用.</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-c#">~ Product() {
+  console.WriteLine(&quot;对象即将被销毁&quot;);
+}
+</code></pre>
+<h4 id="方法">方法</h4>
+<ul>
+<li>首字母大写</li>
+</ul>
+<h5 id="参数">参数</h5>
+<ol>
+<li>可缺省的参数: 参数可定义默认值</li>
+</ol>
+<pre><code class="language-c#">public void fn(int val = 5){}
+</code></pre>
+<ol start="2">
+<li>
+<p>输出参数: 当方法需要返回多个值, 类型可以不同</p>
+<ul>
+<li>
+<p>输出类型的参数需要初始化</p>
+</li>
+<li>
+<p>可以用来获取商品信息</p>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-c#">// 此时函数有 三个 返回值   可为 void
+public string fn( out int i, out int j){
+  i = 0;
+  j = 0;
+  return &quot;返回的字符串&quot;
+}
+</code></pre>
+<ol start="3">
+<li>params 参数: 参数的数量不确定
+<ol>
+<li>前面可以定义参数</li>
+<li>后面不允许有其他参数</li>
+<li>params 关键字只能有一个</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-c#">// params
+public int fn(params int[] nums) {
+  int sum = 0;
+  foreach(var item in nums) {
+    sum += item;
+  }
+  return sum;
+}
+
+int res = fn(2, 3, 4, 5);
+</code></pre>
+<ol start="4">
+<li>ref 引用
+<ul>
+<li>修饰参数按地址传递, 默认都是按值传递</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-c#">// ref 来完成 a 和 b 的互换
+public void fn(ref int a, ref int b) {
+  int temp;
+  temp = a;
+  a = b;
+  b = temp;
+}
+
+</code></pre>
+<h4 id="类为元素的数组">类为元素的数组</h4>
+<pre><code class="language-c#">Student s1 = new Student();
+Student s2 = new Student();
+Student[] students = { s1, s2 };
+</code></pre>
+<h3 id="2-继承">2. 继承</h3>
+<ul>
+<li>
+<p>好处: 实现代码的重用.</p>
+</li>
+<li>
+<p>类只能是单继承, 一个类只能有一个父亲.</p>
+</li>
+<li>
+<p>子类的名称的最后一部分就是父类的名称.</p>
+</li>
+<li>
+<p>子类构造函数加 base 关键字: 在子类中, base 代表对父类的引用, 也包含列祖列宗.</p>
+<ul>
+<li>如果是子类的子类在引用父类的时候, 不用写 base.base.</li>
+</ul>
+</li>
+<li>
+<p>子类构造函数的参数需要包含自身的属性加上父类的属性.(字段也可以, 主要是完成初始化)</p>
+<ul>
+<li>父类参数不加变量类型</li>
+</ul>
+</li>
+<li>
+<p>和父类一样, 同样需要两个构造函数</p>
+<ul>
+<li>无参对无参, 有参对有参</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c#">public class UniStudent : Student
+    {
+        public string Major { get; set; }
+        public string Group { get; set; }
+
+        public UniStudent() : base()
+        {
+        }
+  
+        public UniStudent(int id, DateTime birthday, string name, string major, string group)
+            : base(id,birthday,name)
+        {
+            this.Major = major;
+            this.Group = group;
+        }
+    }
+</code></pre>
+<ul>
+<li>
+<p>修饰符 base 关键字用来修饰父类的字段.</p>
+</li>
+<li>
+<p>只有子类或者子类的子类可以访问和修改.</p>
+</li>
+</ul>
+<pre><code class="language-c#">public void fn()
+        {
+            base.pint = 0;
+        }
+</code></pre>
+<ul>
+<li>
+<p>internal 只能在一个命名空间内使用, 同一个解决方案里面不能跨命名空间使用.</p>
+</li>
+<li>
+<p>protected internal 组合修饰符</p>
+</li>
+<li>
+<p>所以一共有五类访问修饰符: private public protected internal, 组合.</p>
+</li>
+</ul>
+<h4 id="虚方法">虚方法</h4>
+<ul>
+<li>
+<p>在父类中定义的,专门给子类去重新设计方法的功能</p>
+</li>
+<li>
+<p>应该是类似 java 的抽象方法?</p>
+</li>
+<li>
+<p>在子类中对父类中的虚方法进行<strong>重写</strong> override</p>
+<ul>
+<li>virtual 和 override 需要成对出现</li>
+</ul>
+</li>
+<li>
+<p>主要作用就是规范子类的方法名称, 大型项目管理常用.</p>
+</li>
+</ul>
+<pre><code class="language-c#">public class Graph {
+  public double[] Length {get;set;}
+  public virtual double GetLength() { return 0;}
+  public virtual double GetArea() { return 0;}
+  public Graph(int length) {
+    this.Length = new double[length];
+  }
+}
+
+public class Rectangular {
+  public Rectangular(int length, int width, int height) : base(length) {
+    base.Length[0] = height;
+    base.Length[1] = width;
+  }
+  public override double GetLength() {
+    return 2 * (base.Length[0] + base.Length[1]); 
+  }
+  public override double GetArea() {
+    return base.Length[0] + base.Length[1];
+  }
+  
+}
+</code></pre>
+<h4 id="new-关键字">new 关键字</h4>
+<ul>
+<li>子类用来隐藏父类的同名方法</li>
+<li>在使用多态的时候, 用子类来创建父类对象
+<ul>
+<li>如果调用子类同名重写的方法, 就是直接调用子类方法</li>
+<li>如果调用子类同名 new 方法, 就是调用父类的方法.</li>
+</ul>
+</li>
+</ul>
+<h4 id="密封类">密封类</h4>
+<ul>
+<li>sealed 关键字: 父类使用 sealed 关键字, 无法产生子类, 太监.</li>
+<li>出于安全性考虑, 有时候会用密封类</li>
+</ul>
+<h4 id="静态">静态</h4>
+<ul>
+<li>static 关键字: 可以修饰类, 字段, 属性, 方法, 构造函数.
+<ul>
+<li>静态方法用的最多, 可以在静态类, 也可以在实例类(public)</li>
+</ul>
+</li>
+<li>特点:
+<ol>
+<li>为所有的类所共享 ( 猜着是对一个命名空间内的所有类所共享 ).</li>
+<li>静态构造函数无论实例化多少次, 只会调用一次. 先调用静态构造函数, 再调用实例构造函数.</li>
+<li>静态方法可以通过 类名.方法名 来调用, 不能通过实例名调用.</li>
+<li>实例类可以定义静态方法.</li>
+<li>声明周期和应用程序的声明周期是一致的, 而实例类一段时间后就会自动销毁对象并释放内存.</li>
+<li>静态方法只能只能访问方法内的字段, 不能访问方法外类里定义的字段和实例方法.</li>
+<li>实例方法内可以访问同一个类中的静态方法</li>
+<li>静态类里面所有的成员都是静态的. 静态类的效率很高.
+<ul>
+<li>不能实例化</li>
+<li>所有成员都被全部对象共享</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<h4 id="抽象类-abstract">抽象类 (abstract)</h4>
+<ol>
+<li>
+<p>抽象方法 (abstract method): 只有声明, 没有定义, 没有大括号.</p>
+</li>
+<li>
+<p>也可以有普通成员, 非抽象的字段或者方法, 静态也可以.</p>
+</li>
+<li>
+<p>但抽象方法不能存在普通类中.</p>
+</li>
+<li>
+<p>抽象类不能被实例化.</p>
+</li>
+<li>
+<p>抽象类的子类(非抽象)必须要重写<strong>全部</strong>的抽象类的方法.</p>
+<ol>
+<li>即使子类是抽象类, 也都要实现</li>
+<li>要写 override 关键字</li>
+</ol>
+</li>
+<li>
+<p>子类如果是抽象类, 则不用重写所有的抽象类.</p>
+</li>
+</ol>
+<h4 id="接口-interface--引用类型">接口 (interface) : 引用类型</h4>
+<ol>
+<li>抽象类里可以有非抽象的成员, 但接口内的成员全部是抽象的.</li>
+<li>不能被实例化.</li>
+<li>成员默认都是 public , 但是不能写任何的访问修饰符.</li>
+<li>方法只能声明不能定义, 不能写大括号</li>
+<li>所有的方法必须被子类实现</li>
+<li>多继承, 可以有多个父级
+<ul>
+<li>如果同时继承类和接口, 要先写父类, 再写接口</li>
+</ul>
+</li>
+</ol>
+<pre><code class="language-c#">public interface IMobile {
+  void Insert();
+}
+
+public interface INet {
+  void Net();
+}
+
+public interface IIntelMobile {
+  void Pay();
+  void Chat();
+}
+
+public interface IIPhone : Inet, IMobile, IIntelMobile{
+  	
+}
+</code></pre>
+<h4 id="显式接口">显式接口</h4>
+<p>多个接口中包含相同方法的声明, 同名同参, 而同时被一个类去实现.</p>
+<pre><code class="language-c#">public interface Ichinese {
+  void Speak();
+}
+
+public interface IUSA {
+  void Speak();
+}
+
+public class Person : Ichinese, IUSA {
+  
+  void Speak() {
+    
+  };
+  void IChinese.Speak() {
+    
+  };
+  
+  void IUSA.Speak() {
+     
+  }
+}
+
+public void Main(string[] args) {
+  // 多态向上转型调用不同接口中同名同参的方法
+  IChinese ic = new Person();
+  ic.Speak();
+  IUSA iu = new Person();
+  iu.Speak();
+}
+</code></pre>
+<h4 id="抽象类和接口的区别">抽象类和接口的区别</h4>
+<ol>
+<li>抽象类有构造方法, 接口没有</li>
+<li>抽象类中有实例成员, 接口中没有, 全部抽象</li>
+<li>抽象类中可以有静态方法, 接口中不能定义静态方法</li>
+<li>抽象类是单继承, 接口是多继承</li>
+<li>类可以实现多个接口, 但只能继承一个抽象类</li>
+<li>类必须实现接口的全部成员, 抽象子类可以实现 0 或者多个父类抽象成员</li>
+</ol>
+<h3 id="3-多态">3. 多态</h3>
+<ol>
+<li>方法的重载 (overload)</li>
+<li>重写 (override)</li>
+<li>向上转型: 父类引用</li>
+</ol>
+<pre><code class="language-c#">// 向上转型 父类 Graphic 可以是抽象类 和 接口
+Graphic g = new Circle(10);
+//调用子类的方法
+g.GetArea();
+</code></pre>
+<ol start="4">
+<li>向下转型:</li>
+</ol>
+<pre><code class="language-c#">Mobile mobile = new IntellMobile();
+IntellMobile mobile2 = (IntellMobile)mobile; // 向下转型
+IntellMobile mobile2 = mobile as IntellMobile; // 向下转型 
+mobile2.Message(); // 调用的是 intellmobile 的方法
+</code></pre>
+<ol start="5">
+<li>父类作为方法的参数</li>
+</ol>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/recent/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#近期文章</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" class="block">leetcode 刷题挑战之 数组</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/">Featured Image</a>
+        <br />
+        
+        <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/">Markdown Syntax Guide</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+        <br />
+        
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#变量">变量</a>
+      <ul>
+        <li><a href="#溢出">溢出</a></li>
+        <li><a href="#数据类型转换">数据类型转换</a>
+          <ul>
+            <li><a href="#1-整数与浮点数">1. 整数与浮点数</a></li>
+            <li><a href="#2-字符串与其他类型转换">2. 字符串与其他类型转换</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#基本运算">基本运算</a>
+      <ul>
+        <li><a href="#移位运算">移位运算</a></li>
+        <li><a href="#-和-equals-的区别">== 和 Equals 的区别</a></li>
+        <li><a href="#疑问未解决">疑问(未解决)</a></li>
+      </ul>
+    </li>
+    <li><a href="#循环">循环</a>
+      <ul>
+        <li><a href="#for-循环">for 循环</a></li>
+        <li><a href="#foreach-循环">foreach 循环</a></li>
+        <li><a href="#数组">数组</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符串">字符串</a></li>
+    <li><a href="#面向对象">面向对象</a>
+      <ul>
+        <li><a href="#oop">OOP</a></li>
+        <li><a href="#1-封装">1. 封装</a>
+          <ul>
+            <li><a href="#封装字段">封装字段</a>
+              <ul>
+                <li><a href="#疑问未解决-1">疑问(未解决)</a></li>
+              </ul>
+            </li>
+            <li><a href="#构造方法">构造方法</a></li>
+            <li><a href="#析构方法">析构方法</a></li>
+            <li><a href="#方法">方法</a>
+              <ul>
+                <li><a href="#参数">参数</a></li>
+              </ul>
+            </li>
+            <li><a href="#类为元素的数组">类为元素的数组</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-继承">2. 继承</a>
+          <ul>
+            <li><a href="#虚方法">虚方法</a></li>
+            <li><a href="#new-关键字">new 关键字</a></li>
+            <li><a href="#密封类">密封类</a></li>
+            <li><a href="#静态">静态</a></li>
+            <li><a href="#抽象类-abstract">抽象类 (abstract)</a></li>
+            <li><a href="#接口-interface--引用类型">接口 (interface) : 引用类型</a></li>
+            <li><a href="#显式接口">显式接口</a></li>
+            <li><a href="#抽象类和接口的区别">抽象类和接口的区别</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-多态">3. 多态</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <br />
+            
+            <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

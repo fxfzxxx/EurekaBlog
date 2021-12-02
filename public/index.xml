@@ -19,11 +19,38 @@
     </item>
     
     <item>
-      <title>静态博客搭建 - 进阶教程 - 基于 academic 主题</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</link>
+      <title>C#复习之基本语法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</guid>
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>变量 byte 8bit int 32bit short 16bit long 64bit ushort 16 无符号 uint 32bit ulong 64bit float float fl fl = 10.0f double decimal 货币类型 char 键盘, 不能为空, 单引号 溢出 byte a; a = 1000; 变量溢出 数</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 数组</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</guid>
+      <description>704. 二分查找 学习了 vector 的用法 需要在开头声明 #include &amp;lt;vector&amp;gt;. vector&amp;lt;int&amp;gt; nums;. 不能直接把数组的值输入到 vector 中, 要通过循环来 pushback 到 vector 中去. int search(vector&amp;lt;int&amp;gt;&amp;amp; nums) 其中</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 链表</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</guid>
+      <description>链表相比如数组, 长度不固定, 可以动态增删. 数组适合查询, 链表适合增删. 203. 移除链表元素 学习了定义 struct 数据结构 用来定</description>
+    </item>
+    
+    <item>
+      <title>静态博客搭建 - 进阶教程 - 基于 academic 主题</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</guid>
       <description>&lt;p&gt;进阶的一些列操作, 基本都是根据 &lt;code&gt;config.toml&lt;/code&gt; 内的提示来的. 而不同的主题, 会有不同的 &lt;code&gt;config.toml&lt;/code&gt; 文件. 当选择好心仪的主题后, 首先要把主题的示范页和 &lt;code&gt;config.toml&lt;/code&gt; 文件拿到主文件夹中.&lt;/p&gt;
 &lt;p&gt;经过一番研究发现, 目前 hugo 比价流行的主题是 academic , 所以进阶的教程就会基于这个主题来展开. 其他主题的教程其实都差不多.&lt;/p&gt;
 &lt;p&gt;最后并没有用这个主题, 主要是因为自由度太高, 反而影响了我继续深挖的心情. 这玩儿搞这么复杂, 配置的时间都赶上我自己弄一套 vue 了.&lt;/p&gt;
@@ -398,19 +425,19 @@ main:
     
     <item>
       <title>搭建博客的过程中遇到的问题</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
       <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
     </item>
     
     <item>
       <title>如何简单快速地搭建一个静态博客</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
       <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为</description>
     </item>
     

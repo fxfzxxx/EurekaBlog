@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>leetcode 刷题挑战之 数组 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="包含了经典的关于数组操作的题目">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"leetcode 刷题挑战之 数组",
+      "item":"/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/"
+    },
+    "headline": "leetcode 刷题挑战之 数组 | Aaron 的博客",
+    "image": "/images/leetcode.jpeg",
+    "datePublished": "2021-12-02T00:00:00+00:00",
+    "dateModified": "2021-12-02T00:00:00+00:00",
+    "wordCount":  2557 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "包含了经典的关于数组操作的题目"
+}
+</script><meta property="og:title" content="leetcode 刷题挑战之 数组 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" />
+
+
+
+<meta property="og:description" content="包含了经典的关于数组操作的题目" />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-02T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-12-02T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="recent" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/" />
+
+
+
+<meta property="og:see_also" content="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" />
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">leetcode 刷题挑战之 数组</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-02</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>6 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/all/" class="hover:text-eureka">All</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+        
+        <span>, </span>
+        <a href="/series/leetcode/" class="hover:text-eureka">leetcode</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/leetcode.jpeg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="704-二分查找">704. 二分查找</h2>
+<ul>
+<li>学习了 vector 的用法
+<ul>
+<li>需要在开头声明 <code>#include &lt;vector&gt;</code>.</li>
+<li><code>vector&lt;int&gt; nums;</code>.</li>
+<li>不能直接把数组的值输入到 vector 中, 要通过循环来 <code>pushback</code> 到 <code>vector </code> 中去.</li>
+<li><code>int search(vector&lt;int&gt;&amp; nums) </code> 其中带一个 <code>&amp;</code> 是传引用的意思.</li>
+</ul>
+</li>
+<li>关键是处理边界问题, 我默认会选择<strong>左闭右闭</strong>的情况:
+<ul>
+<li><code>int left = 0; int right = nums.size() - 1;</code>.</li>
+</ul>
+</li>
+<li>最终代码:</li>
+</ul>
+<pre><code class="language-c++">// 给定升序序列，通过二分法查找目标值
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+class Solution
+{
+public:
+    int search(vector&lt;int&gt; &amp;nums, int target)
+    {
+        int left = 0;
+        int right = nums.size() - 1;
+        while (left &lt;= right)
+        {
+            int middle = (left + right) / 2;
+            if (target &lt; nums[middle])
+            {
+                right = middle - 1;
+            }
+            else if (target &gt; nums[middle])
+            {
+                left = middle + 1;
+            }
+            else
+            {
+                return middle;
+            }
+        }
+        return -1;
+    }
+};
+
+int main()
+{
+    Solution s;
+    int a[10] = {1, 3, 4, 5, 6, 7, 8, 9, 10, 10};
+    vector&lt;int&gt; nums;
+    for (int i = 0; i &lt; 10; i++)
+    {
+        nums.push_back(a[i]);
+    }
+    //vector&lt;int&gt; b(a,a+2);
+
+    int target = 5;
+    int res = s.search(nums, target);
+    cout &lt;&lt; &quot;Location is &quot; &lt;&lt; res &lt;&lt; endl;
+    return 0;
+}
+
+</code></pre>
+<h2 id="27-移除元素">27. 移除元素</h2>
+<ul>
+<li>有两种方法
+<ul>
+<li>嵌套循环暴力解法</li>
+<li>双指针</li>
+</ul>
+</li>
+<li>c++没有直接获取数组长度的函数, 可以在累开头定义一个模板</li>
+</ul>
+<pre><code class="language-c++">tampate &lt;class T&gt;
+
+int getArrayLen(T&amp; array)
+{
+  return (sizeof(array)/sizeof(array[0]));
+}
+</code></pre>
+<ul>
+<li>最终代码:</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+// 暴力解法
+class Solution1
+{
+public:
+    int removeElement(vector&lt;int&gt; &amp;nums, int val)
+    {
+        int size = nums.size();
+        for (int i = 0; i &lt; size; i++)
+        {
+            if (nums[i] == val)
+            {
+                for (int j = i + 1; j &lt; nums.size(); j++)
+                {
+                    nums[j - 1] = nums[j];
+                }
+                i--;
+                size--;
+            }
+        }
+    }
+};
+// 双指针法
+class Solution2
+{
+public:
+    int removeElement(vector&lt;int&gt; &amp;nums, int val)
+    {
+        int slowIndex = 0;
+        for (int fastIndex = 0; fastIndex &lt; nums.size(); fastIndex++) {
+            if (nums[fastIndex] != val) {
+                nums[slowIndex++] = nums[fastIndex];
+            }
+        }
+        return slowIndex;
+    }
+};
+
+int main() {
+    Solution2 s2;
+    int array[10] = {1,2,3,4,5,6,7,8,9,10};
+    int size = sizeof(array) / sizeof(array[0]);
+    vector&lt;int&gt; nums;
+    for (int i = 0; i &lt; size ; i++)
+    {
+        nums.push_back(array[i]);
+    }
+    int val = 4;
+    int res = s2.removeElement(nums,val);
+
+    cout &lt;&lt; &quot;The new lenth of the array is :&quot; &lt;&lt; res &lt;&lt; endl;
+    cout &lt;&lt;  size &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h2 id="977-有序数组的平方">977. 有序数组的平方</h2>
+<ul>
+<li>
+<p><code>vector&lt;int&gt; result(A.size(), 0)</code> 创建一个长度和 A 样的 vector, 并且初始值为 0.</p>
+</li>
+<li>
+<p>因为对<code>vector&lt;int&gt; sortedSqaures(vector&lt;int&gt;&amp; A)</code>引用传参有疑问, 我尝试在函数调用前后向量 A 的值, 结果发现是一样的. 所以决定写一个小程序来验证传引用的效果.</p>
+<ul>
+<li>经过验证, 需要在函数体内对形参再赋值. 赋值后, 函数执行完毕, 实参也会发生改变.</li>
+</ul>
+</li>
+<li>
+<p>最终代码:</p>
+</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+// 暴力解法
+class Solution
+{
+public:
+    vector&lt;int&gt; sortedSquares(vector&lt;int&gt; &amp;A)
+    {
+        for (int i = 0; i &lt; A.size(); i++)
+        {
+            A[i] *= A[i];
+        }
+        sort(A.begin(), A.end());
+        return A;
+    }
+};
+// 双指针法
+class Solution2
+{
+public:
+    vector&lt;int&gt; sortedSquares(vector&lt;int&gt;&amp; A)
+    {
+        int k = A.size() - 1;
+        vector&lt;int&gt; result(A.size(), 0);
+        for (int i = 0, j = A.size() - 1; i &lt;= j;)
+        {
+            if (A[i] * A[i] &gt; A[j] * A[j])
+                {
+                    result[k--] = A[i] * A[i];
+                    i++;
+                }
+                
+            else
+            {
+                result[k--] = A[j] * A[j];
+                j--;
+            }
+            
+        }
+
+        return result;
+    }
+};
+
+int main() {
+    Solution2 s2;
+    int a[10] = {-4,-3,-2,-1,0,1,2,3,4,5};
+    vector&lt;int&gt; nums;
+    for (int i = 0; i&lt;10; i++) {
+        nums.push_back(a[i]);
+    }
+    cout &lt;&lt; &quot;The original vector:&quot; &lt;&lt; nums[0] &lt;&lt; endl;
+    cout &lt;&lt; &quot;Start to ouput the result vector: &quot; &lt;&lt; endl;
+    vector&lt;int&gt; res = s2.sortedSquares(nums);
+    for ( int i = 0; i &lt; 10; i++) {
+        cout &lt;&lt; res[i] &lt;&lt; endl;
+    }
+    
+    cout &lt;&lt;&quot;The calculated result vector: &quot; &lt;&lt;nums[0] &lt;&lt; endl;
+}
+</code></pre>
+<h2 id="209-长度最小的子数组">209. 长度最小的子数组</h2>
+<h3 id="c函数返回一个数组">C++函数返回一个数组</h3>
+<ul>
+<li>做这个题之前, 我想要写一个单独的文件来存储一个函数. 这个函数可以生成一个随机的数组. 然后可以把这个数组 pushback 到一个 vector 中去. (现在回想起来, 未尝不可直接生成一个 vector, 反而要简单很多. 不过, 探索数组的过程, 我也再次复习了一遍指针.)</li>
+<li>回想一下, 数组之所以不能作为函数的返回值, 是因为数组的本质是一个指针. <code>int arr = new arr[4]</code>, 这里的 <code>arr</code> 作为一个指针实际指向的是数组的第一个元素. <code>arr == 0x7ffeefbff450 </code>. 并且<code>*arr</code> 取的是数组的第一个元素, <code>*(arr + 1) </code> 得到的是第二个元素, 因为数组在内存上是连续的, 又由于这是一个 <code>int</code> 数组, 所以二者的地址差别应该是 4 个字节, 即 32 bits.</li>
+</ul>
+<pre><code class="language-C++">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main()
+{
+    int  var[5] = {1,2,3,4,5};   // 实际变量的声明
+    int  *ip;        // 指针变量的声明
+
+    ip = var;       // 在指针变量中存储 var 的地址
+
+    cout &lt;&lt; &quot;Value of var variable: &quot;;
+    cout &lt;&lt; var &lt;&lt; endl; // Value of var variable: 0x7ff7b6c3f720
+		
+    // 输出在指针变量中存储的地址
+    cout &lt;&lt; &quot;Address stored in ip variable: &quot;; 
+    cout &lt;&lt; ip &lt;&lt; endl; //Address stored in ip variable: 0x7ff7b2202720
+
+    // 访问指针中地址的值
+    cout &lt;&lt; &quot;Value of *ip variable: &quot;;
+    // *ip = 30;
+    *var = 30;
+    cout &lt;&lt; *ip &lt;&lt; endl; // Value of *ip variable: 30
+    cout &lt;&lt; var &lt;&lt; endl; // 0x7ff7b2202720
+    cout &lt;&lt; var[0] &lt;&lt; endl; // 30
+
+    system(&quot;pause&quot;);
+    return 0;
+}
+</code></pre>
+<ul>
+<li>下面 &amp;height[0] 就是取得是数组第一个元素的地址，假设地址为 1000；&amp;height 是直接对数组名进行取地址，这个时候就是取得是 height 整个数组的地址，指向包含 10 个元素的 int 型数组，地址范围为 1000~1036；</li>
+<li>我们知道 height 等价于 &amp;height[0]，height+1 会将地址加 4 个字节；但 &amp;height+1 就是将地址增加 10*4 个字节。</li>
+</ul>
+<pre><code class="language-c++">int height[10];//int型的数组
+cout &lt;&lt; &amp;height &lt;&lt; endl;//&amp;用在数组名上
+cout &lt;&lt; &amp;height[0] &lt;&lt; endl;//&amp;用在数组第一个元素上
+</code></pre>
+<ul>
+<li>如果想返回一个数组, 则可以返回一个指针数组:</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+
+using namespace std;
+
+float* MultMatrix(float A[4], float B[4])
+{
+    float *M = new float[4];
+    M[0] = A[0]*B[0] + A[1]*B[2];
+    M[1] = A[0]*B[1] + A[1]*B[3];
+    M[2] = A[2]*B[0] + A[3]*B[2];
+    M[3] = A[2]*B[1] + A[3]*B[3];
+    cout &lt;&lt; M[0] &lt;&lt; &quot; &quot; &lt;&lt; M[1] &lt;&lt; endl;
+    cout &lt;&lt; M[2] &lt;&lt; &quot; &quot; &lt;&lt; M[3] &lt;&lt; endl;
+
+    return M; // M 是一个指针
+}
+
+int main()
+{
+    float A[4] = { 1.75, 0.66, 0, 1.75 };
+    float B[4] = {1, 1, 0, 0};
+    float *M = MultMatrix(A, B);
+    cout &lt;&lt; M[0] &lt;&lt; &quot; &quot; &lt;&lt; M[1] &lt;&lt; endl;
+    cout &lt;&lt; M[2] &lt;&lt; &quot; &quot; &lt;&lt; M[3] &lt;&lt; endl;
+    delete[] M;
+
+    return 0;
+}
+</code></pre>
+<h3 id="题目解答">题目解答</h3>
+<ul>
+<li><code> int minlength = INT32_MAX;</code> 是因为要取一个比数组长度大的数, 这样能保证在给最小长度赋值的时候, 可以包含全部的数字长度. 因此, 及时<code>int minlength = nums.size() + 1</code> 应该也是可取的.</li>
+<li>最终代码:</li>
+</ul>
+<pre><code class="language-c++">#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include &quot;RandomArray.cpp&quot;
+using namespace std;
+class Solution {
+    public:
+    int minSubArrayLength(int target, vector&lt;int&gt;&amp; nums) {
+        int minlength = INT32_MAX;
+        int length = 1;
+        int sum = 0;
+        int start =  0;
+        for(int i = 0; i &lt; nums.size(); i++) {
+            sum = sum + nums[i];
+            // 这里必须是 while 循环, 因为如果下一个加的nums[i] 是一个很大的数, start 可能
+            // 会往后移动多次
+            while(sum &gt;= target) {
+                length = i - start + 1;
+                sum = sum - nums[start];
+                start++;         
+                // 最小值必须在循环内赋值, 如果在 for 循环里, 会赋值为 1, 也就是初始值.       
+                minlength = minlength &lt; length ? minlength : length;
+            }
+            
+        }
+        return minlength == INT32_MAX ? 0 : minlength;
+
+    }
+};
+int main () {
+    Solution s1;
+    int array[] = {2,3,4,0,1};
+    int size = sizeof(array) / sizeof(array[0]);
+    vector&lt;int&gt; nums;
+    for (int i = 0; i &lt; size ; i++)
+    {
+        nums.push_back(array[i]);
+    }
+    int s = 8;
+    int res = s1.minSubArrayLength(s,nums);
+    cout &lt;&lt; res &lt;&lt; endl;
+}
+</code></pre>
+<h2 id="59-螺旋矩阵">59. 螺旋矩阵</h2>
+<ul>
+<li>n x n 的二维 vector 的初始化</li>
+</ul>
+<pre><code class="language-c++">vector&lt; vector&lt;int&gt; &gt; res(n, vector&lt;int&gt;(n,0)) // n 是长度, 0 是初始值.
+</code></pre>
+<ul>
+<li>解题思路就是左闭右开的走法, 从左上角开始走, 每一次走都留最后一格. 然后下一次走把最后一格作为起点. 然后每走完一圈, 到坐上角的右下方的格子, 这时候起点相当于比一开始加 1. 后面也是一样. 每多走一圈, 起点就加 1. 并且每走一圈相当于上下各减 1 的长度, 即减 2 的长度, 所以一共会走 n/2 圈. 奇数 n 需要考虑最中间的一格单独加上值.</li>
+<li>最终代码</li>
+</ul>
+<pre><code class="language-c++">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+class Solution1
+{
+public:
+    vector&lt;vector&lt;int&gt; &gt; generateMatrix(int n)
+    {
+        vector&lt;vector&lt;int&gt; &gt; res(n, vector&lt;int&gt;(n, 0));
+        int loop = n / 2;
+        int start_x = 0;
+        int start_y = 0;
+        // 起始数字从 1 开始
+        int count = 1;
+        // 奇数情况, 要单独定义一下最中间的数
+        int mid = (n - 1) / 2;
+
+        while (loop--)
+        {
+            // (0,0) -&gt; (0,n-2)
+            for (int i = start_y; i &lt; n - start_y - 1; i++)
+            {
+                res[start_x][i] = count++;
+            }
+            // (0,n-1) -&gt; (n-2,n-1)
+            for (int j = start_x; j &lt; n - start_x - 1; j++)
+            {
+                res[j][n - start_y - 1] = count++;
+            }
+            // (n-1,n-1) -&gt; (n-1,1)
+            for (int i = n - start_y - 1; i &gt; start_y; i--)
+            {
+                res[n - start_x - 1][i] = count++;
+            }
+            // (n-1,0) -&gt; (1,0)
+            for (int j = n - start_x - 1; j &gt; start_x; j--)
+            {
+                res[j][start_y] = count++;
+            }
+            start_x++;
+            start_y++;
+        }
+        // 如果为奇数, 要单独给最中间的赋值
+
+        if (n % 2)
+        {
+            res[mid][mid] = n * n;
+        }
+        return res;
+    }
+};
+
+class Solution2
+{
+public:
+    vector&lt;vector&lt;int&gt; &gt; generateMatrix(int n)
+    {
+        vector&lt;vector&lt;int&gt; &gt; res(n, vector&lt;int&gt;(n, 0));
+        int loop = n / 2;
+        // x 和 y 的起点都是每次递增一次, 所以可以只定义一个开始.
+        int start = 0;
+        // 起始数字从 1 开始
+        int count = 1;
+        // 奇数情况, 要单独定义一下最中间的数
+        int mid = (n - 1) / 2;
+
+        while (loop--)
+        {
+            // (0,0) -&gt; (0,n-2)
+            for (int i = start; i &lt; n - start - 1; i++)
+            {
+                res[start][i] = count++;
+            }
+            // (0,n-1) -&gt; (n-2,n-1)
+            for (int j = start; j &lt; n - start - 1; j++)
+            {
+                res[j][n - start - 1] = count++;
+            }
+            // (n-1,n-1) -&gt; (n-1,1)
+            for (int i = n - start - 1; i &gt; start; i--)
+            {
+                res[n - start - 1][i] = count++;
+            }
+            // (n-1,0) -&gt; (1,0)
+            for (int j = n - start - 1; j &gt; start; j--)
+            {
+                res[j][start] = count++;
+            }
+            start++;
+        }
+        // 如果为奇数, 要单独给最中间的赋值
+
+        if (n % 2)
+        {
+            res[mid][mid] = n * n;
+        }
+        return res;
+    }
+};
+
+int main()
+{
+    Solution2 s2;
+    int n = 6;
+    vector&lt;vector&lt;int&gt; &gt; res = s2.generateMatrix(n);
+    for (int i = 0; i &lt; n; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            cout &lt;&lt; res[i][j] &lt;&lt; &quot; &quot;;
+        }
+        cout &lt;&lt; &quot;\n&quot;
+             &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</code></pre>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/recent/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#近期文章</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="block">C#复习之基本语法</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" class="block">leetcode 刷题挑战之 链表</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/">Featured Image</a>
+        <br />
+        
+        <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/">Markdown Syntax Guide</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+        <br />
+        
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#704-二分查找">704. 二分查找</a></li>
+    <li><a href="#27-移除元素">27. 移除元素</a></li>
+    <li><a href="#977-有序数组的平方">977. 有序数组的平方</a></li>
+    <li><a href="#209-长度最小的子数组">209. 长度最小的子数组</a>
+      <ul>
+        <li><a href="#c函数返回一个数组">C++函数返回一个数组</a></li>
+        <li><a href="#题目解答">题目解答</a></li>
+      </ul>
+    </li>
+    <li><a href="#59-螺旋矩阵">59. 螺旋矩阵</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <br />
+            
+            <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>搭建博客的过程中遇到的问题 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"搭建博客的过程中遇到的问题",
+      "item":"/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"
+    },
+    "headline": "搭建博客的过程中遇到的问题 | Aaron 的博客",
+    "image": "/images/hugo.jpeg",
+    "datePublished": "2021-11-30T00:00:00+00:00",
+    "dateModified": "2021-11-30T00:00:00+00:00",
+    "wordCount":  570 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主"
+}
+</script><meta property="og:title" content="搭建博客的过程中遇到的问题 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+
+<meta property="og:description" content="academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主" />
+
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-30T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-11-30T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="image" />
+
+<meta property="article:tag" content="recent" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/" />
+
+
+
+<meta property="og:see_also" content="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/#about" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">关于</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">搭建博客的过程中遇到的问题</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-30</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/all/" class="hover:text-eureka">All</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/hugo.jpeg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="academic-主题文档不清楚">academic 主题文档不清楚</h2>
+<p>对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏.</p>
+<p>并且整个文档红色的主题看着有点上头, 并且 wowcheamy 的名字感觉很奇怪🌈. 版本控制也很混乱, 导致经常出现实际情况和文档有不符的情况.</p>
+<p>比如我想在主页放一个 blank widget, 在导入图片的时候, 文档里出现了不同的路径, 有 <code>static/media</code>, <code>static/img</code>, <code>static/images</code>. 问题是什么, 我把每一种路径都尝试了, 依然是无法读取图片.</p>
+<p>还有就是, 我建立博客的初衷就是简单易读, 过于花哨的功能开始让主题要素过多, 导致我直接放弃了 academic 这个主题. 咱只能说咱还是菜, 降不住这玩儿了.</p>
+<h2 id="科学上网">科学上网</h2>
+<p>说来也巧, 中间在搭建 academic 主题博客的时候, 由于刚好毕业, 学校安排的 vpn 直接给停用了.</p>
+<p>并且, 我备用的 vpn 只能在 mac 上支持 ss 协议 (暂时也不知道意义是什么, 只记得在 win 上可以选择 udp), 在 GitHub 上传和下载的时候总是出现丢包的情况, 异常烦人.</p>
+<p>这个 academic 有时候在渲染页面的时候,可能是我的主题路径不是本地, 还要从 GitHub 上的官方仓库下载什么 module, 经常失败, 更加烦人.</p>
+<p>最后, 我不得不把 GitHub 的 一组IP地址加到 <code>etc/host</code> 文件内. 虽然不用科学上网后也能正常访问, 但是依然存在渲染失败的情况. 估计是加入的 ip 地址不全导致的. 最后也导致我放弃了 academic 这个主题.</p>
+<h2 id="git-的使用">git 的使用</h2>
+<p>在使用 git 的时候, 一定要在主文件夹下 commit, 不然如果子文件夹下碰巧也是一个仓库的话, commit 就只会存在于子文件夹的仓库内. 在子文件夹仓库内的多词 commit 都不会被记录在主文件夹的 log 中.</p>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/image/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#image</a>
+    
+    <a href="/tags/recent/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#近期文章</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" class="block">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" class="block">如何简单快速地搭建一个静态博客</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/">Featured Image</a>
+        <br />
+        
+        <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/">Markdown Syntax Guide</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#academic-主题文档不清楚">academic 主题文档不清楚</a></li>
+    <li><a href="#科学上网">科学上网</a></li>
+    <li><a href="#git-的使用">git 的使用</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <br />
+            
+            <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/">Featured Image</a>
+            <br />
+            
+            <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <br />
+            
+            <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+            <br />
+            
+            <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/emoji-support/">Emoji Support</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
