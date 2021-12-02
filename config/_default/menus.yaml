@@ -1,7 +1,7 @@
 main:
-  - name: 关于
-    url: '#about'
-    weight: 6
+  # - name: 关于
+  #   url: '#about'
+  #   weight: 6
   - name: 科技
     url: /categories/Technology
     weight: 2
