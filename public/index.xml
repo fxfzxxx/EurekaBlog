@@ -8,7 +8,7 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blank</title>
       <link>/%E4%B8%8D%E7%94%A8%E7%9A%84%E4%B8%BB%E9%A1%B5%E6%8E%A7%E4%BB%B6/blank/</link>
@@ -19,63 +19,9 @@
     </item>
     
     <item>
-      <title>1. fs 内置模块</title>
-      <link>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</guid>
-      <description>fs - file system node 内置的一个模块 里面存放的都是操作文件相关的方法 使用的时候不需要自己定义，但是需要导入 const fs = require(&#39;fs&#39;) readFile() 异步读</description>
-    </item>
-    
-    <item>
-      <title>2. 第三方模块</title>
-      <link>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</guid>
-      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模</description>
-    </item>
-    
-    <item>
-      <title>3. 自定义模块</title>
-      <link>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</guid>
-      <description>/* 每一个 js 文件天生自带一个变量叫做 module Module { id: &#39;.&#39;, // 当前文件的存储路径 path: &#39;E:\\BK_GP_20\\05_第五周\</description>
-    </item>
-    
-    <item>
-      <title>4. 了解 npm</title>
-      <link>/docs/node.js/npm/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/npm/</guid>
-      <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具</description>
-    </item>
-    
-    <item>
-      <title>5. 了解 nrm</title>
-      <link>/docs/node.js/nrm/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/nrm/</guid>
-      <description>npm 的下载地址 默认在国外 下载会比较慢, 容易丢包 解决办法: 换一个国内的下载地址 npm 地址 npm 的原始地址 yarn 地址 国外的地址 cnpm</description>
-    </item>
-    
-    <item>
-      <title>搭建博客的过程中遇到的问题</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
-    </item>
-    
-    <item>
       <title>静态博客搭建 - 进阶教程 - 基于 academic 主题</title>
       <link>/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</guid>
       <description>&lt;p&gt;进阶的一些列操作, 基本都是根据 &lt;code&gt;config.toml&lt;/code&gt; 内的提示来的. 而不同的主题, 会有不同的 &lt;code&gt;config.toml&lt;/code&gt; 文件. 当选择好心仪的主题后, 首先要把主题的示范页和 &lt;code&gt;config.toml&lt;/code&gt; 文件拿到主文件夹中.&lt;/p&gt;
@@ -403,6 +349,60 @@ main:
 &lt;ul&gt;
 &lt;li&gt;添加 `&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>1. fs 内置模块</title>
+      <link>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</guid>
+      <description>fs - file system node 内置的一个模块 里面存放的都是操作文件相关的方法 使用的时候不需要自己定义，但是需要导入 const fs = require(&#39;fs&#39;) readFile() 异步读</description>
+    </item>
+    
+    <item>
+      <title>2. 第三方模块</title>
+      <link>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</guid>
+      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模</description>
+    </item>
+    
+    <item>
+      <title>3. 自定义模块</title>
+      <link>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</guid>
+      <description>/* 每一个 js 文件天生自带一个变量叫做 module Module { id: &#39;.&#39;, // 当前文件的存储路径 path: &#39;E:\\BK_GP_20\\05_第五周\</description>
+    </item>
+    
+    <item>
+      <title>4. 了解 npm</title>
+      <link>/docs/node.js/npm/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/npm/</guid>
+      <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具</description>
+    </item>
+    
+    <item>
+      <title>5. 了解 nrm</title>
+      <link>/docs/node.js/nrm/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/nrm/</guid>
+      <description>npm 的下载地址 默认在国外 下载会比较慢, 容易丢包 解决办法: 换一个国内的下载地址 npm 地址 npm 的原始地址 yarn 地址 国外的地址 cnpm</description>
+    </item>
+    
+    <item>
+      <title>搭建博客的过程中遇到的问题</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
     </item>
     
     <item>

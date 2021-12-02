@@ -93,7 +93,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-11-30T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-12-02T00:00:00&#43;00:00" />
 
 
 
@@ -315,6 +315,62 @@
   
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" class="font-bold text-xl hover:text-eureka">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+</div>
+<div class="content">
+  
+    如何定制主页和内容管理.
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-02</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>6 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/all/" class="hover:text-eureka">All</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+  <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
+    <img src="/images/hugo.jpeg" class="w-full" alt="Featured Image">
+  </div>
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full lg:w-2/3">
+    <div class="mb-4">
   <a href="/docs/node.js/" class="font-bold text-xl hover:text-eureka">了解node</a>
 </div>
 <div class="content">
@@ -399,75 +455,6 @@
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
         <span>2 min read</span>
-    </div>
-    
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-folder mr-1"></i>
-        
-        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
-        
-        
-        <span>, </span>
-        <a href="/categories/all/" class="hover:text-eureka">All</a>
-        
-    </div>
-    
-
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-  <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
-    <img src="/images/hugo.jpeg" class="w-full" alt="Featured Image">
-  </div>
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full lg:w-2/3">
-    <div class="mb-4">
-  <a href="/posts/%E7%A7%91%E6%8A%80/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" class="font-bold text-xl hover:text-eureka">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
-</div>
-<div class="content">
-  
-    进阶的一些列操作, 基本都是根据 config.toml 内的提示来的. 而不同的主题, 会有不同的 config.toml 文件. 当选择好心仪的主题后, 首先要把主题的示范页和 config.toml 文件拿到主文件夹中.
-经过一番研究发现, 目前 hugo 比价流行的主题是 academic , 所以进阶的教程就会基于这个主题来展开. 其他主题的教程其实都差不多.
-最后并没有用这个主题, 主要是因为自由度太高, 反而影响了我继续深挖的心情. 这玩儿搞这么复杂, 配置的时间都赶上我自己弄一套 vue 了.
-基于 academic 主题的博客的初始化 方法 一: 1. 安装 academic 主题 到 hugo 官网主题页面, 找到 academic 主题中的下载选项. 此时会直接跳转到 academic 主题的官方 GitHub 仓库, 点击 use the template. 此时会直接将这个仓库克隆到自己仓库中去,并命名为 hugo-academic. 到自己的仓库, 复制 clone 的 SSH 代码. 在本地想要存储博客文件的目录下打开命令行, 输入 git clone git@github.com:fxfzxxx/hugo-academic.git . clone 后面的代码就是之前复制的 SSH 代码. 现在就会把这个主题的所有所需文件克隆到该目录下的 hugo-academic 文件夹内, 其与 GitHub 中 的仓库同名.
-2. 配置环境 新版本的 academic 主题需要 go 的环境, 所以在任意目录下打开命令行, 输入 brew install golong 来完成 go 环境的下载. 正常来讲, 系统会直接识别出 go 环境的变量. 如果出现不识别的情况, 需要到根目录打开隐藏的 ~/.zshrc 文件, 并在其中另起一行输入export PATH=$PATH:/usr/local/go/bin 来完成环境变量的配置.
-3. 生成网站的框架 在 hugo-academic 文件夹内打开命令行, 输入输入 hugo 来完成博客的渲染. 在命令行输入 hugo serever -D, 来打开服务器. 在浏览器输入 http://localhost:1313/ 来查看网站的骨架.
-方法 二 ( 很多无用功的方法 ): 1. 安装 academic 主题 到 hugo 官网主题页面, 找到 academic 主题中的下载选项. 此时会直接跳转到 academic 主题的官方 GitHub 仓库, 点击 use the template. 此时会直接将这个仓库克隆到自己仓库中去. 到自己的仓库, 复制 clone 的 SSH 代码. 然后在本地创建存储博客的文件夹 HugoAcademic , 在其内创建 theme 文件夹. 在 theme 文件夹内打开命令行输入 git clone git@github.com:fxfzxxx/hugo-academic.git . clone 后面的代码就是之前复制的 SSH 代码. 现在就会把这个主题的所有所需文件克隆到 theme 文件夹内.
-2. 配置环境 新版本的 academic 主题需要 go 的环境, 所以在任意目录下打开命令行, 输入 brew install golong 来完成 go 环境的下载. 正常来讲, 系统会直接识别出 go 环境的变量. 如果出现不识别的情况, 需要到根目录打开隐藏的 ~/.zshrc 文件, 并在其中另起一行输入export PATH=$PATH:/usr/local/go/bin 来完成环境变量的配置.
-3. 生成网站的框架 正常来讲需要通过在 HugoAcademic 文件夹中打开命令行输入 hugo new site 来创建一个新的博客. 但是这样初始化的站点, 需要更多的配置. 所以我们可以到下载好的主题文件夹中找到 exampleSite 文件夹, 把里面的所有文件复制或移动到博客的 HugoAcademic 文件夹内. 然后在 HugoAcademic 目录下打开命令行, 输入 hugo 来完成博客的渲染. 在命令行输入 hugo serever -D, 来打开服务器. 在浏览器输入 http://localhost:1313/ 来查看网站的框架.
-详解 config内的配置文件 在该目录下会有一个 _default 文件夹, 所有的配置文件都在其中, 并且以 yaml 为后缀. 不了解 yaml 语言的不影响对配置文件的更改. 具体的 yaml 的介绍在超链接内, 感兴趣可以看一下.
-在更改配置文件的时候可以开着 hugo 服务器监听变化, 实时渲染改变后的页面.
-1. config.yaml 这里涉及更改语言, 所以会涉及到语言简写的标准 ISO/RFC5646 language identifier.
-# Configuration of Hugo # Guide: https://wowchemy.com/docs/getting-started/ # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/ title: Academic # Website name 更改首页的网站名 baseurl: &#39;https://example.com/&#39; # Website URL 自己的域名 # 页脚的版权信息 提供一个模板: &#34;© 2021-2022 AXFBlog 版权所有 [沪ICP102345678号](http://www.beian.miit.gov.cn)&#34; copyright: &#39;&#39; # Footer text, e.g. &#39;© {year} Me&#39; ############################ ## LANGUAGE ############################ defaultContentLanguage: en ## 这里改成 zh, 单独改这里可能会报错, 同时要更改 languages.yaml 里面的语言设置. hasCJKLanguage: false #因为有中文 改成 True defaultContentLanguageInSubdir: false removePathAccents: true # 下面的都暂时不改, 暂时不影响博客的搭建 ############################ ## MODULES ############################ module: imports: - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms/v5 - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5 ############################ ## ADVANCED ############################ enableGitInfo: false summaryLength: 30 paginate: 10 enableEmoji: true enableRobotsTXT: true footnotereturnlinkcontents: &lt;sup&gt;^&lt;/sup&gt; ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$] permalinks: event: &#39;/talk/:slug/&#39; tags: &#39;/tag/:slug/&#39; categories: &#39;/category/:slug/&#39; publication_types: &#39;/publication-type/:slug/&#39; disableAliases: true outputs: home: [HTML, RSS, JSON, WebAppManifest, headers, redirects] section: [HTML, RSS] imaging: resampleFilter: lanczos quality: 75 anchor: smart timeout: 600000 taxonomies: tag: tags category: categories publication_type: publication_types author: authors markup: _merge: deep related: threshold: 80 includeNewer: true toLower: true indices: - name: tags weight: 100 - name: categories weight: 70  2. languages.yaml # Languages # Create a section for each of your site&#39;s languages. # Documentation: https://wowchemy.com/docs/guide/language/ # Default language en: # 改成 zh languageCode: en-US # 改成 zh-Hans # Uncomment for multi-lingual sites, and move English content into `en` sub-folder. #contentDir: content/en # Uncomment the lines below to configure your website in a second language. #zh: # languageCode: zh-Hans # contentDir: content/zh # title: Chinese website title... # params: # description: Site description in Chinese... # menu: # main: # - name: 传 # url: &#39;#about&#39; # weight: 1  3. params.yaml # SITE SETUP # Guide: https://wowchemy.com/docs/getting-started/ # Documentation: https://wowchemy.com/docs/ # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/ # Appearance # 主题颜色的选择有多种, 默认是 minimal,还有 1950s, Apogee, Coffee, Cyberpunk, Dark, Earth, Forest, Minimal, Mr Robort, Ocean, Rose, Strawberry theme: minimal # 自动夜览模式 day_night: true font: &#39;&#39; font_size: L # SEO site_type: Person local_business_type: &#39;&#39; org_name: &#39;&#39; description: &#39;&#39; twitter: &#39;&#39; # Contact (edit or remove options as required) email: test@example.org phone: 888 888 88 88 address: street: 450 Serra Mall city: Stanford region: CA postcode: &#39;94305&#39; country: United States country_code: US coordinates: latitude: &#39;37.4275&#39; longitude: &#39;-122.1697&#39; directions: Enter Building 1 and take the stairs to Office 200 on Floor 2 office_hours: - &#39;Monday 10:00 to 13:00&#39; - &#39;Wednesday 09:00 to 10:00&#39; appointment_url: &#39;https://calendly.com&#39; contact_links: - icon: twitter icon_pack: fab name: DM Me link: &#39;https://twitter.com/Twitter&#39; - icon: skype icon_pack: fab name: Skype Me link: &#39;skype:echo123?call&#39; - icon: keybase icon_pack: fab name: Chat on Keybase link: &#39;https://keybase.io/&#39; - icon: comments icon_pack: fas name: Discuss on Forum link: &#39;https://discourse.gohugo.io&#39; # Site header main_menu: enable: true align: l show_logo: true show_language: false show_day_night: true show_search: true highlight_active_link: true # Localization date_format: &#39;Jan 2, 2006&#39; time_format: &#39;3:04 PM&#39; address_format: en-us # 改成 zh # Site features highlight: true highlight_languages: - r math: True diagram: True privacy_pack: false # 页面可否编辑 edit_page: repo_url: &#39;&#39; content_dir: &#39;&#39; repo_branch: main editable: page: false post: false book: false show_related: book: true page: false post: true project: true publication: true event: true reading_time: true # 大约的阅读时间 section_pager: false docs_section_pager: true sharing: true # 社交媒体分享 copyright_license: enable: false allow_derivatives: false share_alike: true allow_commercial: false notice: &#39;This work is licensed under {license}&#39; abstract_length: 135 缩略的数字 plugins_js: [] avatar: gravatar: false shape: circle publications: date_format: January 2006 citation_style: apa projects: post_view: 2 publication_view: 2 talk_view: 2 breadcrumb: page_types: book: true comments: #评论 provider: &#39;&#39; commentable: post: true book: true project: true publication: true event: true disqus: shortname: &#39;&#39; show_count: true commento: url: &#39;&#39; search: provider: wowchemy algolia: app_id: &#39;&#39; api_key: &#39;&#39; index_name: &#39;&#39; show_logo: false map: provider: &#39;&#39; api_key: &#39;&#39; zoom: 15 marketing: google_analytics: &#39;&#39; google_tag_manager: &#39;&#39; google_site_verification: &#39;&#39; baidu_site_verification: &#39;&#39; baidu_tongji: &#39;&#39; cms: branch: master local_backend: false icon: pack: ai: true  4. menus.yaml # Navigation Links # To link a homepage widget, specify the URL as a hash `#` followed by the filename of the # desired widget in your `content/home/` folder. # The weight parameter defines the order that the links will appear in. # url # 指向 widget main: - name: Home url: &#39;#about&#39; weight: 10 - name: Posts url: &#39;#posts&#39; weight: 20 - name: Projects url: &#39;#projects&#39; weight: 30 - name: Talks url: &#39;#talks&#39; weight: 40 - name: Publications url: &#39;#featured&#39; weight: 50 - name: Contact url: &#39;#contact&#39; weight: 60 # 自己的 CV # Link to a PDF of your resume/CV from the menu. # To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below. # - name: CV # url: uploads/resume.pdf # weight: 70  widget 详解 widget 相关文件都是以 .md 为后缀并在 content/home 目录下. 当在  params.yaml 内编辑头部导航栏的 URL 时指向 #widget 实际上就是滑动到主页的对应 widget 位置.
-md 文本的显示处理 1. listing 页面缩略文堆在一起  添加 ` 
-  
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2021-11-30</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>6 min read</span>
     </div>
     
     
@@ -678,6 +665,8 @@ md 文本的显示处理 1. listing 页面缩略文堆在一起  添加 `
     
       
       
+        
+      
     
 
     
@@ -687,10 +676,10 @@ md 文本的显示处理 1. listing 页面缩略文堆在一起  添加 `
     
   
 
-  <div class="pl-scrollbar bg-secondary-bg" 
+  <div class="pl-scrollbar bg-tertiary-bg" 
     >
     <div class="max-w-screen-xl mx-auto">
-      <div id="about" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+      <div id="about" class="lg:w-2/3 mx-auto px-6 md:px-8 xl:px-12 py-12">
         
   
 
@@ -737,7 +726,7 @@ md 文本的显示处理 1. listing 页面缩略文堆在一起  添加 `
       
       
       <div class="pb-2 pr-4 md:pr-0 pt-4 md:pt-0">
-        <a href="mailto:example@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="mailto:fanxuan5@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     
       
@@ -761,23 +750,24 @@ md 文本的显示处理 1. listing 页面缩略文堆在一起  添加 `
   </div>
 </div>
 <div class="content">
-  <h2 id="self-introduction">Self Introduction</h2>
-<p>Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat id. Aenean ac velit massa. Vivamus feugiat dui at magna viverra, ut dictum nunc rutrum. Duis eget sapien finibus, lobortis orci id, vestibulum tellus. Maecenas lobortis urna libero, quis fermentum lectus lobortis nec. Nullam laoreet volutpat libero, ac mattis magna ullamcorper quis. Duis eget ipsum eu nisi mattis cursus et vitae turpis.</p>
-<p>Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Aenean a massa in lacus venenatis vestibulum. Duis vel sem quis elit iaculis consectetur et quis dolor. Morbi eu ipsum hendrerit, malesuada ante sed, dapibus est. Suspendisse feugiat nulla ut gravida convallis. Phasellus id massa posuere, rhoncus justo ut, porttitor dolor. Nulla ultrices malesuada egestas. Nunc fermentum tincidunt sem ac vulputate. Donec mollis sollicitudin justo eget varius. Donec ornare velit et felis blandit, id molestie sapien lobortis. Morbi eget tristique justo. Mauris posuere, nibh eu laoreet ultricies, ligula erat iaculis sapien, vel dapibus lacus libero ut diam. Etiam viverra ante felis, et scelerisque nunc pellentesque vitae. Praesent feugiat dictum molestie.</p>
-<h2 id="details">Details</h2>
-<p>Nunc pellentesque vitae:</p>
-<ul>
-<li>Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.</li>
-<li>Donec dignissim leo in mollis faucibus.</li>
-<li>Donec blandit lacus a pellentesque fermentum.</li>
-</ul>
-<p>Donec mollis sollicitudin:</p>
-<ul>
-<li>Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.</li>
-<li>Aliquam eu leo vitae justo aliquam tincidunt.</li>
-<li>Fusce non massa id augue interdum feugiat sed et nulla.</li>
-<li>Vivamus molestie augue in tristique laoreet.</li>
-</ul>
+  <!-- ## Self Introduction
+
+Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat id. Aenean ac velit massa. Vivamus feugiat dui at magna viverra, ut dictum nunc rutrum. Duis eget sapien finibus, lobortis orci id, vestibulum tellus. Maecenas lobortis urna libero, quis fermentum lectus lobortis nec. Nullam laoreet volutpat libero, ac mattis magna ullamcorper quis. Duis eget ipsum eu nisi mattis cursus et vitae turpis.
+
+Aliquam pretium diam eget leo feugiat finibus. Donec malesuada commodo ipsum. Aenean a massa in lacus venenatis vestibulum. Duis vel sem quis elit iaculis consectetur et quis dolor. Morbi eu ipsum hendrerit, malesuada ante sed, dapibus est. Suspendisse feugiat nulla ut gravida convallis. Phasellus id massa posuere, rhoncus justo ut, porttitor dolor. Nulla ultrices malesuada egestas. Nunc fermentum tincidunt sem ac vulputate. Donec mollis sollicitudin justo eget varius. Donec ornare velit et felis blandit, id molestie sapien lobortis. Morbi eget tristique justo. Mauris posuere, nibh eu laoreet ultricies, ligula erat iaculis sapien, vel dapibus lacus libero ut diam. Etiam viverra ante felis, et scelerisque nunc pellentesque vitae. Praesent feugiat dictum molestie.
+
+## Details  
+
+Nunc pellentesque vitae:
+- Morbi accumsan nibh efficitur diam molestie, non dignissim diam facilisis.
+- Donec dignissim leo in mollis faucibus.
+- Donec blandit lacus a pellentesque fermentum.
+
+Donec mollis sollicitudin:
+- Nunc dictum purus ornare purus consectetur, eu pellentesque massa ullamcorper.
+- Aliquam eu leo vitae justo aliquam tincidunt.
+- Fusce non massa id augue interdum feugiat sed et nulla.
+- Vivamus molestie augue in tristique laoreet. -->
 
 </div>
 
