@@ -2,7 +2,7 @@
 title: Aaron Fan
 draft: false
 role: Student
-avatar: images/icon.png
+avatar: images/avatar2.jpeg
 bio: My research interests include machine learning, signal processing, web development and robotics.
 organization:
   name: University of Auckland
