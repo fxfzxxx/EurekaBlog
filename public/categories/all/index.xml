@@ -6,7 +6,7 @@
     <description>Recent content in All on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
+    <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
     <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/all/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/</guid>
-      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候必须告诉软件需要运行哪一个文件 node 没有可视</description>
+      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主题看着有点上头, 并且 wowcheamy 的名字感觉很奇怪🌈</description>
+      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
     </item>
     
     <item>
@@ -366,7 +366,7 @@ main:
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
-      <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为博客. 说实话, 本来以为不难, 结果属实有点</description>
+      <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为</description>
     </item>
     
   </channel>

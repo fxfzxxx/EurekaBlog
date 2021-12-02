@@ -6,7 +6,7 @@
     <description>Recent content in Aaron Fan on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://www.wangchucheng.com/&#34;&gt;C. Wang&lt;/a&gt; and &lt;a href=&#34;https://www.ruiqima.com/&#34;&gt;R. Ma&lt;/a&gt;
+    <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
     <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/authors/aaron/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/</guid>
-      <description>fs - file system node 内置的一个模块 里面存放的都是操作文件相关的方法 使用的时候不需要自己定义，但是需要导入 const fs = require(&#39;fs&#39;) readFile() 异步读取文件 语法: readFile( 路径, 格式， 回调函数) 路径</description>
+      <description>fs - file system node 内置的一个模块 里面存放的都是操作文件相关的方法 使用的时候不需要自己定义，但是需要导入 const fs = require(&#39;fs&#39;) readFile() 异步读</description>
     </item>
     
     <item>
@@ -24,7 +24,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</guid>
-      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模块 下载: npm i moment 导入: require(&amp;lsquo;moment&amp;rsquo;) 导入的时候, 直接书</description>
+      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97/</guid>
-      <description>/* 每一个 js 文件天生自带一个变量叫做 module Module { id: &#39;.&#39;, // 当前文件的存储路径 path: &#39;E:\\BK_GP_20\\05_第五周\\05_DAY\\01_代码\\05_自</description>
+      <description>/* 每一个 js 文件天生自带一个变量叫做 module Module { id: &#39;.&#39;, // 当前文件的存储路径 path: &#39;E:\\BK_GP_20\\05_第五周\</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/npm/</guid>
-      <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具 也是电脑中的一个软件 没有图标 npm 的安装 当安</description>
+      <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具</description>
     </item>
     
     <item>
@@ -51,7 +51,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/nrm/</guid>
-      <description>npm 的下载地址 默认在国外 下载会比较慢, 容易丢包 解决办法: 换一个国内的下载地址 npm 地址 npm 的原始地址 yarn 地址 国外的地址 cnpm 地址, 中国国家做的 镜像地址, 和npm服务</description>
+      <description>npm 的下载地址 默认在国外 下载会比较慢, 容易丢包 解决办法: 换一个国内的下载地址 npm 地址 npm 的原始地址 yarn 地址 国外的地址 cnpm</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/</guid>
-      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候必须告诉软件需要运行哪一个文件 node 没有可视</description>
+      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候</description>
     </item>
     
     <item>
@@ -69,7 +69,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主题看着有点上头, 并且 wowcheamy 的名字感觉很奇怪🌈</description>
+      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
     </item>
     
     <item>
@@ -411,7 +411,7 @@ main:
       <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
-      <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为博客. 说实话, 本来以为不难, 结果属实有点</description>
+      <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为</description>
     </item>
     
   </channel>

@@ -1,6 +1,6 @@
 ---
 title: 静态博客搭建 - 进阶教程 - 基于 academic 主题
-description: 关于一些比较细节的设置, 包括主页菜单和内容的控制.
+description: 如何定制主页和内容管理.
 toc: true
 authors:
   - Aaron
@@ -12,8 +12,8 @@ categories:
   - All
 series:
   - Themes Guide
-date: '2021-11-30'
-lastmod: '2021-11-30'
+date: '2021-12-02'
+lastmod: '2021-12-02'
 featuredImage: images/hugo.jpeg
 draft: false
 ---
@@ -388,3 +388,40 @@ widget 相关文件都是以 `.md` 为后缀并在 `content/home` 目录下. 当
 
 - 首先要设置 `config.toml` 文件中的主题语言.
 - 其实就是更改`theme/i18n`目录下对应主题内 `yaml` 文件中对应的翻译.
+
+## content 文件夹
+
+- 里面相当于路由的根目录, 可以在在其中放置文件夹, 文件中再放置 `.md` 文件
+- 此时, hugo 生成的次目录下的页面就会产生一个列表, 列表对应其内的 `.md` 文件.
+- 一般路由文件夹是英文名称, 此时页面的大标题就是英文名称.
+- 如果想要更改标题名为中文, 就需要新建一个 `_index.md` 文件, 并在其中写入
+
+```yaml
+---
+title: 汉语翻译
+---
+```
+
+### post 目录下内容管理
+
+post 目录及其子目录下所有的 `.md` 文件都能够识别, 所以说可以在 post 文件夹下创建子文件夹对内容进行管理.
+
+### .md 文件内 yaml 中的的 categories, tags 和 series
+
+- 这三个选项, 输入都是列表, 列表中的每一项都会单独创建一个文件夹
+- url 下访问该文件夹会显示 含有 该项的所有 `.md` 文件
+- 在访问的时候如果想改变页面顶部的标题, 新建一个 `_index.md` 文件, 并在其中写入
+
+```yaml
+---
+title: 汉语翻译
+---
+```
+
+### 主页顶部菜单
+
+- 菜单的意义就是点击选项后, 显示出该选项下所有的 `.md` 文件.
+
+- 对菜单的 url 设置基本有几种思路 - 假设有两个菜单选项 科技和艺术.
+  - 直接在 content 目录下创建两个文件夹 科技和艺术, 分别设置选项的 url 为 `/科技` 和 `/艺术`
+  - 不在 content 目录下额外创建文件夹, 在 `/content/posts` 内创建 科技和艺术两个文件夹. 注意, 此时如果将菜单选项的 url 设置为 `/content/posts/科技` 是无法定位到文件内的所有 `.md` 文件的. 所以, 需要在 `.md` 文件内的 yaml 内单独设置 categories 科技. 然后, 菜单选项的 url 可以为 `content/categories/科技`
