@@ -8,7 +8,34 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#复习之struct, Indexer 和运算符的重载</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/</guid>
+      <description>结构 Stuct 结构是值类型. 值类型在内存的栈区(stack), 引用类型在内存的堆区(heep). 用的相对少了, 只有在考</description>
+    </item>
+    
+    <item>
+      <title>C#复习之停车场小项目</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <description>停车场练习 首先勾勒一下所有的类: 汽车父类: 字段: 车牌号, 车辆位置, 品牌, 入场时期 轿车子类: 字段: 排量 客车子类:</description>
+    </item>
+    
+    <item>
+      <title>C#复习之面向对象</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</guid>
+      <description>面向对象 枚举类型是值类型, 读取速度要快很多. 因为是值类型所以可以和整形数相互转换. 注意: 枚举是和类平行的, 写的</description>
+    </item>
+    
     <item>
       <title>C#复习之基本语法</title>
       <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>

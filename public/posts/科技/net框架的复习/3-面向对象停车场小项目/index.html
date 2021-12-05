@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>C#复习之停车场小项目 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="一个简单的面向对象编程的练习.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"C#复习之停车场小项目",
+      "item":"/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/"
+    },
+    "headline": "C#复习之停车场小项目 | Aaron 的博客",
+    "image": "/images/net.jpg",
+    "datePublished": "2021-12-04T00:00:00+00:00",
+    "dateModified": "2021-12-05T00:00:00+00:00",
+    "wordCount":  1057 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "一个简单的面向对象编程的练习."
+}
+</script><meta property="og:title" content="C#复习之停车场小项目 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/" />
+
+
+
+<meta property="og:description" content="一个简单的面向对象编程的练习." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-04T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-12-05T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="recent" />
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/" />
+
+
+
+<meta property="og:see_also" content="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" />
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">C#复习之停车场小项目</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-04</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>3 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/all/" class="hover:text-eureka">All</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
+        
+        
+        <span>, </span>
+        <a href="/series/c-net/" class="hover:text-eureka">C-NET</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/net.jpg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="停车场练习">停车场练习</h2>
+<p>首先勾勒一下所有的类:</p>
+<ul>
+<li>汽车父类: 字段: 车牌号, 车辆位置, 品牌, 入场时期
+<ul>
+<li>轿车子类: 字段: 排量</li>
+<li>客车子类: 字段: 最大载客</li>
+<li>卡车子类: 字段: 最大载重</li>
+</ul>
+</li>
+<li>停车场类:
+<ul>
+<li>字段: 最大容量</li>
+<li>方法: 最大容量驶入方法, 驶出方法, 查询位置方法, 综合信息方法</li>
+</ul>
+</li>
+</ul>
+<h3 id="复习到的点">复习到的点:</h3>
+<h4 id="public-和-private-的区别">public 和 private 的区别</h4>
+<ul>
+<li>
+<p>主要区别就是 public 可以在类的外部访问; private 只能在类内访问: 在别的类里创建实例后, 不能调用 private 方法和字段.</p>
+</li>
+<li>
+<p>枚举, 类, 接口的默认访问修饰符是 internal, 字段和方法的默认访问修饰符是 private.</p>
+</li>
+</ul>
+<h4 id="子类的构造函数">子类的构造函数</h4>
+<ul>
+<li>子类的无参构造函数可以不写 <code>: base()</code> .</li>
+<li>子类的有参构造函数需要写 <code> :base()</code> 并且括号内也把父类参数写全, 不用写变量类型.</li>
+</ul>
+<h4 id="string-的一些内容">String 的一些内容</h4>
+<ul>
+<li>比较两个字符串: <code>string1.Equals(string2)</code>.
+<ul>
+<li>但是用之前, 好像需要判断 string1 的类型, 起码不能为空.</li>
+</ul>
+</li>
+<li>书写含有多个变量的字符串: <code> string = String.Fomat(&quot;{0} is looking at {1}&quot;, a,b)</code>.</li>
+</ul>
+<h2 id="项目代码">项目代码</h2>
+<pre><code class="language-c#">using System;
+
+namespace ParkingSystem
+{
+    // 命名空间内, 默认的枚举,类,接口的访问修饰符都是 internal (同一命名空间内)
+    enum Brand
+    {
+        Volkswagen,
+        Meredece,
+        BMW
+    }
+    // 父类
+    abstract class Vehicle
+    {
+        // 类内的字段和属性默认的访问修饰符是 private (只有类内可以访问)
+        public string numberPlate { get; set; }
+        public double location { get; set; }
+        public Brand brand { get; set; }
+        public DateTime entryTime { get; set; }
+        public Vehicle() { }
+        public Vehicle(string num, double price, Brand brand, DateTime entry)
+        {
+            this.numberPlate = num;
+            this.location = price;
+            this.brand = brand;
+            this.entryTime = entry;
+        }
+    }
+    // 子类
+    class SedenVehicle : Vehicle
+    {
+        public double gasCost { get; set; }
+        // 无参构造函数可以不写父类 : base
+        public SedenVehicle() : base() { }
+        public SedenVehicle(double gasCost, string num, double price, Brand brand, DateTime entry)
+            : base(num, price, brand, entry)
+        {
+            this.gasCost = gasCost;
+
+        }
+    }
+    class BusVehicle : Vehicle
+    {
+        public int maxVolume { get; set; }
+        public BusVehicle() : base() { }
+        public BusVehicle(int maxVolume, string num, double price, Brand brand, DateTime entry)
+            : base(num, price, brand, entry)
+        {
+            this.maxVolume = maxVolume;
+        }
+
+    }
+    class TruckVehicle : Vehicle
+    {
+        public double maxLoad { get; set; }
+        public TruckVehicle() : base() { }
+        public TruckVehicle(int maxLoad, string num, double price, Brand brand, DateTime entry)
+            : base(num, price, brand, entry)
+        {
+            this.maxLoad = maxLoad;
+        }
+    }
+    class CarPark
+    {
+        // 默认 private 字段
+        Vehicle[] vehiclesArray = new Vehicle[10];
+        // 通过公共方法访问私有字段: 设置数组长度, 确定停车场最大容量
+        public void setMax(int num)
+        {
+            vehiclesArray = new Vehicle[num];
+            Console.WriteLine( &quot;The max volume of the carpark is {0}...&quot;, vehiclesArray.Length);
+        }
+        // 默认私有字段: 停车场内的车辆总数
+        int count = 0;
+        // 车辆进场方法
+        public string Inpark(Vehicle v)
+        {
+            string info = &quot;Sorry, the park is full.&quot;;
+            // 遍历数组寻找车位.
+            for (int i = 0; i &lt; vehiclesArray.Length; i++)
+            {
+                // 数组默认值是 null, 如果是 null 就可以停入
+                if (vehiclesArray[i] == null)
+                {
+                    count++; // 总数加 1
+                    this.vehiclesArray[i] = v; //数组对应停车
+                    v.entryTime = DateTime.Now; // 记录驶入时间
+                    v.location = i;
+                    //设置停车信息
+                    info = String.Format(&quot;You vehicle rego is {0}, location is {1}, and the entry time is {2}. &quot;, v.numberPlate, i, v.entryTime);
+                    break;
+                }
+
+            }
+            Console.WriteLine(info);
+            return info;
+        }
+        // 驶出停车场
+        public string Outpark(Vehicle v)
+        {
+            string info = &quot;&quot;;
+            // 遍历数组寻找车位.
+            for (int i = 0; i &lt; vehiclesArray.Length; i++)
+            {
+                // 数组默认值是 null, 如果是 null 就可以停入
+                if (vehiclesArray[i] == v)
+                {
+                    count--; // 总数减 1
+                    this.vehiclesArray[i] = null; // 清除数组中的车辆
+                    double cost = DateTime.Now.Ticks - v.entryTime.Ticks; // 记录驶出的时间
+                    //设置停车信息
+                    info = String.Format(&quot;You vehicle rego is {0}, the exit time is {1} and the cost is ${2}. &quot;, v.numberPlate, v.entryTime,cost);
+                    break;
+                }
+
+            }
+            Console.WriteLine(info);
+            return info;
+        }
+        // 得到停车场内车辆位置信息
+        public Vehicle GetVehicle(string no)
+        {
+            foreach (Vehicle item in vehiclesArray)
+            {
+                if (item.numberPlate == no) // ( vehicle.numberPlate.Equals(no) )
+                {
+                    Console.WriteLine(&quot;Your vehicle is at {0}.&quot;, item.location);
+                    return item;
+                }
+            }
+            Console.WriteLine(&quot;No match in the carpark.&quot;);
+            return null;
+        }
+        // 得到停车场内综合信息
+        void Getinfo(Vehicle v)
+        {
+
+            // 各种车辆的 数量
+        }
+
+
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SedenVehicle sedan1 = new SedenVehicle(10.00, &quot;JLN881&quot;, 3, Brand.BMW, DateTime.Now);
+            BusVehicle bus1 = new BusVehicle(22, &quot;ANZ222&quot;, 2, Brand.Meredece, DateTime.Now);
+            CarPark uniPark = new CarPark();
+            uniPark.setMax(30);
+            uniPark.Inpark(sedan1);
+            uniPark.Inpark(bus1);
+            uniPark.GetVehicle(&quot;JLN881&quot;);
+
+        }
+    }
+}
+
+</code></pre>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/recent/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#近期文章</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" class="block">C#复习之struct, Indexer 和运算符的重载</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" class="block">C#复习之面向对象</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/featured-image/">Featured Image</a>
+        <br />
+        
+        <a href="/techs/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/">Markdown Syntax Guide</a>
+        <br />
+        
+        <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/">Placeholder Text</a>
+        <br />
+        
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#停车场练习">停车场练习</a>
+      <ul>
+        <li><a href="#复习到的点">复习到的点:</a>
+          <ul>
+            <li><a href="#public-和-private-的区别">public 和 private 的区别</a></li>
+            <li><a href="#子类的构造函数">子类的构造函数</a></li>
+            <li><a href="#string-的一些内容">String 的一些内容</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#项目代码">项目代码</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

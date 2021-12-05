@@ -7,7 +7,7 @@ theme: eureka
 # theme: wangchucheng.com/hugo-eureka
 # If you cannot access the Github mirror, you can also use the Gitee mirror: gitee.com/wangchucheng/hugo-eureka
 
-paginate: 4
+paginate: 8
 copyright: >
   &copy; 2021 Aaron Fan
 enableEmoji: true

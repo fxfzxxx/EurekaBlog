@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
 
 <meta name="description"
-  content="基本语法和面向对象的一些内容.">
+  content="一些关于基本语法的复习.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -89,7 +89,7 @@
     "image": "/images/net.jpg",
     "datePublished": "2021-12-02T00:00:00+00:00",
     "dateModified": "2021-12-02T00:00:00+00:00",
-    "wordCount":  3041 ,
+    "wordCount":  606 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -102,7 +102,7 @@
             "url": "/images/avatar2.jpeg"
         }
         },
-    "description": "基本语法和面向对象的一些内容."
+    "description": "一些关于基本语法的复习."
 }
 </script><meta property="og:title" content="C#复习之基本语法 | Aaron 的博客" />
 <meta property="og:type" content="article" />
@@ -115,7 +115,7 @@
 
 
 
-<meta property="og:description" content="基本语法和面向对象的一些内容." />
+<meta property="og:description" content="一些关于基本语法的复习." />
 
 
 
@@ -148,6 +148,18 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" />
 
 
 
@@ -188,6 +200,18 @@
 <meta property="og:see_also" content="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" />
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" />
 
 
 
@@ -279,14 +303,14 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>7 min read</span>
+        <span>2 min read</span>
     </div>
     
     
     <div class="mr-6 my-2">
         <i class="fas fa-folder mr-1"></i>
         
-        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
         
         
         <span>, </span>
@@ -448,452 +472,7 @@ int index = s1.IndexOf(&quot; &quot;) // 定位
 StringBuilder sb = new StringBuilder();
 sb.Append(&quot;a&quot;); // 效率高
 </code></pre>
-<h2 id="面向对象">面向对象</h2>
-<ul>
-<li>枚举类型是值类型, 读取速度要快很多.</li>
-<li>因为是值类型所以可以和整形数相互转换.</li>
-<li>注意: 枚举是和类平行的, 写的时候写在类的外面</li>
-</ul>
-<pre><code class="language-c#">enum Color {
-  red, Blue, Green, Yellow, 红
-};
-
-Color red = Color.红;
-int a = Convert.ToInt32(Color.蓝)
-</code></pre>
-<h3 id="oop">OOP</h3>
-<ul>
-<li>OOP = OOA + OOD + OOP</li>
-<li>封装, 继承, 多态</li>
-</ul>
-<h3 id="1-封装">1. 封装</h3>
-<h4 id="封装字段">封装字段</h4>
-<ul>
-<li>私有字段无法被类的外部直接访问, 所以需要封装成属性.</li>
-</ul>
-<pre><code class="language-c#">private int age;
-public int Age {
-  get { return age;}
-  set { return age = value;}
-}
-</code></pre>
-<ul>
-<li>C# 3.0 之后出现了自动属性
-<ul>
-<li>只有属性, 没有字段.</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-c#"> public int Age {get;set;}
-</code></pre>
-<ul>
-<li>自动属性更简洁, 但是想要在 set 里面加条件判断的话, 需要用复杂点的那个.</li>
-</ul>
-<pre><code class="language-c#">public int Age {
-  get { return age;}
-  set { 
-    if (value &lt; 0 || value &gt; 130) {
-      age = 20
-    }
-   // age = value;
-  		}
-}
-</code></pre>
-<h5 id="疑问未解决-1">疑问(未解决)</h5>
-<ul>
-<li>这里有一个疑问, 就是为什么不直接用 public 字段, 而是 private 字段封装成属性加 get , set.
-<ul>
-<li>感觉起到的效果差不多</li>
-<li>唯一的区别就是, 如果属性不加 set, 可以设置为只读.</li>
-</ul>
-</li>
-</ul>
-<h4 id="构造方法">构造方法</h4>
-<ul>
-<li>
-<p>作用: 实例化对象时, 对其进行初始化.</p>
-</li>
-<li>
-<p>如果不定义, 就是默认无参构造方法.(基本要保证有一个无参, 一个有参)</p>
-</li>
-<li>
-<p>特点:</p>
-<ol>
-<li>
-<p>与类同名</p>
-</li>
-<li>
-<p>没有返回值关键字(void 也不行)</p>
-</li>
-<li>
-<p>可以定义多个构造方法( <strong>重载</strong>: 名字相同, 参数不同)</p>
-</li>
-<li>
-<p>this 关键字, 对当前实例对象的引用</p>
-</li>
-<li>
-<p>私有构造函数不能创建对象</p>
-</li>
-</ol>
-</li>
-</ul>
-<h4 id="析构方法">析构方法</h4>
-<ul>
-<li>对象被销毁前执行, 做一些善后工作.</li>
-<li>特点:
-<ol>
-<li>类只能定义一个析构方法.</li>
-<li>无访问修饰符, 没有参数, 没有返回值.</li>
-<li>波浪号开头.</li>
-<li>对象销毁前, 自动调用.</li>
-</ol>
-</li>
-</ul>
-<pre><code class="language-c#">~ Product() {
-  console.WriteLine(&quot;对象即将被销毁&quot;);
-}
-</code></pre>
-<h4 id="方法">方法</h4>
-<ul>
-<li>首字母大写</li>
-</ul>
-<h5 id="参数">参数</h5>
-<ol>
-<li>可缺省的参数: 参数可定义默认值</li>
-</ol>
-<pre><code class="language-c#">public void fn(int val = 5){}
-</code></pre>
-<ol start="2">
-<li>
-<p>输出参数: 当方法需要返回多个值, 类型可以不同</p>
-<ul>
-<li>
-<p>输出类型的参数需要初始化</p>
-</li>
-<li>
-<p>可以用来获取商品信息</p>
-</li>
-</ul>
-</li>
-</ol>
-<pre><code class="language-c#">// 此时函数有 三个 返回值   可为 void
-public string fn( out int i, out int j){
-  i = 0;
-  j = 0;
-  return &quot;返回的字符串&quot;
-}
-</code></pre>
-<ol start="3">
-<li>params 参数: 参数的数量不确定
-<ol>
-<li>前面可以定义参数</li>
-<li>后面不允许有其他参数</li>
-<li>params 关键字只能有一个</li>
-</ol>
-</li>
-</ol>
-<pre><code class="language-c#">// params
-public int fn(params int[] nums) {
-  int sum = 0;
-  foreach(var item in nums) {
-    sum += item;
-  }
-  return sum;
-}
-
-int res = fn(2, 3, 4, 5);
-</code></pre>
-<ol start="4">
-<li>ref 引用
-<ul>
-<li>修饰参数按地址传递, 默认都是按值传递</li>
-</ul>
-</li>
-</ol>
-<pre><code class="language-c#">// ref 来完成 a 和 b 的互换
-public void fn(ref int a, ref int b) {
-  int temp;
-  temp = a;
-  a = b;
-  b = temp;
-}
-
-</code></pre>
-<h4 id="类为元素的数组">类为元素的数组</h4>
-<pre><code class="language-c#">Student s1 = new Student();
-Student s2 = new Student();
-Student[] students = { s1, s2 };
-</code></pre>
-<h3 id="2-继承">2. 继承</h3>
-<ul>
-<li>
-<p>好处: 实现代码的重用.</p>
-</li>
-<li>
-<p>类只能是单继承, 一个类只能有一个父亲.</p>
-</li>
-<li>
-<p>子类的名称的最后一部分就是父类的名称.</p>
-</li>
-<li>
-<p>子类构造函数加 base 关键字: 在子类中, base 代表对父类的引用, 也包含列祖列宗.</p>
-<ul>
-<li>如果是子类的子类在引用父类的时候, 不用写 base.base.</li>
-</ul>
-</li>
-<li>
-<p>子类构造函数的参数需要包含自身的属性加上父类的属性.(字段也可以, 主要是完成初始化)</p>
-<ul>
-<li>父类参数不加变量类型</li>
-</ul>
-</li>
-<li>
-<p>和父类一样, 同样需要两个构造函数</p>
-<ul>
-<li>无参对无参, 有参对有参</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-c#">public class UniStudent : Student
-    {
-        public string Major { get; set; }
-        public string Group { get; set; }
-
-        public UniStudent() : base()
-        {
-        }
-  
-        public UniStudent(int id, DateTime birthday, string name, string major, string group)
-            : base(id,birthday,name)
-        {
-            this.Major = major;
-            this.Group = group;
-        }
-    }
-</code></pre>
-<ul>
-<li>
-<p>修饰符 base 关键字用来修饰父类的字段.</p>
-</li>
-<li>
-<p>只有子类或者子类的子类可以访问和修改.</p>
-</li>
-</ul>
-<pre><code class="language-c#">public void fn()
-        {
-            base.pint = 0;
-        }
-</code></pre>
-<ul>
-<li>
-<p>internal 只能在一个命名空间内使用, 同一个解决方案里面不能跨命名空间使用.</p>
-</li>
-<li>
-<p>protected internal 组合修饰符</p>
-</li>
-<li>
-<p>所以一共有五类访问修饰符: private public protected internal, 组合.</p>
-</li>
-</ul>
-<h4 id="虚方法">虚方法</h4>
-<ul>
-<li>
-<p>在父类中定义的,专门给子类去重新设计方法的功能</p>
-</li>
-<li>
-<p>应该是类似 java 的抽象方法?</p>
-</li>
-<li>
-<p>在子类中对父类中的虚方法进行<strong>重写</strong> override</p>
-<ul>
-<li>virtual 和 override 需要成对出现</li>
-</ul>
-</li>
-<li>
-<p>主要作用就是规范子类的方法名称, 大型项目管理常用.</p>
-</li>
-</ul>
-<pre><code class="language-c#">public class Graph {
-  public double[] Length {get;set;}
-  public virtual double GetLength() { return 0;}
-  public virtual double GetArea() { return 0;}
-  public Graph(int length) {
-    this.Length = new double[length];
-  }
-}
-
-public class Rectangular {
-  public Rectangular(int length, int width, int height) : base(length) {
-    base.Length[0] = height;
-    base.Length[1] = width;
-  }
-  public override double GetLength() {
-    return 2 * (base.Length[0] + base.Length[1]); 
-  }
-  public override double GetArea() {
-    return base.Length[0] + base.Length[1];
-  }
-  
-}
-</code></pre>
-<h4 id="new-关键字">new 关键字</h4>
-<ul>
-<li>子类用来隐藏父类的同名方法</li>
-<li>在使用多态的时候, 用子类来创建父类对象
-<ul>
-<li>如果调用子类同名重写的方法, 就是直接调用子类方法</li>
-<li>如果调用子类同名 new 方法, 就是调用父类的方法.</li>
-</ul>
-</li>
-</ul>
-<h4 id="密封类">密封类</h4>
-<ul>
-<li>sealed 关键字: 父类使用 sealed 关键字, 无法产生子类, 太监.</li>
-<li>出于安全性考虑, 有时候会用密封类</li>
-</ul>
-<h4 id="静态">静态</h4>
-<ul>
-<li>static 关键字: 可以修饰类, 字段, 属性, 方法, 构造函数.
-<ul>
-<li>静态方法用的最多, 可以在静态类, 也可以在实例类(public)</li>
-</ul>
-</li>
-<li>特点:
-<ol>
-<li>为所有的类所共享 ( 猜着是对一个命名空间内的所有类所共享 ).</li>
-<li>静态构造函数无论实例化多少次, 只会调用一次. 先调用静态构造函数, 再调用实例构造函数.</li>
-<li>静态方法可以通过 类名.方法名 来调用, 不能通过实例名调用.</li>
-<li>实例类可以定义静态方法.</li>
-<li>声明周期和应用程序的声明周期是一致的, 而实例类一段时间后就会自动销毁对象并释放内存.</li>
-<li>静态方法只能只能访问方法内的字段, 不能访问方法外类里定义的字段和实例方法.</li>
-<li>实例方法内可以访问同一个类中的静态方法</li>
-<li>静态类里面所有的成员都是静态的. 静态类的效率很高.
-<ul>
-<li>不能实例化</li>
-<li>所有成员都被全部对象共享</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<h4 id="抽象类-abstract">抽象类 (abstract)</h4>
-<ol>
-<li>
-<p>抽象方法 (abstract method): 只有声明, 没有定义, 没有大括号.</p>
-</li>
-<li>
-<p>也可以有普通成员, 非抽象的字段或者方法, 静态也可以.</p>
-</li>
-<li>
-<p>但抽象方法不能存在普通类中.</p>
-</li>
-<li>
-<p>抽象类不能被实例化.</p>
-</li>
-<li>
-<p>抽象类的子类(非抽象)必须要重写<strong>全部</strong>的抽象类的方法.</p>
-<ol>
-<li>即使子类是抽象类, 也都要实现</li>
-<li>要写 override 关键字</li>
-</ol>
-</li>
-<li>
-<p>子类如果是抽象类, 则不用重写所有的抽象类.</p>
-</li>
-</ol>
-<h4 id="接口-interface--引用类型">接口 (interface) : 引用类型</h4>
-<ol>
-<li>抽象类里可以有非抽象的成员, 但接口内的成员全部是抽象的.</li>
-<li>不能被实例化.</li>
-<li>成员默认都是 public , 但是不能写任何的访问修饰符.</li>
-<li>方法只能声明不能定义, 不能写大括号</li>
-<li>所有的方法必须被子类实现</li>
-<li>多继承, 可以有多个父级
-<ul>
-<li>如果同时继承类和接口, 要先写父类, 再写接口</li>
-</ul>
-</li>
-</ol>
-<pre><code class="language-c#">public interface IMobile {
-  void Insert();
-}
-
-public interface INet {
-  void Net();
-}
-
-public interface IIntelMobile {
-  void Pay();
-  void Chat();
-}
-
-public interface IIPhone : Inet, IMobile, IIntelMobile{
-  	
-}
-</code></pre>
-<h4 id="显式接口">显式接口</h4>
-<p>多个接口中包含相同方法的声明, 同名同参, 而同时被一个类去实现.</p>
-<pre><code class="language-c#">public interface Ichinese {
-  void Speak();
-}
-
-public interface IUSA {
-  void Speak();
-}
-
-public class Person : Ichinese, IUSA {
-  
-  void Speak() {
-    
-  };
-  void IChinese.Speak() {
-    
-  };
-  
-  void IUSA.Speak() {
-     
-  }
-}
-
-public void Main(string[] args) {
-  // 多态向上转型调用不同接口中同名同参的方法
-  IChinese ic = new Person();
-  ic.Speak();
-  IUSA iu = new Person();
-  iu.Speak();
-}
-</code></pre>
-<h4 id="抽象类和接口的区别">抽象类和接口的区别</h4>
-<ol>
-<li>抽象类有构造方法, 接口没有</li>
-<li>抽象类中有实例成员, 接口中没有, 全部抽象</li>
-<li>抽象类中可以有静态方法, 接口中不能定义静态方法</li>
-<li>抽象类是单继承, 接口是多继承</li>
-<li>类可以实现多个接口, 但只能继承一个抽象类</li>
-<li>类必须实现接口的全部成员, 抽象子类可以实现 0 或者多个父类抽象成员</li>
-</ol>
-<h3 id="3-多态">3. 多态</h3>
-<ol>
-<li>方法的重载 (overload)</li>
-<li>重写 (override)</li>
-<li>向上转型: 父类引用</li>
-</ol>
-<pre><code class="language-c#">// 向上转型 父类 Graphic 可以是抽象类 和 接口
-Graphic g = new Circle(10);
-//调用子类的方法
-g.GetArea();
-</code></pre>
-<ol start="4">
-<li>向下转型:</li>
-</ol>
-<pre><code class="language-c#">Mobile mobile = new IntellMobile();
-IntellMobile mobile2 = (IntellMobile)mobile; // 向下转型
-IntellMobile mobile2 = mobile as IntellMobile; // 向下转型 
-mobile2.Message(); // 调用的是 intellmobile 的方法
-</code></pre>
-<ol start="5">
-<li>父类作为方法的参数</li>
-</ol>
+<p>​</p>
 
         </div>
         
@@ -956,6 +535,9 @@ mobile2.Message(); // 调用的是 intellmobile 的方法
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" class="block">C#复习之面向对象</a>
+        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
@@ -978,6 +560,15 @@ mobile2.Message(); // 调用的是 intellmobile 的方法
     <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
     <div class="content">
         
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+        <br />
         
         <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
         <br />
@@ -1011,6 +602,15 @@ mobile2.Message(); // 调用的是 intellmobile 的方法
         
         
         
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+        <br />
+        
         <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
         <br />
         
@@ -1018,82 +618,6 @@ mobile2.Message(); // 调用的是 intellmobile 的方法
     </div>
 </div>
         
-        
-        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
-    <span class="text-lg font-semibold">On This Page</span>
-</div>
-<div class="sticky-toc hidden lg:block px-6 pb-6 ">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#变量">变量</a>
-      <ul>
-        <li><a href="#溢出">溢出</a></li>
-        <li><a href="#数据类型转换">数据类型转换</a>
-          <ul>
-            <li><a href="#1-整数与浮点数">1. 整数与浮点数</a></li>
-            <li><a href="#2-字符串与其他类型转换">2. 字符串与其他类型转换</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#基本运算">基本运算</a>
-      <ul>
-        <li><a href="#移位运算">移位运算</a></li>
-        <li><a href="#-和-equals-的区别">== 和 Equals 的区别</a></li>
-        <li><a href="#疑问未解决">疑问(未解决)</a></li>
-      </ul>
-    </li>
-    <li><a href="#循环">循环</a>
-      <ul>
-        <li><a href="#for-循环">for 循环</a></li>
-        <li><a href="#foreach-循环">foreach 循环</a></li>
-        <li><a href="#数组">数组</a></li>
-      </ul>
-    </li>
-    <li><a href="#字符串">字符串</a></li>
-    <li><a href="#面向对象">面向对象</a>
-      <ul>
-        <li><a href="#oop">OOP</a></li>
-        <li><a href="#1-封装">1. 封装</a>
-          <ul>
-            <li><a href="#封装字段">封装字段</a>
-              <ul>
-                <li><a href="#疑问未解决-1">疑问(未解决)</a></li>
-              </ul>
-            </li>
-            <li><a href="#构造方法">构造方法</a></li>
-            <li><a href="#析构方法">析构方法</a></li>
-            <li><a href="#方法">方法</a>
-              <ul>
-                <li><a href="#参数">参数</a></li>
-              </ul>
-            </li>
-            <li><a href="#类为元素的数组">类为元素的数组</a></li>
-          </ul>
-        </li>
-        <li><a href="#2-继承">2. 继承</a>
-          <ul>
-            <li><a href="#虚方法">虚方法</a></li>
-            <li><a href="#new-关键字">new 关键字</a></li>
-            <li><a href="#密封类">密封类</a></li>
-            <li><a href="#静态">静态</a></li>
-            <li><a href="#抽象类-abstract">抽象类 (abstract)</a></li>
-            <li><a href="#接口-interface--引用类型">接口 (interface) : 引用类型</a></li>
-            <li><a href="#显式接口">显式接口</a></li>
-            <li><a href="#抽象类和接口的区别">抽象类和接口的区别</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-多态">3. 多态</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div>
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        enableStickyToc();
-    });
-</script>
         
     </div>
     
