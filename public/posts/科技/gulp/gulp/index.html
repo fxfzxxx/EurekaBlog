@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>通俗讲解 gulp 的使用方法 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="了解 gulp 的使用和一些常用的插件.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"通俗讲解 gulp 的使用方法",
+      "item":"/posts/%E7%A7%91%E6%8A%80/gulp/gulp/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/gulp/gulp/"
+    },
+    "headline": "通俗讲解 gulp 的使用方法 | Aaron 的博客",
+    "image": "/images/gulp.jpeg",
+    "datePublished": "2021-12-06T00:00:00+00:00",
+    "dateModified": "2021-12-06T00:00:00+00:00",
+    "wordCount":  3237 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "了解 gulp 的使用和一些常用的插件."
+}
+</script><meta property="og:title" content="通俗讲解 gulp 的使用方法 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/gulp/gulp/" />
+
+
+
+<meta property="og:description" content="了解 gulp 的使用和一些常用的插件." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-06T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-12-06T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="All" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">通俗讲解 gulp 的使用方法</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-06</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>7 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" class="hover:text-eureka">打包工具</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/gulp.jpeg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="了解-gulp">了解 gulp</h2>
+<ul>
+<li>
+<p>前端自动化打包构建工具</p>
+<ul>
+<li>打包就是把文件 压缩, 整合, 移动, 混淆</li>
+</ul>
+</li>
+<li>
+<p>常用构建工具</p>
+<ul>
+<li>gulp: 基于流的打包构建工具</li>
+<li>webpack: 基于 js 文件的打包构建工具</li>
+</ul>
+</li>
+<li>
+<p>什么是流</p>
+<ul>
+<li>流文件
+<ul>
+<li>一种文件传输格式</li>
+<li>一段一段的文件传输</li>
+<li>网络在线视频</li>
+</ul>
+</li>
+<li>流格式
+<ul>
+<li>从头到尾的一个过程</li>
+<li>需要从 源 开始一步步经过加工
+<ul>
+<li>每一个步骤依赖上一步的结果</li>
+<li>最终会出一个完整的成品</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>gulp 是基于 流格式 的打包工具
+<ul>
+<li>scss =&gt; css =&gt; 前缀 =&gt; 压缩</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>gulp</strong> <strong>的依赖环境</strong></p>
+<ul>
+<li>依赖于 node 环境进行开发</li>
+<li>底层封装内容就是 node 里面的读写文件(fs 和 http 模块)</li>
+</ul>
+</li>
+<li>
+<p><strong>gulp 的作用</strong></p>
+<ul>
+<li>对于 css 文件
+<ul>
+<li>压缩</li>
+<li>转码( 自动添加前缀, SCSS 转CSS)</li>
+</ul>
+</li>
+<li>对于 JS 文件
+<ul>
+<li>压缩</li>
+<li>转码( ES6 转 ES5 )</li>
+</ul>
+</li>
+<li>对于 html 文件
+<ul>
+<li>压缩</li>
+<li>转码( 对格式的转换 )</li>
+</ul>
+</li>
+<li>对静态资源文件的处理</li>
+<li>对第三方文件的处理</li>
+</ul>
+</li>
+<li>
+<p><strong>gulp 的安装</strong></p>
+<ul>
+<li>是一个 js 相关的工具</li>
+<li>直接用 npm 安装</li>
+<li>需要安装在电脑环境里面, 一次安装 多次使用</li>
+<li>打开命令行, 输入指令
+<ul>
+<li><code>$ npm install --global gulp</code></li>
+<li>mac: <code>$ sudo npm install --global gulp</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>gulp 的检测</strong></p>
+<ul>
+<li><code>gulp --version</code></li>
+</ul>
+</li>
+<li>
+<p><strong>gulp 的卸载</strong></p>
+<ul>
+<li><code>$ npm uninstall --global gulp</code></li>
+</ul>
+</li>
+<li>
+<p><strong>gulp 的版本</strong></p>
+<ul>
+<li>
+<p>gulp @3.9.1</p>
+</li>
+<li>
+<p>gulp @4 =&gt; gulp cli 2.2.0</p>
+<ul>
+<li>19年1月开始迭代</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="gulp-的使用">gulp 的使用</h2>
+<h3 id="源码和打包后的内容">源码和打包后的内容</h3>
+<ul>
+<li>源码一般放在 src 文件夹种</li>
+<li>打包后一般在 dist 文件夹中</li>
+<li>文件分开是因为打包后要上传服务器, 集中放在一起便于一起上传</li>
+</ul>
+<h3 id="1-准备好一个项目">1. 准备好一个项目</h3>
+<ul>
+<li>目录结构</li>
+<li>源码和打包的分开</li>
+<li>结构
+<ul>
+<li>xiaomi
+<ul>
+<li>src
+<ul>
+<li>pages</li>
+<li>css  正常来说 css 和 sass 文件夹只需要一个</li>
+<li>js</li>
+<li>sass</li>
+<li>images</li>
+<li>videos</li>
+<li>audios</li>
+<li>lib 第三方(swiper, jQuery)</li>
+<li>fonts</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-准备一个-gulpfilejs-文件">2. 准备一个 gulpfile.js 文件</h3>
+<ul>
+<li>是必需的</li>
+<li>是 gulp 打包的依据</li>
+<li>每一个项目都需要一个 gulpfile.js 文件</li>
+<li>在这个文件里进行本项目的打包配置</li>
+<li>gulp 运行的时候, 会自动读取 gulpfile.js 文件里的配置</li>
+<li>注意: 直接卸载与 src 同级的根目录</li>
+</ul>
+<h3 id="3-在项目里再次安装-gulp">3. 在项目里再次安装 gulp</h3>
+<ul>
+<li>注意: 项目里的 gulp 是以第三方模块的形式出现的</li>
+<li>是专门配置打包流程的 API</li>
+<li>在 src 同级的项目文件夹打开命令行 输入 <code>npm init</code></li>
+</ul>
+<blockquote>
+<p>gulp 分为两种</p>
+<ol>
+<li>全局依赖 gulp
+<ul>
+<li>一台电脑安装一次就够，以后使用就可以了</li>
+<li>在命令行内提供 gulp xxx 的能力</li>
+<li>任何地方安装 输入 <code>$ npm install --global gulp</code></li>
+</ul>
+</li>
+<li>项目依赖第三方 gulp
+<ul>
+<li>每个项目都要安装一次</li>
+<li>作为第三方包引入, 再导入之后, 可以使用 <code>gulp.xxx()</code> 方法</li>
+<li>需要切换到项目目录, 输入 <code>$ npm install gulp</code></li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<ul>
+<li><strong>package.json 记录的第三方依赖</strong>
+<ul>
+<li>dependencies
+<ul>
+<li>表示项目的 项目依赖</li>
+<li>例如 jQuery, Swiper</li>
+<li>项目运行需要用的的内容, 将来上线后也需要用到的内容</li>
+</ul>
+</li>
+<li>devDependencies
+<ul>
+<li>表示项目的 开发依赖</li>
+<li>比如 gulp</li>
+<li>项目开发阶段会用到的, 上线之后不会用</li>
+</ul>
+</li>
+<li>所以如果要把 gulp 放在 devDependencies 里面
+<ul>
+<li>需要在命令行内输入
+<ul>
+<li><code>$ npm install --dev gulp </code>, 或者</li>
+<li><code>$ npm install -D gulp</code></li>
+</ul>
+</li>
+<li>
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210704003319241.png" alt="image-20210704003319241" style="zoom: 67%;" />
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-在-gulpfilejs-里书写配置文件">4. 在 gulpfile.js 里书写配置文件</h3>
+<ul>
+<li>书写该项目的打包流程</li>
+<li>打包完毕之后, 按照打包流程去执行 gulp 指令, 运行 gulpfile.js 文件</li>
+</ul>
+<h2 id="gulp-的常用-api">gulp 的常用 api</h2>
+<ul>
+<li>
+<p><code>gulp.task()</code></p>
+<ul>
+<li>
+<p>语法: <code>gulp.task(任务名称, 任务处理函数)</code></p>
+</li>
+<li>
+<p>作用: 创建一个基于流的任务</p>
+</li>
+<li>
+<p>例子</p>
+<ul>
+<li>
+<pre><code class="language-js">gulp.task('htmlHandler', function () {
+    // 找到 html 源文件, 进行压缩打包, 放入指定目录
+})
+</code></pre>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>gulp.src()</code></p>
+<ul>
+<li>语法: <code>gulp.src(路径信息)</code></li>
+<li>作用：找到源文件</li>
+<li>书写方式:
+<ul>
+<li><code>gulp.src('./a/b.html')</code> 找到指定文件</li>
+<li><code>gulp.src('./a/*.html')</code> 指定目录下, 找到指定后缀文件</li>
+<li><code>gulp.src('./a/**')</code> 指定目录下, 所有文件</li>
+<li><code>gulp.scr('./a/** /*')</code> a 目录下, 所有子目录里的所有文件</li>
+<li><code>gulp.src('./a/** /*.html')</code> a 目录下, 所有子目录里所有 指定后缀文件</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>gulp.dest()</code></p>
+<ul>
+<li>语法: <code>gulp.dest(路径信息)</code></li>
+<li>作用: 把一个内容放到指定目录内</li>
+<li>一般是打包好之后, 用这个 api</li>
+</ul>
+</li>
+<li>
+<p><code>gulp.watch()</code></p>
+<ul>
+<li>
+<p>语法: <code>gulp.watch(路径信息, 任务名称)</code></p>
+</li>
+<li>
+<p>作用: 监控指定目录下的文件, 一旦发生变化, 从新执行后面的任务</p>
+</li>
+<li>
+<p>例子: <code>gulp.watch('./src/pages/*.html', htmlHandler)</code></p>
+<ul>
+<li>监控指定目录下的 html 文件变化, 如有变化就执行 htmlHandler 任务</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>gulp.series()</code></p>
+<ul>
+<li>语法: <code>gulp.series(任务1, 任务2, 任务3)</code></li>
+<li>作用: 执行多个任务, 前一个结束 (流被 return 出去之后)), 后一个开始</li>
+</ul>
+</li>
+<li>
+<p><code>gulp.parallel()</code></p>
+<ul>
+<li>语法: <code>gulp.parallel(任务1, 任务2, 任务3)</code></li>
+<li>作用: 并行执行多个任务</li>
+</ul>
+</li>
+<li>
+<p><code>pipe()</code></p>
+<ul>
+<li>
+<p>管道函数</p>
+</li>
+<li>
+<p>所有的 gulp API 都是基于流</p>
+</li>
+<li>
+<p>接收当前流, 进入下一个流过程的管道函数</p>
+</li>
+<li>
+<p>例子</p>
+<ul>
+<li>
+<pre><code class="language-js">gulp.src().pipe(压缩任务).pipe(转码).pipe(gulp.dest('./a'))
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>执行的时候直接在 gulpfile.js 目录下, 打开命令行, 输入<code>$ npm cssHandler</code></p>
+</li>
+</ul>
+<h2 id="gulp-常用的插件">gulp 常用的插件</h2>
+<ul>
+<li>gulp 的插件就是用来执行各种压缩转码任务的</li>
+</ul>
+<h3 id="gulp-cssmmin"><code>gulp-cssmmin</code></h3>
+<ul>
+<li>下载: <code>npm i gulp-cssmin -D</code></li>
+<li>导入: <code>const cssmin = require('gulp-cssmin')</code></li>
+<li>导入后得到一个处理流文件的函数</li>
+<li>直接在管道函数里执行</li>
+<li>压缩过程中会自动总结重复的样式</li>
+</ul>
+<h3 id="gulp-autoprefixer"><code>gulp-autoprefixer</code></h3>
+<ul>
+<li>下载: <code>npm i gulp-autoprefixer</code></li>
+<li>导入: <code>const autoPrefixer = require('gulp-autoprefixer')</code></li>
+<li>导入后得到一个处理流文件的函数</li>
+<li>在管道函数内使用, 需要传递参数 <code>{browsers:[需要兼容的浏览器]}</code></li>
+<li>可以不传递参数, 需要在 package.json 里面, 加一项
+<ul>
+<li><code>&quot;browserlist&quot;(小写) = [&quot;last 2 versions&quot;,&quot;IOS &lt; 7&quot;, &quot;FireFox&quot; &lt;20]</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-sass"><code>gulp-sass</code></h3>
+<ul>
+<li>
+<p>下载: <code>npm i gulp-sass -D</code></p>
+<ul>
+<li>
+<p>很容易报错, 下载不成功</p>
+</li>
+<li>
+<p>原因</p>
+<ul>
+<li>gulp-sass 依赖另一个第三方 node-sass</li>
+<li>node-sass 很难下载成功</li>
+</ul>
+</li>
+<li>
+<p>解决</p>
+<ul>
+<li>需要给 node-sass 单独配置一个下载地址</li>
+<li><code>$ set sass_binary_site=https://npm.taobao.org/mirrors/node-sass/</code></li>
+<li><code>$ npm i node-sass -D</code></li>
+<li><code>$ npm i gulp-sass -D</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>导入: <code>const sass = require('gulp-sass')</code></p>
+<ul>
+<li>导入后管道函数内直接执行就可以了</li>
+</ul>
+</li>
+<li>
+<p><strong>sass</strong> <strong>转码的使用</strong></p>
+<ul>
+<li>如果需要导入 sass 文件的时候</li>
+<li>就把 变量 混合器 定义在 .sass 文件中
+<ul>
+<li>gulp 配置只会转码 .scss 文件</li>
+<li>sass 中的 变量和混合器不会被转码</li>
+</ul>
+</li>
+<li>当转码 .scss 文件的时候, 会自动读取和解析 .sass 文件里面的变量</li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-uglify"><code>gulp-uglify</code></h3>
+<ul>
+<li>
+<p>下载: <code>npm i -D gulp-uglify</code></p>
+</li>
+<li>
+<p>导入: <code>const uglify = require('gulp-uglify')</code></p>
+</li>
+<li>
+<p>作用: 压缩 js 文件的, 但是不认识 ES6</p>
+<ul>
+<li>需要用 gulp-babel: 把 ES6 转换成 ES5
+<ul>
+<li>但有坑</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-babel"><code>gulp-babel</code></h3>
+<ul>
+<li>专门进行 ES6 转 ES5 的插件</li>
+<li>版本问题
+<ul>
+<li>gulp-babel@7: 使用在 gulp@3 里面</li>
+<li>gulp-babel@8: 使用在 gulp@4 里面</li>
+</ul>
+</li>
+<li>下载:
+<ul>
+<li>gulp-babel  需要依赖另外两个包, 都需要下载
+<ul>
+<li>@babel/core 和 @ babel/preset-env</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>导入: 导入一个就够, 其它会自动导入</li>
+<li>在管道函数内使用, 需要传递参数
+<ul>
+<li>8版本: <code>{ presets:['@babel/env'] }</code></li>
+<li>7版本: <code>{ presets:['es2015']}</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="gulp-htmlmin"><code>gulp-htmlmin</code></h3>
+<ul>
+<li>下载: <code>npm i -D gulp-htmlmin</code></li>
+<li>导入: <code>const htmlmin = require('gulp-htmlmin')</code></li>
+<li>
+<h2 id="管道函数内使用需要传参-来决定如何压缩">管道函数内使用需要传参, 来决定如何压缩</h2>
+<ul>
+<li><code>{collapseWhitespace: true}</code> 移除空格</li>
+<li><code>{removeEmptyAttributes: true}</code> 去除空的属性, 仅限于原生属性</li>
+<li><code>{collapseBooleanAttributes: true}</code> checked = &ldquo;checked&rdquo;  会变成 checked</li>
+<li><code>removeAttributesQuotes: true}</code> 移除双引号, 一般 属性 = 后面的值可以不加双引号, 只有多个属性同时存在才必须加</li>
+<li><code>{minifyCSS: true}</code> 压缩内嵌式 css 代码, 只能是基本压缩, 不能其它处理</li>
+<li><code>{minifyJS: true}</code> 压缩内嵌式 js 代码, 基本压缩, 不能 ES6</li>
+</ul>
+</li>
+</ul>
+<h3 id="heading"></h3>
+<h4 id="图片问题">图片问题</h4>
+<ul>
+<li>在开发环境中, 图片不需要自己压缩</li>
+<li>大图片都是线上地址</li>
+<li>UI 处理好的图片, 压缩过了</li>
+<li>直接<code>src().pipe(gulp.dest())</code>
+<ul>
+<li>没必要 下载 gulp-image7</li>
+<li>7级压缩,无损压缩, 压缩效果不大, 甚至有时候文件变大</li>
+</ul>
+</li>
+</ul>
+<h4 id="视频-音频和图片一样">视频, 音频和图片一样</h4>
+<ul>
+<li>直接<code>src().pipe(gulp.dest())</code></li>
+</ul>
+<h4 id="第三方包-字体等">第三方包, 字体等</h4>
+<ul>
+<li>都不需要压缩转码, 直接移到 dist</li>
+<li>因为 dist 需要是一个完整的项目</li>
+</ul>
+<h2 id="配置默认任务">配置默认任务</h2>
+<ul>
+<li>
+<p>默认任务的作用就是把所有任务一起执行</p>
+</li>
+<li>
+<p>是否有先后顺序为判断依据</p>
+<ul>
+<li>有先后 用 gulp.series()</li>
+<li>没先后 用 gulp.parallel()</li>
+<li>两个方法的返回值都是函数, 返回值都可以直接当任务函数使用</li>
+</ul>
+</li>
+<li>
+<p>两种方式创建 default 任务</p>
+<ul>
+<li><code>gulp.task('default', () =&gt; {})</code></li>
+<li><code>module.exports.default = () =&gt; {}</code></li>
+</ul>
+</li>
+<li>
+<p>之所以 需要命名为 <code>default</code>, 是因为可以直接 <code>$gulp</code>  后面不用接任何关键字, 直接运行</p>
+</li>
+</ul>
+<h2 id="创建一个删除任务">创建一个删除任务</h2>
+<ul>
+<li>如果每次打包不删除 dist 文件夹</li>
+<li>在更改 src 中文件的文件名后, 会重新在 dist 中打包一个新文件名的文件, 而旧文件依然存在</li>
+<li>所以每次打包之前, 需要执行一个删除 dist 文件夹的任务</li>
+</ul>
+<h3 id="插件-del">插件 <code>del</code></h3>
+<ul>
+<li>下载: <code>npm i -D del</code></li>
+<li>作用：删除文件目录</li>
+<li>导入：<code>const del = require('del')</code></li>
+<li>以数组的形式传递要删除的文件夹</li>
+</ul>
+<h2 id="gulp-启动服务器">gulp 启动服务器</h2>
+<h3 id="利用-gulp-启动一个服务器">利用 gulp 启动一个服务器</h3>
+<ul>
+<li>gulp 是基于 node 环境的工具</li>
+<li>node 可以作为服务器语言</li>
+<li>所以 gulp 可以启动一个 基于 node 的服务器</li>
+<li>根目录为 dist
+<ul>
+<li>如果 src 为根目录, sass 文件没有被转码, 无法使用 <code>'../sass/index.css'</code> , 无法被找到</li>
+</ul>
+</li>
+</ul>
+<h3 id="插件-gulp-webserver">插件 <code>gulp-webserver</code></h3>
+<ul>
+<li>
+<p>作用:  启动一个基于 node 的服务器</p>
+</li>
+<li>
+<p>下载: <code>npm i -D gulp-webserver</code> 还是在项目根目录</p>
+</li>
+<li>
+<p>导入: <code>const webserver = require('gulp-webserver')</code></p>
+</li>
+<li>
+<p>导入后得到一个处理流文件的函数</p>
+</li>
+<li>
+<p>管道函数内调用, 需要传递参数, 来配置服务器</p>
+<ul>
+<li>
+<pre><code class="language-js">const webHandler = function () {
+    return gulp
+    .src('./dist')
+    .pipe(webserver({
+        host: 'localhost',
+        port: '8080',
+        livereload: true,
+        open: './pages/login.html' // 起始页
+    }))
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>启动服务配置自定义域名</p>
+<ul>
+<li>找到电脑中 hosts 文件
+<ul>
+<li><code>C:/windows/system32/drivers/etc/hosts</code></li>
+<li>注意: 找到那个没有后缀的 hosts 文件</li>
+<li>添加一行内容 <code>127.0.0.1    www.xx.com</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="gulp-webserver-配置代理"><code>gulp-webserver</code> 配置代理</h4>
+<ul>
+<li>
+<pre><code class="language-js">proxy: [
+          {
+            source: &quot;/td&quot;, // 代理标识符
+            target: &quot;https://xxx.com/server&quot;, // 代理目标地址
+          },
+        ],
+</code></pre>
+</li>
+<li>
+<p>注意:</p>
+<ul>
+<li>如果没有多余代理, 不要写空对象</li>
+<li>如果想用代理, 那么必须是在 gulp-websever 启动的服务器上</li>
+<li>可以代理一个目录, 目录中所有文件都可以跨域访问</li>
+</ul>
+</li>
+</ul>
+<h3 id="添加监控任务检测文件变化">添加监控任务检测文件变化</h3>
+<ul>
+<li>
+<pre><code class="language-js">const watchHandler = function () {
+    gulp.watch('./src/sass/*.scss', sassHandler)
+    gulp.watch('./src/css/*.css', cssHandler4)
+    gulp.watch('./src/js/*.js', jsHandler)
+    gulp.watch('./src/pages/*.html', htmlHandler)
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="gulp-打包组件">gulp 打包组件</h2>
+<h3 id="场景">场景</h3>
+<ul>
+<li>把重复的 html 单独拿出来, 写成 html 片段</li>
+<li>单独拿出来的片段可以包含 css 和 js
+<ul>
+<li>也可以不包含</li>
+</ul>
+</li>
+<li>当压缩 html 的时候
+<ul>
+<li>在固定位置把写好的 html 片段引入进来</li>
+</ul>
+</li>
+</ul>
+<h3 id="组件">组件</h3>
+<ul>
+<li>一段可以包含 (css / js) 的一整套 html 结构片段</li>
+<li>把页面的每一部分分成一段一段的 html 片段</li>
+<li>最后组装在一起</li>
+</ul>
+<h3 id="插件-gulp-file-include">插件 <code>gulp-file-include</code></h3>
+<ul>
+<li>
+<p>作用: 在一个 html 页面里导入另一个 html 片段</p>
+</li>
+<li>
+<p>下载: <code>npm i -D gulp-file-include</code> 还是在项目根目录</p>
+</li>
+<li>
+<p>导入: <code>const webserver = require('gulp-file-include')</code></p>
+</li>
+<li>
+<p>导入后得到一个处理流文件的函数</p>
+</li>
+<li>
+<p>管道函数内调用, 压缩之前, 需要传递参数</p>
+<ul>
+<li>
+<pre><code class="language-js">.pipe(fileInclude({ 
+    prefix:'@-@', // 标识符
+    basepath: './src/components/' // 组件目录
+}))
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>在 html 文件里导入时</p>
+<ul>
+<li>
+<p>语法: <code>自定义标识符include('要导入的文件路径', 'json格式自定义变量')</code>  <strong>存疑, 应该是对象格式</strong>, key+双引号无法渲染</p>
+</li>
+<li>
+<p>文件路径从 basepath以后开始书写</p>
+</li>
+<li>
+<pre><code class="language-html">&lt;!-- index.html --&gt;
+&lt;body&gt;
+    @-@include('./header.html',{ title: '首页', show: 'active'})
+    &lt;hr&gt;
+    &lt;h1&gt;Index&lt;/h1&gt;
+    &lt;hr&gt;
+    @-@include('./footer.html')
+&lt;/body&gt;
+
+&lt;!-- header.html --&gt;
+&lt;div class=&quot;header @-@active&quot;&gt;  样式的套用
+    header
+    &lt;h1&gt;@-@title&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+</li>
+<li>
+<p>常把<code>&lt;head&gt;</code>标签也单独拿出来作为组件</p>
+</li>
+<li>
+<pre><code class="language-html">&lt;!-- index.html --&gt;
+&lt;head&gt;
+    @-@include('./src/components/head.html', { title: &quot;index&quot;})
+&lt;/head&gt;
+
+&lt;!-- head.html --&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;@-@title&lt;/title&gt;
+</code></pre>
+</li>
+<li>
+<p>还可以用于 js, css 的引入</p>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/all/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#All</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/git/git/" class="block">通俗讲解 git 的使用方法</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" class="block">C#复习之struct, Indexer 和运算符的重载</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/gulp/gulp/">通俗讲解 gulp 的使用方法</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#了解-gulp">了解 gulp</a></li>
+    <li><a href="#gulp-的使用">gulp 的使用</a>
+      <ul>
+        <li><a href="#源码和打包后的内容">源码和打包后的内容</a></li>
+        <li><a href="#1-准备好一个项目">1. 准备好一个项目</a></li>
+        <li><a href="#2-准备一个-gulpfilejs-文件">2. 准备一个 gulpfile.js 文件</a></li>
+        <li><a href="#3-在项目里再次安装-gulp">3. 在项目里再次安装 gulp</a></li>
+        <li><a href="#4-在-gulpfilejs-里书写配置文件">4. 在 gulpfile.js 里书写配置文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#gulp-的常用-api">gulp 的常用 api</a></li>
+    <li><a href="#gulp-常用的插件">gulp 常用的插件</a>
+      <ul>
+        <li><a href="#gulp-cssmmin"><code>gulp-cssmmin</code></a></li>
+        <li><a href="#gulp-autoprefixer"><code>gulp-autoprefixer</code></a></li>
+        <li><a href="#gulp-sass"><code>gulp-sass</code></a></li>
+        <li><a href="#gulp-uglify"><code>gulp-uglify</code></a></li>
+        <li><a href="#gulp-babel"><code>gulp-babel</code></a></li>
+        <li><a href="#gulp-htmlmin"><code>gulp-htmlmin</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#管道函数内使用需要传参-来决定如何压缩">管道函数内使用需要传参, 来决定如何压缩</a>
+      <ul>
+        <li><a href="#heading"></a>
+          <ul>
+            <li><a href="#图片问题">图片问题</a></li>
+            <li><a href="#视频-音频和图片一样">视频, 音频和图片一样</a></li>
+            <li><a href="#第三方包-字体等">第三方包, 字体等</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#配置默认任务">配置默认任务</a></li>
+    <li><a href="#创建一个删除任务">创建一个删除任务</a>
+      <ul>
+        <li><a href="#插件-del">插件 <code>del</code></a></li>
+      </ul>
+    </li>
+    <li><a href="#gulp-启动服务器">gulp 启动服务器</a>
+      <ul>
+        <li><a href="#利用-gulp-启动一个服务器">利用 gulp 启动一个服务器</a></li>
+        <li><a href="#插件-gulp-webserver">插件 <code>gulp-webserver</code></a>
+          <ul>
+            <li><a href="#gulp-webserver-配置代理"><code>gulp-webserver</code> 配置代理</a></li>
+          </ul>
+        </li>
+        <li><a href="#添加监控任务检测文件变化">添加监控任务检测文件变化</a></li>
+      </ul>
+    </li>
+    <li><a href="#gulp-打包组件">gulp 打包组件</a>
+      <ul>
+        <li><a href="#场景">场景</a></li>
+        <li><a href="#组件">组件</a></li>
+        <li><a href="#插件-gulp-file-include">插件 <code>gulp-file-include</code></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/git/git/">通俗讲解 git 的使用方法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E6%97%A5%E5%B8%B8%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85%E8%BF%9E%E6%8E%A5-github-%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/">解决国内连接 GitHub 慢的问题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

@@ -6,7 +6,7 @@ authors:
   - example-author
 tags: 
 categories: Technology
-series:
+series: 博客搭建
 date: '2021-03-31T13:11:22+08:00'
 lastmod: '2021-03-31T13:11:22+08:00'
 featuredImage: images/home.jpg

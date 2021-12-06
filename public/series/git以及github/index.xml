@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git以及Github on Aaron 的博客</title>
+    <link>/series/git%E4%BB%A5%E5%8F%8Agithub/</link>
+    <description>Recent content in git以及Github on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/git%E4%BB%A5%E5%8F%8Agithub/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通俗讲解 git 的使用方法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/git/git/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/git/git/</guid>
+      <description>git 分布式版本管理器 git 安装在电脑里的一个软件 用来管理文件夹(repo) 管理: 管理文件夹内时间节点 把文件夹内的代码</description>
+    </item>
+    
+  </channel>
+</rss>

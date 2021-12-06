@@ -45,14 +45,5 @@
       <description>包管理器 包 每一个插件 类库 框架 叫做一个包 jQuery bootstrap 安装下载第三方内容 官网下载 找人要 npm下载 专门用来下载第三方包的 工具</description>
     </item>
     
-    <item>
-      <title>了解node</title>
-      <link>/docs/node.js/</link>
-      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/node.js/</guid>
-      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候</description>
-    </item>
-    
   </channel>
 </rss>

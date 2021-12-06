@@ -1,6 +1,6 @@
 ---
 title: 4. 了解 npm
-description: 
+description: 简单描述了 npm 是什么.
 toc: true
 authors:
   - Aaron
@@ -10,7 +10,6 @@ tags:
 categories:
   # - Technology
 series:
-  -  自学笔记
 date: '2021-11-30'
 lastmod: '2021-11-30'
 featuredImage: images/nodejs.jpeg

@@ -5,13 +5,11 @@ toc: true
 authors:
   - Aaron
 tags:
-  - image
-  - recent
+  - All
 categories:
   - Technology
-  - All
 series:
-  - Themes Guide
+  - 博客搭建
 date: '2021-12-02'
 lastmod: '2021-12-02'
 featuredImage: images/hugo.jpeg
@@ -406,11 +404,41 @@ title: 汉语翻译
 
 post 目录及其子目录下所有的 `.md` 文件都能够识别, 所以说可以在 post 文件夹下创建子文件夹对内容进行管理.
 
-### .md 文件内 yaml 中的的 categories, tags 和 series
 
+
+### 主页顶部菜单
+
+- 顶部菜单的编辑是在 config.yaml 中的 menu 部分或者同名文件夹内的 menu.yaml.
+
+  - 可以设置名称和 url
+  - 点击菜单选项, 就会跳转到对应的 url
+  - 点击之后会产生两种结果,
+
+    1. 显示当前文件内的所有 `.md` 文件
+    
+    2. 显示当前 url 对应的所有标签, 目录或者是系列.
+  - 想要显示第二种结果, 需要单独设置 config.yaml:
+  
+  ```yaml
+  taxonomies:
+    category: categories
+    tag: tags
+    series: series
+    author: authors
+  ```
+  
+  - 用以上英文复数作文名字的 url, 就会对应到其下属的所有标签, 而不是内容.
+  
+  #### .md 文件内 yaml 中的的 categories, tags 和 series
+  
 - 这三个选项, 输入都是列表, 列表中的每一项都会单独创建一个文件夹
-- url 下访问该文件夹会显示 含有 该项的所有 `.md` 文件
-- 在访问的时候如果想改变页面顶部的标题, 新建一个 `_index.md` 文件, 并在其中写入
+
+- url 下访问该文件夹如 `http://localhost:1313/series/` 会显示 含有 该项的所有 `.md` 文件
+
+- 在访问的时候如果想改显示的名字, 需要在 `content` 文件夹下新建一个 `series` 文件夹, 并在其中新建一个 `_index.md` 文件, 并在其中写入
+
+  - 改变的原因是由于url 中不能含有一些特殊字符比如 #, 如果想命名 C# 就必须通过这种方式更改显示名称.
+
 
 ```yaml
 ---
@@ -418,10 +446,9 @@ title: 汉语翻译
 ---
 ```
 
-### 主页顶部菜单
-
-- 菜单的意义就是点击选项后, 显示出该选项下所有的 `.md` 文件.
-
 - 对菜单的 url 设置基本有几种思路 - 假设有两个菜单选项 科技和艺术.
   - 直接在 content 目录下创建两个文件夹 科技和艺术, 分别设置选项的 url 为 `/科技` 和 `/艺术`
-  - 不在 content 目录下额外创建文件夹, 在 `/content/posts` 内创建 科技和艺术两个文件夹. 注意, 此时如果将菜单选项的 url 设置为 `/content/posts/科技` 是无法定位到文件内的所有 `.md` 文件的. 所以, 需要在 `.md` 文件内的 yaml 内单独设置 categories 科技. 然后, 菜单选项的 url 可以为 `content/categories/科技`
+
+  - 不在 content 目录下额外创建文件夹, 在 `/content/posts` 内创建 科技和艺术两个文件夹. 注意, 此时如果将菜单选项的 url 设置为 `/content/posts/科技` 是无法定位到文件内的所有 `.md` 文件的. 所以, 需要在 `.md` 文件内的 yaml 内单独设置 categories 科技. 然后, 菜单选项的 url 可以为 `content/categories/科技`.
+
+    

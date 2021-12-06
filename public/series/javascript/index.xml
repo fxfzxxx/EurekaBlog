@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on Aaron 的博客</title>
+    <link>/series/javascript/</link>
+    <description>Recent content in JavaScript on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>了解 Node.js</title>
+      <link>/docs/node.js/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/</guid>
+      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候</description>
+    </item>
+    
+  </channel>
+</rss>

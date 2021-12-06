@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>通俗讲解 git 的使用方法 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="包括工作中的版本控制, 解决冲突以及 github 的使用.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"通俗讲解 git 的使用方法",
+      "item":"/posts/%E7%A7%91%E6%8A%80/git/git/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/git/git/"
+    },
+    "headline": "通俗讲解 git 的使用方法 | Aaron 的博客",
+    "image": "/images/git.webp",
+    "datePublished": "2021-12-06T00:00:00+00:00",
+    "dateModified": "2021-12-06T00:00:00+00:00",
+    "wordCount":  4239 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "包括工作中的版本控制, 解决冲突以及 github 的使用."
+}
+</script><meta property="og:title" content="通俗讲解 git 的使用方法 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/git/git/" />
+
+
+
+<meta property="og:description" content="包括工作中的版本控制, 解决冲突以及 github 的使用." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-12-06T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-12-06T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="All" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">通俗讲解 git 的使用方法</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-12-06</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>9 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/git%E4%BB%A5%E5%8F%8Agithub/" class="hover:text-eureka">git以及Github</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/git.webp" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h1 id="git-分布式版本管理器">git 分布式版本管理器</h1>
+<h2 id="git">git</h2>
+<ul>
+<li>安装在电脑里的一个软件</li>
+<li>用来管理文件夹(repo)
+<ul>
+<li>管理: 管理文件夹内时间节点</li>
+</ul>
+</li>
+<li>把文件夹内的代码上传到指定的远程位置</li>
+<li>没有可视化操作, 一切都在命令行中操作</li>
+</ul>
+<h2 id="github">Github</h2>
+<ul>
+<li>线上网站</li>
+<li>保存 git 上传的代码</li>
+<li>其它软件无法上传</li>
+<li>社交平台, 开源, 讨论</li>
+</ul>
+<h2 id="首次安装-git-配置">首次安装 git 配置</h2>
+<ul>
+<li>第一次安装 git 需要配置全局内容</li>
+<li>为了将来上传的时候的签名</li>
+<li>查看全局配置
+<ul>
+<li>打开命令行, 目录无所谓</li>
+<li>输入指令<code>$ config --list</code></li>
+</ul>
+</li>
+<li>配置全局邮箱
+<ul>
+<li>打开命令行, 目录无所谓</li>
+<li>输入指令 <code>$ config --global user.email &quot;@&quot;</code></li>
+<li>随便写也行, 就是一个签名, 最好是 Github 注册的邮箱</li>
+</ul>
+</li>
+<li>配置全局用户名
+<ul>
+<li>打开命令行, 目录无所谓</li>
+<li>输入指令 <code>$ config --global user.name &quot;&quot;</code></li>
+<li>随便写也行, 就是一个签名, 最好是 Github 注册的用户名</li>
+</ul>
+</li>
+</ul>
+<h2 id="首次使用-git">首次使用 git</h2>
+<h3 id="1-本地仓库初始化">1. 本地仓库初始化</h3>
+<ul>
+<li>
+<p>需要把一个文件夹初始化成一个 git 仓库 repo</p>
+<ul>
+<li>这个文件夹的及文件夹的所有后代才会被 git 管理</li>
+</ul>
+</li>
+<li>
+<p>打开命令行</p>
+<ul>
+<li>切换到 git 需要管理的文件夹内</li>
+<li>输入指令 <code>$git init</code></li>
+<li>如果成功, 文件夹内会多一个 .git 的文件夹</li>
+<li>就表示 .git 所在的文件夹及所有后代的目录都被 git 管理了</li>
+<li>这个文件夹就叫做一个 本地仓库</li>
+</ul>
+</li>
+<li>
+<p>初始化后</p>
+<ul>
+<li>当一个目录被初始化为一个 git 仓库后</li>
+<li>文件夹会被虚拟的分为三个部分
+<ol>
+<li><strong>工作区</strong>
+<ul>
+<li>书写代码的真是位置</li>
+</ul>
+</li>
+<li><strong>暂存区</strong>
+<ul>
+<li>暂时存储一些内容, 存储的不是文件而是节点</li>
+<li>把想要形成历史版本的节点, 暂时存储一下</li>
+</ul>
+</li>
+<li><strong>历史区</strong>
+<ul>
+<li>已经形成历史的版本, 将来可以穿越回来的历史节点</li>
+<li>历史区只能把 暂存区 里面的节点 变为历史节点</li>
+<li>不能直接操作工作区</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>上传的时候
+<ul>
+<li>git 只能上传 历史区 的内容</li>
+<li>不能上传 工作区 和 暂存区 的内容</li>
+<li>如果历史区没有内容, 会提示你上传不成功</li>
+</ul>
+</li>
+</ul>
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210712173555982.png" alt="image-20210712173555982" style="zoom: 67%;" />
+</li>
+</ul>
+<h3 id="2-把工作内容添加到暂存区">2. 把工作内容添加到暂存区</h3>
+<ul>
+<li>工作区需要有内容 (<code>.git</code> 不算)
+<ul>
+<li>空文件可以添加, 空文件夹不行</li>
+<li>没有形成历史版本的暂存区会被覆盖</li>
+</ul>
+</li>
+<li>打开命令行
+<ul>
+<li><code>$git add 文件名</code></li>
+<li><code>$git add 文件夹名</code></li>
+<li><code>$git add --all</code> : 添加当前工作区所有内容
+<ul>
+<li>简写: <code>$git add .</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-查看工作区和暂存区的状态">3. 查看工作区和暂存区的状态</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git status</code></li>
+</ul>
+<h3 id="4-撤回暂存区内容">4. 撤回暂存区内容</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令
+<ul>
+<li><code>$ git reset HEAD -- 文件名</code></li>
+<li><code>$ git reset HEAD -- 文件夹</code></li>
+<li><code>$ git reset HEAD -- .</code> 所有内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="5-形成历史版本">5. 形成历史版本</h3>
+<ul>
+<li>把暂存区的内容形成一个历史版本
+<ul>
+<li>前提: 暂存区需要有内容</li>
+</ul>
+</li>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令: <code>$ git commit -m &quot;说明&quot; </code></li>
+<li><code>$ git commit -a -m &quot;&quot;</code> 全部加入暂存区然后形成历史版本的简写</li>
+</ul>
+<h3 id="6-查看历史版本">6. 查看历史版本</h3>
+<ul>
+<li>
+<p>查看<strong>本地</strong>已经形成的历史版本</p>
+</li>
+<li>
+<p>打开命令行, 切换到 <code>.git</code> 所在的目录</p>
+</li>
+<li>
+<p>输入指令 <code>$ git log</code></p>
+</li>
+<li>
+<p>就会以倒叙的形成出现<strong>本地</strong>保存的所有历史版本</p>
+</li>
+<li>
+<pre><code class="language-shell">  '历史版本 唯一ID'
+commit f984401cf13217326a4d523de330eebd34168d18 (HEAD -&gt; master) '括号内代表这是最新历史版本'
+Author: fxfzxxx &lt;aaron1995228@gmail.com&gt;
+  '历史版本的生成时间'
+Date:   Tue Jul 13 12:34:44 2021 +0800
+
+    second
+
+commit 7e8b5b449038c1a8d82c8a99f455a3ae48ad06f7
+Author: fxfzxxx &lt;aaron1995228@gmail.com&gt;
+Date:   Tue Jul 13 12:33:39 2021 +0800
+
+    first
+
+</code></pre>
+</li>
+</ul>
+<h3 id="7-回滚历史版本">7. 回滚历史版本</h3>
+<ul>
+<li>回到之前某一个历史版本</li>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git reset --hard 版本id</code></li>
+<li>就可以回到那个时间状态
+<ul>
+<li>实际的文件会发生变化</li>
+</ul>
+</li>
+<li>注意:
+<ul>
+<li>历史回滚之后, 回到过去版本</li>
+<li>如果过去版本新增内容, 会走一条新的时间线</li>
+<li>如果没上传的情况下
+<ul>
+<li>可以在任意时间线和任意时间节点穿梭</li>
+</ul>
+</li>
+<li>如果在上传的情况下
+<ul>
+<li>跨时间线穿梭, 需要先回滚到左边共同的时间节点后</li>
+<li>再往右边穿梭</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210713130916707.png" alt="image-20210713130916707" style="zoom:67%;" />
+<h3 id="8-删除历史版本">8. 删除历史版本</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令<code>$ git rebase -i 历史版本id </code>
+<ol>
+<li>版本id要写删除的前一个id, 会回到前一个id并把后面都删除</li>
+<li>删除的时候, 进入编辑状态后, 需要把 pick 改为 drop, 再次 输入 <code>:wq</code> 就可以了</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p><strong>删除历史版本的时候会进入编辑状态</strong></p>
+<ul>
+<li>按下 i 键, 表示 insert, 插入的意思, 也就是开始编辑文本</li>
+<li>把 pick 改为 drop, 再 按 esc</li>
+<li>编辑器下面会出现命令等待状态</li>
+<li>输入 <code>:wq</code> 表示完成编辑, 保存并且退出</li>
+</ul>
+</blockquote>
+<ul>
+<li>删除的只是本地记录, 远程上传的不会删除</li>
+</ul>
+<h2 id="git-上传远程">git 上传远程</h2>
+<ul>
+<li>上传不是上传 <code>.git</code> 所在的文件, 而是上传同级的所有文件</li>
+</ul>
+<h3 id="1-建立一个远程仓库">1. 建立一个远程仓库</h3>
+<ul>
+<li>就是在 Github 里创建一个'&lsquo;文件夹&rsquo;'</li>
+<li>GitHub 页面右上角加号 &ndash;&gt; new repository</li>
+<li>repository 必填, 表示远程仓库名称</li>
+<li>描述可以写或者不屑</li>
+<li>点击 create repository 就创建成功了</li>
+</ul>
+<h3 id="2-在仓库里保证有一个没有上传的历史版本">2. 在仓库里保证有一个没有上传的历史版本</h3>
+<h3 id="3-添加一个远程仓库地址">3. 添加一个远程仓库地址</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git remote add origin 仓库地址</code>
+<ul>
+<li>remote 远程</li>
+<li>add 添加</li>
+<li>origin 变量名, 可以自己随便书写</li>
+<li>仓库地址可以是 gitee 或者是 Github</li>
+</ul>
+</li>
+<li>添加完毕后, 在这个 <code>.git</code> 所在目录里, 上传到 <code>origin</code> 就是上传到这个仓库地址</li>
+</ul>
+<h3 id="4-把历史区的内容推送到远程">4. 把历史区的内容推送到远程</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git push -u origin master</code>
+<ul>
+<li>push 推送</li>
+<li>-u 记录下本次推送的信息, 到哪一个地址, 哪一个分支
+<ul>
+<li>下次如果还是此仓库和此分支, 直接写 <code>git push </code> 就可以了</li>
+</ul>
+</li>
+<li>origin 地址变量</li>
+<li>master 分支</li>
+</ul>
+</li>
+</ul>
+<h4 id="41-推送时遇到的问题">4.1 推送时遇到的问题</h4>
+<h5 id="readmemd-问题">readme.md 问题</h5>
+<ul>
+<li>
+<p>首先是先在远程仓库创建了 <code>readme</code> file, 之后又删除了</p>
+</li>
+<li>
+<p>应该是经历了两次 commit</p>
+</li>
+<li>
+<p>所以即使先 <code>$git pull origin master</code>, 再 <code>$ git push origin master</code>, 依然是报错</p>
+</li>
+<li>
+<p>解决需要先 <code>git pull origin master --allow-unrelated-histories</code>, 之后再 push 就可以了</p>
+</li>
+</ul>
+<h5 id="登录问题1">登录问题1</h5>
+<ul>
+<li>每次 push 都弹出登录框需要登录</li>
+<li>并且在登录框内输入账号密码, 会登录失败</li>
+<li>之后提示在ssh内登录时, 输入账号密码, 可以成功登录</li>
+<li>问题是每次登录都要重新再经历一次以上步骤</li>
+<li>后来通过在 Github 的 settings 里的 developer settings 里, 设置了 token</li>
+<li>在下次弹出登录框, 登陆失败后, ssh里登录的时候</li>
+<li>密码的地方输入 token 就可以了</li>
+<li>下次就不再弹出登录框了</li>
+</ul>
+<h5 id="登录问题2">登录问题2</h5>
+<ul>
+<li>第一次 push 之后弹出登录框需要登陆</li>
+<li>输入错误密码后, windows 会记录错误密码</li>
+<li>导致后面的 push, 不会再给机会填写新的密码</li>
+<li>每次 push 都不成功</li>
+<li>解决就是要去 控制面板 -&gt; 账户 -&gt; windows凭证 -&gt; github 删掉</li>
+<li>下次 push 就会重新弹出输入用户名和密码的对话框</li>
+</ul>
+<h3 id="5-拉取远程代码">5. 拉取远程代码</h3>
+<h4 id="51-自己拉取自己的代码">5.1 自己拉取自己的代码</h4>
+<ul>
+<li><strong>第一次拉取</strong>
+<ul>
+<li>实际上就是克隆一份到本地</li>
+<li>复制 Github 上的一个仓库到本地</li>
+<li>打开 github 需要克隆的仓库
+<ul>
+<li>复制仓库的远程地址</li>
+<li>在本地找到一个需要存放这个文件夹的位置</li>
+<li>右键 git bash here</li>
+<li>输入指令: <code>$ git clone 远程仓库地址</code></li>
+</ul>
+</li>
+<li>会复制一个一模一样的的文件夹到指定目录
+<ul>
+<li>这个文件夹是 git 初始化后的仓库</li>
+<li>记录着远程仓库的地址</li>
+<li>上传会自动上传到这个地址</li>
+<li>可以直接 <code>git push</code> 不用加 <code>-u origin master</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>第 n 次拉取</strong>
+<ul>
+<li>不需要在克隆</li>
+<li>只需要在第一次克隆下来的文件夹内</li>
+<li>打开命令行, 输入 <code>$ git pull</code></li>
+<li>一般实际情况就是 到公司后先 pull 下班前 push</li>
+<li>回家后 也先pull 写完后 push</li>
+<li>第二天到公司再 pull</li>
+</ul>
+</li>
+</ul>
+<h4 id="52-自己拉取别人的代码">5.2 自己拉取别人的代码</h4>
+<ul>
+<li>第一次拉取直接克隆</li>
+<li>到想要克隆的位置, 打开命令行, 输入 <code>$ git clone 地址</code></li>
+<li>第 n 次拉取
+<ul>
+<li>直接到 <code>.git </code> 同级目录, 输入 <code>$ git pull</code></li>
+</ul>
+</li>
+<li>如果修改了内容想要 push
+<ul>
+<li>不会成功, 因为要别人的用户名密码</li>
+</ul>
+</li>
+</ul>
+<h2 id="历史回滚冲突问题">历史回滚冲突问题</h2>
+<ul>
+<li>
+<p>例子:</p>
+<ul>
+<li>1.txt: 第一次编辑 -&gt; <code>$ git commit m&quot;001&quot;</code></li>
+<li>1.txt: 第二次编辑 -&gt; <code>$ git commit m&quot;002&quot;</code></li>
+<li>历史回滚 -&gt;<code> git reset --hard 001</code>
+<ul>
+<li>注意是实际情况 001 替换为随机的版本码</li>
+</ul>
+</li>
+<li>1.txt: 第一次编辑再编辑 -&gt; <code>$git commit m&quot;001-2&quot;</code></li>
+<li>上传远程 <code>$git push -u origin master </code></li>
+<li>只会得到 001 和 001-2 两个历史版本</li>
+<li>第一条时间线上的 002 版本丢失</li>
+</ul>
+</li>
+<li>
+<p>当本地回滚到 001 和 002 两个版本的时候,</p>
+</li>
+<li>
+<p>再次上传就会报错</p>
+</li>
+<li>
+<p>因为远程的版本是 001 和 001-2</p>
+</li>
+<li>
+<p>解决</p>
+<ul>
+<li>需要先把远程的 001 和 001-2 pull 下来</li>
+<li>然后手动解决冲突, 在 vs code里会有相应提示</li>
+<li>假如选择把 002 和 001-2 的更改内容都保留, 相当于两条时间线合并</li>
+<li>再次 commit 就会形成下一个历史版本</li>
+<li>所以在远程 会有<strong>四个</strong> 历史版本
+<ul>
+<li>001</li>
+<li>002</li>
+<li>001-2</li>
+<li>解决冲突后的版本</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210714124028420.png" alt="image-20210714124028420" style="zoom: 50%;" />
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210714124532885.png" alt="image-20210714124532885" style="zoom:50%;" />
+<h2 id="了解-git-相关的三个文件">了解 git 相关的三个文件</h2>
+<h3 id="1-git-占位文件">1. git 占位文件</h3>
+<ul>
+<li>当使用 git 管理文件夹的时候</li>
+<li>空文件夹无法识别</li>
+<li>一般项目在初始化的时候, 会先准备好目录解构上传一次
+<ul>
+<li>就会有空文件夹</li>
+</ul>
+</li>
+<li>git 提供一个 .gitkeep 文件
+<ul>
+<li>没有名称, 只有后缀</li>
+</ul>
+</li>
+<li>没有特殊意义
+<ul>
+<li>这是为了能够使空文件夹上传</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-git-忽略文件">2. git 忽略文件</h3>
+<ul>
+<li>在开发的过程中, 会下载很多第三方</li>
+<li>node_modules 文件夹里的文件很多, 最好不上传</li>
+<li>只需要在初始化项目的时候, 生成 package.json 文件
+<ul>
+<li>只需要上传 package.json 文件</li>
+</ul>
+</li>
+<li>这时候可以引入 忽略文件 .gitignore
+<ul>
+<li>之后后缀, 没有名称</li>
+<li>在里面书写不希望上传的文件或者文件夹</li>
+<li>文件保存在 .git 的同级目录</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-git-说明文件">3. git 说明文件</h3>
+<ul>
+<li>readme.md</li>
+<li>对当前仓库内的描述和说明</li>
+<li>md 语法书写</li>
+<li>传到远程的时候, 会自动渲染在项目下面</li>
+</ul>
+<h2 id="git-分支">git 分支</h2>
+<img src="C:\Users\Aaron\AppData\Roaming\Typora\typora-user-images\image-20210714132642913.png" alt="image-20210714132642913" style="zoom:50%;" />
+<ul>
+<li>当初始化仓库后, 会自动生成一个分支 master
+<ul>
+<li>主要分支或者根分支</li>
+</ul>
+</li>
+<li>之后可以创建其它的分支, 分别书写内容
+<ul>
+<li>每一个分支的内容相对独立</li>
+</ul>
+</li>
+<li>每个独立的功能分支, 最后都合并到 master 上
+<ul>
+<li>master 就具备了每个功能分支的功能</li>
+</ul>
+</li>
+<li>之后哪个功能需要改进, 或者又 bug
+<ul>
+<li>就去单独的分支更改</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-创建分支">1. 创建分支</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令: <code>$ git branch 自定义分支名称 </code></li>
+<li><strong>创建的分支, 会复制当前分支的所有内容</strong></li>
+</ul>
+<h3 id="2-查看分支情况">2. 查看分支情况</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令: <code>$ git branch</code></li>
+<li>会看到所有分支</li>
+<li>创建完新的分支后, 如果需要切换到分支, 需要手动切换</li>
+</ul>
+<h3 id="3-切换分支">3. 切换分支</h3>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令: <code>$ git checkout 分支名称</code>
+<ul>
+<li><code> $ git checkout -b 分支名称</code> 创建并切换到</li>
+</ul>
+</li>
+<li>就会切换到分支</li>
+</ul>
+<h3 id="4-合并分支">4. 合并分支</h3>
+<ul>
+<li>
+<p>合并操作: 只能是在哪个分支, 把别的分支合并到自己身上</p>
+</li>
+<li>
+<p>打开命令行, 切换到 <code>.git</code> 所在的目录</p>
+</li>
+<li>
+<p>输入指令 <code>$ git merge 需要合并过来的分支</code></p>
+</li>
+<li>
+<p>指定分支就会合并到自己身上</p>
+</li>
+</ul>
+<h3 id="5-删除分支">5. 删除分支</h3>
+<ul>
+<li>首先要离开要删除的分支</li>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git branch -d 要删除的分支</code>
+<ul>
+<li>如果分支上又历史版本, 还没有合并</li>
+<li>可能会删不掉</li>
+</ul>
+</li>
+<li>删不掉的话可以使用强力删除 ( 慎用 )
+<ul>
+<li>尽量还是去解决删除不掉的原因</li>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git branch -D 要删除的分支</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="6-分支的远程操作">6. 分支的远程操作</h3>
+<ul>
+<li>
+<p>当建立其他分支, 默认是不会上传的</p>
+<ul>
+<li>git 默认上传 master 分支</li>
+</ul>
+</li>
+<li>
+<p>当上传的时候</p>
+<ul>
+<li><code>git push -u origin master</code></li>
+<li>把当前的分支和远程的 master 建立连接</li>
+</ul>
+</li>
+<li>
+<p><code>$ git push --set-upstream origin master </code> 相当于 <code>$ git push -u origin master</code></p>
+<ul>
+<li>意思就是设置好了之后, 以后可以简写 <code>$ git push </code>  就上传到 master 分支了</li>
+</ul>
+</li>
+</ul>
+<h4 id="61-如果要把自定义的其它分支上传">6.1 如果要把自定义的其它分支上传</h4>
+<ul>
+<li>切换到要上传的分支</li>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令 <code>$ git push origin 要上传的分支</code></li>
+</ul>
+<h4 id="62-删除远程分支">6.2 删除远程分支</h4>
+<ul>
+<li>打开命令行, 切换到 <code>.git</code> 所在的目录</li>
+<li>输入指令: <code>$ git push origin --delete 要删除的分支</code></li>
+<li>远程分支删除后, 本地分支依然会保留</li>
+</ul>
+<h4 id="63-特殊分支-gh-pages">6.3 特殊分支 <code>gh-pages</code></h4>
+<ul>
+<li>可以把 github 变成一个临时的服务器
+<ul>
+<li>在这个分支上 上传一个 index.html 文件</li>
+<li>如果不是 index.html, 需要书写文件名</li>
+</ul>
+</li>
+<li>上传之后
+<ul>
+<li>到 github 并且切换到 gh-pages 分支</li>
+<li>点击 settings</li>
+<li>下面会有一个 github pages 地址</li>
+<li>如果文件是 index.html, 输入地址就能直接访问</li>
+<li>如果是 abc.html, 就需要输入地址 + abc.html</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-分支的命名规范">7 分支的命名规范</h3>
+<ul>
+<li>大家约定俗成的东西</li>
+<li>有的公司, 会以公司员工的名字命名分支</li>
+</ul>
+<h4 id="1-主分支---master">1. 主分支 - master</h4>
+<ul>
+<li>创建 git 仓库的时候就会产生</li>
+<li>不接受任何代码上传</li>
+<li>只接收 dev 分支合并的内容</li>
+<li>只存储每一个迭代版本中经过测试合格的版本</li>
+</ul>
+<h4 id="2-主开发分支---dev--development-deve">2. 主开发分支 - dev / development /deve</h4>
+<ul>
+<li>初始化项目之后, 就会从 master 上直接复制开辟的分支</li>
+<li>不接受任何代码上传</li>
+<li>只接收 主功能分支 上合并的内容 PR ( Pull Request )</li>
+<li>存储开发过程中, 每一个阶段的内容</li>
+</ul>
+<h4 id="3-主功能分支---feature-xxx">3. 主功能分支 - feature-xxx</h4>
+<ul>
+<li>直接从 dev 分支上开辟出来的分支</li>
+<li>进行不同功能的开发</li>
+<li>开发完毕后把代码合并到 dev 分支上</li>
+<li>接收文件上传</li>
+</ul>
+<h4 id="4-功能-bug-解决分支---feature-xxx-fix-xxx">4. 功能 bug 解决分支 - feature-xxx-fix-xxx</h4>
+<ul>
+<li>在项目运行的过程中, 出现 bug 进行修复的分支</li>
+<li>都是从 功能分支 上开辟出来的</li>
+<li>修改完毕后, 合并到主分支上</li>
+<li>再由功能分支合并到 dev 分支上</li>
+<li>一般不删除, 开多少留多少, 后期打架的资本, 证明干活了</li>
+</ul>
+<h4 id="5-紧急-bug-解决分支---hot-fix-xxx">5. 紧急 bug 解决分支 - hot-fix-xxx</h4>
+<ul>
+<li>直接从 master 上开辟</li>
+<li>进行 bug 的紧急修复</li>
+<li>修复完 可以直接合并到 master 上</li>
+<li>微博服务器炸了</li>
+<li>能开这个分支的人解决了, 有额外的奖金</li>
+</ul>
+<h2 id="git-密钥">git 密钥</h2>
+<ul>
+<li>GitHub 上除了可以使用 https 的地址
+<ul>
+<li>还可以使用 ssh 地址</li>
+<li>需要在电脑里也配置一个密钥</li>
+<li>完事可以直接登录 github</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>
+<p>打开命令行, 目录无所谓</p>
+</li>
+<li>
+<p>输入指令: <code>$ ssh-keygen -t rsa -C &quot;github配置的全局邮箱&quot;</code></p>
+<ul>
+<li>
+<p>可以输入 <code>$ git config --list </code> 查看全局邮箱</p>
+</li>
+<li>
+<p>回车后, 要求输入二次密码</p>
+</li>
+<li>
+<p>可以不写, 直接三个回车</p>
+</li>
+<li>
+<p>生成花里胡哨的密钥</p>
+</li>
+</ul>
+</li>
+<li>
+<p>去到电脑里找到密钥</p>
+<ol>
+<li>目录下的 pub 文件</li>
+<li>复制里面的所有内容</li>
+</ol>
+</li>
+<li>
+<p>来到 github settings</p>
+<ol>
+<li>选择 ssh, 并创建新的 ssh key</li>
+<li>title 随便写</li>
+<li>key 的位置粘贴刚才复制的密钥</li>
+</ol>
+</li>
+<li>
+<p>添加成功</p>
+<ul>
+<li>以后就可以使用 ssh 地址上传和下载了</li>
+</ul>
+</li>
+</ol>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/all/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#All</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/gulp/gulp/" class="block">通俗讲解 gulp 的使用方法</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/git/git/">通俗讲解 git 的使用方法</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#git">git</a></li>
+    <li><a href="#github">Github</a></li>
+    <li><a href="#首次安装-git-配置">首次安装 git 配置</a></li>
+    <li><a href="#首次使用-git">首次使用 git</a>
+      <ul>
+        <li><a href="#1-本地仓库初始化">1. 本地仓库初始化</a></li>
+        <li><a href="#2-把工作内容添加到暂存区">2. 把工作内容添加到暂存区</a></li>
+        <li><a href="#3-查看工作区和暂存区的状态">3. 查看工作区和暂存区的状态</a></li>
+        <li><a href="#4-撤回暂存区内容">4. 撤回暂存区内容</a></li>
+        <li><a href="#5-形成历史版本">5. 形成历史版本</a></li>
+        <li><a href="#6-查看历史版本">6. 查看历史版本</a></li>
+        <li><a href="#7-回滚历史版本">7. 回滚历史版本</a></li>
+        <li><a href="#8-删除历史版本">8. 删除历史版本</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-上传远程">git 上传远程</a>
+      <ul>
+        <li><a href="#1-建立一个远程仓库">1. 建立一个远程仓库</a></li>
+        <li><a href="#2-在仓库里保证有一个没有上传的历史版本">2. 在仓库里保证有一个没有上传的历史版本</a></li>
+        <li><a href="#3-添加一个远程仓库地址">3. 添加一个远程仓库地址</a></li>
+        <li><a href="#4-把历史区的内容推送到远程">4. 把历史区的内容推送到远程</a>
+          <ul>
+            <li><a href="#41-推送时遇到的问题">4.1 推送时遇到的问题</a>
+              <ul>
+                <li><a href="#readmemd-问题">readme.md 问题</a></li>
+                <li><a href="#登录问题1">登录问题1</a></li>
+                <li><a href="#登录问题2">登录问题2</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#5-拉取远程代码">5. 拉取远程代码</a>
+          <ul>
+            <li><a href="#51-自己拉取自己的代码">5.1 自己拉取自己的代码</a></li>
+            <li><a href="#52-自己拉取别人的代码">5.2 自己拉取别人的代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#历史回滚冲突问题">历史回滚冲突问题</a></li>
+    <li><a href="#了解-git-相关的三个文件">了解 git 相关的三个文件</a>
+      <ul>
+        <li><a href="#1-git-占位文件">1. git 占位文件</a></li>
+        <li><a href="#2-git-忽略文件">2. git 忽略文件</a></li>
+        <li><a href="#3-git-说明文件">3. git 说明文件</a></li>
+      </ul>
+    </li>
+    <li><a href="#git-分支">git 分支</a>
+      <ul>
+        <li><a href="#1-创建分支">1. 创建分支</a></li>
+        <li><a href="#2-查看分支情况">2. 查看分支情况</a></li>
+        <li><a href="#3-切换分支">3. 切换分支</a></li>
+        <li><a href="#4-合并分支">4. 合并分支</a></li>
+        <li><a href="#5-删除分支">5. 删除分支</a></li>
+        <li><a href="#6-分支的远程操作">6. 分支的远程操作</a>
+          <ul>
+            <li><a href="#61-如果要把自定义的其它分支上传">6.1 如果要把自定义的其它分支上传</a></li>
+            <li><a href="#62-删除远程分支">6.2 删除远程分支</a></li>
+            <li><a href="#63-特殊分支-gh-pages">6.3 特殊分支 <code>gh-pages</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#7-分支的命名规范">7 分支的命名规范</a>
+          <ul>
+            <li><a href="#1-主分支---master">1. 主分支 - master</a></li>
+            <li><a href="#2-主开发分支---dev--development-deve">2. 主开发分支 - dev / development /deve</a></li>
+            <li><a href="#3-主功能分支---feature-xxx">3. 主功能分支 - feature-xxx</a></li>
+            <li><a href="#4-功能-bug-解决分支---feature-xxx-fix-xxx">4. 功能 bug 解决分支 - feature-xxx-fix-xxx</a></li>
+            <li><a href="#5-紧急-bug-解决分支---hot-fix-xxx">5. 紧急 bug 解决分支 - hot-fix-xxx</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#git-密钥">git 密钥</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/gulp/gulp/">通俗讲解 gulp 的使用方法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E6%97%A5%E5%B8%B8%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85%E8%BF%9E%E6%8E%A5-github-%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/">解决国内连接 GitHub 慢的问题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/">C#复习之面向对象</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">C#复习之基本语法</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

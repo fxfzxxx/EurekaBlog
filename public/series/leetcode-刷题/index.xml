@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>leetcode 刷题 on Aaron 的博客</title>
+    <link>/series/leetcode-%E5%88%B7%E9%A2%98/</link>
+    <description>Recent content in leetcode 刷题 on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Thu, 02 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/leetcode-%E5%88%B7%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>leetcode 刷题挑战之 数组</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</guid>
+      <description>704. 二分查找 学习了 vector 的用法 需要在开头声明 #include &amp;lt;vector&amp;gt;. vector&amp;lt;int&amp;gt; nums;. 不能直接把数组的值输入到 vector 中, 要通过循环来 pushback 到 vector 中去. int search(vector&amp;lt;int&amp;gt;&amp;amp; nums) 其中</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 链表</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</guid>
+      <description>链表相比如数组, 长度不固定, 可以动态增删. 数组适合查询, 链表适合增删. 203. 移除链表元素 学习了定义 struct 数据结构 用来定</description>
+    </item>
+    
+  </channel>
+</rss>

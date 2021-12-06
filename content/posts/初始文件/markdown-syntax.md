@@ -5,17 +5,10 @@ toc: true
 authors:
   - Hugo Authors
 tags:
-  - markdown
-  - css
-  - html
-  - themes
 categories:
-  - themes
-  - syntax
   - Arts
 series:
-  - Themes Guide
-  - art
+  - 博客搭建
 date: '2019-03-11'
 lastmod: '2019-03-11'
 draft: false

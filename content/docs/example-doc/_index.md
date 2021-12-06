@@ -4,8 +4,8 @@ description: This is an example doc layout of Eureka theme
 toc: true
 authors:
 tags: 
-categories: 哈哈哈哈哈哈
-series: 哦哦哦哦哦哦
+categories: 
+series: 
 date: '2020-10-16'
 lastmod: '2020-10-16'
 draft: false

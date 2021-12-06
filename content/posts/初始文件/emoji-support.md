@@ -6,9 +6,8 @@ authors:
   - Hugo Authors
 tags:
   - emoji
-  - recent
 categories: Technology
-series: 
+series: 博客搭建
 date: '2019-03-05'
 lastmod: '2019-03-05'
 draft: false

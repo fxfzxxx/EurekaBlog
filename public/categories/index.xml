@@ -8,20 +8,11 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>All</title>
-      <link>/categories/all/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/all/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>科技</title>
       <link>/categories/technology/</link>
-      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>/categories/technology/</guid>
       <description></description>
@@ -37,36 +28,9 @@
     </item>
     
     <item>
-      <title>哈哈哈哈哈哈</title>
-      <link>/categories/%E5%93%88%E5%93%88%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</link>
-      <pubDate>Fri, 16 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/%E5%93%88%E5%93%88%E5%93%88%E5%93%88%E5%93%88%E5%93%88/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>themes</title>
-      <link>/categories/themes/</link>
-      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/themes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>syntax</title>
-      <link>/categories/syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/syntax/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>政治经济</title>
       <link>/categories/politics/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/categories/politics/</guid>
       <description></description>

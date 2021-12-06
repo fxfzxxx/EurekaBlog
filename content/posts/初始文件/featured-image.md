@@ -5,12 +5,10 @@ toc: true
 authors:
   - Example Author
 tags:
-  - image
 categories:
-  - themes
+  - Technology
 series:
-  - Themes Guide
-  - art
+  - 博客搭建
 date: '2020-05-26'
 lastmod: '2020-05-26'
 featuredImage: images/hero-right.jpg

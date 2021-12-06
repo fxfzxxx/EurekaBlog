@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>了解node on Aaron 的博客</title>
+    <title>了解 Node.js on Aaron 的博客</title>
     <link>/docs/node.js/</link>
-    <description>Recent content in 了解node on Aaron 的博客</description>
+    <description>Recent content in 了解 Node.js on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
@@ -24,7 +24,7 @@
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/node.js/%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E5%9D%97/</guid>
-      <description>第三方模块就是别人写好的内容, 拿来之际额用] 大部分都是为了完成某一单一功能类的插件 moment 专门用来处理时间 的第三方模</description>
+      <description>第三方模块就是别人写好的内容, 拿来直接用. 大部分都是为了完成某一单一功能类的插件. moment 专门用来处理时间 的第三方模</description>
     </item>
     
     <item>

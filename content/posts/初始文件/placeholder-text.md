@@ -6,15 +6,11 @@ authors:
   - Hugo Authors
   - Example Author
 tags:
-  - markdown
-  - text
   - recent
 categories: 
   - Arts
-  - politics
 series:
-  - Themes Guide
-  - arts
+  - 博客搭建
 date: '2019-03-09'
 lastmod: '2019-03-09'
 draft: false

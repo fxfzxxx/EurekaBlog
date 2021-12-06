@@ -1,6 +1,6 @@
 ---
 title: 5. 了解 nrm
-description: 
+description: nrm 主要用来切换下载地址.
 toc: true
 authors:
   - Aaron

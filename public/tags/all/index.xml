@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>All on Aaron 的博客</title>
+    <link>/tags/all/</link>
+    <description>Recent content in All on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/all/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通俗讲解 git 的使用方法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/git/git/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/git/git/</guid>
+      <description>git 分布式版本管理器 git 安装在电脑里的一个软件 用来管理文件夹(repo) 管理: 管理文件夹内时间节点 把文件夹内的代码</description>
+    </item>
+    
+    <item>
+      <title>通俗讲解 gulp 的使用方法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/gulp/gulp/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/gulp/gulp/</guid>
+      <description>了解 gulp 前端自动化打包构建工具 打包就是把文件 压缩, 整合, 移动, 混淆 常用构建工具 gulp: 基于流的打包构建工具 webpack: 基于 js 文件</description>
+    </item>
+    
+    <item>
+      <title>C#复习之struct, Indexer 和运算符的重载</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/</guid>
+      <description>结构 Stuct 结构是值类型. 值类型在内存的栈区(stack), 引用类型在内存的堆区(heep). 用的相对少了, 只有在考</description>
+    </item>
+    
+    <item>
+      <title>解决国内连接 GitHub 慢的问题</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E6%97%A5%E5%B8%B8%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85%E8%BF%9E%E6%8E%A5-github-%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 05 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E6%97%A5%E5%B8%B8%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85%E8%BF%9E%E6%8E%A5-github-%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>在没有科学上网的情况下, 经常会遇到 GitHub 连接失败的情况. 经查发现, 可以通过配置 /private/etc/hosts 可以达到不搭梯子仍可快速访问 GitHub 的效</description>
+    </item>
+    
+    <item>
+      <title>C#复习之停车场小项目</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
+      <description>停车场练习 首先勾勒一下所有的类: 汽车父类: 字段: 车牌号, 车辆位置, 品牌, 入场时期 轿车子类: 字段: 排量 客车子类:</description>
+    </item>
+    
+    <item>
+      <title>C#复习之面向对象</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</link>
+      <pubDate>Sat, 04 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/</guid>
+      <description>面向对象 枚举类型是值类型, 读取速度要快很多. 因为是值类型所以可以和整形数相互转换. 注意: 枚举是和类平行的, 写的</description>
+    </item>
+    
+    <item>
+      <title>C#复习之基本语法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>变量 byte 8bit int 32bit short 16bit long 64bit ushort 16 无符号 uint 32bit ulong 64bit float float fl fl = 10.0f double decimal 货币类型 char 键盘, 不能为空, 单引号 溢出 byte a; a = 1000; 变量溢出 数</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 数组</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</guid>
+      <description>704. 二分查找 学习了 vector 的用法 需要在开头声明 #include &amp;lt;vector&amp;gt;. vector&amp;lt;int&amp;gt; nums;. 不能直接把数组的值输入到 vector 中, 要通过循环来 pushback 到 vector 中去. int search(vector&amp;lt;int&amp;gt;&amp;amp; nums) 其中</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 链表</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</guid>
+      <description>链表相比如数组, 长度不固定, 可以动态增删. 数组适合查询, 链表适合增删. 203. 移除链表元素 学习了定义 struct 数据结构 用来定</description>
+    </item>
+    
+    <item>
+      <title>静态博客搭建 - 进阶教程 - 基于 academic 主题</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/</guid>
+      <description>&lt;p&gt;进阶的一些列操作, 基本都是根据 &lt;code&gt;config.toml&lt;/code&gt; 内的提示来的. 而不同的主题, 会有不同的 &lt;code&gt;config.toml&lt;/code&gt; 文件. 当选择好心仪的主题后, 首先要把主题的示范页和 &lt;code&gt;config.toml&lt;/code&gt; 文件拿到主文件夹中.&lt;/p&gt;
+&lt;p&gt;经过一番研究发现, 目前 hugo 比价流行的主题是 academic , 所以进阶的教程就会基于这个主题来展开. 其他主题的教程其实都差不多.&lt;/p&gt;
+&lt;p&gt;最后并没有用这个主题, 主要是因为自由度太高, 反而影响了我继续深挖的心情. 这玩儿搞这么复杂, 配置的时间都赶上我自己弄一套 vue 了.&lt;/p&gt;
+&lt;h2 id=&#34;基于-academic-主题的博客的初始化&#34;&gt;基于 academic 主题的博客的初始化&lt;/h2&gt;
+&lt;h3 id=&#34;方法-一&#34;&gt;方法 一:&lt;/h3&gt;
+&lt;h4 id=&#34;1-安装-academic-主题&#34;&gt;1. 安装 academic 主题&lt;/h4&gt;
+&lt;p&gt;到 hugo 官网主题页面, 找到 academic 主题中的下载选项. 此时会直接跳转到 academic 主题的官方 GitHub 仓库, 点击 &lt;code&gt;use the template&lt;/code&gt;. 此时会直接将这个仓库克隆到自己仓库中去,并命名为 &lt;code&gt;hugo-academic&lt;/code&gt;. 到自己的仓库, 复制 clone 的 SSH 代码. 在本地想要存储博客文件的目录下打开命令行, 输入 &lt;code&gt;git clone git@github.com:fxfzxxx/hugo-academic.git&lt;/code&gt; . clone 后面的代码就是之前复制的 SSH 代码. 现在就会把这个主题的所有所需文件克隆到该目录下的 &lt;code&gt;hugo-academic&lt;/code&gt; 文件夹内, 其与 GitHub 中 的仓库同名.&lt;/p&gt;
+&lt;h4 id=&#34;2-配置环境&#34;&gt;2. 配置环境&lt;/h4&gt;
+&lt;p&gt;新版本的 academic 主题需要 go 的环境, 所以在任意目录下打开命令行, 输入 &lt;code&gt;brew install golong&lt;/code&gt; 来完成 go 环境的下载. 正常来讲, 系统会直接识别出 go 环境的变量. 如果出现不识别的情况, 需要到根目录打开隐藏的 &lt;code&gt;~/.zshrc&lt;/code&gt; 文件, 并在其中另起一行输入&lt;code&gt;export PATH=$PATH:/usr/local/go/bin&lt;/code&gt; 来完成环境变量的配置.&lt;/p&gt;
+&lt;h4 id=&#34;3-生成网站的框架&#34;&gt;3. 生成网站的框架&lt;/h4&gt;
+&lt;p&gt;在 &lt;code&gt;hugo-academic&lt;/code&gt; 文件夹内打开命令行, 输入输入 &lt;code&gt;hugo&lt;/code&gt; 来完成博客的渲染. 在命令行输入 &lt;code&gt;hugo serever -D&lt;/code&gt;, 来打开服务器. 在浏览器输入 &lt;code&gt;http://localhost:1313/&lt;/code&gt; 来查看网站的骨架.&lt;/p&gt;
+&lt;h3 id=&#34;方法-二--很多无用功的方法-&#34;&gt;方法 二 ( 很多无用功的方法 ):&lt;/h3&gt;
+&lt;h4 id=&#34;1-安装-academic-主题-1&#34;&gt;1. 安装 academic 主题&lt;/h4&gt;
+&lt;p&gt;到 hugo 官网主题页面, 找到 academic 主题中的下载选项. 此时会直接跳转到 academic 主题的官方 GitHub 仓库, 点击 &lt;code&gt;use the template&lt;/code&gt;. 此时会直接将这个仓库克隆到自己仓库中去. 到自己的仓库, 复制 clone 的 SSH 代码. 然后在本地创建存储博客的文件夹 &lt;code&gt;HugoAcademic&lt;/code&gt; , 在其内创建 &lt;code&gt;theme&lt;/code&gt; 文件夹. 在 &lt;code&gt;theme&lt;/code&gt; 文件夹内打开命令行输入 &lt;code&gt;git clone git@github.com:fxfzxxx/hugo-academic.git  &lt;/code&gt;. clone 后面的代码就是之前复制的 SSH 代码. 现在就会把这个主题的所有所需文件克隆到 &lt;code&gt;theme&lt;/code&gt; 文件夹内.&lt;/p&gt;
+&lt;h4 id=&#34;2-配置环境-1&#34;&gt;2. 配置环境&lt;/h4&gt;
+&lt;p&gt;新版本的 academic 主题需要 go 的环境, 所以在任意目录下打开命令行, 输入 &lt;code&gt;brew install golong&lt;/code&gt; 来完成 go 环境的下载. 正常来讲, 系统会直接识别出 go 环境的变量. 如果出现不识别的情况, 需要到根目录打开隐藏的 &lt;code&gt;~/.zshrc&lt;/code&gt; 文件, 并在其中另起一行输入&lt;code&gt;export PATH=$PATH:/usr/local/go/bin&lt;/code&gt; 来完成环境变量的配置.&lt;/p&gt;
+&lt;h4 id=&#34;3-生成网站的框架-1&#34;&gt;3. 生成网站的框架&lt;/h4&gt;
+&lt;p&gt;正常来讲需要通过在 &lt;code&gt;HugoAcademic&lt;/code&gt; 文件夹中打开命令行输入 &lt;code&gt;hugo new site&lt;/code&gt; 来创建一个新的博客. 但是这样初始化的站点, 需要更多的配置. 所以我们可以到下载好的主题文件夹中找到 &lt;code&gt;exampleSite&lt;/code&gt; 文件夹, 把里面的所有文件复制或移动到博客的 &lt;code&gt;HugoAcademic&lt;/code&gt; 文件夹内. 然后在 &lt;code&gt;HugoAcademic&lt;/code&gt; 目录下打开命令行, 输入 &lt;code&gt;hugo&lt;/code&gt; 来完成博客的渲染. 在命令行输入 &lt;code&gt;hugo serever -D&lt;/code&gt;, 来打开服务器. 在浏览器输入 &lt;code&gt;http://localhost:1313/&lt;/code&gt; 来查看网站的框架.&lt;/p&gt;
+&lt;h2 id=&#34;详解-config内的配置文件&#34;&gt;详解 config内的配置文件&lt;/h2&gt;
+&lt;p&gt;在该目录下会有一个 &lt;code&gt;_default&lt;/code&gt; 文件夹, 所有的配置文件都在其中, 并且以 &lt;strong&gt;&lt;a href=&#34;https://learnxinyminutes.com/docs/yaml/&#34;&gt;yaml&lt;/a&gt;&lt;/strong&gt; 为后缀. 不了解 &lt;code&gt;yaml&lt;/code&gt; 语言的不影响对配置文件的更改. 具体的 &lt;code&gt;yaml&lt;/code&gt; 的介绍在超链接内, 感兴趣可以看一下.&lt;/p&gt;
+&lt;p&gt;在更改配置文件的时候可以开着 &lt;code&gt;hugo&lt;/code&gt; 服务器监听变化, 实时渲染改变后的页面.&lt;/p&gt;
+&lt;h3 id=&#34;1--configyaml&#34;&gt;1.  config.yaml&lt;/h3&gt;
+&lt;p&gt;这里涉及更改语言, 所以会涉及到语言简写的标准 &lt;a href=&#34;https://www.w3schools.com/tags/ref_language_codes.asp&#34;&gt;ISO/RFC5646 language identifier&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Configuration of Hugo
+# Guide: https://wowchemy.com/docs/getting-started/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+title: Academic # Website name 更改首页的网站名 
+baseurl: &#39;https://example.com/&#39; # Website URL 自己的域名
+# 页脚的版权信息 提供一个模板: &amp;quot;© 2021-2022 AXFBlog 版权所有 [沪ICP102345678号](http://www.beian.miit.gov.cn)&amp;quot;
+copyright: &#39;&#39; # Footer text, e.g. &#39;© {year} Me&#39;
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en ## 这里改成 zh, 单独改这里可能会报错, 同时要更改 languages.yaml 里面的语言设置.
+hasCJKLanguage: false #因为有中文 改成 True
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+# 下面的都暂时不改, 暂时不影响博客的搭建
+############################
+## MODULES
+############################
+
+module:
+  imports:
+    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy-cms/v5
+    - path: github.com/wowchemy/wowchemy-hugo-modules/wowchemy/v5
+
+############################
+## ADVANCED
+############################
+
+enableGitInfo: false
+summaryLength: 30
+paginate: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: &amp;lt;sup&amp;gt;^&amp;lt;/sup&amp;gt;
+ignoreFiles: [\.ipynb$, .ipynb_checkpoints$, \.Rmd$, \.Rmarkdown$, _cache$]
+permalinks:
+  event: &#39;/talk/:slug/&#39;
+  tags: &#39;/tag/:slug/&#39;
+  categories: &#39;/category/:slug/&#39;
+  publication_types: &#39;/publication-type/:slug/&#39;
+disableAliases: true
+outputs:
+  home: [HTML, RSS, JSON, WebAppManifest, headers, redirects]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: lanczos
+  quality: 75
+  anchor: smart
+timeout: 600000
+taxonomies:
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+markup:
+  _merge: deep
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 70
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;2-languagesyaml&#34;&gt;2. languages.yaml&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;# Languages
+#   Create a section for each of your site&#39;s languages.
+#   Documentation: https://wowchemy.com/docs/guide/language/
+
+# Default language
+en: # 改成 zh
+  languageCode: en-US # 改成 zh-Hans
+  # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
+  #contentDir: content/en
+
+# Uncomment the lines below to configure your website in a second language.
+#zh:
+#  languageCode: zh-Hans
+#  contentDir: content/zh
+#  title: Chinese website title...
+#  params:
+#    description: Site description in Chinese...
+#  menu:
+#    main:
+#      - name: 传
+#        url: &#39;#about&#39;
+#        weight: 1
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;3-paramsyaml&#34;&gt;3. params.yaml&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# SITE SETUP
+# Guide: https://wowchemy.com/docs/getting-started/
+# Documentation: https://wowchemy.com/docs/
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+# Appearance
+
+# 主题颜色的选择有多种, 默认是 minimal,还有 1950s, Apogee, Coffee, Cyberpunk, Dark, Earth, Forest, Minimal, Mr Robort, Ocean, Rose, Strawberry
+theme: minimal 
+# 自动夜览模式
+day_night: true
+font: &#39;&#39;
+font_size: L
+
+# SEO
+
+site_type: Person
+local_business_type: &#39;&#39;
+org_name: &#39;&#39;
+description: &#39;&#39;
+twitter: &#39;&#39;
+
+# Contact (edit or remove options as required)
+
+email: test@example.org
+phone: 888 888 88 88
+address:
+  street: 450 Serra Mall
+  city: Stanford
+  region: CA
+  postcode: &#39;94305&#39;
+  country: United States
+  country_code: US
+coordinates:
+  latitude: &#39;37.4275&#39;
+  longitude: &#39;-122.1697&#39;
+directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+office_hours:
+  - &#39;Monday 10:00 to 13:00&#39;
+  - &#39;Wednesday 09:00 to 10:00&#39;
+appointment_url: &#39;https://calendly.com&#39;
+contact_links:
+  - icon: twitter
+    icon_pack: fab
+    name: DM Me
+    link: &#39;https://twitter.com/Twitter&#39;
+  - icon: skype
+    icon_pack: fab
+    name: Skype Me
+    link: &#39;skype:echo123?call&#39;
+  - icon: keybase
+    icon_pack: fab
+    name: Chat on Keybase
+    link: &#39;https://keybase.io/&#39;
+  - icon: comments
+    icon_pack: fas
+    name: Discuss on Forum
+    link: &#39;https://discourse.gohugo.io&#39;
+
+# Site header
+
+main_menu:
+  enable: true
+  align: l
+  show_logo: true
+  show_language: false
+  show_day_night: true
+  show_search: true
+  highlight_active_link: true
+
+# Localization
+
+date_format: &#39;Jan 2, 2006&#39;
+time_format: &#39;3:04 PM&#39; 
+address_format: en-us # 改成 zh
+
+# Site features
+
+highlight: true
+highlight_languages:
+  - r
+math: True
+diagram: True
+privacy_pack: false
+# 页面可否编辑
+edit_page:
+  repo_url: &#39;&#39;
+  content_dir: &#39;&#39;
+  repo_branch: main
+  editable:
+    page: false
+    post: false
+    book: false
+show_related:
+  book: true
+  page: false
+  post: true
+  project: true
+  publication: true
+  event: true
+reading_time: true # 大约的阅读时间
+section_pager: false
+docs_section_pager: true
+sharing: true # 社交媒体分享
+copyright_license:
+  enable: false
+  allow_derivatives: false
+  share_alike: true
+  allow_commercial: false
+  notice: &#39;This work is licensed under {license}&#39;
+abstract_length: 135 缩略的数字
+plugins_js: []
+avatar:
+  gravatar: false
+  shape: circle
+publications:
+  date_format: January 2006
+  citation_style: apa
+projects:
+  post_view: 2
+  publication_view: 2
+  talk_view: 2
+breadcrumb:
+  page_types:
+    book: true
+comments: #评论
+  provider: &#39;&#39;
+  commentable:
+    post: true
+    book: true
+    project: true
+    publication: true
+    event: true
+  disqus:
+    shortname: &#39;&#39;
+    show_count: true
+  commento:
+    url: &#39;&#39;
+search:
+  provider: wowchemy
+  algolia:
+    app_id: &#39;&#39;
+    api_key: &#39;&#39;
+    index_name: &#39;&#39;
+    show_logo: false
+map:
+  provider: &#39;&#39;
+  api_key: &#39;&#39;
+  zoom: 15
+marketing:
+  google_analytics: &#39;&#39;
+  google_tag_manager: &#39;&#39;
+  google_site_verification: &#39;&#39;
+  baidu_site_verification: &#39;&#39;
+  baidu_tongji: &#39;&#39;
+cms:
+  branch: master
+  local_backend: false
+icon:
+  pack:
+    ai: true
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;4-menusyaml&#34;&gt;4. menus.yaml&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+# url # 指向 widget
+main:
+  - name: Home 
+    url: &#39;#about&#39;
+    weight: 10
+  - name: Posts
+    url: &#39;#posts&#39;
+    weight: 20
+  - name: Projects
+    url: &#39;#projects&#39;
+    weight: 30
+  - name: Talks
+    url: &#39;#talks&#39;
+    weight: 40
+  - name: Publications
+    url: &#39;#featured&#39;
+    weight: 50
+  - name: Contact
+    url: &#39;#contact&#39;
+    weight: 60
+    
+# 自己的 CV
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
+#  - name: CV
+#    url: uploads/resume.pdf
+#    weight: 70
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;widget-详解&#34;&gt;widget 详解&lt;/h2&gt;
+&lt;p&gt;widget 相关文件都是以 &lt;code&gt;.md&lt;/code&gt; 为后缀并在 &lt;code&gt;content/home&lt;/code&gt; 目录下. 当在 &lt;code&gt; params.yaml&lt;/code&gt; 内编辑头部导航栏的 &lt;code&gt;URL&lt;/code&gt; 时指向 &lt;code&gt;#widget&lt;/code&gt; 实际上就是滑动到主页的对应 &lt;code&gt;widget&lt;/code&gt; 位置.&lt;/p&gt;
+&lt;h2 id=&#34;md-文本的显示处理&#34;&gt;md 文本的显示处理&lt;/h2&gt;
+&lt;h3 id=&#34;1-listing-页面缩略文堆在一起&#34;&gt;1. listing 页面缩略文堆在一起&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;添加 `&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>了解 Node.js</title>
+      <link>/docs/node.js/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/node.js/</guid>
+      <description>node 定义 官方: 基于 V8 引擎的 js 运行时 环境 (2009) 私人: 一个软件, 能运行 js 代码 node 和其他普通软件的区别 node 没有图标 node 运行的时候</description>
+    </item>
+    
+    <item>
+      <title>搭建博客的过程中遇到的问题</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>academic 主题文档不清楚 对于 widget 的使用, 总是找不到合适的解决方案. 文档有时候会在关键的时候出现遗漏. 并且整个文档红色的主</description>
+    </item>
+    
+    <item>
+      <title>如何简单快速地搭建一个静态博客</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 26 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/</guid>
+      <description>博客的作用: 浪费时间 装逼 感动自己 为了充分发挥博客的第 2 点作用, 我研究了如何快速的把自己的笔记内容, 轻松地转化为</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,18 +1,17 @@
 ---
-title: 了解node
-description: 
+title: 了解 Node.js
+description: 自学 node.js 的时候的一些笔记, 通俗易懂的表述了 node 是什么和能干什么.
 toc: true
 authors:
   - Aaron
 tags:
   - 前端
   - node.js
-  - recent
+  - All
 categories:
   - Technology
-  - All
 series:
-  -  自学笔记
+  -  JavaScript
 date: '2021-11-30'
 lastmod: '2021-11-30'
 featuredImage: images/nodejs.jpeg
