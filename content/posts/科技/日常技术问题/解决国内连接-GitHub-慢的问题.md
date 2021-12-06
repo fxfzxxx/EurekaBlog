@@ -12,7 +12,7 @@ series:
   - 技术小问题
 date: '2021-12-05'
 lastmod: '2021-12-05'
-featuredImage: images/cats1.jpeg
+featuredImage: images/cats2.jpeg
 draft: false
 ---
 
