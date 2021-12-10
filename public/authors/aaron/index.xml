@@ -8,7 +8,25 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Mon, 06 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/authors/aaron/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/authors/aaron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#复习之泛型 Generic</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</guid>
+      <description>泛型 广泛的类型: 泛型类, 泛型方法, 泛型集合, 泛型接口, 泛型委托. 泛型的运用主要在 泛型集合. 泛型类的约束: 关键字</description>
+    </item>
+    
+    <item>
+      <title>leetcode 刷题挑战之 链表</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</link>
+      <pubDate>Mon, 06 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</guid>
+      <description>链表相比如数组, 长度不固定, 可以动态增删. 数组适合查询, 链表适合增删. 203. 移除链表元素 学习了定义 struct 数据结构 用来定</description>
+    </item>
+    
     <item>
       <title>通俗讲解 git 的使用方法</title>
       <link>/posts/%E7%A7%91%E6%8A%80/git/git/</link>
@@ -79,15 +97,6 @@
       
       <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/</guid>
       <description>704. 二分查找 学习了 vector 的用法 需要在开头声明 #include &amp;lt;vector&amp;gt;. vector&amp;lt;int&amp;gt; nums;. 不能直接把数组的值输入到 vector 中, 要通过循环来 pushback 到 vector 中去. int search(vector&amp;lt;int&amp;gt;&amp;amp; nums) 其中</description>
-    </item>
-    
-    <item>
-      <title>leetcode 刷题挑战之 链表</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</link>
-      <pubDate>Thu, 02 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/</guid>
-      <description>链表相比如数组, 长度不固定, 可以动态增删. 数组适合查询, 链表适合增删. 203. 移除链表元素 学习了定义 struct 数据结构 用来定</description>
     </item>
     
     <item>

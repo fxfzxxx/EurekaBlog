@@ -8,7 +8,16 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Sun, 05 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/c-net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/c-net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C#复习之泛型 Generic</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Fri, 10 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</guid>
+      <description>泛型 广泛的类型: 泛型类, 泛型方法, 泛型集合, 泛型接口, 泛型委托. 泛型的运用主要在 泛型集合. 泛型类的约束: 关键字</description>
+    </item>
+    
     <item>
       <title>C#复习之struct, Indexer 和运算符的重载</title>
       <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/</link>

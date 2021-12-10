@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>C#复习之基本语法 | Aaron 的博客</title>
+<title>C#复习之泛型 Generic | Aaron 的博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
 
 <meta name="description"
-  content="一些关于基本语法的复习.">
+  content="一些基本的概念.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"C#复习之基本语法",
-      "item":"/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"}]
+      "name":"C#复习之泛型 Generic",
+      "item":"/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/"}]
 }
 </script>
 
@@ -83,13 +83,13 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"
+        "@id": "/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/"
     },
-    "headline": "C#复习之基本语法 | Aaron 的博客",
+    "headline": "C#复习之泛型 Generic | Aaron 的博客",
     "image": "/images/net.jpg",
-    "datePublished": "2021-12-02T00:00:00+00:00",
-    "dateModified": "2021-12-02T00:00:00+00:00",
-    "wordCount":  606 ,
+    "datePublished": "2021-12-10T00:00:00+00:00",
+    "dateModified": "2021-12-10T00:00:00+00:00",
+    "wordCount":  614 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -102,20 +102,20 @@
             "url": "/images/avatar2.jpeg"
         }
         },
-    "description": "一些关于基本语法的复习."
+    "description": "一些基本的概念."
 }
-</script><meta property="og:title" content="C#复习之基本语法 | Aaron 的博客" />
+</script><meta property="og:title" content="C#复习之泛型 Generic | Aaron 的博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/avatar2.jpeg">
 
 
-<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/" />
 
 
 
-<meta property="og:description" content="一些关于基本语法的复习." />
+<meta property="og:description" content="一些基本的概念." />
 
 
 
@@ -131,10 +131,10 @@
 
 
 
-<meta property="article:published_time" content="2021-12-02T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2021-12-10T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-12-02T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-12-10T00:00:00&#43;00:00" />
 
 
 
@@ -151,8 +151,6 @@
 
 
 
-<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/" />
-
 
 
 <meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/" />
@@ -166,6 +164,8 @@
 <meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" />
 
 
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
 
 
 
@@ -248,11 +248,11 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">C#复习之基本语法</h1>
+        <h1 class="font-bold text-3xl text-primary-text">C#复习之泛型 Generic</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2021-12-02</span>
+        <span>2021-12-10</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
@@ -286,138 +286,139 @@
         
 
         <div class="content">
-            <h2 id="变量">变量</h2>
+            <h2 id="泛型">泛型</h2>
 <ul>
-<li>byte 8bit</li>
-<li>int 32bit</li>
-<li>short 16bit</li>
-<li>long 64bit</li>
-<li>ushort 16 无符号</li>
-<li>uint 32bit</li>
-<li>ulong 64bit</li>
-<li>float
+<li>
+<p>广泛的类型: 泛型类, 泛型方法, 泛型集合, 泛型接口, 泛型委托.</p>
+</li>
+<li>
+<p>泛型的运用主要在 泛型集合.</p>
+</li>
+<li>
+<p>泛型类的约束: 关键字 where</p>
 <ul>
-<li>float fl</li>
-<li>fl = 10.0f</li>
+<li>where T: struct
+<ul>
+<li>约束 T 为值类型, 因为在 c# 语言中所有的值类型都是用 struct 结构去定义的.</li>
 </ul>
 </li>
-<li>double</li>
-<li>decimal 货币类型</li>
-<li>char 键盘, 不能为空, 单引号</li>
-</ul>
-<h3 id="溢出">溢出</h3>
-<p>byte a;</p>
-<p>a = 1000; 变量溢出</p>
-<h3 id="数据类型转换">数据类型转换</h3>
-<h4 id="1-整数与浮点数">1. 整数与浮点数</h4>
+<li>where T: class
 <ul>
-<li>小进大 int 自动转换</li>
-<li>大进小需要进行强制转换</li>
+<li>约束 T 为引用类型</li>
 </ul>
-<pre><code class="language-c#">// 牵扯到一个变量名称问题
-// CTS: Common Title Syetem
-// int 会自动转化成 Int32
-// 所以 int a 和 Int32 a 都可以用来生成变量
-</code></pre>
+</li>
+<li>where T: new()
 <ul>
-<li><code>int.Parse</code></li>
-<li><code>Convert.ToInt32(s)</code> 数据类型 转化成通用变量</li>
+<li>约束 T 为含有 public 无参构造函数的类型</li>
+<li>基本的值类型有, 引用类型没有</li>
+<li>自定义的类是可以的</li>
 </ul>
-<h4 id="2-字符串与其他类型转换">2. 字符串与其他类型转换</h4>
+</li>
+<li>where T:K
 <ul>
-<li>跟上面一样</li>
+<li>约束 T 为 K 的子类</li>
 </ul>
-<h2 id="基本运算">基本运算</h2>
-<h3 id="移位运算">移位运算</h3>
-<pre><code class="language-c#">int a = 5;
-b = a &gt;&gt; 2; 
-</code></pre>
+</li>
+<li>where T:IMyInterface
 <ul>
-<li>首先把 a 转换成 2 进制, 可以得到 a=101</li>
-<li>把 101 右侧看成一堵墙, 即 101|</li>
-<li>往右移位就把整体往右移动两位</li>
-<li>整体变为 1|01, 只读取墙左边的数值</li>
-<li>最后 a 变为 1</li>
+<li>约束 T 必须为 IMyInterface 的实现类</li>
 </ul>
-<pre><code class="language-c#">b = a &lt;&lt; 2; // 10100 =&gt; 20
-</code></pre>
-<h3 id="-和-equals-的区别">== 和 Equals 的区别</h3>
+</li>
+</ul>
+</li>
+<li>
+<p>值类型和引用类型的复习</p>
 <ul>
-<li>实际上字符串就是一串字符的数组</li>
+<li>值类型: 整型 + 浮点型 + 字符 + 布尔 + 日期 + 枚举 + 结构</li>
+<li>应用类型: 字符串 + 数组 + 类 + 接口 + 委托</li>
 </ul>
-<pre><code class="language-c#">String a = new String(new char[]{'a','b','c'});
-String b = new String(new char[]{'a','b','c'));
-                                 
-// a == b 是错误的 因为 a 和 b 的地址不一样. (验证后发现都是对的)
-// a.Equal(b) 是对的
+</li>
+</ul>
+<pre><code class="language-c#">/*
+ * 1.泛型方法
+ * 2.泛型类
+ * 3.泛型类中的泛型方法
+ * 4.两个参数的泛型类
+ * 5.泛型的约束 
+*/
+using System;
+
+namespace GenericTest
+{
+    class class1
+    {
+        // 1. 泛型方法的定义
+        public void Show&lt;T&gt;(T t)
+        {
+            Console.WriteLine(&quot;This is {0} and parameter is {1}&quot;,typeof(class1).Name, t.GetType().Name);
+        }
+    }
+
+    //2,4. 泛型类
+    class GenericClass&lt;T&gt;
+    {
+        //声明两个泛型的变量
+        T a;
+        T b;
+        //构造函数
+        public GenericClass(T a,T b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+        //方法输出两个字段的拼接
+        public string Combine()
+        {
+            return this.a.ToString() + this.b.ToString();
+        }
+        //3. 泛型类中的泛型方法, 注意不用写尖括号
+        public void Sum(T a, T b) { }
+    }
+
+    //5. 两个参数的泛型类, 并对泛型进行约束
+    class GenericClass2&lt;T, K, A, B&gt;
+        where T : struct //T 必须为值类型
+        where K : class //K 必须为引用类型
+        where A : new() //A 必须定义无参 public构造函数
+        where B : K //K 必须是 B 的父类
+    {     
+        T a;
+        K b;
+        // 泛型类的构造函数
+        public GenericClass2(T a, K b)
+        {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    // 主程序
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            #region 泛型方法
+            class1 c1 = new class1();
+            // 泛型方法的调用方法.
+            c1.Show&lt;int&gt;(100);
+            // 此方法也能够输出参数的类型, 证明泛型也能够这样调用.
+            c1.Show(&quot;ss&quot;);
+            #endregion
+
+            #region 泛型类
+            // 调用构造函数需要指定参数类型.
+            GenericClass&lt;int&gt; g1 = new GenericClass&lt;int&gt;(123, 456);
+            GenericClass&lt;string&gt; g2 = new GenericClass&lt;string&gt;(&quot;aa&quot;, &quot;ple&quot;);
+            string res1 = g1.Combine();
+            string res2 = g2.Combine();
+            Console.WriteLine(res1); // 输出 123456
+            Console.WriteLine(res2); // 输出 123456
+            #endregion
+        }
+    }
+}
 
 </code></pre>
-<h3 id="疑问未解决">疑问(未解决)</h3>
-<pre><code class="language-c#">#region == 和 Equals 的区别
-String a = new string(new char[] { 'a' });
-String b = &quot;a&quot;;
-Console.WriteLine(a == b);
-Console.WriteLine(a.Equals(b));
-#endregion
-// 输出都是 true 
-</code></pre>
-<h2 id="循环">循环</h2>
-<h3 id="for-循环">for 循环</h3>
-<pre><code class="language-c#">for(int i = 0; i &lt; 10; i++){
-  
-}
-  
-// 里面的执行顺序是转圈 i&lt;10 -&gt; {} -&gt; i++ -&gt; i&lt;10 -&gt; {} -&gt;... 
-</code></pre>
-<h3 id="foreach-循环">foreach 循环</h3>
-<ul>
-<li>迭代只读</li>
-<li>效率比 for 要高</li>
-</ul>
-<pre><code class="language-c#">foreach (int item in scores) {
-  item += 10; // 不合法
-}
-</code></pre>
-<h3 id="数组">数组</h3>
-<ul>
-<li>二维数组初始化</li>
-</ul>
-<pre><code class="language-c#">int[,] a = new int[3,4];
-a[2,2] = 10;
-// 数组长度
-a.Getlength(0) // 一维长度
-a.Getlength(1) // 二维  长度
-</code></pre>
-<h2 id="字符串">字符串</h2>
-<ul>
-<li>字符串初始化</li>
-</ul>
-<pre><code class="language-c#">String s1 = &quot;abc&quot;;
-String s2 = new String(new char[]{'a','b','c'});
-</code></pre>
-<ul>
-<li>字符串方法</li>
-</ul>
-<pre><code class="language-c#">s1.CompareTo(s2) // 如果是 0, 就是相等.
-s1.Equals(s2) // 相等 true, 区分大小写.
-s1 = s1.Trim() // 去掉空格.
-s1 = s1.ToUpper() // 大写
-s1 = s1.ToLower() // 小写
-s1 = s1.Replace('a','c') // c 把 a 换了
-s1 = s1.Substring(2); // 从 2 往后截取
-s1 = s1.Substring(2,3) // 从 2 往后截取 3 个长度.
-String[] s1 = s2.spit(''); // 以参数为分割, 返回到字符串数组里.
-int index = s1.IndexOf(&quot; &quot;) // 定位
-</code></pre>
-<ul>
-<li>字符串拼接的效率</li>
-</ul>
-<pre><code class="language-c#">s += a; // 效率低
-
-StringBuilder sb = new StringBuilder();
-sb.Append(&quot;a&quot;); // 效率高
-</code></pre>
-<p>​</p>
 
         </div>
         
@@ -480,14 +481,11 @@ sb.Append(&quot;a&quot;); // 效率高
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">Previous</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1-1/" class="block">C#复习之面向对象</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">Next</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/" class="block">leetcode 刷题挑战之 数组</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/" class="block">leetcode 刷题挑战之 链表</a>
         
     </div>
 </div>
@@ -526,6 +524,22 @@ sb.Append(&quot;a&quot;); // 效率高
 </div>
         
         
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#泛型">泛型</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
     </div>
     
 
@@ -536,16 +550,22 @@ sb.Append(&quot;a&quot;); // 效率高
         <h2 class="text-lg font-semibold mb-4">See Also</h2>
         <div class="content">
             
-            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E6%95%B0%E7%BB%84/">leetcode 刷题挑战之 数组</a>
+            <a href="/posts/%E7%A7%91%E6%8A%80/leetcode/%E9%93%BE%E8%A1%A8/">leetcode 刷题挑战之 链表</a>
             <br />
             
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-%E8%BF%9B%E9%98%B6%E6%95%99%E7%A8%8B-%E5%9F%BA%E4%BA%8E-academic-%E4%B8%BB%E9%A2%98/">静态博客搭建 - 进阶教程 - 基于 academic 主题</a>
+            <a href="/posts/%E7%A7%91%E6%8A%80/git/git/">通俗讲解 git 的使用方法</a>
             <br />
             
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">搭建博客的过程中遇到的问题</a>
+            <a href="/posts/%E7%A7%91%E6%8A%80/gulp/gulp/">通俗讲解 gulp 的使用方法</a>
             <br />
             
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">如何简单快速地搭建一个静态博客</a>
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/4-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A12/">C#复习之struct, Indexer 和运算符的重载</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E6%97%A5%E5%B8%B8%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98/%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%86%85%E8%BF%9E%E6%8E%A5-github-%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/">解决国内连接 GitHub 慢的问题</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/3-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%81%9C%E8%BD%A6%E5%9C%BA%E5%B0%8F%E9%A1%B9%E7%9B%AE/">C#复习之停车场小项目</a>
             <br />
             
         </div>
