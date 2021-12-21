@@ -89,7 +89,7 @@
     "image": "/images/net.jpg",
     "datePublished": "2021-12-10T00:00:00+00:00",
     "dateModified": "2021-12-10T00:00:00+00:00",
-    "wordCount":  756 ,
+    "wordCount":  1233 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -256,7 +256,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>2 min read</span>
+        <span>3 min read</span>
     </div>
     
     
@@ -425,7 +425,7 @@ namespace GenericTest
 <li>数组:  长度固定, 有序, 元素类型相同</li>
 <li>集合: 长度可变, 有序, 元素类型可以不同. 泛型集合可以规定元素类型.</li>
 </ul>
-<h3 id="集合的分类">集合的分类</h3>
+<h3 id="常用集合的分类">常用集合的分类</h3>
 <ul>
 <li>传统集合
 <ul>
@@ -440,6 +440,70 @@ namespace GenericTest
 </ul>
 </li>
 </ul>
+<h3 id="arraylist-的操作">ArrayList 的操作</h3>
+<ul>
+<li>创建: ArrayList al = new ArrayList(length)</li>
+<li>添加元素: add( object v)
+<ul>
+<li>装箱的过程: 值类型存到引用类型的过程</li>
+<li>拆箱的过程: 把集合内的元素提取出来赋值(比如 int), 有时候需要拆箱: 把引用转值.</li>
+<li>object 是所有变量类型的顶层父级, 传参可以穿参数的子类, 所以 add 方法可以传任何形式的变量.</li>
+<li>当添加的元素数量超过动态数组长度的时候, 长度会自动翻倍.</li>
+</ul>
+</li>
+<li>剩下的懒得写了, 直接写在代码实例里了.</li>
+</ul>
+<pre><code class="language-c#">/* 
+ * 1.创建
+ * 2.添加
+ * 3.获取
+ * 4.插入
+ * 5.插入一组
+ * 6.删除
+ * 7.排序
+ * 8.颠倒
+ */
+using System;
+using System.Collections;
+
+namespace CollectionTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //1. 创建长度为 10 的动态数组
+            ArrayList arrayList = new ArrayList(10);
+            //2. 添加一个整型到动态数组, 装箱
+            arrayList.Add(100);
+            //3. 获取元素, 拆箱 
+            int a = Convert.ToInt32(arrayList[0]);
+            //4. 在 0 位置上插入一个整型, 后面的元素一次往后移位
+            //不能在最后一个元素之后的之后插入, 中间不能有空位
+            arrayList.Insert(0, 100);
+            //5. 插入一组数据, 两个参数一个是插入节点, 一个是实现了 ICollection 接口的数据类型
+            int[] list = { 1, 2, 3, 4 }; //初始化一个数组
+            arrayList.InsertRange(3, list);
+            //6. 删除元素
+            arrayList.Remove(100); //删除 100
+            arrayList.RemoveAt(0); //删除 第一个元素
+            arrayList.RemoveRange(0, 2); //删除 从 0 开始往后 2 个元素
+            //7. 元素排序和颠倒
+            arrayList.Sort(); //从小到大 
+            arrayList.Reverse();
+            //8. 转换成数组, 长度为元素个数 
+            Object[] arr = arrayList.ToArray();
+            //循环遍历所有元素, count 为元素个数
+            for(int i = 0; i &lt; arrayList.Count; i++)
+            {
+                Console.WriteLine(arrayList[i]);
+            }
+        }
+    }
+}
+
+
+</code></pre>
 
         </div>
         
@@ -555,7 +619,8 @@ namespace GenericTest
     <li><a href="#集合">集合</a>
       <ul>
         <li><a href="#集合和数组的比较">集合和数组的比较</a></li>
-        <li><a href="#集合的分类">集合的分类</a></li>
+        <li><a href="#常用集合的分类">常用集合的分类</a></li>
+        <li><a href="#arraylist-的操作">ArrayList 的操作</a></li>
       </ul>
     </li>
   </ul>
