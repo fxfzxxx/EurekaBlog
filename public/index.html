@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' ><meta charset="utf-8">
+<html lang='zh' ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
@@ -81,7 +81,11 @@
 
 
 
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh" />
+
+
+
+<meta property="og:locale:alternate" content="en" />
 
 
 
@@ -93,7 +97,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-12-10T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-12-22T00:00:00&#43;00:00" />
 
 
 
@@ -135,9 +139,22 @@
                 </div>
                 <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+            <div class="relative pt-4 pl-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="languageMode">
+                    <i class="fas fa-globe"></i>
+                    <span class="pl-1">简体中文</span>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open-lang">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='languageOptions'>
+                    <a class="px-4 py-1 hover:text-eureka" href="/">简体中文</a>
+                    <a class="px-4 py-1 hover:text-eureka" href="/en/">English</a>
                 </div>
             </div>
         </div>
@@ -167,6 +184,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         getcolorscheme();
         switchBurger();
+        switchLanguage()
     });
 </script>
 </div>
@@ -333,7 +351,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>3 min read</span>
+        <span>3分钟阅读时长</span>
     </div>
     
     
@@ -387,7 +405,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1 min read</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
@@ -441,7 +459,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>9 min read</span>
+        <span>9分钟阅读时长</span>
     </div>
     
     
@@ -495,7 +513,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>7 min read</span>
+        <span>7分钟阅读时长</span>
     </div>
     
     
@@ -530,7 +548,7 @@
 
     <div class="px-8 pt-2 hover:text-eureka">
       
-  <a href="/posts/" class="font-semibold">Read More</a>
+  <a href="/posts/" class="font-semibold">阅读更多</a>
   <i class="fas fa-caret-right ml-1"></i>
 
     </div>
@@ -618,6 +636,76 @@
   
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
+  <a href="/docs/java-basics/" class="font-bold text-xl hover:text-eureka">了解 Java</a>
+</div>
+<div class="content">
+  
+    自学 Java 的笔记, 用来查缺补漏.
+  
+</div>
+
+<div class="px-6 pt-4">
+  
+  <div class="">
+      <div class="mb-2">
+          <a href="/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="font-semibold hover:text-eureka">1.Java 复习之 基础语法</a>
+      </div>
+      <div class="">
+        
+          Java 语言最基础的语法概念
+        
+      </div>
+  </div>
+  
+  
+  <div class="-mx-4 my-4 border-t"></div>
+  <div class="">
+      <div class="mb-2">
+          <a href="/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/" class="font-semibold hover:text-eureka">2.Java 复习之 命名及注释标准</a>
+      </div>
+      <div class="">
+        
+          Java 各种命名和注释的规范
+        
+      </div>
+  </div>
+  
+  
+  <div class="-mx-4 my-4 border-t"></div>
+  <div class="">
+      <div class="mb-2">
+          <a href="/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/" class="font-semibold hover:text-eureka">3.1 Java 复习之 对象和类</a>
+      </div>
+      <div class="">
+        
+          Java 对象和类的一些知识
+        
+      </div>
+  </div>
+  
+  <div class="pt-6 hover:text-eureka">
+      <a href="/docs/java-basics/" class="font-semibold">阅读更多</a>
+      <i class="fas fa-caret-right ml-1"></i>
+  </div>
+</div>
+
+  </div>
+
+  
+  <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
+    <img src="/images/java-logo.png" class="w-full" alt="Featured Image">
+  </div>
+  
+</div>
+</div>
+</div>
+
+<div class="mb-6">
+  <div class="bg-secondary-bg rounded border hover:shadow-lg transition ease-in-out duration-200 px-6 pt-6 pb-4">
+  <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full lg:w-2/3">
+    <div class="mb-4">
   <a href="/docs/node.js/" class="font-bold text-xl hover:text-eureka">了解 Node.js</a>
 </div>
 <div class="content">
@@ -666,7 +754,7 @@
   </div>
   
   <div class="pt-6 hover:text-eureka">
-      <a href="/docs/node.js/" class="font-semibold">Read More</a>
+      <a href="/docs/node.js/" class="font-semibold">阅读更多</a>
       <i class="fas fa-caret-right ml-1"></i>
   </div>
 </div>
@@ -684,7 +772,7 @@
 
     <div class="px-8 pt-2 hover:text-eureka">
       
-  <a href="/docs/" class="font-semibold">Read More</a>
+  <a href="/docs/" class="font-semibold">阅读更多</a>
   <i class="fas fa-caret-right ml-1"></i>
 
     </div>

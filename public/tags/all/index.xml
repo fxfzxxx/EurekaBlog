@@ -5,10 +5,100 @@
     <link>/tags/all/</link>
     <description>Recent content in All on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/all/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/all/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.Java 复习之 基础语法</title>
+      <link>/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>基本概念 一个 Java 程序可以看作是一些列对象的集合，这些对象通过调用彼此的方法来协同工作。下面介绍几个基本概念。 对象</description>
+    </item>
+    
+    <item>
+      <title>2.Java 复习之 命名及注释标准</title>
+      <link>/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/</guid>
+      <description>命名及注释标准 命名规范 1、 项目名全部小写 2、 包名全部小写 3、 类名首字母大写，如果类名由多个单词组成，每个单词的</description>
+    </item>
+    
+    <item>
+      <title>3.1 Java 复习之 对象和类</title>
+      <link>/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</guid>
+      <description>一个类可以包含以下类型变量： 局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都</description>
+    </item>
+    
+    <item>
+      <title>3.2 Java 复习之 面向对象的记忆偏差点</title>
+      <link>/docs/java-basics/3.java%E5%A4%8D%E4%B9%A0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/3.java%E5%A4%8D%E4%B9%A0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>面向对象 构造函数内调用构造函数 一般运用在设置默认值 要放在构造函数方法体内的第一行 class Student { String name; public Student(String name) { this.name = name; } public Student()</description>
+    </item>
+    
+    <item>
+      <title>4.Java 复习之 修饰符</title>
+      <link>/docs/java-basics/4.-java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/4.-java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>Java 修饰符主要分两类: 访问修饰符 (Access Modifiers) 非访问修饰符 (Non-Access Modifiers) 访问修饰符 default (即默认，什么也不写）: 在同一 包内 可见，不使用任</description>
+    </item>
+    
+    <item>
+      <title>5.Java 复习之 继承</title>
+      <link>/docs/java-basics/5.-java-%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/5.-java-%E7%BB%A7%E6%89%BF/</guid>
+      <description>为什么需要继承 代码存在重复了，导致后果就是代码量大且臃肿，而且维护性不高(维护性主要是后期需要修改的时候，就需</description>
+    </item>
+    
+    <item>
+      <title>6.Java 复习之 重写和重载</title>
+      <link>/docs/java-basics/6.-java-%E9%87%8D%E5%86%99override%E4%B8%8E%E9%87%8D%E8%BD%BDoverload/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/6.-java-%E9%87%8D%E5%86%99override%E4%B8%8E%E9%87%8D%E8%BD%BDoverload/</guid>
+      <description>重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理 重写就是当子类继承自父类的相同方法，输入数据一样，</description>
+    </item>
+    
+    <item>
+      <title>7.Java 复习之 包的解释</title>
+      <link>/docs/java-basics/7.-java-%E5%8C%85/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/7.-java-%E5%8C%85/</guid>
+      <description>Java 包 package 通常，一个公司使用它互联网域名的颠倒形式来作为它的包名.例如：互联网域名是 runoob.com，所有的包</description>
+    </item>
+    
+    <item>
+      <title>小项目 五子棋游戏</title>
+      <link>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
+      <description>遇到的一些细节上的问题 g.drawLine() 方法无法执行的原因 画不出来的原因是 paint 方法在创建 JFrame 实例的时候自动执行, 和 drawLine 方法是并发的,</description>
+    </item>
+    
+    <item>
+      <title>了解 Java</title>
+      <link>/docs/java-basics/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/</guid>
+      <description>我的第一个java程序 普通内容 创建文件 HelloWorld.java, 代码如下： public class HelloWorld{ public static void main(String[] args){ System.out.println(&amp;quot;Hello World.&amp;quot;); } } String args[] 和 String[] args 都可以执行， 但推荐使用 String[] args,</description>
+    </item>
+    
     <item>
       <title>C#复习之泛型 Generic</title>
       <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</link>

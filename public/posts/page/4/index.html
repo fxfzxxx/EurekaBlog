@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' ><meta charset="utf-8">
+<html lang='zh' ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
@@ -70,15 +70,51 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "Markdown Syntax Guide",
+            "description": "Sample article showcasing basic Markdown syntax and formatting for HTML elements.",
+            "url": "/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
             "name": "Placeholder Text",
             "description": "Lorem Ipsum Dolor Si Amet",
             "url": "/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/"
         },{
             "@type":"ListItem",
-            "position":  2 ,
+            "position":  3 ,
             "name": "Emoji Support",
             "description": "Guide to emoji usage in Hugo",
             "url": "/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/emoji-support/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "",
+            "description": "Java 流(Stream)、文件(File)和IO Java 的控制台输入由 System.in 完成。 为了获得一个绑定到控制台的字符流，你可以把",
+            "url": "/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-stream-data-io/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "",
+            "description": "StringBuilder 类 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。 和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次",
+            "url": "/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-stringbuilder-%E7%B1%BB/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "",
+            "description": "Java String 类 String 类是不可改变的解析，例如： String s = \u0026quot;Google\u0026quot;; System.out.println(\u0026quot;s = \u0026quot; + s); s = \u0026quot;Runoob\u0026quot;; System.out.println(\u0026quot;s = \u0026quot; + s); 输出结果为： Google Runoob 从结果上看是改变了，但为什",
+            "url": "/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-string%E7%B1%BB/"
+        },{
+            "@type":"ListItem",
+            "position":  7 ,
+            "name": "",
+            "description": "Java 多态 class Shape { void draw() {} } class Circle extends Shape { void draw() { System.out.println(\u0026quot;Circle.draw()\u0026quot;); } } class Square extends Shape { void draw() { System.out.println(\u0026quot;Square.draw()\u0026quot;); } } class Triangle extends Shape { void draw() { System.out.println(\u0026quot;Triangle.draw()\u0026quot;); } } 例子: 多态 public class Test { public static void",
+            "url": "/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-%E5%A4%9A%E6%80%81/"
+        },{
+            "@type":"ListItem",
+            "position":  8 ,
+            "name": "",
+            "description": "Java 封装（Encapsulation） 在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种",
+            "url": "/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-%E5%B0%81%E8%A3%85/"
         }
     ]
 }
@@ -101,7 +137,7 @@
 
 
 
-<meta property="og:locale" content="en" />
+<meta property="og:locale" content="zh" />
 
 
 
@@ -113,7 +149,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-12-05T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-12-22T00:00:00&#43;00:00" />
 
 
 
@@ -143,6 +179,7 @@
             <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
             <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
             <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
         </div>
 
         <div class="flex">
@@ -154,9 +191,9 @@
                 </div>
                 <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
                 </div>
             </div>
         </div>
@@ -205,6 +242,54 @@
   
   <div class="w-full ">
     <div class="mb-4">
+  <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/markdown-syntax/" class="font-bold text-xl hover:text-eureka">Markdown Syntax Guide</a>
+</div>
+<div class="content">
+  
+    Sample article showcasing basic Markdown syntax and formatting for HTML elements.
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2019-03-11</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/arts/" class="hover:text-eureka">艺术</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="hover:text-eureka">博客搭建</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
   <a href="/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/placeholder-text/" class="font-bold text-xl hover:text-eureka">Placeholder Text</a>
 </div>
 <div class="content">
@@ -220,7 +305,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>2 min read</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
@@ -229,10 +314,6 @@
         
         <a href="/categories/arts/" class="hover:text-eureka">艺术</a>
         
-        
-        <span>, </span>
-        <a href="/categories/politics/" class="hover:text-eureka">政治经济</a>
-        
     </div>
     
 
@@ -240,11 +321,7 @@
     <div class="mr-6 my-2">
         <i class="fas fa-th-list mr-1"></i>
         
-        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
-        
-        
-        <span>, </span>
-        <a href="/series/arts/" class="hover:text-eureka">arts</a>
+        <a href="/series/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="hover:text-eureka">博客搭建</a>
         
     </div>
     
@@ -276,16 +353,193 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1 min read</span>
+        <span>1分钟阅读时长</span>
     </div>
     
     
     <div class="mr-6 my-2">
         <i class="fas fa-folder mr-1"></i>
         
-        <a href="/categories/technology/" class="hover:text-eureka">Technology</a>
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
         
     </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="hover:text-eureka">博客搭建</a>
+        
+    </div>
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-stream-data-io/" class="font-bold text-xl hover:text-eureka"></a>
+</div>
+<div class="content">
+  
+    Java 流(Stream)、文件(File)和IO Java 的控制台输入由 System.in 完成。 为了获得一个绑定到控制台的字符流，你可以把
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>4分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-stringbuilder-%E7%B1%BB/" class="font-bold text-xl hover:text-eureka"></a>
+</div>
+<div class="content">
+  
+    StringBuilder 类 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。 和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-string%E7%B1%BB/" class="font-bold text-xl hover:text-eureka"></a>
+</div>
+<div class="content">
+  
+    Java String 类 String 类是不可改变的解析，例如： String s = &#34;Google&#34;; System.out.println(&#34;s = &#34; &#43; s); s = &#34;Runoob&#34;; System.out.println(&#34;s = &#34; &#43; s); 输出结果为： Google Runoob 从结果上看是改变了，但为什
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-%E5%A4%9A%E6%80%81/" class="font-bold text-xl hover:text-eureka"></a>
+</div>
+<div class="content">
+  
+    Java 多态 class Shape { void draw() {} } class Circle extends Shape { void draw() { System.out.println(&#34;Circle.draw()&#34;); } } class Square extends Shape { void draw() { System.out.println(&#34;Square.draw()&#34;); } } class Triangle extends Shape { void draw() { System.out.println(&#34;Triangle.draw()&#34;); } } 例子: 多态 public class Test { public static void
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>3分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/%E7%A7%91%E6%8A%80/java-%E5%A4%8D%E4%B9%A0/java-basics/java-%E5%B0%81%E8%A3%85/" class="font-bold text-xl hover:text-eureka"></a>
+</div>
+<div class="content">
+  
+    Java 封装（Encapsulation） 在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种
+  
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>0001-01-01</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1分钟阅读时长</span>
+    </div>
+    
     
 
     
@@ -310,9 +564,6 @@
         <a href="/posts/page/3/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="/posts/" aria-label="Page 1" class="page-link" role="button">1</a>
-      </li>
-      <li class="page-item">
         <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
       </li>
       <li class="page-item">
@@ -321,11 +572,17 @@
       <li class="page-item active">
         <a href="#" aria-current="page" aria-label="Page 4" class="page-link" role="button">4</a>
       </li>
-      <li class="page-item disabled">
-        <a href="#" aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
+      <li class="page-item">
+        <a href="/posts/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
       </li>
-      <li class="page-item disabled">
-        <a href="#" aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      <li class="page-item">
+        <a href="/posts/page/6/" aria-label="Page 6" class="page-link" role="button">6</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/6/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
 

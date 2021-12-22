@@ -5,10 +5,28 @@
     <link>/categories/technology/</link>
     <description>Recent content in 科技 on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小项目 五子棋游戏</title>
+      <link>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
+      <description>遇到的一些细节上的问题 g.drawLine() 方法无法执行的原因 画不出来的原因是 paint 方法在创建 JFrame 实例的时候自动执行, 和 drawLine 方法是并发的,</description>
+    </item>
+    
+    <item>
+      <title>了解 Java</title>
+      <link>/docs/java-basics/</link>
+      <pubDate>Mon, 20 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/</guid>
+      <description>我的第一个java程序 普通内容 创建文件 HelloWorld.java, 代码如下： public class HelloWorld{ public static void main(String[] args){ System.out.println(&amp;quot;Hello World.&amp;quot;); } } String args[] 和 String[] args 都可以执行， 但推荐使用 String[] args,</description>
+    </item>
+    
     <item>
       <title>C#复习之泛型 Generic</title>
       <link>/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/</link>

@@ -5,17 +5,89 @@
     <link>/</link>
     <description>Recent content on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Blank</title>
-      <link>/%E4%B8%8D%E7%94%A8%E7%9A%84%E4%B8%BB%E9%A1%B5%E6%8E%A7%E4%BB%B6/blank/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>1.Java 复习之 基础语法</title>
+      <link>/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>/%E4%B8%8D%E7%94%A8%E7%9A%84%E4%B8%BB%E9%A1%B5%E6%8E%A7%E4%BB%B6/blank/</guid>
-      <description>Write anything you like here!</description>
+      <guid>/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</guid>
+      <description>基本概念 一个 Java 程序可以看作是一些列对象的集合，这些对象通过调用彼此的方法来协同工作。下面介绍几个基本概念。 对象</description>
+    </item>
+    
+    <item>
+      <title>2.Java 复习之 命名及注释标准</title>
+      <link>/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/</guid>
+      <description>命名及注释标准 命名规范 1、 项目名全部小写 2、 包名全部小写 3、 类名首字母大写，如果类名由多个单词组成，每个单词的</description>
+    </item>
+    
+    <item>
+      <title>3.1 Java 复习之 对象和类</title>
+      <link>/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/</guid>
+      <description>一个类可以包含以下类型变量： 局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都</description>
+    </item>
+    
+    <item>
+      <title>3.2 Java 复习之 面向对象的记忆偏差点</title>
+      <link>/docs/java-basics/3.java%E5%A4%8D%E4%B9%A0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/3.java%E5%A4%8D%E4%B9%A0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</guid>
+      <description>面向对象 构造函数内调用构造函数 一般运用在设置默认值 要放在构造函数方法体内的第一行 class Student { String name; public Student(String name) { this.name = name; } public Student()</description>
+    </item>
+    
+    <item>
+      <title>4.Java 复习之 修饰符</title>
+      <link>/docs/java-basics/4.-java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/4.-java%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>Java 修饰符主要分两类: 访问修饰符 (Access Modifiers) 非访问修饰符 (Non-Access Modifiers) 访问修饰符 default (即默认，什么也不写）: 在同一 包内 可见，不使用任</description>
+    </item>
+    
+    <item>
+      <title>5.Java 复习之 继承</title>
+      <link>/docs/java-basics/5.-java-%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/5.-java-%E7%BB%A7%E6%89%BF/</guid>
+      <description>为什么需要继承 代码存在重复了，导致后果就是代码量大且臃肿，而且维护性不高(维护性主要是后期需要修改的时候，就需</description>
+    </item>
+    
+    <item>
+      <title>6.Java 复习之 重写和重载</title>
+      <link>/docs/java-basics/6.-java-%E9%87%8D%E5%86%99override%E4%B8%8E%E9%87%8D%E8%BD%BDoverload/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/6.-java-%E9%87%8D%E5%86%99override%E4%B8%8E%E9%87%8D%E8%BD%BDoverload/</guid>
+      <description>重载就是同样的一个方法能够根据输入数据的不同，做出不同的处理 重写就是当子类继承自父类的相同方法，输入数据一样，</description>
+    </item>
+    
+    <item>
+      <title>7.Java 复习之 包的解释</title>
+      <link>/docs/java-basics/7.-java-%E5%8C%85/</link>
+      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/7.-java-%E5%8C%85/</guid>
+      <description>Java 包 package 通常，一个公司使用它互联网域名的颠倒形式来作为它的包名.例如：互联网域名是 runoob.com，所有的包</description>
+    </item>
+    
+    <item>
+      <title>小项目 五子棋游戏</title>
+      <link>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
+      <description>遇到的一些细节上的问题 g.drawLine() 方法无法执行的原因 画不出来的原因是 paint 方法在创建 JFrame 实例的时候自动执行, 和 drawLine 方法是并发的,</description>
     </item>
     
     <item>
@@ -592,6 +664,123 @@ main:
       
       <guid>/posts/%E5%88%9D%E5%A7%8B%E6%96%87%E4%BB%B6/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-stream-data-io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-stream-data-io/</guid>
+      <description>Java 流(Stream)、文件(File)和IO Java 的控制台输入由 System.in 完成。 为了获得一个绑定到控制台的字符流，你可以把</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-stringbuilder-%E7%B1%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-stringbuilder-%E7%B1%BB/</guid>
+      <description>StringBuilder 类 当对字符串进行修改的时候，需要使用 StringBuffer 和 StringBuilder 类。 和 String 类不同的是，StringBuffer 和 StringBuilder 类的对象能够被多次</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-string%E7%B1%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-string%E7%B1%BB/</guid>
+      <description>Java String 类 String 类是不可改变的解析，例如： String s = &amp;quot;Google&amp;quot;; System.out.println(&amp;quot;s = &amp;quot; + s); s = &amp;quot;Runoob&amp;quot;; System.out.println(&amp;quot;s = &amp;quot; + s); 输出结果为： Google Runoob 从结果上看是改变了，但为什</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E5%A4%9A%E6%80%81/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E5%A4%9A%E6%80%81/</guid>
+      <description>Java 多态 class Shape { void draw() {} } class Circle extends Shape { void draw() { System.out.println(&amp;quot;Circle.draw()&amp;quot;); } } class Square extends Shape { void draw() { System.out.println(&amp;quot;Square.draw()&amp;quot;); } } class Triangle extends Shape { void draw() { System.out.println(&amp;quot;Triangle.draw()&amp;quot;); } } 例子: 多态 public class Test { public static void</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E5%B0%81%E8%A3%85/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E5%B0%81%E8%A3%85/</guid>
+      <description>Java 封装（Encapsulation） 在面向对象程式设计方法中，封装（英语：Encapsulation）是指一种</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <description>Java 异常处理 捕获异常 使用 try 和 catch 关键字可以捕获异常。try/catch 代码块放在异常可能发生的地方。 try/cat</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E6%8A%BD%E8%B1%A1%E7%B1%BB/</guid>
+      <description>Java 抽象类 在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E6%8E%A5%E5%8F%A3/</guid>
+      <description>Java接口 Interface 接口（英文：Interface），在JAVA编程语言中是一个抽象类型，是抽象方法的集合，接口通常</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E6%95%B0%E7%BB%84/</guid>
+      <description>Java数组 创建数组 Java语言使用 **new **操作符来创建数组，语法如下: arrayRefVar = new dataType[arraySize]; 上面的语法语句做了两件事： 使用 dataType[arraySize]</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E6%9E%9A%E4%B8%BE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E6%9E%9A%E4%B8%BE/</guid>
+      <description>Java 枚举 Java 枚举类使用 enum 关键字来定义，各个常量使用逗号 , 来分割。 例如定义一个颜色的枚举类。 enum Color { RED, GREEN, BLUE; } public class Test { //</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
+      <description>Java 正则表达式 正则表达式 描述 this is text 匹配字符串 &amp;ldquo;this is text&amp;rdquo; this\s+is\s+text 注意字符串中的 \s+。匹配单词 &amp;ldquo;this&amp;rdquo; 后面的 \s+ 可以匹配多个空格，之</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B/</guid>
+      <description>变量类型 Java 语言支持的变量类型有: 类变量：独立于方法之外的变量，用 static 修饰。 (静态变量) 实例变量：独立于方法之外的</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/docs/java-basics/java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/java%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>Java环境配置 Windows下的环境配置 https://www.oracle.com/technetwork/java/javase/overview/index.html 到此网站下载对应的 JDK。 安装完成后，右击&amp;quot;我的电脑&amp;q</description>
     </item>
     
   </channel>
