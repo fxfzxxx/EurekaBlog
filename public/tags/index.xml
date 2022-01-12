@@ -5,16 +5,25 @@
     <link>/tags/</link>
     <description>Recent content in Tags on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Wed, 22 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>All</title>
       <link>/tags/all/</link>
-      <pubDate>Wed, 22 Dec 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>/tags/all/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>项目</title>
+      <link>/tags/%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/%E9%A1%B9%E7%9B%AE/</guid>
       <description></description>
     </item>
     

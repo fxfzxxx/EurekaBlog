@@ -1,0 +1,218 @@
+<head>
+   <style scoped>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+
+      .carousel-nav>a {
+         text-decoration: none;
+      }
+
+      .carousel {
+         border: 20px solid rgba(201, 201, 201, 0.565);
+         width: 740px;
+         height: 586px;
+         margin: 50px auto;
+         position: relative;
+      }
+      /* img height decrease while move to hugo blog */
+      .carousel-item>img {
+         width: 740px;
+         height: 546px; 
+         position: absolute;
+         opacity: 0;
+         transition: opacity .5s linear;
+      }
+
+      .carousel-item img.active {
+         opacity: 1;
+      }
+
+      .carousel-nav {
+         /* overflow: hidden; */
+         width: 145px;
+         height: 20px;
+         position: absolute;
+         left: 37px;
+         bottom: 25px;
+      }
+
+      .carousel-nav a {
+         margin-left: 5px;
+         float: left;
+         font-size: 25px;
+         color: rgb(70, 70, 70);
+         width: 20px;
+         height: 15px;
+         line-height: 15px;
+      }
+
+      .carousel-nav a:hover {
+         color: rgb(131, 130, 130);
+      }
+
+      .carousel-nav a.active {
+         color: rgb(131, 130, 130);
+      }
+
+      .right {
+         width: 20px;
+         height: 40px;
+         top: 0;
+         bottom: 0;
+         right: 0;
+         color: rgb(255, 255, 255);
+         font-size: 30px;
+         position: absolute;
+         margin: auto 0;
+         background-color: rgba(112, 112, 112, 0.555);
+         line-height: 35px;
+         cursor: pointer;
+      }
+
+      .right:hover {
+         background-color: rgba(112, 112, 112, 0.932);
+      }
+
+      .left {
+         width: 20px;
+         height: 40px;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         color: rgb(255, 255, 255);
+         font-size: 30px;
+         position: absolute;
+         margin: auto 0;
+         background-color: rgba(112, 112, 112, 0.555);
+         line-height: 35px;
+         cursor: pointer;
+      }
+
+      .left:hover {
+         background-color: rgba(112, 112, 112, 0.932);
+      }
+   </style>
+</head>
+
+<body>
+   <div id="JD_carousel">
+      <div class="carousel clearfix">
+         <div class="img-box">
+            <a href="">
+               <div class="carousel-item">
+                  <img class='active' src="/images/net.jpg" alt="" />
+               </div>
+            </a>
+            <a href="">
+               <div class="carousel-item">
+                  <img src="/images/gulp.jpeg" alt="" />
+               </div>
+            </a>
+            <a href="">
+               <div class="carousel-item">
+                  <img src="/images/cats2.jpeg" alt="" />
+               </div>
+            </a>
+         </div>
+         <div class="right"> > </div>
+         <div class="left"> < </div>
+
+               <div class="carousel-nav">
+               </div>
+         </div>
+
+         <script>
+            const carousel = document.querySelector('.carousel');
+            const imgs = document.querySelectorAll('.img-box img')
+            const pointerBox = document.querySelector('.carousel-nav')
+            const right = document.querySelector('.right')
+            const left = document.querySelector('.left')
+            let index = 0
+            let timer = 0
+
+            setPointer()
+            function setPointer() {
+               let frg = document.createDocumentFragment()
+               for (let i = 0; i < imgs.length; i++) {
+                  let pointer = document.createElement('a')
+                  if (i == 0) pointer.className = 'active'
+                  pointer.innerText = '●'
+                  pointer.setAttribute('index', i)
+                  pointer.setAttribute('type', 'point')
+                  pointer.setAttribute('href', 'javascript:;')
+                  pointer.setAttribute('style', 'text-decoration: none;')
+
+                  frg.appendChild(pointer)
+               }
+               pointerBox.appendChild(frg)
+            }
+
+            function changeImgTo(index) {
+               for (let i = 0; i < imgs.length; i++) {
+                  imgs[i].style.opacity = '0'
+                  pointerBox.children[i].className = ''
+               }
+               imgs[index].style.opacity = '1'
+               pointerBox.children[index].className = 'active'
+            }
+
+            autoPlay()
+            function autoPlay() {
+               timer = setInterval(() => {
+                  index++
+                  if (index > imgs.length - 1) index = 0
+                  changeImgTo(index)
+
+               }, 2000)
+            }
+
+            overOut()
+            function overOut() {
+               carousel.addEventListener('mouseover', () => {
+                  clearInterval(timer)
+               })
+               carousel.addEventListener('mouseout', () => {
+                  autoPlay()
+               })
+            }
+
+            click()
+            function click() {
+               carousel.addEventListener('click', (e) => {
+                  e = e || window.event
+                  const target = e.target || e.srcElement
+                  if (target === right) {
+                     index++
+                     if (index > imgs.length - 1) index = 0
+                     changeImgTo(index)
+                  }
+                  if (target === left) {
+                     index--
+                     if (index < 0) index = imgs.length - 1
+                     changeImgTo(index)
+                  }
+                  if (target.getAttribute('type') === 'point') {
+                     index = target.getAttribute('index') - 0
+                     changeImgTo(index)
+                  }
+
+               })
+            }
+
+            tagChange()
+            function tagChange() {
+               document.addEventListener('visibilitychange', () => {
+                  if (document.visibilityState === hidden) {
+                     clearInterval(timer)
+                  }
+                  else if (document.visibilityState === visible)
+                     autoPlay()
+               })
+            }
+
+         </script>
+      </div>
+
+</body>

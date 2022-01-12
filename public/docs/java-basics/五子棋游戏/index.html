@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='zh' ><meta charset="utf-8">
+<html lang='en' ><meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 
 
@@ -90,10 +90,10 @@
         "@id": "/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/"
     },
     "headline": "小项目 五子棋游戏 | 了解 Java | Aaron 的博客",
-    "image": "/images/java-logo.png",
+    "image": "/images/five_game_screenshot.png",
     "datePublished": "2021-12-21T00:00:00+00:00",
     "dateModified": "2021-12-21T00:00:00+00:00",
-    "wordCount":  336 ,
+    "wordCount":  5022 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -123,7 +123,7 @@
 
 
 
-<meta property="og:locale" content="zh" />
+<meta property="og:locale" content="en" />
 
 
 
@@ -189,6 +189,7 @@
             <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
             <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文档</a>
             <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+            <a href="/categories/projects" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目</a>
         </div>
 
         <div class="flex">
@@ -200,9 +201,9 @@
                 </div>
                 <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
-                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
-                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
                 </div>
             </div>
         </div>
@@ -257,7 +258,7 @@
 
 
 <div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
-    <span class="font-semibold">目录</span>
+    <span class="font-semibold">Table of Contents</span>
     <i class="fas fa-caret-right ml-1"></i>
 </div>
 
@@ -538,7 +539,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1分钟阅读时长</span>
+        <span>11 min read</span>
     </div>
     
     
@@ -546,6 +547,10 @@
         <i class="fas fa-folder mr-1"></i>
         
         <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/projects/" class="hover:text-eureka">项目</a>
         
     </div>
     
@@ -569,11 +574,673 @@
                     
                     
                     <div class="my-4">
-                        <img src="/images/java-logo.png" class="w-full" alt="Featured Image">
+                        <img src="/images/five_game_screenshot.png" class="w-full" alt="Featured Image">
                     </div>
                     
                     <div class="content">
-                        <h2 id="遇到的一些细节上的问题">遇到的一些细节上的问题</h2>
+                        <h2 id="项目特点">项目特点</h2>
+<ol>
+<li>两种游戏模式: 人机对战和玩家对战.</li>
+<li>可以多步悔棋.</li>
+<li>项目未使用图片, 图形都是绘制而成.</li>
+</ol>
+<h2 id="项目结构以及源码">项目结构以及源码</h2>
+<ul>
+<li>src
+<ul>
+<li>ButtonAction 类</li>
+<li>Config 接口</li>
+<li>Core 类</li>
+<li>GameMouse 类</li>
+<li>GameUI 类</li>
+<li>MyFrame 类</li>
+</ul>
+</li>
+</ul>
+<h3 id="buttonaction-类">ButtonAction 类</h3>
+<p>此类继承于 <code>ActionListener</code> 接口, 主要用于传递按钮点击事件的函数.</p>
+<pre><code class="language-JAVA">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class ButtonAction implements ActionListener {
+    public Graphics gr;
+    public MyFrame mf;
+    public JButton redoButton;
+    public JButton restartButton;
+    public JRadioButton aiButton;
+    public JRadioButton playerButton;
+    //利用构造器把画布中的按钮和画笔全部传进来
+    public ButtonAction(Graphics gr, MyFrame mf, JButton redoButton, JButton restartButton, JRadioButton aiButton, JRadioButton playerButton) {
+        this.gr = gr;
+        this.mf = mf;
+        this.redoButton = redoButton;
+        this.restartButton = restartButton;
+        this.aiButton = aiButton;
+        this.playerButton = playerButton;
+    }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(e.getSource());
+        Object target = e.getSource();
+        if(aiButton.isSelected()) {//选择 AI 对战模式
+            Core.mode = 0;
+        }
+        else if(playerButton.isSelected()) {//选择玩家对战模式
+            Core.mode = 1;
+        }
+        if(target == aiButton || target == playerButton) { //如果点击了模式选择的选择按钮
+            for (int i = 0; i &lt;15 ; i++) {
+                for (int j = 0; j &lt; 15; j++) {
+                    Core.map[i][j] = 0;//一旦重新选择模式, 棋盘将清空
+                }
+            }
+            Core.flag = 1;//棋子颜色变为黑色
+            Core.res = 0;//对战结果为 无结果
+            mf.paint(gr);
+            System.out.println(&quot;MODE: &quot; + Core.mode);
+        }
+
+        if(target == redoButton) { //如果点击会千牛
+            if(!Core.chessStack.empty() &amp;&amp; Core.mode == 1) { //玩家对战模式,只需悔棋到上一步
+                int y = Core.chessStack.pop();//弹栈
+                int x = Core.chessStack.pop();
+                Core.map[x][y] = 0;
+                Core.flag = - Core.flag;
+                Core.res = 0;
+                mf.paint(gr);
+            }
+            if(!Core.chessStack.empty() &amp;&amp; Core.mode == 0) {//人机对战模式需要悔棋两步
+                int y = Core.chessStack.pop();//弹栈第一次
+                int x = Core.chessStack.pop();
+                Core.map[x][y] = 0;
+                Core.flag = - Core.flag;
+                y = Core.chessStack.pop();//弹栈第二次
+                x = Core.chessStack.pop();
+                Core.map[x][y] = 0;
+                Core.flag = - Core.flag;
+                Core.res = 0;
+                mf.paint(gr);
+            }
+        }
+        else if(target == restartButton) { //重新开始按钮, 棋盘清零, 结果重置
+            for (int i = 0; i &lt;15 ; i++) {
+                for (int j = 0; j &lt; 15; j++) {
+                    Core.map[i][j] = 0;
+                }
+            }
+            Core.flag = 1;
+            Core.res = 0;
+            mf.paint(gr);
+        }
+    }
+}
+
+</code></pre>
+<h3 id="gamemouse-类">GameMouse 类</h3>
+<p>此类继承于<code>MouseListener</code>接口, 主要负责定义鼠标点击时候的函数. 包括获取坐标, 绘制棋子,下棋等操作.</p>
+<pre><code class="language-java">import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.HashMap;
+
+public class GameMouse implements MouseListener, Config {
+    public Graphics gr;
+    public MyFrame mf;
+    public int chessX, chessY;
+    int res = 0;
+    private HashMap&lt;String, Integer&gt; Map = new HashMap&lt;&gt;();//用于存储ai算法的权值
+    private HashMap&lt;String, Integer&gt; aiValues = Core.generateAIMap(Map);//生成权值
+
+    public GameMouse(Graphics gr) {
+        this.gr = gr;
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // 获取坐标
+        int x = e.getX();
+        int y = e.getY();
+        int xTemp, yTemp;
+        System.out.println(x + &quot; &quot; + y);
+        gr.setColor(Color.black);
+        //计算交点值
+        if ((x - X0) % SIZE &gt; SIZE / 2) {
+            xTemp = (x - X0) / SIZE + 1;
+        } else {
+            xTemp = (x - X0) / SIZE;
+        }
+        if ((y - Y0) % SIZE &gt; SIZE / 2) {
+            yTemp = (y - Y0) / SIZE + 1;
+        } else {
+            yTemp = (y - Y0) / SIZE;
+        }
+        // 只有棋子坐标在特定范围内的时候, 再赋值, 否则给个赋值, 下面的代码也不用再执行
+        if (xTemp &gt;= 0 &amp;&amp; xTemp &lt;= 14) {
+            chessX = xTemp;
+        } else {
+            chessX = -1;
+        }
+        if (yTemp &gt;= 0 &amp;&amp; yTemp &lt;= 14) {
+            chessY = yTemp;
+        } else {
+            chessY = -1;
+        }
+        // 只有没有结果的时候才下棋, 如果有结果, 不下棋,也不重绘棋盘
+        if (Core.res == 0 &amp;&amp; chessX &gt;= 0 &amp;&amp; chessX &lt;= 15 &amp;&amp; chessY &gt;= 0 &amp;&amp; chessY &lt;= 15) {
+            if (Core.mode == 0) {
+                //调用下棋函数
+                Core.aiPlaceChess(mf, gr, Core.map, chessX, chessY, aiValues);
+                //传当前方法内的横纵坐标到 mf 对象内, 用于悔棋
+
+                System.out.println(&quot;当前结果: &quot; + Core.res);
+
+            }
+            if (Core.mode == 1) {
+                //调用下棋函数
+                Core.placeChess(mf, gr, Core.map, chessX, chessY);
+                //传当前方法内的横纵坐标到 mf 对象内, 用于悔棋
+                Core.chessStack.push(chessX);
+                Core.chessStack.push(chessY);
+                res = Core.isWin(Core.map, chessX, chessY);
+                System.out.println(&quot;当前结果: &quot; + Core.res);
+
+                if (res == 4) {
+                    JOptionPane.showMessageDialog(null, &quot;黑色胜利.&quot;);
+                    Core.res = res;
+                }
+                if (res == -4) {
+                    JOptionPane.showMessageDialog(null, &quot;白色胜利.&quot;);
+                    Core.res = res;
+                }
+            }
+
+        }
+    }
+
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+}
+
+</code></pre>
+<h3 id="myframe-类">MyFrame 类</h3>
+<p>继承了<code>Jframe</code>类, 主要用于提供画笔, 重绘棋盘等功能.</p>
+<pre><code class="language-java">import javax.swing.*;
+import java.awt.*;
+
+public class MyFrame extends JFrame implements Config {
+    //重写 paint 方法, 用于改变视窗大小和重新开始等情况的重绘棋盘
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.black);
+        for (int i = 0; i &lt; LINE; i++) {
+            g.setColor(Color.black);
+            g.drawLine(X0, Y0 + i * SIZE, (LINE - 1) * SIZE + X0, Y0 + i * SIZE);
+            g.drawLine(X0 + i * SIZE, Y0, X0 + i * SIZE, (LINE - 1) * SIZE + Y0);
+        }
+        g.drawRect(48,78,704,704);
+        g.fillOval(200 - 5,230 - 5,10,10);
+        g.fillOval(600 - 5,630 - 5,10,10);
+        g.fillOval(600 - 5,230 - 5,10,10);
+        g.fillOval(200 - 5,630 - 5,10,10);
+        g.fillOval(400 - 5,430 - 5,10,10);
+        for (int i = 0; i &lt; LINE; i++) {
+            for (int j = 0; j &lt; LINE; j++) {
+//                System.out.print(map[j][i] + &quot; &quot;);
+                if (Core.map[i][j] == 1) {
+                    for (int k = 0; k &lt; 50; k++) {
+                        Color c = new Color(4*k,4*k,4*k);
+                        g.setColor(c);
+                        g.fillOval(X0 + i * SIZE - 25 + k/3, Y0 + j * SIZE - 25 + k/3, 50 - k, 50 - k);
+                    }
+
+                } else if (Core.map[i][j] == -1) {
+                    for (int k = 0; k &lt; 50; k++) {
+                        Color c = new Color(k+200,k+200,k+200);
+                        g.setColor(c);
+                        g.fillOval(X0 + i * SIZE - 25 + k/3, Y0 + j * SIZE - 25 + k/3, 50 - k, 50 - k);
+                    }
+                }
+            }
+//            System.out.print(&quot;\n&quot;);
+
+        }
+
+    }
+}
+
+</code></pre>
+<h3 id="core-类">Core 类</h3>
+<p>此类主要提供一些列静态算法, 为游戏的核心逻辑类.</p>
+<pre><code class="language-java">import javax.swing.*;
+import java.awt.*;
+import java.util.HashMap;
+import java.util.Stack;
+
+public class Core implements Config {
+    static int[][] map = new int[16][16]; // 棋盘二维数组
+    static Stack&lt;Integer&gt; chessStack = new Stack&lt;&gt;();//用于悔棋的堆栈
+    static int mode = 0; //人机或者是玩家对战模式
+    static int flag = 1; // 下一步颜色
+    static int res = 0; //最后结果
+    static int max = -100; //通过权值表算出的最大值
+    static int maxI, maxJ; //最大权值的棋盘位置,用于白棋落子
+    //
+    //哈希表的内容不能直接在这里添加, 要在函数体内
+    private HashMap&lt;String, Integer&gt; Map = new HashMap&lt;&gt;();
+
+    /**
+     *  将全指标输入空的哈希表
+     * @param aiMap 初始的空哈希表
+     * @return
+     */
+    public static HashMap generateAIMap(HashMap&lt;String, Integer&gt; aiMap) {
+        aiMap.put(&quot;0000&quot;, 10);
+        aiMap.put(&quot;B&quot;, 7);
+        aiMap.put(&quot;BB&quot;, 800);
+        aiMap.put(&quot;BBB&quot;, 15000);
+        aiMap.put(&quot;BBBB&quot;, 800000);
+        aiMap.put(&quot;W&quot;, 15);
+        aiMap.put(&quot;WW&quot;, 400);
+        aiMap.put(&quot;WWW&quot;, 1800);
+        aiMap.put(&quot;WWWW&quot;, 100000);
+        return aiMap;
+    }
+
+    //region 权值 复杂
+//    public static HashMap generateAIMap1(HashMap&lt;String, Integer&gt; aiMap) {
+//        aiMap.put(&quot;0000&quot;, 10);
+//        aiMap.put(&quot;B0WW&quot;, 7);
+//        aiMap.put(&quot;0B0W&quot;, 8);
+//        aiMap.put(&quot;B0W0&quot;, 9);
+//        aiMap.put(&quot;B00W&quot;, 30);
+//        aiMap.put(&quot;00B0&quot;, 40);
+//        aiMap.put(&quot;0B00&quot;, 70);
+//        aiMap.put(&quot;000B&quot;, 100);
+//        aiMap.put(&quot;00BB&quot;, 200);
+//        aiMap.put(&quot;BB0W&quot;, 500);
+//        aiMap.put(&quot;0BB0&quot;, 800);
+//        aiMap.put(&quot;BB00&quot;, 900);
+//        aiMap.put(&quot;B0BB&quot;, 1000);
+//        aiMap.put(&quot;BBBW&quot;, 1100);
+//        aiMap.put(&quot;BB0B&quot;, 1500);
+//        aiMap.put(&quot;BBB0&quot;, 100000);
+//        aiMap.put(&quot;BBBB&quot;, 800000);
+//        aiMap.put(&quot;W0BB&quot;, 15);
+//        aiMap.put(&quot;0W0B&quot;, 16);
+//        aiMap.put(&quot;0W0B&quot;, 16);
+//        aiMap.put(&quot;WW&quot;, 400);
+//        aiMap.put(&quot;WWW&quot;, 1800);
+//        aiMap.put(&quot;WWWW&quot;, 100000);
+//        return aiMap;
+//    }
+    //endregion
+
+    /**
+     * 与 AI 对战的下棋模式
+     * @param mf 画布
+     * @param gr 画笔
+     * @param map 棋局
+     * @param chessX AI 下棋前的黑棋横坐标
+     * @param chessY AI 下棋前的黑棋纵坐标
+     * @param aiValues 权值表
+     */
+    public static void aiPlaceChess(MyFrame mf, Graphics gr, int[][] map, int chessX, int chessY, HashMap&lt;String, Integer&gt; aiValues) {
+        int res = 0;
+        if (Core.flag == 1) {
+            gr.setColor(Color.black);
+            //判断落子位置是否有棋子
+            if (map[chessX][chessY] == 0) {
+                map[chessX][chessY] = 1;
+                Core.chessStack.push(chessX); //用于悔棋
+                Core.chessStack.push(chessY);
+                for (int k = 0; k &lt; 50; k++) {
+                    Color c = new Color(4 * k, 4 * k, 4 * k);
+                    gr.setColor(c);
+                    gr.fillOval(X0 + chessX * SIZE - 25 + k / 3, Y0 + chessY * SIZE - 25 + k / 3, 50 - k, 50 - k);
+                }
+                System.out.println(&quot;下黑棋&quot;);
+                System.out.println(&quot;棋子坐标为:&quot; + chessX + &quot;,&quot; + chessY + &quot; 棋子颜色为: &quot; + Core.flag);
+                Core.flag = -1;
+                aiCheckMax(aiValues, map);
+                res = isWin(map, chessX, chessY);
+                if (res &gt;= 4) {
+                    JOptionPane.showMessageDialog(null, &quot;宝宝真厉害,奖励宝宝一个亲亲.&quot;);
+                    Core.res = res;
+                }
+            }
+            if (Core.res == 0) {
+                gr.setColor(Color.white);
+                chessX = maxI;
+                chessY = maxJ;
+                Core.chessStack.push(chessX);
+                Core.chessStack.push(chessY);
+                map[chessX][chessY] = -1;
+                for (int k = 0; k &lt; 50; k++) {
+                    Color c = new Color(k + 200, k + 200, k + 200);
+                    gr.setColor(c);
+                    gr.fillOval(X0 + chessX * SIZE - 25 + k / 3, Y0 + chessY * SIZE - 25 + k / 3, 50 - k, 50 - k);
+                }
+                System.out.println(&quot;下白棋&quot;);
+                System.out.println(&quot;棋子坐标为:&quot; + maxI + &quot;,&quot; + maxJ + &quot; 棋子颜色为: &quot; + Core.flag);
+                Core.flag = 1;
+                res = isWin(map, chessX, chessY);
+
+                if (res &lt;= -4) {
+                    JOptionPane.showMessageDialog(null, &quot;西白,几把人机竟然赢了,下一把给它锤爆嗷.&quot;);
+                    Core.res = res;
+                }
+            }
+        }
+
+    }
+
+    /**
+     * 查找出权值最大的位置, 并将最大值坐标存储到 Core 类的静态变量中
+     *
+     * @param aiValues 棋子对应的权值表
+     * @param map      当前棋盘
+     */
+    public static void aiCheckMax(HashMap&lt;String, Integer&gt; aiValues, int[][] map) {
+        int[][] score = new int[16][16];
+        max = -100;
+        StringBuilder sbHorizon = new StringBuilder(5);
+        // 先试一下一个点的算法
+        for (int i = 0; i &lt; LINE; i++) {
+            for (int j = 0; j &lt; LINE; j++) {
+                //如果位置没有棋子, 再去做下面四个循环
+                if (map[i][j] == 0) {
+                    int[] scoreArray = new int[4]; //存储每个空位周围 4 个方向的权值
+
+                    //水平方向的分数
+                    //  双循环原因: 第一层来看控制五元组的位置, 第二层变量五元组中的每个元素
+                    for (int z = -4; z &lt; 1; z++) {
+                        for (int k = z; k &lt; 5 + z; k++) {
+                            if (i + k &lt; 15 &amp;&amp; i + k &gt;= 0) {
+                                if (map[i + k][j] == 1) sbHorizon.append(&quot;B&quot;);
+                                if (map[i + k][j] == -1) sbHorizon.append(&quot;W&quot;);
+                            }
+                        }
+                        String horString = sbHorizon.toString();
+                        scoreArray[0] = scoreArray[0] + checkScore(horString);
+                        sbHorizon.delete(0, 5);
+                    }
+                    //垂直方向
+                    for (int z = -4; z &lt; 1; z++) {
+                        for (int k = z; k &lt; 5 + z; k++) {
+                            if (j + k &lt; 15 &amp;&amp; j + k &gt;= 0) {
+                                if (map[i][j + k] == 1) sbHorizon.append(&quot;B&quot;);
+                                if (map[i][j + k] == -1) sbHorizon.append(&quot;W&quot;);
+                            }
+                        }
+                        String horString = sbHorizon.toString();
+                        scoreArray[1] = scoreArray[1] + checkScore(horString);
+                        sbHorizon.delete(0, 5);
+                    }
+                    // &quot; \ &quot; 方向
+                    for (int z = -4; z &lt; 1; z++) {
+                        for (int k = z; k &lt; 5 + z; k++) {
+                            if (j + k &lt; 15 &amp;&amp; j + k &gt;= 0 &amp;&amp; i + k &lt; 15 &amp;&amp; i + k &gt;= 0) {
+                                if (map[i + k][j + k] == 1) sbHorizon.append(&quot;B&quot;);
+                                if (map[i + k][j + k] == -1) sbHorizon.append(&quot;W&quot;);
+                            }
+                        }
+                        String horString = sbHorizon.toString();
+                        scoreArray[2] = scoreArray[2] + checkScore(horString);
+                        sbHorizon.delete(0, 5);
+                    }
+                    // &quot; / &quot; 方向
+                    for (int z = -4; z &lt; 1; z++) {
+                        for (int k = z; k &lt; 5 + z; k++) {
+                            if (j - k &lt; 15 &amp;&amp; j - k &gt;= 0 &amp;&amp; i + k &lt; 15 &amp;&amp; i + k &gt;= 0) {
+                                if (map[i + k][j - k] == 1) sbHorizon.append(&quot;B&quot;);
+                                if (map[i + k][j - k] == -1) sbHorizon.append(&quot;W&quot;);
+                            }
+                        }
+                        String horString = sbHorizon.toString();
+                        scoreArray[3] = scoreArray[3] + checkScore(horString);
+                        sbHorizon.delete(0, 5);
+                    }
+                    score[i][j] = scoreArray[0] + scoreArray[1] + scoreArray[2] + scoreArray[3];
+                    if (score[i][j] &gt; max) {
+                        max = score[i][j];
+                        maxI = i;
+                        maxJ = j;
+                    }
+                }
+
+            }
+        }
+        System.out.println(&quot;最大值坐标: x: &quot; + maxI + &quot; y: &quot; + maxJ);
+
+    }
+
+    /**
+     * 通过对照全指标, 得出五元组的分数
+     *
+     * @param s 五元组中的棋子分布情况
+     * @return
+     */
+    public static int checkScore(String s) {
+        int score = 0;
+        if (s.contains(&quot;B&quot;) &amp;&amp; s.contains(&quot;W&quot;)) score = -1; // 尝试解决这个问题 1, 如果最后扫描到白子, 应该结果分数小一点
+        else if (s.contains(&quot;B&quot;) &amp;&amp; !s.contains(&quot;W&quot;)) {
+            if (s.contains(&quot;BBBB&quot;)) score = 800000;
+            else if (s.contains(&quot;BBB&quot;)) score = 15000;
+            else if (s.contains(&quot;BB&quot;)) score = 800;
+            else if (s.contains(&quot;B&quot;)) score = 7;
+        } else if (!s.contains(&quot;B&quot;) &amp;&amp; s.contains(&quot;W&quot;)) {
+            if (s.contains(&quot;WWWW&quot;)) score = 100000;
+            else if (s.contains(&quot;WWW&quot;)) score = 1800;
+            else if (s.contains(&quot;WW&quot;)) score = 400;
+            else if (s.contains(&quot;W&quot;)) score = 15;
+        } else score = 0;
+        return score;
+
+    }
+
+    /**
+     * 判断输赢
+     *
+     * @param map    棋盘的二维数组 (注意此矩阵直观上看实际是棋盘的90度旋转)
+     * @param chessX 当前下的棋子横坐标
+     * @param chessY 当前下的棋子纵坐标
+     * @return 4 为黑赢 -4 为白赢
+     */
+    public static int isWin(int[][] map, int chessX, int chessY) {
+        int num = 0;
+        // 设置一个最大的结果值, 最后返回
+        // 原因是下面的四个循环因为存在先后顺序, 可能最后小的 num 覆盖掉之前大的 num 导致返回的 num 不准确. 该赢的赢不了.
+        int maxNum = 0;
+        // 横赢算法
+        if ((map[chessX + 1][chessY] == map[chessX][chessY] &amp;&amp; chessX + 1 &lt;= LINE) || (chessX &gt; 1 &amp;&amp; map[chessX - 1][chessY] == map[chessX][chessY])) {
+            num = 0;
+            for (int i = -4; i &lt; 5; i++) {
+                if (chessX + i &gt;= 0 &amp;&amp; chessX + i + 1 &lt;= LINE) {
+                    if (map[chessX + i][chessY] == map[chessX + i + 1][chessY] &amp;&amp; map[chessX + i][chessY] != 0) {
+                        num = num + map[chessX + i][chessY];
+                        System.out.println(&quot;横赢num&quot; + num);
+                        if(Math.abs(num) &gt;= maxNum) maxNum =num;
+                    }
+                }
+            }
+        }
+        // 竖赢算法
+        if ((map[chessX][chessY + 1] == map[chessX][chessY] &amp;&amp; chessY + 1 &lt;= LINE) || (chessY &gt; 1 &amp;&amp; map[chessX][chessY - 1] == map[chessX][chessY])) {
+            num = 0;
+            for (int i = -4; i &lt; 5; i++) {
+                if (chessY + i &gt;= 0 &amp;&amp; chessY + i + 1 &lt;= LINE) {
+                    if (map[chessX][chessY + i] == map[chessX][chessY + i + 1] &amp;&amp; map[chessX][chessY + i] != 0) {
+                        num = num + map[chessX][chessY + i];
+                        System.out.println(&quot;竖赢num&quot; + num);
+                        if(Math.abs(num) &gt;= maxNum) maxNum =num;
+                    }
+                }
+            }
+        }
+        // 右斜下赢
+        // 先判断斜下是否有两个相连的情况, 并且横坐标等于 0 的时候 不做 x-1 的判断, 横坐标等于 15 的时候 不做 +1 判断.
+        if ((chessX &gt; 1 &amp;&amp; chessY &gt; 1 &amp;&amp; map[chessX][chessY] == map[chessX - 1][chessY - 1]) || (chessY &lt; 15 &amp;&amp; chessX &lt; 15 &amp;&amp; map[chessX][chessY] == map[chessX + 1][chessY + 1])) {
+            num = 0;
+            for (int i = -4; i &lt; 5; i++) {
+                if (chessX + i &gt;= 0 &amp;&amp; chessX + i &lt;= LINE - 1 &amp;&amp; chessY + i &gt;= 0 &amp;&amp; chessY + i &lt;= LINE - 1) {
+                    if (map[chessX + i][chessY + i] == map[chessX + i + 1][chessY + i + 1] &amp;&amp; map[chessX + i][chessY + i] != 0) {
+                        num = num + map[chessX + i][chessY + i];
+                        System.out.println(&quot;斜下num&quot; + num);
+                        if(Math.abs(num) &gt;= maxNum) maxNum =num;
+                    }
+                }
+            }
+        }
+        //左斜下赢
+        if ((chessX &lt; 15 &amp;&amp; chessY &gt; 1 &amp;&amp; map[chessX][chessY] == map[chessX + 1][chessY - 1]) || (chessY &lt; 15 &amp;&amp; chessX &gt; 1 &amp;&amp; map[chessX][chessY] == map[chessX - 1][chessY + 1])) {
+            num = 0;
+            for (int i = -4; i &lt; 5; i++) {
+                if (chessX - i &gt;= 1 &amp;&amp; chessX - i &lt;= LINE - 1 &amp;&amp; chessY + i &gt;= 0 &amp;&amp; chessY + i &lt;= LINE - 1) {
+                    if (map[chessX - i][chessY + i] == map[chessX - i - 1][chessY + i + 1] &amp;&amp; map[chessX - i][chessY + i] != 0) {
+                        num = num + map[chessX - i][chessY + i];
+                        System.out.println(&quot;左斜下num&quot; + num);
+                        if(Math.abs(num) &gt;= maxNum) maxNum =num;
+                    }
+
+                }
+
+            }
+        }
+
+        return maxNum;
+    }
+
+    /**
+     * 下棋子
+     *
+     * @param mf     棋子所在画布
+     * @param gr     画布的画笔
+     * @param map    存储棋盘的二位数字
+     * @param chessX 当前棋子横坐标
+     * @param chessY 当前其子纵坐标
+     */
+    public static void placeChess(MyFrame mf, Graphics gr, int[][] map, int chessX, int chessY) {
+        if (Core.flag == 1) {
+            gr.setColor(Color.black);
+            //判断落子位置是否有棋子
+            if (map[chessX][chessY] != 1 &amp;&amp; map[chessX][chessY] != -1) {
+                map[chessX][chessY] = 1;
+                for (int k = 0; k &lt; 50; k++) {
+                    Color c = new Color(4 * k, 4 * k, 4 * k);
+                    gr.setColor(c);
+                    gr.fillOval(X0 + chessX * SIZE - 25 + k / 3, Y0 + chessY * SIZE - 25 + k / 3, 50 - k, 50 - k);
+                }
+                System.out.println(&quot;下黑棋&quot;);
+                System.out.println(&quot;棋子坐标为:&quot; + chessX + &quot;,&quot; + chessY + &quot; 棋子颜色为: &quot; + Core.flag);
+                Core.flag = -1;
+            }
+        } else if (Core.flag == -1) {
+            gr.setColor(Color.white);
+            if (map[chessX][chessY] != 1 &amp;&amp; map[chessX][chessY] != -1) {
+                map[chessX][chessY] = -1;
+                for (int k = 0; k &lt; 50; k++) {
+                    Color c = new Color(k + 200, k + 200, k + 200);
+                    gr.setColor(c);
+                    gr.fillOval(X0 + chessX * SIZE - 25 + k / 3, Y0 + chessY * SIZE - 25 + k / 3, 50 - k, 50 - k);
+                }
+                System.out.println(&quot;下白棋&quot;);
+                System.out.println(&quot;棋子坐标为:&quot; + chessX + &quot;,&quot; + chessY + &quot; 棋子颜色为: &quot; + Core.flag);
+                Core.flag = 1;
+            }
+        }
+    }
+
+
+}
+
+</code></pre>
+<h3 id="config-接口">Config 接口</h3>
+<p>提供棋盘的一些基本数据, 例如行数列数,左上角的起始坐标.</p>
+<pre><code class="language-java">public interface Config {
+    public static final int X0 = 50;
+    public static final int Y0 = 80;
+    public static final int LINE = 15;
+    public static final int SIZE = 50;
+
+}
+
+</code></pre>
+<h3 id="gameui-类">GameUI 类</h3>
+<p>初始化 UI 的类, 定义了 UI 中所需要的画布, 按钮等可视元素. 并将事件监听器添加到这些可视元素上.</p>
+<pre><code class="language-java">import javax.swing.*;
+import java.awt.*;
+
+public class GameUI {
+    public static void main(String[] args) {
+        GameUI ui = new GameUI();
+        ui.initUI();
+    }
+
+    public void initUI() {
+        //需要调用有重写paint方法的JFrame子类
+        MyFrame jf = new MyFrame();
+        jf.setSize(1000, 830);
+        jf.setTitle(&quot;五子棋游戏&quot;);
+        jf.setLocationRelativeTo(null);
+        JButton restartButton = new JButton(&quot;重新开始&quot;);
+        JButton redoButton = new JButton(&quot;悔棋&quot;);
+        JRadioButton aiButton = new JRadioButton(&quot;人机对战&quot;,true);
+        JRadioButton playerButton = new JRadioButton(&quot;玩家对战&quot;);
+        ButtonGroup modeButtonGroup = new ButtonGroup();
+        modeButtonGroup.add(aiButton);
+        modeButtonGroup.add(playerButton);
+        Box b1 = Box.createHorizontalBox();
+        Box b2 = Box.createVerticalBox();
+        jf.add(b1);
+        b1.add(Box.createRigidArea(new Dimension(800,50)));
+        // b1 内嵌套一个 b2
+        b1.add(b2);
+        b2.add(restartButton);
+        b2.add(redoButton);
+        b2.add(aiButton);
+        b2.add(playerButton);
+        // 把两个按钮撑到上面
+        b2.add(Box.createRigidArea(new Dimension(0,600)));
+        jf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        jf.setVisible(true);
+        // 获取画笔对象
+        Graphics g = jf.getGraphics();
+        GameMouse mouse = new GameMouse(g);
+        jf.addMouseListener(mouse);
+        ButtonAction buttonAction = new ButtonAction(g, jf, redoButton, restartButton,aiButton,playerButton);
+        restartButton.addActionListener(buttonAction);
+        redoButton.addActionListener(buttonAction);
+        aiButton.addActionListener(buttonAction);
+        playerButton.addActionListener(buttonAction);
+    }
+}
+
+
+
+</code></pre>
+<h2 id="遇到的一些细节上的问题">遇到的一些细节上的问题</h2>
 <h3 id="gdrawline-方法无法执行的原因">g.drawLine() 方法无法执行的原因</h3>
 <ul>
 <li>画不出来的原因是 paint 方法在创建 JFrame 实例的时候自动执行, 和 drawLine 方法是并发的, 画线的线程可能会在 paint 方法之前就执行了.</li>
@@ -666,13 +1333,13 @@ System.out.println(&quot;棋子坐标为:&quot; + chessX + &quot;,&quot; + chess
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">上一页</span>
+        <span class="block font-bold">Previous</span>
         <a href="/docs/java-basics/7.-java-%E5%8C%85/" class="block">7.Java 复习之 包的解释</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
-        <span class="block font-bold">下一页</span>
+        <span class="block font-bold">Next</span>
         <a href="/docs/java-basics/java-stream-data-io/" class="block"></a>
         
     </div>
@@ -687,11 +1354,22 @@ System.out.println(&quot;棋子坐标为:&quot; + chessX + &quot;,&quot; + chess
                 <div class="hidden lg:block lg:w-1/4">
                     
                     <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
-    <span class="text-lg font-semibold">本页内容</span>
+    <span class="text-lg font-semibold">On This Page</span>
 </div>
 <div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#项目特点">项目特点</a></li>
+    <li><a href="#项目结构以及源码">项目结构以及源码</a>
+      <ul>
+        <li><a href="#buttonaction-类">ButtonAction 类</a></li>
+        <li><a href="#gamemouse-类">GameMouse 类</a></li>
+        <li><a href="#myframe-类">MyFrame 类</a></li>
+        <li><a href="#core-类">Core 类</a></li>
+        <li><a href="#config-接口">Config 接口</a></li>
+        <li><a href="#gameui-类">GameUI 类</a></li>
+      </ul>
+    </li>
     <li><a href="#遇到的一些细节上的问题">遇到的一些细节上的问题</a>
       <ul>
         <li><a href="#gdrawline-方法无法执行的原因">g.drawLine() 方法无法执行的原因</a></li>

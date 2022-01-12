@@ -5,7 +5,7 @@
     <link>/series/java-%E5%A4%8D%E4%B9%A0/</link>
     <description>Recent content in Java 复习 on Aaron 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
     <lastBuildDate>Tue, 21 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/java-%E5%A4%8D%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +15,7 @@
       <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
-      <description>遇到的一些细节上的问题 g.drawLine() 方法无法执行的原因 画不出来的原因是 paint 方法在创建 JFrame 实例的时候自动执行, 和 drawLine 方法是并发的,</description>
+      <description>项目特点 两种游戏模式: 人机对战和玩家对战. 可以多步悔棋. 项目未使用图片, 图形都是绘制而成. 项目结构以及源码 src ButtonAction</description>
     </item>
     
     <item>

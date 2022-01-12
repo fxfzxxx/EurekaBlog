@@ -1,13 +1,13 @@
 en:
   languageCode: en
   languageName: English
-  # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
-  contentDir: content/en
-  title: Aaron's Blog
+#   # Uncomment for multilingual sites, and move the default content into corresponding sub-folder.
+#   contentDir: content/en
+#   title: Aaron's Blog
 
-# Uncomment for multilingual sites, and customize the following config.
-zh:
-  languageCode: zh
-  languageName: 简体中文
-  contentDir: content/zh
-  title: Aaron 的博客
+# # Uncomment for multilingual sites, and customize the following config.
+# zh:
+#   languageCode: zh
+#   languageName: 简体中文
+#   contentDir: content/zh
+#   title: Aaron 的博客

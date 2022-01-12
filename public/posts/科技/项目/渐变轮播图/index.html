@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>渐变轮播图 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="通过渐变的动画效果切换图片.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"渐变轮播图",
+      "item":"/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/"
+    },
+    "headline": "渐变轮播图 | Aaron 的博客",
+    "image": "/images/front-end.jpeg",
+    "datePublished": "2022-01-10T00:00:00+00:00",
+    "dateModified": "2022-01-10T00:00:00+00:00",
+    "wordCount":  1080 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "通过渐变的动画效果切换图片."
+}
+</script><meta property="og:title" content="渐变轮播图 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/" />
+
+
+
+<meta property="og:description" content="通过渐变的动画效果切换图片." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-01-10T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-01-10T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="All" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+            <a href="/categories/projects" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">渐变轮播图</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2022-01-10</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>3 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/projects/" class="hover:text-eureka">项目</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="hover:text-eureka">前端项目展示</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/front-end.jpeg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <ul>
+<li>
+<p>这个功能在网站的首页比较常见, 通常用于产品的宣传. 另外, 也常见于一些图片集的展示.</p>
+</li>
+<li>
+<p>通过一些扩展可以实现更完整的功能, 比如下方的小图预览等等.</p>
+</li>
+<li>
+<p>相对于轮播图, 渐变图的代码明显更简洁.</p>
+</li>
+</ul>
+<h3 id="项目的特点">项目的特点</h3>
+<ol>
+<li>每隔特定时间, 自动更新到下一张图片.</li>
+<li>可以通过点击图片左右两侧的切换按钮来切换到前后的图片.</li>
+<li>可以通过点击下方圆点来切换图片.</li>
+</ol>
+<h3 id="项目的技术栈">项目的技术栈</h3>
+<p>html, CSS, 原生 JS</p>
+<h3 id="项目效果展示">项目效果展示</h3>
+<p>由于通过 hugo 的 shortcode 的方式上传这些前端文件到服务器, 出现了一些 css 上的冲突,因此我通过增加行内样式的方式让以下展示, 符合原始设计.</p>
+<head>
+   <style scoped>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+
+      .carousel-nav>a {
+         text-decoration: none;
+      }
+
+      .carousel {
+         border: 20px solid rgba(201, 201, 201, 0.565);
+         width: 740px;
+         height: 586px;
+         margin: 50px auto;
+         position: relative;
+      }
+       
+      .carousel-item>img {
+         width: 740px;
+         height: 546px; 
+         position: absolute;
+         opacity: 0;
+         transition: opacity .5s linear;
+      }
+
+      .carousel-item img.active {
+         opacity: 1;
+      }
+
+      .carousel-nav {
+          
+         width: 145px;
+         height: 20px;
+         position: absolute;
+         left: 37px;
+         bottom: 25px;
+      }
+
+      .carousel-nav a {
+         margin-left: 5px;
+         float: left;
+         font-size: 25px;
+         color: rgb(70, 70, 70);
+         width: 20px;
+         height: 15px;
+         line-height: 15px;
+      }
+
+      .carousel-nav a:hover {
+         color: rgb(131, 130, 130);
+      }
+
+      .carousel-nav a.active {
+         color: rgb(131, 130, 130);
+      }
+
+      .right {
+         width: 20px;
+         height: 40px;
+         top: 0;
+         bottom: 0;
+         right: 0;
+         color: rgb(255, 255, 255);
+         font-size: 30px;
+         position: absolute;
+         margin: auto 0;
+         background-color: rgba(112, 112, 112, 0.555);
+         line-height: 35px;
+         cursor: pointer;
+      }
+
+      .right:hover {
+         background-color: rgba(112, 112, 112, 0.932);
+      }
+
+      .left {
+         width: 20px;
+         height: 40px;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         color: rgb(255, 255, 255);
+         font-size: 30px;
+         position: absolute;
+         margin: auto 0;
+         background-color: rgba(112, 112, 112, 0.555);
+         line-height: 35px;
+         cursor: pointer;
+      }
+
+      .left:hover {
+         background-color: rgba(112, 112, 112, 0.932);
+      }
+   </style>
+</head>
+
+<body>
+   <div id="JD_carousel">
+      <div class="carousel clearfix">
+         <div class="img-box">
+            <a href="">
+               <div class="carousel-item">
+                  <img class='active' src="/images/net.jpg" alt="" />
+               </div>
+            </a>
+            <a href="">
+               <div class="carousel-item">
+                  <img src="/images/gulp.jpeg" alt="" />
+               </div>
+            </a>
+            <a href="">
+               <div class="carousel-item">
+                  <img src="/images/cats2.jpeg" alt="" />
+               </div>
+            </a>
+         </div>
+         <div class="right"> > </div>
+         <div class="left"> &lt; </div>
+
+               <div class="carousel-nav">
+               </div>
+         </div>
+
+         <script>
+            const carousel = document.querySelector('.carousel');
+            const imgs = document.querySelectorAll('.img-box img')
+            const pointerBox = document.querySelector('.carousel-nav')
+            const right = document.querySelector('.right')
+            const left = document.querySelector('.left')
+            let index = 0
+            let timer = 0
+
+            setPointer()
+            function setPointer() {
+               let frg = document.createDocumentFragment()
+               for (let i = 0; i < imgs.length; i++) {
+                  let pointer = document.createElement('a')
+                  if (i == 0) pointer.className = 'active'
+                  pointer.innerText = '●'
+                  pointer.setAttribute('index', i)
+                  pointer.setAttribute('type', 'point')
+                  pointer.setAttribute('href', 'javascript:;')
+                  pointer.setAttribute('style', 'text-decoration: none;')
+
+                  frg.appendChild(pointer)
+               }
+               pointerBox.appendChild(frg)
+            }
+
+            function changeImgTo(index) {
+               for (let i = 0; i < imgs.length; i++) {
+                  imgs[i].style.opacity = '0'
+                  pointerBox.children[i].className = ''
+               }
+               imgs[index].style.opacity = '1'
+               pointerBox.children[index].className = 'active'
+            }
+
+            autoPlay()
+            function autoPlay() {
+               timer = setInterval(() => {
+                  index++
+                  if (index > imgs.length - 1) index = 0
+                  changeImgTo(index)
+
+               }, 2000)
+            }
+
+            overOut()
+            function overOut() {
+               carousel.addEventListener('mouseover', () => {
+                  clearInterval(timer)
+               })
+               carousel.addEventListener('mouseout', () => {
+                  autoPlay()
+               })
+            }
+
+            click()
+            function click() {
+               carousel.addEventListener('click', (e) => {
+                  e = e || window.event
+                  const target = e.target || e.srcElement
+                  if (target === right) {
+                     index++
+                     if (index > imgs.length - 1) index = 0
+                     changeImgTo(index)
+                  }
+                  if (target === left) {
+                     index--
+                     if (index < 0) index = imgs.length - 1
+                     changeImgTo(index)
+                  }
+                  if (target.getAttribute('type') === 'point') {
+                     index = target.getAttribute('index') - 0
+                     changeImgTo(index)
+                  }
+
+               })
+            }
+
+            tagChange()
+            function tagChange() {
+               document.addEventListener('visibilitychange', () => {
+                  if (document.visibilityState === hidden) {
+                     clearInterval(timer)
+                  }
+                  else if (document.visibilityState === visible)
+                     autoPlay()
+               })
+            }
+
+         </script>
+      </div>
+
+</body>
+<h3 id="项目源码">项目源码</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;!--[if lt IE 7]&gt;      &lt;html class=&quot;no-js lt-ie9 lt-ie8 lt-ie7&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;         &lt;html class=&quot;no-js lt-ie9 lt-ie8&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;         &lt;html class=&quot;no-js lt-ie9&quot;&gt; &lt;![endif]--&gt;
+&lt;!--[if gt IE 8]&gt;      &lt;html class=&quot;no-js&quot;&gt; &lt;!--&lt;![endif]--&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+    &lt;title&gt;&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;../reset.css&quot; /&gt;
+    &lt;style&gt;
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .carousel {
+        border: 20px solid rgba(201, 201, 201, 0.565);
+        width: 740px;
+        height: 586px;
+        margin: 50px auto;
+        position: relative;
+      }
+
+      .carousel-item img {
+        width: 740px;
+        height: 586px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity .5s linear;
+      }
+      .carousel-item img.active {
+        opacity: 1;
+      }
+      .carousel-nav {
+        /* overflow: hidden; */
+        width: 145px;
+        height: 20px;
+        position: absolute;
+        left: 37px;
+        bottom: 25px;
+      }
+
+      .carousel-nav a {
+        margin-left: 5px;
+        float: left;
+        font-size: 25px;
+        color: rgb(70, 70, 70);
+        width: 20px;
+        height: 15px;
+        line-height: 15px;
+      }
+
+      .carousel-nav a:hover {
+        color: rgb(131, 130, 130);
+      }
+      .carousel-nav a.active {
+        color: rgb(131, 130, 130);
+      }
+      .right {
+        width: 20px;
+        height: 40px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        position:absolute;
+        margin: auto 0;
+        background-color: rgba(112, 112, 112, 0.555);
+        line-height: 35px;
+        cursor: pointer;
+      }
+      .right:hover {
+        background-color: rgba(112, 112, 112, 0.932);
+      } 
+      .left {
+        width: 20px;
+        height: 40px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        color: rgb(255, 255, 255);
+        font-size: 30px;
+        position:absolute;
+        margin: auto 0;
+        background-color: rgba(112, 112, 112, 0.555);
+        line-height: 35px;
+        cursor: pointer;
+      }
+      .left:hover {
+        background-color: rgba(112, 112, 112, 0.932);
+      } 
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id=&quot;JD_carousel&quot;&gt;
+      &lt;div class=&quot;carousel clearfix&quot;&gt;
+        &lt;div class=&quot;img-box&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            &lt;div class=&quot;carousel-item&quot;&gt;
+              &lt;img class ='active' src=&quot;../images/carousel1.webp&quot; alt=&quot;&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            &lt;div class=&quot;carousel-item&quot;&gt;
+              &lt;img src=&quot;../images/carousel2.webp&quot; alt=&quot;&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+          &lt;a href=&quot;#&quot;&gt;
+            &lt;div class=&quot;carousel-item&quot;&gt;
+              &lt;img src=&quot;../images/carousel3.webp&quot; alt=&quot;&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;right&quot;&gt;&gt;&lt;/div&gt;
+        &lt;div class=&quot;left&quot;&gt;&lt;&lt;/div&gt;
+  
+        &lt;div class=&quot;carousel-nav&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+  
+      &lt;script&gt;
+        const carousel = document.querySelector('.carousel');
+        const imgs = document.querySelectorAll('.img-box img')
+        const pointerBox = document.querySelector('.carousel-nav')
+        const right = document.querySelector('.right')
+        const left = document.querySelector('.left')
+        let index = 0
+        let timer = 0 
+  
+        setPointer()
+        function setPointer() {
+          let frg = document.createDocumentFragment()
+          for (let i = 0 ; i &lt; imgs.length ; i++) {
+            let pointer = document.createElement('a')
+            if (i == 0) pointer.className = 'active'
+            pointer.innerText = '●'
+            pointer.setAttribute('index',i)
+            pointer.setAttribute('type','point')
+            pointer.setAttribute('href','javascript:;')
+            frg.appendChild(pointer)
+          }
+          pointerBox.appendChild(frg)
+        }
+  
+        function changeImgTo(index) {
+            for (let i = 0 ; i &lt; imgs.length ; i++) {
+              imgs[i].style.opacity = '0'
+              pointerBox.children[i].className = ''
+            }
+            imgs[index].style.opacity = '1'
+            pointerBox.children[index].className = 'active'
+        }
+        
+        autoPlay()
+        function autoPlay() {
+          timer = setInterval(() =&gt; {         
+            index++
+            if (index &gt; imgs.length-1) index = 0
+            changeImgTo(index)
+  
+          },1000)
+        }
+  
+        overOut()
+        function overOut() {
+          carousel.addEventListener('mouseover',() =&gt; {
+            clearInterval(timer)
+          })
+          carousel.addEventListener('mouseout',() =&gt; {
+            autoPlay()
+          })
+        }
+        
+        click()
+        function click() {
+          carousel.addEventListener('click',(e) =&gt; {
+            e = e || window.event
+            const target = e.target || e.srcElement
+            if (target === right) {
+              index ++
+              if (index &gt; imgs.length-1) index = 0
+              changeImgTo(index)
+            }
+            if (target === left) {
+              index --
+              if (index &lt; 0 ) index = imgs.length -1
+              changeImgTo(index)
+            }
+            if (target.getAttribute('type') === 'point') {
+              index = target.getAttribute('index') - 0
+              changeImgTo(index)
+            }
+  
+          })
+        }
+        
+        tagChange()
+        function tagChange() {
+          document.addEventListener('visibilitychange',() =&gt; {
+            if ( document.visibilityState === hidden) {
+              clearInterval(timer)
+            }
+            else if ( document.visibilityState === visible)
+              autoPlay()
+          })
+        }
+      
+      &lt;/script&gt;
+    &lt;/div&gt;
+    
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/all/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#All</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/" class="block">ToDo 待办事项项目</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/net%E6%A1%86%E6%9E%B6%E7%9A%84%E5%A4%8D%E4%B9%A0/5-%E6%B3%9B%E5%9E%8B/" class="block">C#复习之泛型 Generic</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/">渐变轮播图</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">1.Java 复习之 基础语法</a>
+            <br />
+            
+            <a href="/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/">2.Java 复习之 命名及注释标准</a>
+            <br />
+            
+            <a href="/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/">3.1 Java 复习之 对象和类</a>
+            <br />
+            
+            <a href="/docs/java-basics/3.java%E5%A4%8D%E4%B9%A0%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">3.2 Java 复习之 面向对象的记忆偏差点</a>
+            <br />
+            
+            <a href="/docs/java-basics/4.-java%E4%BF%AE%E9%A5%B0%E7%AC%A6/">4.Java 复习之 修饰符</a>
+            <br />
+            
+            <a href="/docs/java-basics/5.-java-%E7%BB%A7%E6%89%BF/">5.Java 复习之 继承</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

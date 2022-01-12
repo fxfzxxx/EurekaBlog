@@ -14,6 +14,9 @@ main:
   - name: 艺术
     url: /categories/arts
     weight: 4
+  - name: 项目
+    url: /categories/projects  
+    weight: 10
   - name: 系列
     url: /series
     weight: 8

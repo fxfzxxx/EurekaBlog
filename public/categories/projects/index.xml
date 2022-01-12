@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>项目 on Aaron 的博客</title>
+    <link>/categories/projects/</link>
+    <description>Recent content in 项目 on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Tue, 11 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小米首页的模拟</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/</link>
+      <pubDate>Tue, 11 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/</guid>
+      <description>项目的特点 CSS 实现的下拉菜单, 并且鼠标悬浮菜单不收回. CSS 实现了众多动态效果, 例如首页图表的雪碧图动画. 利用爬虫脚</description>
+    </item>
+    
+    <item>
+      <title>ToDo 待办事项项目</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/</guid>
+      <description>项目特点 项目的技术栈 html, CSS, JS 项目源码</description>
+    </item>
+    
+    <item>
+      <title>渐变轮播图</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/</guid>
+      <description>这个功能在网站的首页比较常见, 通常用于产品的宣传. 另外, 也常见于一些图片集的展示. 通过一些扩展可以实现更完整的</description>
+    </item>
+    
+    <item>
+      <title>小项目 五子棋游戏</title>
+      <link>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</link>
+      <pubDate>Tue, 21 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/</guid>
+      <description>项目特点 两种游戏模式: 人机对战和玩家对战. 可以多步悔棋. 项目未使用图片, 图形都是绘制而成. 项目结构以及源码 src ButtonAction</description>
+    </item>
+    
+  </channel>
+</rss>
