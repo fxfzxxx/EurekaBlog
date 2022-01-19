@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="./css/base.css">
+		<link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" href="css/app.css">
+	</head>
+	<body>
+		<!-- todoapp 类的 section 内的所有内容, 都添加到模板中了 -->
+		<section class="todoapp">
+			
+		</section> 
+		
+		<footer class="info">
+			<p>Double-click to edit a todo</p>
+			<!-- Remove the below line ↓ -->
+			<p>Template by <a href="javascript:;">Sindre Sorhus</a></p>
+			<!-- Change this out with your name and url ↓ -->
+			<p>Created by <a href="javascript:;">Aaron Fan</a></p>
+			<p>Part of <a href="javascript:;">TodoMVC</a></p>
+		</footer>
+		<!-- 注意引入模板引擎的位置: 必须在所有js 之前和模板之前, 这样才能在其他 js 中调用模板中的 template 函数 -->
+		<script src="js/template-web.js"></script>
+		<!-- Scripts here. Don't remove ↓ -->
+		<!-- 模板 -->
+		<!-- 注意 script 标签内的 type 和 id 都是固定必须的 -->
+		<script type="text/template" id="tmp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" placeholder="What needs to be done?" autofocus>
+			</header>
+			<!-- 7.默认隐藏, 有项目的时候才显示-->
+			{{ if length }}
+			<section class="main">
+				<!-- 全选按钮 label 的 for 属性如果和 input 的 id 一样, 点击
+						label 就相当于点击 input. 这里的 input 实际上隐藏了.
+				-->
+				<!-- 9. 识别全选状态 -->
+				<input id="toggle-all" class="toggle-all" type="checkbox" {{ activeNum === 0 && "checked" }}>
+				<label for="toggle-all">Mark all as complete</label>
+				<ul class="todo-list">
+					
+					<!-- 8. 循环创建 li -->
+					<!-- v 为变量, 代表 bindList 中的每一个元素 -->
+					{{ each bindList v }}
+					<!-- 每一个 TODO 就是一个 li, 没类名就是未完成, 有类名 completed, 就是已完成 
+						如果加 editting 就是正在编辑的状态.
+					-->
+					<li class="{{ v.isFinished && "completed" }} {{ v.isEdit && "editing" }}">
+						<div class="view">
+							<!-- checked 决定是否选中 -->
+							<input class="toggle" type="checkbox" data-id = "{{ v.ID }}" {{ v.isFinished && "checked" }}>
+							<label class="todo-item" data-id = "{{ v.ID }}" >{{ v.content }}</label>
+							<button class="destroy" data-id = "{{ v.ID }}"></button>
+						</div>
+						<input class="edit" value="{{ v.content }}" data-id = "{{ v.ID }}"> 
+					</li>
+					{{ /each }}
+				</ul>
+			</section>
+			<!-- footer 默认隐藏 在添加项目之后再显示 -->
+			<footer class="footer">
+				<!-- 10.实时更新未完成项目的数量 -->
+				<span class="todo-count"><strong>{{ activeNum }}</strong> item left</span>
+				<!-- 11. 选择显示的项目类型, 通过 hashchange 出发 -->
+				<ul class="filters">
+					<li>
+						<a class="{{ type === 'all' && 'selected' }}" href="#/all">All</a>
+					</li>
+					<li>
+						<a class="{{ type === 'active' && 'selected' }}" href="#/active">Active</a>
+					</li>
+					<li>
+						<a class="{{ type === 'completed' && 'selected' }}" href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<button class="clear-completed">Clear completed</button>
+			</footer>
+
+			{{ /if }}
+		</script>
+		
+		<script src="js/app.js"></script>
+		
+
+	</body>
+</html>

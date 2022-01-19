@@ -166,6 +166,19 @@
 
 
 <link rel="alternate" type="application/rss+xml" href="/tags/node.js/index.xml" title="Aaron 的博客" />
+ 
+
+<style>
+  #google_translate_element {
+    margin: 0 0 0 10px;
+  } 
+  #google_translate_element img {
+    display: inline;
+  }
+  .skiptranslate {
+    
+  }
+</style>
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -194,7 +207,7 @@
 
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode" style="padding-top:8px;">
                     <i class="fas fa-adjust"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
@@ -206,6 +219,7 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
                 </div>
             </div>
+            <div style="width: 150;display: inline-block;" id="google_translate_element"></div>
         </div>
     </div>
 
@@ -235,6 +249,13 @@
         switchBurger();
     });
 </script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ch'}, 'google_translate_element');
+    }
+</script>
+    
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
   </header>
   <main class="flex-grow pt-16">

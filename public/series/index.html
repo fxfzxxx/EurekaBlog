@@ -93,7 +93,7 @@
 
 
 
-<meta property="og:updated_time" content="2022-01-11T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2022-01-18T00:00:00&#43;00:00" />
 
 
 
@@ -101,6 +101,19 @@
 
 
 <link rel="alternate" type="application/rss+xml" href="/series/index.xml" title="Aaron 的博客" />
+ 
+
+<style>
+  #google_translate_element {
+    margin: 0 0 0 10px;
+  } 
+  #google_translate_element img {
+    display: inline;
+  }
+  .skiptranslate {
+    
+  }
+</style>
 
 <body class="flex flex-col min-h-screen">
   <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
@@ -129,7 +142,7 @@
 
         <div class="flex">
             <div class="relative pt-4 md:pt-0">
-                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode" style="padding-top:8px;">
                     <i class="fas fa-adjust"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
@@ -141,6 +154,7 @@
                     <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
                 </div>
             </div>
+            <div style="width: 150;display: inline-block;" id="google_translate_element"></div>
         </div>
     </div>
 
@@ -170,6 +184,13 @@
         switchBurger();
     });
 </script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ch'}, 'google_translate_element');
+    }
+</script>
+    
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </div>
   </header>
   <main class="flex-grow pt-16">
@@ -180,10 +201,6 @@
     
 </article>
 <div class="bg-secondary-bg rounded px-6 py-8">
-    
-    <h2 class="text-lg text-primary-text my-2">
-        <a href="/series/%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="text-eureka hover:underline">项目展示</a>
-    </h2>
     
     <h2 class="text-lg text-primary-text my-2">
         <a href="/series/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/" class="text-eureka hover:underline">前端项目展示</a>
