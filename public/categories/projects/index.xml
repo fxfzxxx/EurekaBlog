@@ -8,7 +8,16 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Tue, 18 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ES6 模块化开发的谈吃蛇小游戏</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
+      <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
+      <description>项目特点 原生 js 实现的交互功能 ES6 模块化开发 分成四个类 食物类: 生成一个食物, 随机位置. 蛇类: 生成一个蛇, 给蛇加一节</description>
+    </item>
+    
     <item>
       <title>ToDo 待办事项项目</title>
       <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/</link>
@@ -24,7 +33,7 @@
       <pubDate>Mon, 17 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/2022-01-17-java-%E5%A4%8D%E4%B9%A0%E4%B9%8B%E8%A7%86%E9%A2%91%E9%80%9A%E4%BF%A1%E5%B0%8F%E9%A1%B9%E7%9B%AE/</guid>
-      <description>视频通信 建立 TCP 连接 服务端需要有一个 ServerSocket 对象, 通过他的 accept 方法监听客户端的 socket 请求并且返回一个socket来与客户端的</description>
+      <description>1. 简单的服务器与客户端 1.1 建立 TCP 连接 服务端需要有一个 ServerSocket 对象, 通过他的 accept 方法监听客户端的 socket 请求并且返回一个sock</description>
     </item>
     
     <item>

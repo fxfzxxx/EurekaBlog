@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+      .header {
+         width: 800px;
+         height: 50px;
+         margin: 0 auto;
+         padding: 20px;
+      }
+      button,
+      input {
+         padding: 20px;
+         outline: none;
+      }
+
+      .map {
+         width: 800px;
+         height: 600px;
+         background-image: url(./imgs/bg.png);
+         margin: 0px auto;
+         border: 5px solid #bfa;
+         box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+         position: relative;
+      }
+      .map > .food {
+         height: 20px;
+         width: 20px;
+         position: absolute;
+         background-image: url(./imgs/food.png);
+         /* top: 200px;
+         left: 200px; */
+      }
+      .map > .head {
+         height: 20px;
+         width: 20px;
+         position: absolute;
+         background-image: url(./imgs/head.png);
+         /* top: 100px;
+         left: 100px; */
+      }
+      .map > .body {
+         height: 20px;
+         width: 20px;
+         position: absolute;
+         background-image: url(./imgs/body.png);
+         /* top: 80px;
+         left: 100px; */
+      }
+      
+      
+   </style>
+</head>
+
+<body>
+   <div class="header">
+      <!-- <button class="btn-start" type="button">Start</button>
+      <button class="btn-stop" type="button">Stop</button> -->
+      <button class="btn-restart" type="button">Restart</button>
+
+      <input class="score" type="text"  placeholder="0">
+      <span>Space to start and pause. 空格键暂停和开始.</span>
+   </div>
+
+   <div class="map">
+      <!-- <div class="food"></div>
+      <div class="head"></div>
+      <div class="body"></div>
+      <div class="body"></div> -->
+   </div>
+
+   <script src="./Main.js" type="module"></script>
+
+
+   <script>
+      /* 
+         分成四个类
+         - 食物类: 生成食物, 随机位置
+         - 蛇模块: 生成一个蛇, 给蛇加一节, 移动, 判断死亡.
+         - 游戏规则: 速度, 积分, 开始, 结束, 吃食物和撞墙的逻辑
+         - 整合: 相当于 java 的 main 函数类.
+      */
+
+   </script>
+</body>
+
+</html>

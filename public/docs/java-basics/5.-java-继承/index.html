@@ -93,7 +93,7 @@
     "image": "/images/java-logo.png",
     "datePublished": "2021-12-22T00:00:00+00:00",
     "dateModified": "2021-12-22T00:00:00+00:00",
-    "wordCount":  2610 ,
+    "wordCount":  2642 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -801,7 +801,7 @@ class Animals {
 }
 
 //子类 Penguin 需要通过关键字 super 进行声明
-
+// 注意: 这里只能访问通过父类方法访问, 不能直接通过 penguin.myname 的形式去访问
 public class InheritConstructorPrivate extends Animals {
     public InheritConstructorPrivate(String myname,int myid) {
         super(myname,myid); // 声明继承父类中的两个属性

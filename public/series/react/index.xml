@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react on Aaron 的博客</title>
+    <link>/series/react/</link>
+    <description>Recent content in react on Aaron 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&amp;copy; 2021 Aaron Fan
+</copyright>
+    <lastBuildDate>Wed, 02 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/series/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>react之基本语法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>学习联想 jsx 中 class 需要写成 className, js 里那个 className 是什么来着 是在事件函数里, 判断 target的时候 if (target.className === &#39;new-todo&#39; &amp;amp;&amp;amp; code === 13) 自定义属性是</description>
+    </item>
+    
+  </channel>
+</rss>
