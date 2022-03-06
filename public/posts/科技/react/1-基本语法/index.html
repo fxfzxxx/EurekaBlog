@@ -86,10 +86,10 @@
         "@id": "/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"
     },
     "headline": "react之基本语法 | Aaron 的博客",
-    "image": "/images/net.jpg",
-    "datePublished": "2022-02-02T00:00:00+00:00",
-    "dateModified": "2022-02-02T00:00:00+00:00",
-    "wordCount":  197 ,
+    "image": "/images/react-logo.jpeg",
+    "datePublished": "2022-02-20T00:00:00+00:00",
+    "dateModified": "2022-03-05T00:00:00+00:00",
+    "wordCount":  4806 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -131,10 +131,10 @@
 
 
 
-<meta property="article:published_time" content="2022-02-02T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-02-20T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-02-02T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-05T00:00:00&#43;00:00" />
 
 
 
@@ -148,6 +148,10 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" />
 
 
 
@@ -258,11 +262,11 @@
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-02-02</span>
+        <span>2022-02-20</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1 min read</span>
+        <span>10 min read</span>
     </div>
     
     
@@ -287,7 +291,7 @@
         
         
         <div class="my-4">
-            <img src="/images/net.jpg" class="w-full" alt="Featured Image">
+            <img src="/images/react-logo.jpeg" class="w-full" alt="Featured Image">
         </div>
         
 
@@ -297,9 +301,9 @@
 <li>jsx 中 class 需要写成 className, js 里那个 className 是什么来着
 <ul>
 <li>是在事件函数里, 判断 target的时候 <code>if (target.className === 'new-todo' &amp;&amp; code === 13) </code></li>
-<li>自定义属性是 <code>data-fuck = &quot;you&quot;</code>
+<li>自定义属性是 <code>data-miss = &quot;you&quot;</code>
 <ul>
-<li><code>if (target.dataset.fuck === you)</code></li>
+<li><code>if (target.dataset.miss === you)</code></li>
 </ul>
 </li>
 </ul>
@@ -309,7 +313,7 @@
 <h3 id="基本规则">基本规则</h3>
 <ol>
 <li>定义虚拟 DOM 时, 不要写引号, 直接在小括号里面写 html.</li>
-<li>标签中混用 js 需要用{}.</li>
+<li>标签中混用 js <strong>表达式</strong> 需要用{}.</li>
 <li>样式类型为 className.</li>
 <li>内联样式, 格式为 <code>style = {{key:value,key1:value}}</code></li>
 <li>只有一个根标签.</li>
@@ -321,7 +325,625 @@
 </ol>
 </li>
 </ol>
-<p>​</p>
+<h3 id="js-表达式">js 表达式</h3>
+<ul>
+<li>
+<p>js 表达式:</p>
+<ul>
+<li>
+<p>表达式会产生一个值, 然后放在一个需要值得地方, 以下表达式, 均可赋值于变量, 也就是在左边可以加变量和等于号</p>
+<ul>
+<li>a</li>
+<li>a+b</li>
+<li>foo(1)</li>
+<li>arr.map(): 遍历数组中每一个元素, 函数处理后, 返回一个新数组.</li>
+<li>function foo() {}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>js 语句:</p>
+<ul>
+<li>if</li>
+<li>for 循环</li>
+<li>switch</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件">组件</h2>
+<h3 id="函数式组件简单组件">函数式组件(简单组件)</h3>
+<ul>
+<li>函数首字母大写</li>
+<li>传递函数的时候元素用自闭和标签</li>
+</ul>
+<pre><code class="language-react">&lt;script type=&quot;text/babel&quot;&gt;
+      function Demo(){
+    		console.log(this) // 输出为 undefined, 原因是 babel 翻译后开启严格模式, 禁止 this 指向 window
+         return &lt;h2&gt; 我使用函数定义的组件 &lt;/h2&gt;
+    		
+      }
+      ReactDOM.render(&lt;Demo/&gt;,document.getElementById('test'))
+ &lt;/script&gt;
+</code></pre>
+<ul>
+<li>执行了 ReactDOM.render 后,
+<ol>
+<li>React 解析组件标签, 找到了 Demo 组件.</li>
+<li>发现组件是函数定义的, 随后调用该函数, 将返回的虚拟 DOM 转为真实 DOM, 随后呈现在页面中.</li>
+</ol>
+</li>
+</ul>
+<h3 id="类式组件复杂组件">类式组件(复杂组件)</h3>
+<pre><code class="language-react">&lt;script type=&quot;text/babel&quot;&gt;
+      class Demo extends React.Component {
+         render() {
+           console.log(this) //this 指向 Demo 的实例对象
+            return &lt;h2&gt;Welcome&lt;/h2&gt;
+         }
+      }
+      ReactDOM.render(&lt;Demo/&gt;,document.getElementById('test'))
+ &lt;/script&gt;
+</code></pre>
+<ul>
+<li>执行了 ReactDOM.render 后,
+<ol>
+<li>React 解析组件标签, 找到了 Demo 组件.</li>
+<li>发现组件是类定义的, 随后new 一个该类的实例, 通过该实例调用原型上的 render 方法</li>
+<li>将 render 返回的虚拟 DOM 转为真是 DOM, 随后呈现在页面中.</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-类式组件实例三大属性之-state">1. 类式组件实例三大属性之 state</h3>
+<ul>
+<li>通过构造器传需要使用的 state</li>
+<li>感觉就像之前通过自定义标签存放的一些数据, 都通过对象形式整合到 state 中去了</li>
+</ul>
+<pre><code class="language-react">&lt;script type=&quot;text/babel&quot;&gt;
+      class Weather extends React.Component { //需要继承
+         constructor(props) {
+            super(props);
+            //初始化状态
+            this.state = {isHot:false}
+         }
+         render() {
+            console.log(this);
+            //读取状态
+            const {isHot} = this.state;
+            return &lt;h2&gt; 今天天气很 {isHot ? '炎热' : '凉爽'}&lt;/h2&gt;
+         }
+      }
+      ReactDOM.render(&lt;Weather/&gt;,document.getElementById('test'))
+   &lt;/script&gt;
+</code></pre>
+<h4 id="组件内原型上自定义函数的-this-指向">组件内原型上自定义函数的 this 指向</h4>
+<ul>
+<li>类中是默认局部开启严格模式</li>
+</ul>
+<pre><code class="language-js">class Person() {
+  constructor() {
+  }
+  study(){
+    console.log(this)
+  }
+}
+const p1 = new Person();
+p1.study(); //输出指向 Person 实例
+const fn = p1.study;
+fn()//输出为 undefined, 因为类内为默认严格模式, 不能指向 window
+</code></pre>
+<h4 id="组件内事件函数的-this-指向">组件内事件函数的 this 指向</h4>
+<ol>
+<li>
+<p>在 react 中尽量直接使用标签内的事件, 然后单独写一个函数, 传到标签内</p>
+</li>
+<li>
+<p>react 重写了所有事件函数, onclick 改为 onClick. 因此事件函数内的 this 指向发生变化, 由事件源变为全局</p>
+</li>
+</ol>
+<ul>
+<li>注意:
+<ul>
+<li>由于react 中的 jsx 都是表达式赋值的形式, 所以 onclick 后面的大括号内必须是 demo 而不写小括号</li>
+<li>如果写了小括号就相当于把 demo 的返回值赋值给 onClick, 此处为 undefined</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>
+<p>weatherChange 函数是通过把函数赋值给 onClick, 通过全局调用 onClick. 它不是通过实例调用的, weatherChange 内的 this 指向就会变为 window. 又因为开起来局部严格模式, 这里的 this 就会指向 undefined.</p>
+<ul>
+<li>
+<p>解决方法 1: 其实这里和原生 js 是一样的, 原生 js 的时间函数的 this 是指向事件源, 解决办法一般就是箭头函数使 this 指向变为上下文的 this指向.</p>
+</li>
+<li>
+<p>解决方法 2: 通过 bind 函数将原型上的 weatherChange 函数的 this 指向重新指到类的属性上</p>
+<ul>
+<li>注意: bind 函数返回一个带有新 this指向的新函数, 但并不自动执行</li>
+</ul>
+<pre><code class="language-js">constructor(props) {
+   super(props);
+   this.state = {isHot:false};
+ 	 this.changeWeather = this.changeWeather.bind(this)
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="state-需要通过-setstate-来更新">state 需要通过 setState 来更新</h4>
+<ol>
+<li>
+<p>setState 方法继承于 React.Componant</p>
+</li>
+<li>
+<p>setState 传入参数为一个对象, 此对象会和 state 内的 key:value 比较并且合并, 所以可以做到只更新一个或者部分键值对.</p>
+</li>
+</ol>
+<h4 id="constructor-和-render的调用次数">constructor 和 render的调用次数</h4>
+<ul>
+<li>constructor 只调用一次</li>
+<li>render 调用 n+1 次, 初始一次和每次 state <strong>更新</strong>
+<ul>
+<li>不用像原生 js 那样把 render 传进事件函数了</li>
+</ul>
+</li>
+</ul>
+<h4 id="基本的代码结构">基本的代码结构</h4>
+<pre><code class="language-js">   &lt;script type=&quot;text/babel&quot;&gt;
+      //1.创建组件
+      class Weather extends React.Component {
+         constructor(props) {
+            super(props);
+            //初始化状态
+            this.state = { isHot: true };
+            this.newWeatherChange = this.weatherChange.bind(this);
+         }
+         weatherChange() {
+            let { isHot } = this.state;
+            this.setState({ isHot: !isHot });
+         }
+         render() {
+            //读取状态
+            let { isHot } = this.state;
+            return &lt;h2 onClick={this.newWeatherChange}&gt; 今天天气很 {isHot ? '炎热' : '凉爽'}&lt;/h2&gt;
+         }
+      }
+      //2.渲染组件
+      ReactDOM.render(&lt;Weather /&gt;, document.getElementById('test'))
+   &lt;/script&gt;
+</code></pre>
+<h4 id="代码的精简函数从原型移到属性"><strong>代码的精简</strong>(函数从原型移到属性)</h4>
+<p>js 类内, 构造器外可以直接写赋值语句, 前面不加 let 和 const, 赋值后直接就是追加的一个属性. 因此, state 的赋值可以拿到构造器外. <strong>同时, 函数也可以写成赋值的形式, 这样函数会从原型变为实例的属性.</strong></p>
+<pre><code class="language-js">&lt;script type=&quot;text/babel&quot;&gt;
+      //1.创建组件
+      class Weather extends React.Component {
+         state = { isHot: true };
+         render() {
+            //读取状态
+            let { isHot } = this.state;
+            return &lt;h2 onClick={this.weatherChange}&gt; 今天天气很 {isHot ? '炎热' : '凉爽'}&lt;/h2&gt;
+         }
+         weatherChange = ()=&gt; {
+            let { isHot } = this.state;
+            this.setState({ isHot: !isHot });
+         }
+      }
+      //2.渲染组件
+      ReactDOM.render(&lt;Weather /&gt;, document.getElementById('test'))
+&lt;/script&gt;
+</code></pre>
+<h4 id="总结">总结</h4>
+<ol>
+<li>render 函数内 this 指向组件实例对象</li>
+<li>组件实例原型上的函数 this 因为react重写的事件函数全局调用会指向 undefined, 如要更改指向到实例:
+<ol>
+<li>可将函数通过箭头函数定义在组件属性上</li>
+<li>在构造器内新写一个函数, 通过 bind 函数更改 this 指向返回新函数赋值给新写的函数</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-类式组件实例三大属性之-props">2. 类式组件实例三大属性之 props</h3>
+<p>只读属性, 但可以进行运算.</p>
+<h4 id="两种方式往组件内传递-props">两种方式往组件内传递 props:</h4>
+<ol>
+<li>标签内直接书写</li>
+<li>标签内用&hellip;展开一个对象</li>
+</ol>
+<pre><code class="language-react">//1.创建组件
+class Person extends React.Component {
+   render() {
+      const {name,age,gender} = this.props;
+      //读取状态
+      return &lt;ul&gt;
+               &lt;li&gt;姓名: {name}&lt;/li&gt;
+               &lt;li&gt;性别: {gender}&lt;/li&gt;
+               &lt;li&gt;年龄: {age} &lt;/li&gt;
+            &lt;/ul&gt;
+   }
+}
+const person = {name: &quot;张三&quot;,age: &quot;18&quot;,gender: &quot;男&quot;}
+//2.渲染组件
+ReactDOM.render(&lt;Person name=&quot;张三&quot; age=&quot;18&quot;gender=&quot;男&quot;/&gt;,document.getElementById('test'))
+ReactDOM.render(&lt;Person {...person}/&gt;, document.getElementById('test2'))
+</code></pre>
+<h4 id="对传入的对象内数据类型进行限制">对传入的对象内数据类型进行限制</h4>
+<p>需要引入<code>prop-types.js</code> 文件来调用对应的限制方法</p>
+<pre><code class="language-react">Person.propTypes = {
+   name: PropTypes.string.isRequired,
+   age: PropTypes.number,
+   gender: PropTypes.string.isRequired,
+   speak: PropTypes.func
+}
+const person = {name: &quot;李四&quot;,age:  20,gender: &quot; 女&quot;}
+function speak() {
+
+}
+//2.渲染组件
+ReactDOM.render(&lt;Person name=&quot;张三&quot; age={18} gender=&quot;男&quot; speak = {speak}/&gt;, document.getElementById('test'))
+ReactDOM.render(&lt;Person {...person}/&gt;, document.getElementById('test2'))
+</code></pre>
+<h4 id="标签属性的简写方式">标签属性的简写方式</h4>
+<pre><code class="language-react">class Person extends React.Component {
+   static propTypes = {
+      name: PropTypes.string.isRequired,
+      age: PropTypes.number,
+      gender: PropTypes.string.isRequired,
+      speak: PropTypes.func
+   }
+   static defaultProps = {
+      gender: &quot;男&quot;,
+      age: 18
+   }
+   render() {
+     //读取属性
+      const { name, age, gender } = this.props;
+      return &lt;ul&gt;
+         &lt;li&gt;姓名: {name}&lt;/li&gt;
+         &lt;li&gt;性别: {gender}&lt;/li&gt;
+         &lt;li&gt;年龄: {age + 99} &lt;/li&gt;
+      &lt;/ul&gt;
+   }
+}
+</code></pre>
+<h4 id="类式组件内构造器的问题">类式组件内构造器的问题</h4>
+<p>构造器的主要作用参考官网只有两点:</p>
+<ol>
+<li>
+<p>初始化 state: <code>this.state = {name:&quot;Sam&quot;}</code></p>
+</li>
+<li>
+<p>通过 bind 函数改变原型上函数的 this 指向并赋值给一个新的函数, 用作事件函数来保证 this 指向组件实例.</p>
+</li>
+</ol>
+<p>以上两点都可以通过构造器外赋值语句的形式达到同样的效果, 所以构造器不是必须的. 基本不会用到.</p>
+<h4 id="函数式组件的-props-应用">函数式组件的 props 应用</h4>
+<p>函数式组件通过传参的形式把 props 传入组件内部. 属性的限制也可以通过<code>组件名.propTypes</code> 来设置.</p>
+<pre><code class="language-react">//1.创建组件
+function Person(props) {
+   const {name, age} = props
+   return(
+      &lt;ul&gt;
+         &lt;li&gt;姓名: {name}&lt;/li&gt;
+         &lt;li&gt;性别: 男&lt;/li&gt;
+         &lt;li&gt;年龄: {age + 99} &lt;/li&gt;
+      &lt;/ul&gt;
+   )
+}
+//对标签属性进行必要性的限制
+Person.propTypes = {
+   name: PropTypes.string.isRequired,
+   age: PropTypes.number,
+   gender: PropTypes.string.isRequired,
+   speak: PropTypes.func
+}
+const person = { name: &quot;李四&quot;, age: 20, gender: &quot; 女&quot; }
+//2.渲染组件
+ReactDOM.render(&lt;Person {...person} /&gt;, document.getElementById('test2'))
+</code></pre>
+<h4 id="总结-1">总结</h4>
+<ol>
+<li>
+<p>props 有两种方式传入类式组件的内部:</p>
+<ol>
+<li>直接在ReactDOM.render 函数的一个参数的标签内写键值对</li>
+<li>在组件外部定义一个对象 <code>p</code>, 在render 函数的一个参数的标签内写 <code>{...p}</code></li>
+</ol>
+</li>
+<li>
+<p>可以对传入的 props 的类型进行判断</p>
+<ol>
+<li>类式组件直接在组件内写 <code>static propTypes ={}</code></li>
+<li>函数式在组件外写 <code>组件名.propTypes = {}</code></li>
+</ol>
+</li>
+<li>
+<p>要引入 <code>prop-types.js</code> 来使用 props 的内容判断</p>
+</li>
+<li>
+<p>组件内部不要修改 props</p>
+</li>
+</ol>
+<h3 id="3-类式组件实例三大属性之-refs">3. 类式组件实例三大属性之 refs</h3>
+<p>refs 感觉就像js 中自定义的一个标签属性, 用来表姐需要访问的标签. 它可以在组件实例中的属性中以对象的形式找到, 每一个 ref 是一个 key, 对应着标记的标签为值.</p>
+<h4 id="通过字符串形式创建-ref-不推荐使用">通过字符串形式创建 ref (不推荐使用)</h4>
+<pre><code class="language-react">//1.创建组件
+class Demo extends React.Component {
+   showData = () =&gt; {
+      const input = this.refs.input1
+      alert(input.value)
+      console.log(this);
+   }
+   showData2 = () =&gt; {
+      const input = this.refs.input2
+      alert(input.value)
+   }
+   render() {
+      return (
+         &lt;div&gt;
+            &lt;input ref=&quot;input1&quot; type=&quot;text&quot; placeholder=&quot;点击按钮提示数据&quot; /&gt;
+            &lt;button ref =&quot;button1&quot; onClick={this.showData}&gt; 点我提示左边数据&lt;/button&gt;
+            &lt;input ref=&quot;input2&quot;onBlur={this.showData2} type=&quot;text&quot; placeholder=&quot;是去焦点提示数据&quot; /&gt;
+         &lt;/div&gt;
+      )
+   }
+
+}
+
+//2.渲染组件
+ReactDOM.render(&lt;Demo /&gt;, document.getElementById('test2'))
+
+</code></pre>
+<h4 id="通过回调函数形式创建-ref">通过回调函数形式创建 ref</h4>
+<blockquote>
+<p>回调函数的定义:</p>
+<ol>
+<li>
+<p>我定义了函数</p>
+</li>
+<li>
+<p>我没调用函数</p>
+</li>
+<li>
+<p>别人调用了函数</p>
+</li>
+</ol>
+</blockquote>
+<p>ref 里回调函数(内联函数)的参数就是 ref 所在的标签, 参数一般就取名 currentNode 简写为 c.</p>
+<p>这里之所以叫回调函数, 是因为我定义了函数, 但是并非自己调用的, 而是 react 帮我调用的.</p>
+<p><strong>注意下面的 <code>this.input1 = c</code> 实际上不把c 节点传入了 refs 中去, 而作为组件本身的属性.</strong></p>
+<pre><code class="language-react">class Demo extends React.Component {
+ showData = () =&gt; {
+    const {input1} = this
+    alert(input1.value)
+    console.log(this);
+ }
+ showData2 = () =&gt; {
+    const {input2} = this
+    alert(input2.value)
+ }
+ render() {
+    return (
+       &lt;div&gt;
+          &lt;input ref={(c)=&gt;{this.input1 = c}} type=&quot;text&quot; placeholder=&quot;点击按钮提示数据&quot; /&gt;
+           &lt;button ref =&quot;button1&quot; onClick={this.showData}&gt; 点我提示左边数据&lt;/button&gt;
+           &lt;input ref={(c)=&gt;{this.input2 = c}} onBlur={this.showData2} type=&quot;text&quot; placeholder=&quot;失去焦点提示数据&quot; /&gt;
+         &lt;/div&gt;
+      )
+   }
+
+}
+
+//2.渲染组件
+ReactDOM.render(&lt;Demo /&gt;, document.getElementById('test2'))
+</code></pre>
+<h5 id="回调函数为内联函数设置-ref时函数的执行次数">回调函数为内联函数设置 ref时函数的执行次数</h5>
+<ol>
+<li>设置内联函数输出 ref 节点</li>
+<li>第一次 render 只输出一次</li>
+<li>更改 state 后, 自动调用 render 会输出一个 null 和一个 ref 节点</li>
+</ol>
+<p>官方解释是因为第一个 null 是要清空之前的节点. 如果要取消这种情况, 可以写组件类的函数, 然后在 ref 中引用. 正常可以写内联.</p>
+<h4 id="通过createref-api-来创建-ref">通过<code>createRef</code> API 来创建 ref</h4>
+<ol>
+<li>通过在组件内创建容器来存储 ref 传回的节点.</li>
+<li>这个容器只能存放一个节点. 也就是说每个 ref 节点都要创建一个容器来接收.</li>
+<li>容器实际上是一个对象, key 值为 current, value 值为节点.</li>
+<li>经过测试, 组件自身 refs 属性就不再存节点了.</li>
+</ol>
+<pre><code class="language-react">//1.创建组件
+class Demo extends React.Component {
+   input1 = React.createRef()
+   showData = () =&gt; {
+      alert(this.input1.current.value)
+      console.log(this);
+   }
+   render() {
+      return (
+         &lt;div&gt;
+            &lt;input ref={this.input1} type=&quot;text&quot; placeholder=&quot;点击按钮提示数据&quot; /&gt;
+            &lt;button onClick={this.showData}&gt; 点我提示左边数据&lt;/button&gt;
+         &lt;/div&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Demo /&gt;, document.getElementById('test2'))
+</code></pre>
+<h3 id="react-的事件处理函数">React 的事件处理函数</h3>
+<ol>
+<li>通过 onXxx 属性指定事件处理函数, 首字母大写
+<ol>
+<li>React 自己写了一套事件处理函数, 所以要首字母大写</li>
+<li>事件同样是事件委托给往外传递事件</li>
+</ol>
+</li>
+<li>通过 event.target 的得到事件发生的 DOM 对象
+<ol>
+<li>因为 ref 不可以过度使用, 因此可以通过这种方式来获取 dom</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-react">//1.创建组件
+class Demo extends React.Component {
+   showData = () =&gt; {
+      const {input1} = this
+      alert(input1.value)
+      console.log(this);
+   }
+   showData2 = (e) =&gt; {
+
+      alert(e.target.value)
+   }
+   render() {
+      return (
+         &lt;div&gt;
+            &lt;input ref={(c)=&gt;{this.input1 = c}} type=&quot;text&quot; placeholder=&quot;点击按钮提示数据&quot; /&gt;
+            &lt;button ref =&quot;button1&quot; onClick={this.showData}&gt; 点我提示左边数据&lt;/button&gt;
+            &lt;input onBlur={this.showData2} type=&quot;text&quot; placeholder=&quot;是去焦点提示数据&quot; /&gt;
+         &lt;/div&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Demo /&gt;, document.getElementById('test2'))
+</code></pre>
+<h3 id="react-中收集表单数据">React 中收集表单数据</h3>
+<h4 id="1非受控组件">1.非受控组件</h4>
+<p>获取数据的时候, 现用现取. 比如表单,CheckBox, 数据需要触发点击事件才能获取到.</p>
+<pre><code class="language-react">//1.创建组件
+class Login extends React.Component {
+  // 点击提交按钮后
+   handleSubmit = (event)=&gt; {
+     //防止页面自动跳转, 不跳转通过 ajax 处理数据.
+      event.preventDefault();
+      const {name,password} = this
+      alert(`用户名:${name.value}, 密码:${password.value}`)
+   }
+   render() {
+      return (
+         &lt;form onSubmit={this.handleSubmit}&gt;
+            用户名: &lt;input ref={(e)=&gt;{this.name = e}} type=&quot;text&quot; /&gt;
+            密码: &lt;input ref={(e)=&gt;{this.password = e}} type=&quot;password&quot;/&gt;
+            &lt;button&gt;登录&lt;/button&gt;
+            &lt;/form&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Login/&gt;, document.getElementById('test'))
+</code></pre>
+<h4 id="2受控组件">2.受控组件</h4>
+<p>通过 onChange 事件来随时获取数据. 优势是 refs 用的少了, 因为 react 官网说少用 refs.</p>
+<pre><code class="language-react">//1.创建组件
+class Login extends React.Component {
+   state = {
+      username:&quot;&quot;,
+      password:&quot;&quot;
+   }
+   saveUsername = (event)=&gt; {
+      this.setState({username:event.target.value})
+   }
+   savePassword = (event)=&gt; {
+      this.setState({password:event.target.value})
+   }
+   handleSubmit = (event)=&gt; {
+      event.preventDefault();
+      const {username,password} = this.state
+      alert(`用户名:${username}, 密码:${password}`)
+   }
+   render() {
+      return (
+         &lt;form onSubmit={this.handleSubmit}&gt;
+            用户名: &lt;input onChange={this.saveUsername} type=&quot;text&quot; /&gt;
+            密码: &lt;input onChange={this.savePassword} type=&quot;password&quot;/&gt;
+            &lt;button&gt;登录&lt;/button&gt;
+            &lt;/form&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Login/&gt;, document.getElementById('test'))
+
+</code></pre>
+<h3 id="高阶函数-函数柯里化">高阶函数-函数柯里化</h3>
+<blockquote>
+<p>In mathematics and computer science, currying is the technique of converting a function that takes multiple arguments into a sequence of functions that each takes a single argument.</p>
+</blockquote>
+<p>Currying 实际上就是把 f(a,b,c) 转化为 f(a)(b)(c), 因此 f(c) 要返回函数并且接收b参数.</p>
+<h4 id="高阶函数">高阶函数</h4>
+<p>高阶函数只需满足两点中的其中一点:</p>
+<ol>
+<li>参数中有函数</li>
+<li>返回值中有函数</li>
+</ol>
+<p>常见的高阶函数: Promise, setTimeout, arr.map(), 事件函数</p>
+<h4 id="运用在-react-中的情景">运用在 react 中的情景</h4>
+<p>事件处理函数在传递的时候, 不能写括号, 不然就会传函数的返回值. 因此, 如果想要传参数加括号, 就要在返回值里写真正的事件传递函数.</p>
+<pre><code class="language-react">//1.创建组件
+class Login extends React.Component {
+   state = {
+      username:&quot;&quot;,
+      password:&quot;&quot;
+   }
+   /*高阶函数:
+      1. 参数里有函数
+      2. 返回值里有函数
+   */
+   saveFormData = (formData)=&gt; {
+      return (evnet)=&gt; {
+         //注意中括号内 key 来取value, 因为下面传参的时候传的字符串
+         this.setState({[formData]:event.target.value})
+      }
+   }
+   handleSubmit = (event)=&gt; {
+      event.preventDefault();
+      const {username,password} = this.state
+      alert(`用户名:${username}, 密码:${password}`)
+   }
+   render() {
+      return (
+         &lt;form onSubmit={this.handleSubmit}&gt;
+            用户名: &lt;input onChange={this.saveFormData(&quot;username&quot;)} type=&quot;text&quot; /&gt;
+            密码: &lt;input onChange={this.saveFormData(&quot;password&quot;)} type=&quot;password&quot;/&gt;
+            &lt;button&gt;登录&lt;/button&gt;
+            &lt;/form&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Login/&gt;, document.getElementById('test'))
+
+</code></pre>
+<h3 id="不使用柯里化的事件函数">不使用柯里化的事件函数</h3>
+<pre><code class="language-react">//1.创建组件
+class Login extends React.Component {
+   state = {
+      username: &quot;&quot;,
+      password: &quot;&quot;
+   }
+   saveFormData = (formData, event) =&gt; {
+      this.setState({ [formData]: event.target.value })
+   }
+   handleSubmit = (event) =&gt; {
+      event.preventDefault();
+      const { username, password } = this.state
+      alert(`用户名:${username}, 密码:${password}`)
+   }
+   render() {
+      return (
+         &lt;form onSubmit={this.handleSubmit}&gt;
+            用户名: &lt;input onChange={event =&gt; this.saveFormData(&quot;username&quot;, event)} type=&quot;text&quot; /&gt;
+            密码: &lt;input onChange={event =&gt; this.saveFormData(&quot;password&quot;, event)} type=&quot;password&quot; /&gt;
+            &lt;button&gt;登录&lt;/button&gt;
+         &lt;/form&gt;
+      )
+   }
+}
+//2.渲染组件
+ReactDOM.render(&lt;Login /&gt;, document.getElementById('test'))
+
+</code></pre>
 
         </div>
         
@@ -385,13 +1007,13 @@
     <div>
         
         <span class="block font-bold">Previous</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/" class="block">ES6 模块化开发的谈吃蛇小游戏</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="block">react之生命周期</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">Next</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/" class="block">ToDo 待办事项项目</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/" class="block">ES6 模块化开发的谈吃蛇小游戏</a>
         
     </div>
 </div>
@@ -409,6 +1031,9 @@
     <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
     <div class="content">
         
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
+        <br />
         
         <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
         <br />

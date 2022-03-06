@@ -8,7 +8,25 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>react之生命周期</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react之基本语法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>学习联想 jsx 中 class 需要写成 className, js 里那个 className 是什么来着 是在事件函数里, 判断 target的时候 if (target.className === &#39;new-todo&#39; &amp;amp;&amp;amp; code === 13) 自定义属性是</description>
+    </item>
+    
     <item>
       <title>ES6 模块化开发的谈吃蛇小游戏</title>
       <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
@@ -16,15 +34,6 @@
       
       <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
       <description>项目特点 原生 js 实现的交互功能 ES6 模块化开发 分成四个类 食物类: 生成一个食物, 随机位置. 蛇类: 生成一个蛇, 给蛇加一节</description>
-    </item>
-    
-    <item>
-      <title>react之基本语法</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
-      <pubDate>Wed, 02 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
-      <description>学习联想 jsx 中 class 需要写成 className, js 里那个 className 是什么来着 是在事件函数里, 判断 target的时候 if (target.className === &#39;new-todo&#39; &amp;amp;&amp;amp; code === 13) 自定义属性是</description>
     </item>
     
     <item>
