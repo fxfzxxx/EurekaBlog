@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>react之 初识路由 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="通过 v5 的 react-router-dom 来创建前端路由.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"react之 初识路由",
+      "item":"/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/"
+    },
+    "headline": "react之 初识路由 | Aaron 的博客",
+    "image": "/images/react-logo.jpeg",
+    "datePublished": "2022-03-15T00:00:00+00:00",
+    "dateModified": "2022-03-15T00:00:00+00:00",
+    "wordCount":  2044 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "通过 v5 的 react-router-dom 来创建前端路由."
+}
+</script><meta property="og:title" content="react之 初识路由 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/" />
+
+
+
+<meta property="og:description" content="通过 v5 的 react-router-dom 来创建前端路由." />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-03-15T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-03-15T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="All" />
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+
+
+
+
+ 
+
+<style>
+  #google_translate_element {
+    margin: 0 0 0 10px;
+  } 
+  #google_translate_element img {
+    display: inline;
+  }
+  .skiptranslate {
+    
+  }
+</style>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+            <a href="/categories/projects" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode" style="padding-top:8px;">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+            <div style="width: 150;display: inline-block;" id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ch'}, 'google_translate_element');
+    }
+</script>
+    
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">react之 初识路由</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2022-03-15</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>5 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/react/" class="hover:text-eureka">react</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/react-logo.jpeg" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="spa">SPA</h2>
+<ol>
+<li>单页面应用 Single Page Application</li>
+<li>整个应用只有一个完整的页面</li>
+<li>点击页面中的连接不会刷新页面, 只会做页面的局部刷新</li>
+<li>数据都用 Ajax 请求, 异步</li>
+</ol>
+<h2 id="路由-router">路由 router</h2>
+<ol>
+<li>路由是一个映射关系 (key: value)</li>
+<li>key 就是地址栏的 path, value 就是对应的组件或者 function</li>
+</ol>
+<h3 id="路由分类">路由分类</h3>
+<h4 id="后端路由">后端路由</h4>
+<ol>
+<li>
+<p>理解： value是function, 用来处理客户端提交的请求。</p>
+</li>
+<li>
+<p>注册路由： router.get(path, function(req, res))</p>
+</li>
+<li>
+<p>工作过程：当node接收到一个请求时, 根据请求路径找到匹配的路由, 调用路由中的函数来处理请求, 返回响应数据</p>
+</li>
+</ol>
+<h4 id="前端路由">前端路由</h4>
+<ol>
+<li>
+<p>浏览器端路由，value是component，用于展示页面内容。</p>
+</li>
+<li>
+<p>注册路由: <code>&lt;Route path=&quot;/test&quot; component={Test}&gt;</code></p>
+</li>
+<li>
+<p>工作过程：当浏览器的path变为/test时, 当前路由组件就会变为Test组件</p>
+</li>
+</ol>
+<h3 id="前端路由基本使用">前端路由基本使用</h3>
+<ol>
+<li>
+<p>先安装 <code>yarn add react-router-dom@5</code> , 此处安装的是 5 版本, 用来理解和学习, 后续会补充 6 版本的安装和使用.</p>
+</li>
+<li>
+<p>编写路由链接:</p>
+<ol>
+<li>首先引入 <code>import {Link} from 'react-router-dom'</code></li>
+<li>在需要点击跳转的地方编写路由链接</li>
+</ol>
+<pre><code class="language-react">{/* 原生 js 靠 a 标签路由 */}
+{/* &lt;a className=&quot;list-group-item&quot; href=&quot;./about.html&quot;&gt;
+  About
+&lt;/a&gt;
+&lt;a className=&quot;list-group-item active&quot; href=&quot;./home.html&quot;&gt;
+  Home
+&lt;/a&gt; */}
+{/* 编写路由链接 */}
+&lt;Link className=&quot;list-group-item&quot; to=&quot;/about&quot;&gt;
+  About
+&lt;/Link&gt;
+&lt;Link className=&quot;list-group-item&quot; to=&quot;/home&quot;&gt;
+  Home
+&lt;/Link&gt;
+</code></pre>
+</li>
+<li>
+<p>注册路由:</p>
+<ol>
+<li>首先引入 <code>import {Route} from 'react-router-dom'</code></li>
+<li>在需要渲染地方注册路由</li>
+</ol>
+<pre><code class="language-react">{/* 注册路由 */}
+  &lt;Route path=&quot;/about&quot; component={About}/&gt;
+  &lt;Route path=&quot;/home&quot; component={Home}/&gt;
+</code></pre>
+</li>
+<li>
+<p>在 index.jsx 中引入 <code>import {BrowserRouter} from 'react-router-dom'</code></p>
+<ol>
+<li>原因是 <code>&lt;Link/&gt;</code> 和 <code>&lt;Route/&gt;</code> 都需要被 <code>&lt;BrowserRouter/&gt;</code> 来包裹, 所以写在 <code>index.js</code> 中相当于包裹整个项目.</li>
+</ol>
+<pre><code class="language-js">ReactDOM.render(
+  &lt;React.StrictMode&gt;
+    &lt;BrowserRouter&gt;
+    &lt;App /&gt;
+    &lt;/BrowserRouter&gt;
+  &lt;/React.StrictMode&gt;,
+  document.getElementById('root')
+);
+</code></pre>
+</li>
+</ol>
+<h3 id="路由组件与普通组件">路由组件与普通组件</h3>
+<h4 id="普通组件">普通组件</h4>
+<ol>
+<li>放在 component 文件夹内</li>
+<li>props 不传就没有东西</li>
+<li><code>&lt;Demo/&gt;</code></li>
+</ol>
+<h4 id="路由组件">路由组件</h4>
+<ol>
+<li>
+<p>放在 pages 文件夹内</p>
+</li>
+<li>
+<p>不点击就不挂载</p>
+</li>
+<li>
+<p><code>&lt;Route path=&quot;/about&quot; component={Demo}/&gt;</code></p>
+</li>
+<li>
+<p>props 不传也有东西</p>
+<pre><code class="language-js">{{
+    &quot;history&quot;: {
+				go: f go(n)
+        goBack: f,
+        goForward: f,
+        push: f push(path,state)
+        replace: f replace(path,state)
+    },
+    &quot;location&quot;: {
+        &quot;pathname&quot;: &quot;/about&quot;,
+        &quot;search&quot;: &quot;&quot;,
+        &quot;hash&quot;: &quot;&quot;,
+        &quot;key&quot;: &quot;p7l20g&quot;,
+         state: undefined
+    },
+    &quot;match&quot;: {
+      	params: {},
+        &quot;path&quot;: &quot;/about&quot;,
+        &quot;url&quot;: &quot;/about&quot;,
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="navlink-的使用和封装">NavLink 的使用和封装</h3>
+<h4 id="基本使用">基本使用</h4>
+<ol>
+<li>
+<p>当 <code>Link</code> 标签作为导航并且需要高亮时, 会不太方便. 用 <code>NavLink</code> 标签的好处是, 当点击这个路由标签后, 会自动给标签追加一个 <code>active</code> 类, 因此可以通过 CSS 来改变标签的样式.</p>
+</li>
+<li>
+<p>这里有一个巧合就是 Bootstrap 的高亮显示类也是 <code>active</code> , 所以使用起来非常方便.</p>
+</li>
+<li>
+<p>如果说使用的 CSS UI 库对应的高亮显示类不是 <code>active</code> 就可以在 <code>NavLink</code> 内来单独设置高亮显示的类名. 比如高亮显示类名是<code>highlight </code>, 就可以写 <code>activeClassName=&quot;highlight&quot;</code>.</p>
+<pre><code class="language-react">&lt;NavLink className=&quot;list-group-item&quot; to=&quot;/about&quot;&gt;About&lt;/Link&gt;
+&lt;NavLink className=&quot;list-group-item&quot; to=&quot;/home&quot;&gt;Home&lt;/Link&gt;
+</code></pre>
+</li>
+<li>
+<p>如果说, 想要单独设置高亮颜色, 绕过已经引入的 UI 库, 可以在 CSS 内设置<code>!important</code> 语法.</p>
+<pre><code class="language-css">.active {
+  background-color: yellow !important;
+  color: red !important
+}
+</code></pre>
+</li>
+</ol>
+<h4 id="二次封装">二次封装</h4>
+<ol>
+<li>
+<p>由于在书写 <code>NavLink</code> 标签的时候, 有大量标签属性重复, 比如 <code>className</code>, <code>activeClassName</code> 或者其他自定义信息, 所以可以进行二次封装来减少代码重复性.</p>
+</li>
+<li>
+<p>创建一个新的一般组件 <code>MyNavLink</code> , 需要引入<code>import { NavLink } from &quot;react-router-dom&quot;</code>, 同时渲染<code>NavLink</code>. 通过 <code>{...this.props}</code> 来把 <code>MyNavLink</code> 收到的 props 传到 <code>NavLink</code> 的 props 中去.</p>
+<pre><code class="language-react">render() {
+  return (
+    &lt;NavLink className=&quot;list-group-item&quot; {...this.props} /&gt;
+  )
+}
+</code></pre>
+</li>
+<li>
+<p>在实际挂载 <code>MyNavLink</code> 的时候, 通过标签内的属性来给组件传递 props. 这里注意: 标签内容也会作为 props 中的 children 传递到组件中去. 传递后, <code>NavLink</code> 会将收到的 props.chidren 渲染到生成的标签内容.</p>
+<ul>
+<li><strong>MyNavLink 标签内容 -&gt; MyNavLink.props.children -&gt; NavLink.props.Children -&gt; NavLinks标签内容</strong></li>
+</ul>
+</li>
+<li>
+<p>这样的好处就是, 二次封装后, MyNavLink 组件依然可以写成标签➕闭合标签的形式, 并且在标签内容内写需要的内容, 从而与 NavLink呼应.</p>
+</li>
+</ol>
+<h3 id="switch-的作用">Switch 的作用</h3>
+<p>注册路由的时候, 可以引入 <code>import {Switch} from &quot;react-router-dom&quot;</code> 包裹在所有 <code>&lt;Route&gt;</code> 标签的外侧.</p>
+<pre><code class="language-react">&lt;Switch&gt;
+  &lt;Route path=&quot;/about&quot; component={About} /&gt;
+  &lt;Route path=&quot;/home&quot; component={Home} /&gt;
+  &lt;Route path=&quot;/home&quot; component={About} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<p>这样可以避免一种情况:</p>
+<p>​	相同地址下, 如果多传了一个路由组件建, 会同时显示两个组件.</p>
+<h3 id="样式丢失的解决">样式丢失的解决</h3>
+<ol>
+<li>
+<p>在 react 服务器下, 如果访问一个不存在的地址, 或者是前端路由地址, react 会默认返回 public 中的 index.html 页面. 这个时候会出现样式丢失的情况.</p>
+</li>
+<li>
+<p>发生这种情况的原因是:</p>
+<ol>
+<li>
+<p>在 index.html 中引入的 css 路径如下:</p>
+<p><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;./css/bootstrap.css&quot; /&gt;</code></p>
+</li>
+<li>
+<p>正常情况下加载 css 文件是从根目录开始的:</p>
+<p><code>http://localhost:3000/css/bootstrap.css</code></p>
+</li>
+<li>
+<p>而直接输入不存在地址,或者是前端路由地址, 加载 css 是从路由地址开始的:</p>
+<p><code>http://localhost:3000/notexist/css/bootstrap.css</code></p>
+</li>
+<li>
+<p><code>localhost: 3000</code> 对应的是 pubic 文件夹. 而 public 文件夹中并不存在 notexist 文件夹. 所以 css 会加载失败.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>解决办法:</p>
+<ol>
+<li>更改 css 引入路径为绝对路径</li>
+</ol>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/bootstrap.css&quot; /&gt;
+或者
+&lt;link rel=&quot;manifest&quot; href=&quot;%PUBLIC_URL%/css/bootstrap.css&quot; /&gt;
+</code></pre>
+<ol start="2">
+<li>改 BrowserRouter 为 HashRouter</li>
+</ol>
+</li>
+</ol>
+<h3 id="路由的模糊匹配和精准匹配">路由的模糊匹配和精准匹配</h3>
+<h4 id="模糊匹配">模糊匹配</h4>
+<p>如果编写的路由链接大于或者说包含注册路由, 则跳转到包含的注册路由.</p>
+<pre><code class="language-react">{/* 编写路由链接 */}
+&lt;MyNavLink to=&quot;/fanxuan/about&quot; title=&quot;About&quot;&gt;
+  About
+&lt;/MyNavLink&gt;
+&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot; title=&quot;Home&quot;&gt;
+  Home
+&lt;/MyNavLink&gt;
+</code></pre>
+<pre><code class="language-react">{/* 注册路由 */}
+&lt;Switch&gt;
+  &lt;Route path=&quot;/fanxuan/about&quot; component={About} /&gt;
+  &lt;Route path=&quot;/fanxuan/home&quot; component={Home} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<h4 id="精准匹配">精准匹配</h4>
+<p>正常来说不开启精准匹配, 有时候开启无法继续匹配二级路由.</p>
+<pre><code class="language-react">{/* 编写路由链接 */}
+&lt;MyNavLink to=&quot;/fanxuan/about&quot; title=&quot;About&quot;&gt;
+  About
+&lt;/MyNavLink&gt;
+&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot; title=&quot;Home&quot;&gt;
+  Home
+&lt;/MyNavLink&gt;
+</code></pre>
+<pre><code class="language-react">{/* 注册路由 */}
+&lt;Switch&gt;
+  &lt;Route exact path=&quot;/fanxuan/about&quot; component={About} /&gt;
+  &lt;Route exact path=&quot;/fanxuan/home&quot; component={Home} /&gt;
+&lt;/Switch&gt;
+</code></pre>
+<h3 id="rediect-的使用">Rediect 的使用</h3>
+<p>在没有匹配到任何路由链接时, 比如直接输入网站地址需要跳转的情况下. 就可以设置 <code>&lt;Redirect&gt;</code> 标签进行跳转.</p>
+<pre><code class="language-react">{/* 注册路由 */}
+&lt;Switch&gt;
+  &lt;Route path=&quot;/about&quot; component={About} /&gt;
+  &lt;Route path=&quot;/home&quot; component={Home} /&gt;
+  &lt;Redirect to=&quot;/about&quot;/&gt;
+&lt;/Switch&gt;
+</code></pre>
+<h3 id="路由的嵌套">路由的嵌套</h3>
+<ol>
+<li>
+<p>路由的注册的是有先后顺序的, App.jsx 中的路由先注册, 先生效.</p>
+</li>
+<li>
+<p>二级路由渲染页面的时候, 需要渲染一级路由的组件, 再渲染二级路由的组件. 一级路由被渲染的原因是出发了路由的模糊匹配.</p>
+</li>
+<li>
+<p>做默认显示的时候, 可以用 <code>&lt;Redirect&gt;</code> 来匹配页面. 挂载了二级路由后, 发现二级路由为空, 则匹配<code>&lt;Redirect&gt;</code>.</p>
+</li>
+</ol>
+<h4 id="一级路由">一级路由</h4>
+<pre><code class="language-react">{/* 编写路由链接 */}
+&lt;MyNavLink to=&quot;/about&quot; &gt;
+  About
+&lt;/MyNavLink&gt;
+&lt;MyNavLink to=&quot;/home&quot;&gt;
+  Home
+&lt;/MyNavLink&gt;
+
+{/* 注册路由 */}
+&lt;Switch&gt;
+  &lt;Route path=&quot;/about&quot; component={About} /&gt;
+  &lt;Route path=&quot;/home&quot; component={Home} /&gt;
+  &lt;Redirect to=&quot;/about&quot; /&gt;
+&lt;/Switch&gt;
+
+</code></pre>
+<h4 id="二级路由">二级路由</h4>
+<pre><code class="language-react">&lt;ul className=&quot;nav nav-tabs&quot;&gt;
+    &lt;li&gt;
+      &lt;MyNavLink to=&quot;/home/news&quot;&gt; News &lt;/MyNavLink&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;MyNavLink to=&quot;/home/messages&quot;&gt; Messages &lt;/MyNavLink&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;Switch&gt;
+    &lt;Route path=&quot;/home/messages&quot; component={Messages} /&gt;
+    &lt;Route path=&quot;/home/news&quot; component={News} /&gt;
+    &lt;Redirect to=&quot;/home/news&quot; /&gt; 
+  &lt;/Switch&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="向路由组件传递参数">向路由组件传递参数</h3>
+<h4 id="向路由组件传递-params-参数">向路由组件传递 params 参数</h4>
+<ol>
+<li>传递</li>
+</ol>
+<pre><code class="language-react">{/* 向路由组建传递 params 参数 */}
+&lt;Link to={`/home/messages/details/${message.id}/${message.title}`}&gt;
+  {message.title}
+&lt;/Link&gt;
+</code></pre>
+<ol start="2">
+<li>声明接收</li>
+</ol>
+<pre><code class="language-react">{/*  声明接收 params 参数 */}
+&lt;Route path=&quot;/home/messages/details/:id/:title&quot; component={Details} /&gt;
+</code></pre>
+<ol start="3">
+<li>接收</li>
+</ol>
+<pre><code class="language-react">//接收 params 参数
+const {id, title} = this.props.match.params
+</code></pre>
+<h4 id="向路由组件传递-serach-参数">向路由组件传递 serach 参数</h4>
+<ol>
+<li>传递</li>
+</ol>
+<pre><code class="language-react">{/* 向路由组建传递 serach 参数 */}
+&lt;Link to={`/home/messages/details/?id=${message.id}&amp;title=${message.title}`}&gt;
+{message.title}
+&lt;/Link&gt;
+</code></pre>
+<ol start="2">
+<li>无需声明接收</li>
+</ol>
+<pre><code class="language-react">{/*  search 参数无需声明接收 */}
+&lt;Route path=&quot;/home/messages/details&quot; component={Details} /&gt;
+</code></pre>
+<ol start="3">
+<li>接收
+<ol>
+<li>由于接收到的参数形式是 <code>urlencoded</code> 也就是 querystring 形式 : key=value&amp;key=value: urlencoded, 所以为了方便, 可以引入一个 react 自带的库来转化成对象.</li>
+<li>引入 <code>import qs from 'qs'</code>, 主要的两个方法 <code>qs.Stringify(obj)</code>: 对象转 qs, <code>qs.Parse(qs.slice(1))</code>: qs转对象.</li>
+</ol>
+</li>
+</ol>
+<pre><code class="language-react">const {search} = this.props.location
+const result = qs.parse(search.slice(1))
+const {id, title} = result
+const findRes = DetialData.find((item) =&gt; item.id === id)
+</code></pre>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/all/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#All</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/" class="block">react之 AJAX</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/">react之 初识路由</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/">react之 AJAX</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/">react之 脚手架</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/">react之 Diffing 算法</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spa">SPA</a></li>
+    <li><a href="#路由-router">路由 router</a>
+      <ul>
+        <li><a href="#路由分类">路由分类</a>
+          <ul>
+            <li><a href="#后端路由">后端路由</a></li>
+            <li><a href="#前端路由">前端路由</a></li>
+          </ul>
+        </li>
+        <li><a href="#前端路由基本使用">前端路由基本使用</a></li>
+        <li><a href="#路由组件与普通组件">路由组件与普通组件</a>
+          <ul>
+            <li><a href="#普通组件">普通组件</a></li>
+            <li><a href="#路由组件">路由组件</a></li>
+          </ul>
+        </li>
+        <li><a href="#navlink-的使用和封装">NavLink 的使用和封装</a>
+          <ul>
+            <li><a href="#基本使用">基本使用</a></li>
+            <li><a href="#二次封装">二次封装</a></li>
+          </ul>
+        </li>
+        <li><a href="#switch-的作用">Switch 的作用</a></li>
+        <li><a href="#样式丢失的解决">样式丢失的解决</a></li>
+        <li><a href="#路由的模糊匹配和精准匹配">路由的模糊匹配和精准匹配</a>
+          <ul>
+            <li><a href="#模糊匹配">模糊匹配</a></li>
+            <li><a href="#精准匹配">精准匹配</a></li>
+          </ul>
+        </li>
+        <li><a href="#rediect-的使用">Rediect 的使用</a></li>
+        <li><a href="#路由的嵌套">路由的嵌套</a>
+          <ul>
+            <li><a href="#一级路由">一级路由</a></li>
+            <li><a href="#二级路由">二级路由</a></li>
+          </ul>
+        </li>
+        <li><a href="#向路由组件传递参数">向路由组件传递参数</a>
+          <ul>
+            <li><a href="#向路由组件传递-params-参数">向路由组件传递 params 参数</a></li>
+            <li><a href="#向路由组件传递-serach-参数">向路由组件传递 serach 参数</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded p-6">
+        <h2 class="text-lg font-semibold mb-4">See Also</h2>
+        <div class="content">
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/">react之 AJAX</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/">react之 脚手架</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/">react之 Diffing 算法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/">小米首页的模拟</a>
+            <br />
+            
+        </div>
+    </div>
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

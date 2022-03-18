@@ -89,7 +89,7 @@
     "image": "/images/react-logo.jpeg",
     "datePublished": "2022-02-20T00:00:00+00:00",
     "dateModified": "2022-03-05T00:00:00+00:00",
-    "wordCount":  4806 ,
+    "wordCount":  4815 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -148,6 +148,22 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" />
 
 
 
@@ -394,6 +410,7 @@
 </ol>
 </li>
 </ul>
+<h2 id="类式组件的三大属性">类式组件的三大属性</h2>
 <h3 id="1-类式组件实例三大属性之-state">1. 类式组件实例三大属性之 state</h3>
 <ul>
 <li>通过构造器传需要使用的 state</li>
@@ -1032,6 +1049,18 @@ ReactDOM.render(&lt;Login /&gt;, document.getElementById('test'))
     <div class="content">
         
         
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/">react之 初识路由</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/">react之 AJAX</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/">react之 脚手架</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/">react之 Diffing 算法</a>
+        <br />
+        
         <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
         <br />
         
@@ -1042,6 +1071,84 @@ ReactDOM.render(&lt;Login /&gt;, document.getElementById('test'))
     </div>
 </div>
         
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#学习联想">学习联想</a></li>
+    <li><a href="#jsx-语法">JSX 语法</a>
+      <ul>
+        <li><a href="#基本规则">基本规则</a></li>
+        <li><a href="#js-表达式">js 表达式</a></li>
+      </ul>
+    </li>
+    <li><a href="#组件">组件</a>
+      <ul>
+        <li><a href="#函数式组件简单组件">函数式组件(简单组件)</a></li>
+        <li><a href="#类式组件复杂组件">类式组件(复杂组件)</a></li>
+      </ul>
+    </li>
+    <li><a href="#类式组件的三大属性">类式组件的三大属性</a>
+      <ul>
+        <li><a href="#1-类式组件实例三大属性之-state">1. 类式组件实例三大属性之 state</a>
+          <ul>
+            <li><a href="#组件内原型上自定义函数的-this-指向">组件内原型上自定义函数的 this 指向</a></li>
+            <li><a href="#组件内事件函数的-this-指向">组件内事件函数的 this 指向</a></li>
+            <li><a href="#state-需要通过-setstate-来更新">state 需要通过 setState 来更新</a></li>
+            <li><a href="#constructor-和-render的调用次数">constructor 和 render的调用次数</a></li>
+            <li><a href="#基本的代码结构">基本的代码结构</a></li>
+            <li><a href="#代码的精简函数从原型移到属性"><strong>代码的精简</strong>(函数从原型移到属性)</a></li>
+            <li><a href="#总结">总结</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-类式组件实例三大属性之-props">2. 类式组件实例三大属性之 props</a>
+          <ul>
+            <li><a href="#两种方式往组件内传递-props">两种方式往组件内传递 props:</a></li>
+            <li><a href="#对传入的对象内数据类型进行限制">对传入的对象内数据类型进行限制</a></li>
+            <li><a href="#标签属性的简写方式">标签属性的简写方式</a></li>
+            <li><a href="#类式组件内构造器的问题">类式组件内构造器的问题</a></li>
+            <li><a href="#函数式组件的-props-应用">函数式组件的 props 应用</a></li>
+            <li><a href="#总结-1">总结</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-类式组件实例三大属性之-refs">3. 类式组件实例三大属性之 refs</a>
+          <ul>
+            <li><a href="#通过字符串形式创建-ref-不推荐使用">通过字符串形式创建 ref (不推荐使用)</a></li>
+            <li><a href="#通过回调函数形式创建-ref">通过回调函数形式创建 ref</a>
+              <ul>
+                <li><a href="#回调函数为内联函数设置-ref时函数的执行次数">回调函数为内联函数设置 ref时函数的执行次数</a></li>
+              </ul>
+            </li>
+            <li><a href="#通过createref-api-来创建-ref">通过<code>createRef</code> API 来创建 ref</a></li>
+          </ul>
+        </li>
+        <li><a href="#react-的事件处理函数">React 的事件处理函数</a></li>
+        <li><a href="#react-中收集表单数据">React 中收集表单数据</a>
+          <ul>
+            <li><a href="#1非受控组件">1.非受控组件</a></li>
+            <li><a href="#2受控组件">2.受控组件</a></li>
+          </ul>
+        </li>
+        <li><a href="#高阶函数-函数柯里化">高阶函数-函数柯里化</a>
+          <ul>
+            <li><a href="#高阶函数">高阶函数</a></li>
+            <li><a href="#运用在-react-中的情景">运用在 react 中的情景</a></li>
+          </ul>
+        </li>
+        <li><a href="#不使用柯里化的事件函数">不使用柯里化的事件函数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
         
     </div>
     

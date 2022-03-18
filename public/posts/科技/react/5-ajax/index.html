@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>react之生命周期 | Aaron 的博客</title>
+<title>react之 AJAX | Aaron 的博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
 
 <meta name="description"
-  content="声明周期的介绍和与之相关的应用">
+  content="利用 AJAX 的前后端交互">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"react之生命周期",
-      "item":"/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"}]
+      "name":"react之 AJAX",
+      "item":"/posts/%E7%A7%91%E6%8A%80/react/5-ajax/"}]
 }
 </script>
 
@@ -83,13 +83,13 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"
+        "@id": "/posts/%E7%A7%91%E6%8A%80/react/5-ajax/"
     },
-    "headline": "react之生命周期 | Aaron 的博客",
+    "headline": "react之 AJAX | Aaron 的博客",
     "image": "/images/react-logo.jpeg",
-    "datePublished": "2022-03-05T00:00:00+00:00",
-    "dateModified": "2022-03-05T00:00:00+00:00",
-    "wordCount":  1491 ,
+    "datePublished": "2022-03-10T00:00:00+00:00",
+    "dateModified": "2022-03-10T00:00:00+00:00",
+    "wordCount":  1545 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -102,20 +102,20 @@
             "url": "/images/avatar2.jpeg"
         }
         },
-    "description": "声明周期的介绍和与之相关的应用"
+    "description": "利用 AJAX 的前后端交互"
 }
-</script><meta property="og:title" content="react之生命周期 | Aaron 的博客" />
+</script><meta property="og:title" content="react之 AJAX | Aaron 的博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/avatar2.jpeg">
 
 
-<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" />
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/" />
 
 
 
-<meta property="og:description" content="声明周期的介绍和与之相关的应用" />
+<meta property="og:description" content="利用 AJAX 的前后端交互" />
 
 
 
@@ -131,10 +131,10 @@
 
 
 
-<meta property="article:published_time" content="2022-03-05T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-03-10T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-03-05T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-10T00:00:00&#43;00:00" />
 
 
 
@@ -155,8 +155,6 @@
 
 
 
-<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/" />
-
 
 
 <meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" />
@@ -166,6 +164,8 @@
 <meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" />
 
 
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" />
 
 
 
@@ -274,15 +274,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">react之生命周期</h1>
+        <h1 class="font-bold text-3xl text-primary-text">react之 AJAX</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-03-05</span>
+        <span>2022-03-10</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>3 min read</span>
+        <span>4 min read</span>
     </div>
     
     
@@ -312,241 +312,149 @@
         
 
         <div class="content">
-            <h2 id="引出声明周期">引出声明周期</h2>
-<p>在组件挂载(mount)完毕后接着开启定时器, 在卸载(unmount)定时器后, 接着取消定时器. 就需要用到两个 react 自己的函数: <code>componentDidMount()</code>  和 <code>componentWillUnmount()</code>.</p>
-<p>以上两个函数成为生命周期回调函数, 也叫生命周期钩子函数, 也叫生命周期钩子, 也叫生命周期函数.</p>
-<pre><code class="language-react">//1.创建组件
-class Life extends React.Component {
-   state = {
-      opacity:1
-   }
-   death = () =&gt; {
-      //利用点击事件清空定时器
-      clearInterval(this.timer)
-      //写在组建
-      ReactDOM.unmountComponentAtNode(document.getElementById(&quot;test&quot;))
-   }
-   //组件刚挂在完毕
-   componentDidMount(){
-      this.timer = setInterval(() =&gt; {
-         let {opacity} = this.state;
-         opacity -= 0.1;
-         if(opacity&lt;=0) opacity = 1
-         this.setState({opacity});// key 与 value 重名, 可以简写
-      },200)
-   }
-   //组件将要卸载
-   componentWillUnmount(){
-      clearInterval(this.timer)
-   }
-   render() {
-      //定时器放在 render 里面, 更新状态的话会引发无限递归. 所以引出 componentDidMount
-      return (
-         &lt;div&gt;
-            &lt;h2 style={{opacity:this.state.opacity}}&gt;React 学不会怎么办?&lt;/h2&gt;
-            &lt;button onClick={this.death}&gt;不活了&lt;/button&gt;
-         &lt;/div&gt;
-
-      )
-   }
-}
-//2.渲染组件
-ReactDOM.render(&lt;Life /&gt;, document.getElementById('test'))
+            <h2 id="axios-的使用">axios 的使用</h2>
+<p>react 主要使用 axios 来进行异步请求.</p>
+<h3 id="配置单个代理的注意事项">配置单个代理的注意事项</h3>
+<ol>
+<li>
+<p>代理服务器的域名和端口是和客户端相同的. 跨域的时候, 浏览器先给代理服务器发请求, 代理服务器再给目标服务器发请求. 服务器与服务器之间不存在跨域问题.</p>
+</li>
+<li>
+<p>可以在react脚手架目录中的 <code>package.json</code> 中配置代理服务器.  只需要加一行:</p>
+<ul>
+<li><code> &quot;proxy&quot;:&quot;http://localhost:5000&quot;</code></li>
+<li>注意 5000 要与目标服务器的地址和端口相同, 这里容易混淆. 因为运行 react 的服务器实在端口 3000 上了, 指向的服务器为端口 5000.</li>
+<li>这样理解: 代理服务器所有信息都给到了, 但是就差目标服务器的地址, 所以必须给.</li>
+</ul>
+</li>
+<li>
+<p>配置完成后, 在使用 axios 的时候, <code>get</code> 地址直接写 react 运行的地址和端口.</p>
+</li>
+<li>
+<p>跨域访问的时候, 优先访问本地 <code>public</code> 中的文件, 再通过代理去寻找目标服务器上的内容.</p>
+<ol>
+<li>比如<code>axios.get('http://localhost:3000/index')</code> 返回的就是, <code>public</code> 下的主页 html 代码.</li>
+<li>比如 <code>axios.get('http://localhost:3000/student')</code> ,如果 public下没有 <code>student</code> 文件, 并且目标服务器有响应以上地址的监听, 则通过目标服务器返回相应数据.</li>
+</ol>
+</li>
+</ol>
+<h3 id="配置多个代理">配置多个代理</h3>
+<ol>
+<li>
+<p>第一步：创建代理配置文件</p>
+<pre><code>在src下创建配置文件：src/setupProxy.js
 </code></pre>
-<h2 id="理解">理解</h2>
-<ol>
-<li>组件对象从创建到死亡会经历特定阶段.</li>
-<li>React 组件对象包含一系列钩子函数, 在特定时期调用.</li>
-<li>在定义组件时, 在钩子函数中, 可以书写特定的工作.</li>
-</ol>
-<h2 id="旧版本生命周期">旧版本生命周期</h2>
-<img src="https://raw.githubusercontent.com/fxfzxxx/MD-Images/master/image-20220306204639487.png" alt="image-20220306204639487" style="zoom: 50%;" />
-<p><strong>已上图的意思是钩子函数的激活方式和执行顺序:</strong></p>
-<ul>
-<li>激活方式:
-<ol>
-<li>挂载时</li>
-<li>父组件执行 render 钩子时</li>
-<li>执行 setState 函数时</li>
-<li>执行 forceUpdate 函数时</li>
-</ol>
 </li>
-<li>执行顺序即为箭头走势</li>
-</ul>
-<p><strong>注意有一个坑:</strong></p>
-<p><code>componentWillReceiveProps</code> 在第一次父组件渲染时, 不会执行, 第二次渲染才会执行. 也就是说, 第二次渲染并且有props 传入到子组件, 子组件才会调用 <code>componentWillReceiveProps</code> 钩子.</p>
-<pre><code class="language-react">//1.创建组件
-class Count extends React.Component {
-   //构造器钩子
-   constructor(props) {
-      console.log(&quot; Count-constructor&quot;);
-      super(props)
-   }
-   state = {
-      count: 0
-   }
-   add = () =&gt; {
-      const { count } = this.state;
-      this.setState({ count: count + 1 })
-   }
-   //不更新 state 的情况下, 强制更新组件
-   myForceUpdate = () =&gt; {
-      this.forceUpdate()
-   }
-   unMount = () =&gt; {
+<li>
+<p>编写setupProxy.js配置具体代理规则：</p>
+<pre><code class="language-js">const proxy = require('http-proxy-middleware')
 
-      ReactDOM.unmountComponentAtNode(document.getElementById(&quot;test&quot;))
-   }
-   //组件将要挂载钩子
-   componentWillMount() {
-      console.log(&quot; Count-componentWillMount&quot;);
-   }
-   //组件将要卸载钩子
-   componentWillUnmount() {
-      console.log(&quot;Count-componentWillUnmount&quot;);
-   }
-   //控制 render 更新的阀门钩子,返回值默认是 true, 如果写了之后, 不写返回 true, setState 之后就不会走下去
-   shouldComponentUpdate() {
-      console.log(&quot; Count-shouldComponentUpdate&quot;);
-      return true
-   }
-   //组件即将更新钩子
-   componentWillUpdate() {
-      console.log(&quot;Count-componentWillUpdate&quot;);
-   }
-   //渲染组件钩子
-   render() {
-      console.log(&quot; Count-render&quot;);
-      return (
-         &lt;div&gt;
-            &lt;h2 &gt;当前求和为 {this.state.count}&lt;/h2&gt;
-            &lt;button onClick={this.add}&gt;点我+1&lt;/button&gt;
-            &lt;button onClick={this.unMount}&gt;卸载组件&lt;/button&gt;
-            &lt;button onClick={this.myForceUpdate}&gt;强制刷新&lt;/button&gt;
-
-
-         &lt;/div&gt;
-
-      )
-   }
-   //组件更新完毕钩子
-   componentDidUpdate() {
-      console.log(&quot;Count-componentDidUpdate&quot;);
-   }
-   //组件刚挂载完毕钩子
-   componentDidMount() {
-      console.log(&quot;Count-componentDidMount&quot;);
-   }
+module.exports = function(app) {
+  app.use(
+    proxy.createProxyMiddleware('/api1', {  //api1是需要转发的请求(所有带有/api1前缀的请求都会转发给5000)
+      target: 'http://localhost:5000', //配置转发目标地址(能返回数据的服务器地址)
+      changeOrigin: true, //控制服务器接收到的请求头中host字段的值,
+       //用来欺骗服务器, 服务器收到请求头的就是本服务器地址
+      /*
+       changeOrigin设置为true时，服务器收到的请求头中的host为：localhost:5000
+       changeOrigin设置为false时，服务器收到的请求头中的host为：localhost:3000
+       changeOrigin默认值为false，但我们一般将changeOrigin值设为true
+      */
+      pathRewrite: {'^/api1': ''} //去除请求前缀，保证交给后台服务器的是正常请求地址(必须配置)
+      // 不然的话服务器上接收的参数就是 api1/xxx
+    }),
+    proxy.createProxyMiddleware('/api2', { 
+      target: 'http://localhost:5001',
+      changeOrigin: true,
+      pathRewrite: {'^/api2': ''}
+    })
+  )
 }
-//父组件A
-class A extends React.Component {
-   state = { brand: &quot;奔驰&quot; }
-   changeBrand = () =&gt; {
-      this.setState({ brand: &quot;宝马&quot; })
-   }
-   //点击按钮后, 像子组件 B 中传入新的 props, 导致 B 开始执行下面的所有生命周期
-   render() {
-      return (
-         &lt;div&gt;
-            &lt;div&gt;我是 A 组件&lt;/div&gt;
-            &lt;button onClick={this.changeBrand}&gt;换车&lt;/button&gt;
-            &lt;B brand={this.state.brand}/&gt;
-         &lt;/div&gt;
-      )
-   }
-}
-//子组件B
-class B extends React.Component {
-   componentWillReceiveProps(){
-      console.log(&quot;B-componentWillReceiveProps&quot;);
-   }
-   render() {
-      return(
-         &lt;div&gt;
-            &lt;div&gt;我是 B 组件, 我接收到的车标是: {this.props.brand}&lt;/div&gt;
-         &lt;/div&gt;)
-      
-   }
-}
-//2.渲染组件
-ReactDOM.render(&lt;Count /&gt;, document.getElementById('test'))
-ReactDOM.render(&lt;A /&gt;, document.getElementById('test'))
 </code></pre>
-<h2 id="旧版本总结">旧版本总结</h2>
-<h3 id="1-初始化阶段">1. 初始化阶段</h3>
-<p>由 ReactDom.render() 触发 &mdash; 初次渲染</p>
-<ol>
-<li>constructor()</li>
-<li>componentWillMount()</li>
-<li>render()</li>
-<li>componentDidMount()
-<ul>
-<li>非常常用, 可以做一些初始化的事情, 比如开启定时器, 发送网络请求, 订阅消息</li>
-</ul>
 </li>
 </ol>
-<h3 id="2更新阶段">2.更新阶段</h3>
-<p>由内部组件的 this.setState() 或者父组件的重新 render 触发, 重新 render 可由 setState 父组件的重新 render 触发.</p>
+<p>说明：</p>
 <ol>
-<li>shouldComponentUpdate()</li>
-<li>componentWillUpdate()</li>
-<li>render()</li>
-<li>componentDidUpdate()</li>
+<li>优点：可以配置多个代理，可以灵活的控制请求是否走代理。</li>
+<li>缺点：配置繁琐，前端请求资源时必须加前缀。</li>
 </ol>
-<h3 id="3卸载组件">3.卸载组件</h3>
-<p>由 ReactDom.unmountComponentAtNode() 触发</p>
+<h2 id="github-搜索案例">Github 搜索案例</h2>
+<h3 id="基本功能">基本功能</h3>
+<p>由浏览器通过 AJAX 发送一个 get 请求, 来拿到 github 的用户数据.</p>
+<h3 id="构架分析">构架分析</h3>
 <ol>
-<li>componentWillUnmount
+<li>浏览器直接可以通过 get <code>https://api.github.com/search/users</code> 地址来获取数据, 触发了跨域, 仍能收到返回信息是因为 github 设置了 cors.</li>
+<li>短时间内多次请求, 容易被 github 封禁. 所以要设置一个服务器来 mock 被封禁后, 返回的数据. 同时服务器也负责转发来自浏览器的请求. 服务器的端口号设置为 5000.</li>
+<li>所以react需要设置代理来访问 5000, 设置 <code>api1</code> 为前缀识别.</li>
+<li>总体来说就是 react 浏览器3000 -&gt;代理服务器3000 -&gt; 数据服务器5000 -&gt; github api</li>
+</ol>
+<h3 id="关键代码">关键代码</h3>
+<h4 id="react-请求">react 请求</h4>
+<pre><code class="language-js">search = () =&gt; {
+      //连续解构赋值 + 重命名
+      const {keyWordInput:{current:{value:value2}}} = this
+      console.log(value2);
+      //注意要给自己发
+      axios.get(`http://localhost:3000/api1/search/users?q=${value2}`).then(
+         response =&gt; {console.log('成功了',response.data)},
+         error =&gt; {console.log('失败了',error)}
+         )
+   }
+</code></pre>
+<h4 id="设置代理">设置代理</h4>
+<pre><code class="language-js">const proxy = require('http-proxy-middleware')
+
+module.exports = function (app) {
+   app.use(
+      proxy.createProxyMiddleware('/api1',{
+         target: 'http://localhost:5000',
+         changeOrigin:true, //用来欺骗服务器, 服务器收到请求头的就是本服务器地址
+         pathRewrite:{'^/api1':''}
+      })
+   )
+}
+</code></pre>
+<h4 id="数据服务器">数据服务器</h4>
+<pre><code class="language-javascript">app.get(&quot;/search/users&quot;, function (req, res) {
+  const {q} = req.query
+  axios({
+    url: 'https://api.github.com/search/users',
+    params: {q}
+  }).then(response =&gt; {
+    res.json(response.data)
+  })
+})
+
+app.listen(5000, &quot;localhost&quot;, (err) =&gt; {
+  if (!err){
+  	console.log(&quot;服务器启动成功&quot;)
+  	console.log(&quot;请求github真实数据请访问：http://localhost:5000/search/users&quot;)
+  	console.log(&quot;请求本地模拟数据请访问：http://localhost:5000/search/users2&quot;)
+  } 
+  else console.log(err);
+})
+</code></pre>
+<h3 id="发布订阅模式">发布订阅模式</h3>
+<h4 id="基本概念">基本概念:</h4>
+<p>监听消息, 并且做出反应, 典型的有js 自带的事件监听函数.</p>
+<p>原生 js 的构造函数内:</p>
 <ul>
-<li>非常常用, 做一些收尾工作: 关闭定时器, 取消消息订阅</li>
-</ul>
+<li>
+<p>属性: 消息队列对象:<code> {click:[fn,f1],abc:[fn1,fn2,fn3]}</code></p>
+</li>
+<li>
+<p>方法:</p>
+<ol>
+<li>
+<p>能向消息队列里添加 <code>subscribe('click',fn)</code> , 删除 <code>unSubscribe('click',fn)</code>;</p>
+</li>
+<li>
+<p>能触发消息队列的函数 <code>publish('click')</code></p>
 </li>
 </ol>
-<h2 id="新的声明周期">新的声明周期</h2>
-<img src="https://raw.githubusercontent.com/fxfzxxx/MD-Images/master/image-20220307115900380.png" alt="image-20220307115900380" style="zoom: 33%;" />
-<p>新的生命周期对比于就得声明周期, 废弃了 3 个钩子(3 个 will):</p>
-<ol>
-<li>componentWillMount</li>
-<li>componentWillReveiveProps</li>
-<li>componentWillUpdate</li>
-</ol>
-<p>提出了两个新的钩子(不常用):</p>
-<ol>
-<li>getDerivedStateProps</li>
-<li>getSnapshotBeforeUpdate</li>
-</ol>
-<p>最重用的还是最底端的 3 个绿色钩子.</p>
-<h2 id="新版本总结">新版本总结</h2>
-<h3 id="1-初始化阶段-1">1. 初始化阶段</h3>
-<p>由 ReactDom.render() 触发 &mdash; 初次渲染</p>
-<ol>
-<li>constructor()</li>
-<li>getDerivedStateFromProps()</li>
-<li>render()</li>
-<li>componentDidMount()
-<ul>
-<li>非常常用, 可以做一些初始化的事情, 比如开启定时器, 发送网络请求, 订阅消息</li>
-</ul>
 </li>
-</ol>
-<h3 id="2更新阶段-1">2.更新阶段</h3>
-<p>由内部组件的 this.setState() 或者父组件的重新 render 触发, 重新 render 可由 setState 父组件的重新 render 触发.</p>
-<ol>
-<li>getDerivedStateFromProps()</li>
-<li>shouldComponentUpdate()</li>
-<li>render()</li>
-<li>getSnapShotBeforeUpdate()</li>
-<li>componentDidUpdate()</li>
-</ol>
-<h3 id="3卸载组件-1">3.卸载组件</h3>
-<p>由 ReactDom.unmountComponentAtNode() 触发</p>
-<ol>
-<li>componentWillUnmount
-<ul>
-<li>非常常用, 做一些收尾工作: 关闭定时器, 取消消息订阅</li>
 </ul>
-</li>
-</ol>
+<h4 id="heading"></h4>
 
         </div>
         
@@ -610,13 +518,13 @@ ReactDOM.render(&lt;A /&gt;, document.getElementById('test'))
     <div>
         
         <span class="block font-bold">Previous</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" class="block">react之 Diffing 算法</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/" class="block">react之 初识路由</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">Next</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="block">react之基本语法</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" class="block">react之 脚手架</a>
         
     </div>
 </div>
@@ -664,22 +572,29 @@ ReactDOM.render(&lt;A /&gt;, document.getElementById('test'))
 <div class="sticky-toc hidden lg:block px-6 pb-6 ">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#引出声明周期">引出声明周期</a></li>
-    <li><a href="#理解">理解</a></li>
-    <li><a href="#旧版本生命周期">旧版本生命周期</a></li>
-    <li><a href="#旧版本总结">旧版本总结</a>
+    <li><a href="#axios-的使用">axios 的使用</a>
       <ul>
-        <li><a href="#1-初始化阶段">1. 初始化阶段</a></li>
-        <li><a href="#2更新阶段">2.更新阶段</a></li>
-        <li><a href="#3卸载组件">3.卸载组件</a></li>
+        <li><a href="#配置单个代理的注意事项">配置单个代理的注意事项</a></li>
+        <li><a href="#配置多个代理">配置多个代理</a></li>
       </ul>
     </li>
-    <li><a href="#新的声明周期">新的声明周期</a></li>
-    <li><a href="#新版本总结">新版本总结</a>
+    <li><a href="#github-搜索案例">Github 搜索案例</a>
       <ul>
-        <li><a href="#1-初始化阶段-1">1. 初始化阶段</a></li>
-        <li><a href="#2更新阶段-1">2.更新阶段</a></li>
-        <li><a href="#3卸载组件-1">3.卸载组件</a></li>
+        <li><a href="#基本功能">基本功能</a></li>
+        <li><a href="#构架分析">构架分析</a></li>
+        <li><a href="#关键代码">关键代码</a>
+          <ul>
+            <li><a href="#react-请求">react 请求</a></li>
+            <li><a href="#设置代理">设置代理</a></li>
+            <li><a href="#数据服务器">数据服务器</a></li>
+          </ul>
+        </li>
+        <li><a href="#发布订阅模式">发布订阅模式</a>
+          <ul>
+            <li><a href="#基本概念">基本概念:</a></li>
+            <li><a href="#heading"></a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -701,6 +616,15 @@ ReactDOM.render(&lt;A /&gt;, document.getElementById('test'))
         <h2 class="text-lg font-semibold mb-4">See Also</h2>
         <div class="content">
             
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/">react之 脚手架</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/">react之 Diffing 算法</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
+            <br />
+            
             <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
             <br />
             
@@ -708,15 +632,6 @@ ReactDOM.render(&lt;A /&gt;, document.getElementById('test'))
             <br />
             
             <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/">渐变轮播图</a>
-            <br />
-            
-            <a href="/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">1.Java 复习之 基础语法</a>
-            <br />
-            
-            <a href="/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/">2.Java 复习之 命名及注释标准</a>
-            <br />
-            
-            <a href="/docs/java-basics/3.-java%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB/">3.1 Java 复习之 对象和类</a>
             <br />
             
         </div>

@@ -8,14 +8,50 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Sat, 05 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/all/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/all/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>react之 初识路由</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/</guid>
+      <description>SPA 单页面应用 Single Page Application 整个应用只有一个完整的页面 点击页面中的连接不会刷新页面, 只会做页面的局部刷新 数据都用 Ajax 请求,</description>
+    </item>
+    
+    <item>
+      <title>react之 AJAX</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/5-ajax/</link>
+      <pubDate>Thu, 10 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/5-ajax/</guid>
+      <description>axios 的使用 react 主要使用 axios 来进行异步请求. 配置单个代理的注意事项 代理服务器的域名和端口是和客户端相同的. 跨域的时候,</description>
+    </item>
+    
+    <item>
+      <title>react之 脚手架</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/</link>
+      <pubDate>Mon, 07 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/</guid>
+      <description>脚手架的意义 xxx脚手架: 用来帮助程序员快速创建一个基于xxx库的模板项目 包含了所有需要的配置（语法检查、js</description>
+    </item>
+    
+    <item>
+      <title>react之 Diffing 算法</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/</guid>
+      <description>证明 Diffing 算法存在的小案例 //1.创建组件 class Time extends React.Component { state ={date: new Date()} componentDidMount() { setInterval(()=&amp;gt; { this.setState( {date: new Date()} ) },1000) } //在两个不同级别的 input 内输入内容</description>
+    </item>
+    
     <item>
       <title>react之生命周期</title>
       <link>/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
       <pubDate>Sat, 05 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-      <description></description>
+      <description>引出声明周期 在组件挂载(mount)完毕后接着开启定时器, 在卸载(unmount)定时器后, 接着取消定时器. 就</description>
     </item>
     
     <item>
