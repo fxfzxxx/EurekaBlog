@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width">
 
 
-<title>react之 Diffing 算法 | Aaron 的博客</title>
+<title>react之 第三方 redux 的使用 | Aaron 的博客</title>
 
 <meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
@@ -58,7 +58,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
 
 <meta name="description"
-  content="一些关于 Diffing 算法的理解">
+  content="基本概念和用法,以及一些实例.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,8 +70,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"react之 Diffing 算法",
-      "item":"/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/"}]
+      "name":"react之 第三方 redux 的使用",
+      "item":"/posts/%E7%A7%91%E6%8A%80/react/8-redux/"}]
 }
 </script>
 
@@ -83,13 +83,13 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/"
+        "@id": "/posts/%E7%A7%91%E6%8A%80/react/8-redux/"
     },
-    "headline": "react之 Diffing 算法 | Aaron 的博客",
+    "headline": "react之 第三方 redux 的使用 | Aaron 的博客",
     "image": "/images/react-logo.jpeg",
-    "datePublished": "2022-03-06T00:00:00+00:00",
-    "dateModified": "2022-03-06T00:00:00+00:00",
-    "wordCount":  381 ,
+    "datePublished": "2022-03-20T00:00:00+00:00",
+    "dateModified": "2022-03-20T00:00:00+00:00",
+    "wordCount":  1195 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -102,20 +102,20 @@
             "url": "/images/avatar2.jpeg"
         }
         },
-    "description": "一些关于 Diffing 算法的理解"
+    "description": "基本概念和用法,以及一些实例."
 }
-</script><meta property="og:title" content="react之 Diffing 算法 | Aaron 的博客" />
+</script><meta property="og:title" content="react之 第三方 redux 的使用 | Aaron 的博客" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/avatar2.jpeg">
 
 
-<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" />
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/react/8-redux/" />
 
 
 
-<meta property="og:description" content="一些关于 Diffing 算法的理解" />
+<meta property="og:description" content="基本概念和用法,以及一些实例." />
 
 
 
@@ -131,10 +131,10 @@
 
 
 
-<meta property="article:published_time" content="2022-03-06T00:00:00&#43;00:00" />
+<meta property="article:published_time" content="2022-03-20T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2022-03-06T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2022-03-20T00:00:00&#43;00:00" />
 
 
 
@@ -150,8 +150,6 @@
 
 
 
-
-<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/8-redux/" />
 
 
 
@@ -170,6 +168,8 @@
 <meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" />
 
 
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/" />
 
 
 
@@ -282,15 +282,15 @@
 <div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
     <div
         class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
-        <h1 class="font-bold text-3xl text-primary-text">react之 Diffing 算法</h1>
+        <h1 class="font-bold text-3xl text-primary-text">react之 第三方 redux 的使用</h1>
         <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
     <div class="mr-6 my-2">
         <i class="fas fa-calendar mr-1"></i>
-        <span>2022-03-06</span>
+        <span>2022-03-20</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>1 min read</span>
+        <span>3 min read</span>
     </div>
     
     
@@ -320,48 +320,196 @@
         
 
         <div class="content">
-            <h2 id="证明-diffing-算法存在的小案例">证明 Diffing 算法存在的小案例</h2>
-<pre><code class="language-react">//1.创建组件
-class Time extends React.Component {
-   state ={date: new Date()}
-   componentDidMount() {
-      setInterval(()=&gt; {
-         this.setState(
-            {date: new Date()}
-         )
-      },1000)
-   }
-   //在两个不同级别的 input 内输入内容, 但是不会更新, 证明了只更新部分.
-   render() {
-      return (
-         &lt;div&gt;
-            &lt;h1&gt;Hello&lt;/h1&gt;
-            &lt;input type=&quot;text&quot;/&gt;
-            &lt;span&gt;
-               现在是: {this.state.date.toTimeString()}
-               &lt;input type=&quot;text&quot;/&gt;
-            &lt;/span&gt;
-         &lt;/div&gt;
-      )
-   }
-}
-//2.渲染组件
-ReactDOM.render(&lt;Time /&gt;, document.getElementById('test'))
-</code></pre>
-<h2 id="key-的作用">Key 的作用</h2>
+            <h2 id="redux">Redux</h2>
+<h3 id="redux是什么">redux是什么</h3>
 <ol>
-<li>React/vue 中 key 的作用是什么?</li>
-<li>为什么遍历列表要用 key,不用 index.</li>
+<li>
+<p>redux是一个专门用于做<strong>状态管理</strong>的JS库(不是react插件库)。</p>
+</li>
+<li>
+<p>它可以用在react, angular, vue等项目中, 但基本与react配合使用。</p>
+</li>
+<li>
+<p>作用: 集中式管理react应用中多个组件<strong>共享</strong>的状态。</p>
+</li>
 </ol>
-<h3 id="效率问题">效率问题</h3>
-<p>key 是作为每个节点的唯一标识, 用来给虚拟 DOM 作为 diff 判断的.</p>
-<p>index 作为 key 会发生 key 的错位. 特别是添加的新数据放在了<strong>数组的头部</strong>, index 都会往后以一个位置. 这就导致了 key 发生了全部错位, 因此虚拟 DOM 会把所有节点中的数据重写写一遍. 造成效率低下.</p>
-<p>所以 key 要用服务器返回的唯一 id 作为标识, 不会发生错位或者改变.</p>
-<h3 id="输入节点问题">输入节点问题</h3>
-<p>li 节点内的input 节点, 会逃逸 diff 算法, 并且可能存有之前输入的信息. 这样在 index 发生错位后, li 节点内的信息更新了, 但是 input 节点里的信息未更新.</p>
-<h3 id="存在没有问题的时候">存在没有问题的时候</h3>
-<p>只要不存在增删改查, 就问题不大.</p>
-<p>未完待续</p>
+<h3 id="什么情况下需要使用redux">什么情况下需要使用redux</h3>
+<ol>
+<li>
+<p>某个组件的状态，需要让其他组件可以随时拿到（共享）。</p>
+</li>
+<li>
+<p>一个组件需要改变另一个组件的状态（通信）。</p>
+</li>
+<li>
+<p>总体原则：能不用就不用, 如果不用比较吃力才考虑使用。</p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/fxfzxxx/MD-Images/master/redux%E5%8E%9F%E7%90%86%E5%9B%BE%E7%9A%84%E5%89%AF%E6%9C%AC.png" alt="redux原理图的副本"></p>
+<h2 id="使用-redux">使用 redux</h2>
+<p>安装: <code>yarn add redux</code></p>
+<h3 id="精简版---求和案例">精简版 - 求和案例</h3>
+<ol>
+<li>
+<p>去除 Count 自身组件状态</p>
+</li>
+<li>
+<p>src 下建立目录</p>
+<ul>
+<li>redux
+<ul>
+<li>store.js</li>
+<li>count_reducer.js</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>store.js</p>
+<ol>
+<li>引入 redux 中的 createStore 函数, 创建一个 store</li>
+<li>createStore 需要传入一个 reducer</li>
+<li>默认暴露 store 对象</li>
+</ol>
+</li>
+<li>
+<p>count_reducer.js</p>
+<ol>
+<li>reducer 的本质是一个函数, 接收: preState, action 两个参数, 返回加工后的状态</li>
+<li>reducer 有两个作用: 初始化状态, 加工状态</li>
+<li>reducer 被第一次调用时, 是 store 自动触发的
+<ol>
+<li>传递的 preState 是 undefined</li>
+<li>传递的 action 是随机生成的 type</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>在 index.js 中检测 store 中状态的改变, 一旦发生改变, 重选渲染 <code> &lt;App/&gt;</code></p>
+<ol>
+<li>subscribe 函数在 redux 中状态改变的时候后触发.</li>
+<li>因为 redux 只负责管理状态, 没办法通知 react 去重新渲染页面, 只能间接触发.</li>
+</ol>
+</li>
+</ol>
+<h3 id="完整版---求和案例">完整版 - 求和案例</h3>
+<p>新增文件:</p>
+<ol>
+<li>
+<p>count_action.js 用来专门创建 action 对象, 直接在 需要 dispatch 的地方当做参数传入.</p>
+</li>
+<li>
+<p>constant.js 用来容易写错的 type 值</p>
+</li>
+</ol>
+<h3 id="异步版---求和案例">异步版 - 求和案例</h3>
+<ul>
+<li>
+<p>需要提前引入一个中间件来使用异步:</p>
+<ol>
+<li><code>yarn add redux-thunk</code>,</li>
+<li>在 store.js 中<code>import thunk from 'redux-thunk'</code></li>
+</ol>
+</li>
+<li>
+<p>action 作为一个对象, 可以是 <code>{type:'type',data:data }</code> , 也可以是一个函数. 当它是函数的时候, 就被称为<strong>异步 action.</strong></p>
+</li>
+<li>
+<p>store 的 dispatch 可以做判断:</p>
+<ol>
+<li>
+<p>如果传入的是同步 action, 那么直接 dispatch 这个对象给 reducer 用.</p>
+</li>
+<li>
+<p>如果传入的是异步 action, 那么会给这个函数传入一个 dispatch 函数, 让异步函数来完成及时或者 ajax 等异步工作后, 调用 dispatch , dispatch 需要传入一个同步 action 函数.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="react-redux">react-redux</h3>
+<p><img src="https://raw.githubusercontent.com/fxfzxxx/MD-Images/master/react-redux%E6%A8%A1%E5%9E%8B%E5%9B%BE.png" alt="react-redux模型图"></p>
+<h4 id="1-明确两个概念">1. 明确两个概念:</h4>
+<ol>
+<li>
+<p>UI组件</p>
+<ol>
+<li>
+<p>只负责 UI 的呈现，不带有任何业务逻辑</p>
+</li>
+<li>
+<p>通过props接收数据(一般数据和函数)</p>
+</li>
+<li>
+<p>不使用任何 Redux 的 API</p>
+</li>
+<li>
+<p>一般保存在components文件夹下</p>
+</li>
+</ol>
+</li>
+<li>
+<p>容器组件</p>
+<ol>
+<li>
+<p>负责管理数据和业务逻辑，不负责UI的呈现</p>
+</li>
+<li>
+<p>使用 Redux 的 API, 和 redux 通信, 将结果给 UI 组件</p>
+</li>
+<li>
+<p>一般保存在containers文件夹下</p>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="2-如何创建容器组件">2. 如何创建容器组件</h4>
+<p>靠 react-redux 的 connect 函数</p>
+<p><code>connect(mapStateToProps, mapDispatchToProps)(UI组件)</code></p>
+<ul>
+<li>mapStateToProps: 映射状态, 返回值是一个对象{key:state}</li>
+<li>mapDispatchToProps: 映射操作状态的方法, 返回值是一个对象{key:function}
+<ul>
+<li>可以作为一个对象直接传, 对象就是操作状态的方法.</li>
+<li>由 react-redux 来调用 dispatch, 自己不用写(不然要在参数里传 dispatch, 然后在返回的对象里调用 dispatch)</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-容器组件中的-store">3. 容器组件中的 store</h4>
+<p>是靠 props 传进去的, 而不是在容器中直接引入的.</p>
+<h3 id="react-redux-优化版本">react-redux 优化版本</h3>
+<ol>
+<li>
+<p>容器组件和 UI 组件混合成一个组件, UI 组件作为类通过 connect 传入容器, 然后暴露容器</p>
+</li>
+<li>
+<p>无需自己给容器传递 store, 不然多个容器每次都要在props键值对传同样的 <code>store={store}</code>, 属于重复性代码. 只需要给 <code>&lt;App /&gt;</code> 外侧包裹一个 <code>&lt;Provider store={store}&gt;</code> , 就可以完成对所有容器的 store 传递. 主要要提前引入 Provider <code>import {Provider} from 'react-redux';</code></p>
+</li>
+<li>
+<p>使用 react-redux 后也不需要自己 <code>subscribe</code> redux 中的状态的改变了, 容器组件可以自动完成这个工作.</p>
+</li>
+<li>
+<p><code>mapDispatchToProps</code> 可以简写成一个对象, 不用每次传入 dispatch 并返回函数.</p>
+</li>
+<li>
+<p>一个组件和 redux 的交互步骤</p>
+<ol>
+<li>
+<p>定义 UI 组件 &ndash; 不暴露 no leakage</p>
+</li>
+<li>
+<p>引入 connect 生成一个容器组件, 并暴露</p>
+<pre><code class="language-react">connect(state =&gt; ({key:value})
+       {key:xxxAction}
+       )(UI 组件)
+</code></pre>
+</li>
+<li>
+<p>在 UI 组件中通过 this.props.xxx  来读写状态</p>
+</li>
+</ol>
+</li>
+</ol>
 
         </div>
         
@@ -424,14 +572,11 @@ ReactDOM.render(&lt;Time /&gt;, document.getElementById('test'))
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
-        <span class="block font-bold">Previous</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/" class="block">react之 脚手架</a>
-        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
         <span class="block font-bold">Next</span>
-        <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="block">react之生命周期</a>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/" class="block">react之 UI 组件库</a>
         
     </div>
 </div>
@@ -485,12 +630,25 @@ ReactDOM.render(&lt;Time /&gt;, document.getElementById('test'))
 <div class="sticky-toc hidden lg:block px-6 pb-6 ">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#证明-diffing-算法存在的小案例">证明 Diffing 算法存在的小案例</a></li>
-    <li><a href="#key-的作用">Key 的作用</a>
+    <li><a href="#redux">Redux</a>
       <ul>
-        <li><a href="#效率问题">效率问题</a></li>
-        <li><a href="#输入节点问题">输入节点问题</a></li>
-        <li><a href="#存在没有问题的时候">存在没有问题的时候</a></li>
+        <li><a href="#redux是什么">redux是什么</a></li>
+        <li><a href="#什么情况下需要使用redux">什么情况下需要使用redux</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用-redux">使用 redux</a>
+      <ul>
+        <li><a href="#精简版---求和案例">精简版 - 求和案例</a></li>
+        <li><a href="#完整版---求和案例">完整版 - 求和案例</a></li>
+        <li><a href="#异步版---求和案例">异步版 - 求和案例</a></li>
+        <li><a href="#react-redux">react-redux</a>
+          <ul>
+            <li><a href="#1-明确两个概念">1. 明确两个概念:</a></li>
+            <li><a href="#2-如何创建容器组件">2. 如何创建容器组件</a></li>
+            <li><a href="#3-容器组件中的-store">3. 容器组件中的 store</a></li>
+          </ul>
+        </li>
+        <li><a href="#react-redux-优化版本">react-redux 优化版本</a></li>
       </ul>
     </li>
   </ul>
@@ -512,22 +670,22 @@ ReactDOM.render(&lt;Time /&gt;, document.getElementById('test'))
         <h2 class="text-lg font-semibold mb-4">See Also</h2>
         <div class="content">
             
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/">react之 UI 组件库</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/">react之 初识路由</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/">react之 AJAX</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/4-%E8%84%9A%E6%89%8B%E6%9E%B6/">react之 脚手架</a>
+            <br />
+            
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/3-dom-%E7%9A%84-diffing-%E7%AE%97%E6%B3%95/">react之 Diffing 算法</a>
+            <br />
+            
             <a href="/posts/%E7%A7%91%E6%8A%80/react/2-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">react之生命周期</a>
-            <br />
-            
-            <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
-            <br />
-            
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/">小米首页的模拟</a>
-            <br />
-            
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E6%B8%90%E5%8F%98%E8%BD%AE%E6%92%AD%E5%9B%BE/">渐变轮播图</a>
-            <br />
-            
-            <a href="/docs/java-basics/1.-java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">1.Java 复习之 基础语法</a>
-            <br />
-            
-            <a href="/docs/java-basics/2.-java%E5%91%BD%E5%90%8D%E5%8F%8A%E6%B3%A8%E9%87%8A%E6%A0%87%E5%87%86/">2.Java 复习之 命名及注释标准</a>
             <br />
             
         </div>

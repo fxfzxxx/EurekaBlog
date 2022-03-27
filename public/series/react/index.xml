@@ -8,7 +8,25 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/series/react/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/series/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>react之 第三方 redux 的使用</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/8-redux/</link>
+      <pubDate>Sun, 20 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/8-redux/</guid>
+      <description>Redux redux是什么 redux是一个专门用于做状态管理的JS库(不是react插件库)。 它可以用在react, angular,</description>
+    </item>
+    
+    <item>
+      <title>react之 UI 组件库</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/</guid>
+      <description>流行的开源 React UI 组件库 国外: material-UI 国内: ant-design antd 安装: yarn add antd 基本使用 import React, { Component } from &amp;quot;react&amp;quot; import { Button } from &amp;quot;antd&amp;quot; import { WechatOutlined } from &#39;@ant-design/icons&#39; import &amp;quot;antd/dist/antd.css&amp;quot; export default class App extends</description>
+    </item>
+    
     <item>
       <title>react之 初识路由</title>
       <link>/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/</link>
@@ -60,7 +78,7 @@
       <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
-      <description>学习联想 jsx 中 class 需要写成 className, js 里那个 className 是什么来着 是在事件函数里, 判断 target的时候 if (target.className === &#39;new-todo&#39; &amp;amp;&amp;amp; code === 13) 自定义属性是</description>
+      <description>Creating a Toolchain from Scratch A JavaScript build toolchain typically consists of: A package manager, such as Yarn or npm. It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them. A bundler, such as webpack or Parcel. It lets you write modular code and bundle it together</description>
     </item>
     
   </channel>

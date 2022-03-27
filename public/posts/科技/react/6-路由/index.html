@@ -89,7 +89,7 @@
     "image": "/images/react-logo.jpeg",
     "datePublished": "2022-03-15T00:00:00+00:00",
     "dateModified": "2022-03-15T00:00:00+00:00",
-    "wordCount":  2044 ,
+    "wordCount":  2561 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -148,6 +148,14 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/8-redux/" />
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/" />
 
 
 
@@ -282,7 +290,7 @@
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>5 min read</span>
+        <span>6 min read</span>
     </div>
     
     
@@ -410,7 +418,7 @@
 <li>props 不传就没有东西</li>
 <li><code>&lt;Demo/&gt;</code></li>
 </ol>
-<h4 id="路由组件">路由组件</h4>
+<h4 id="路由组件对象的内容">路由组件对象的内容</h4>
 <ol>
 <li>
 <p>放在 pages 文件夹内</p>
@@ -681,6 +689,105 @@ const result = qs.parse(search.slice(1))
 const {id, title} = result
 const findRes = DetialData.find((item) =&gt; item.id === id)
 </code></pre>
+<h4 id="向路由组建传递-state-参数">向路由组建传递 state 参数</h4>
+<p>不会在地址中显示穿的参数, 但刷新页面, 依然带着参数. 如果删除缓存, state 变为 undefined.</p>
+<ol>
+<li>传递</li>
+</ol>
+<pre><code class="language-react">{/* 向路由组建传递 state 参数 */}
+&lt;Link to={{pathname:'/home/messages/details',state:{id:message.id,title:message.title}}}&gt;
+	{message.title}
+&lt;/Link&gt;
+</code></pre>
+<ol start="2">
+<li>声明接收</li>
+</ol>
+<pre><code class="language-react">{/*  state 参数无需声明接收 */}
+&lt;Route path=&quot;/home/messages/details&quot; component={Details} /&gt;
+</code></pre>
+<ol start="3">
+<li>接收</li>
+</ol>
+<pre><code class="language-react">const {id, title} = this.props.location.state
+const findRes = DetialData.find((item) =&gt; item.id === id)
+</code></pre>
+<h3 id="push与-replace-的区别">push与 replace 的区别</h3>
+<p>在编写路由连接的时候, 可以加 <code>replace=true</code> 来标识路由为 replace 模式. replace 模式不会将访问存在于历史记录, 后退函数也拿不到历史记录. 历史记录类似于一个栈结构, replace 是直接换栈顶的内容.</p>
+<pre><code class="language-react">//replace=true 可直接简写为 true
+&lt;MyNavLink replace to=&quot;/home/messages&quot;&gt; Messages &lt;/MyNavLink&gt;
+</code></pre>
+<h3 id="编程式路由导航">编程式路由导航</h3>
+<p>编程式就是直接调用 props.history 中的函数api前进或者后退.</p>
+<pre><code class="language-react">pushClick = (id,title) =&gt; {
+    this.props.history.push('/home/messages/details',{ id, title })
+  }
+  replaceClick = (id,title) =&gt; {
+    this.props.history.replace('/home/messages/details',{ id, title })
+  }
+  forward = () =&gt; {
+    this.props.history.goForward()
+  }
+  back = () =&gt; {
+    this.props.history.goBack()
+  }
+  go = () =&gt; {
+    this.props.history.go(2)
+  }
+  render() {
+    const { messagesArray } = this.state
+    return (
+      &lt;div&gt;
+        &lt;ul&gt;
+          {messagesArray.map((message) =&gt; {
+            return (
+              &lt;li key={message.id}&gt;
+                {/* 向路由组建传递 state 参数 */}
+                &lt;Link to={{ pathname: '/home/messages/details', state: { id: message.id, title: message.title } }}&gt;
+                  {message.title}&lt;/Link&gt;
+                &lt;button onClick={() =&gt; { this.pushClick(message.id, message.title) }}&gt;push&lt;/button&gt;
+                &lt;button onClick={() =&gt; { this.replaceClick(message.id, message.title) }}&gt;replace&lt;/button&gt;
+              &lt;/li&gt;
+            )
+          })}
+        &lt;/ul&gt;
+        &lt;hr /&gt;
+        {/*  state 参数无需声明接收 */}
+        &lt;Route path=&quot;/home/messages/details&quot; component={Details} /&gt;
+        &lt;button onClick={this.back}&gt; 回退&lt;/button&gt;
+        &lt;button onClick={this.forward}&gt; 前进 &lt;/button&gt;
+        &lt;button onClick={this.go}&gt; 前进两页 &lt;/button&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+</code></pre>
+<h3 id="withrouter-的使用">withRouter 的使用</h3>
+<p><code>withRouter</code> 函数可以接收一个一般组件, 将其转化为带有路由属性的组件(props 里有 history,match,location)</p>
+<pre><code class="language-react">import React, { Component } from &quot;react&quot;
+import { withRouter } from &quot;react-router-dom&quot;
+class Header extends Component {
+  forward = () =&gt; {
+    this.props.history.goForward()
+  }
+  back = () =&gt; {
+    this.props.history.goBack()
+  }
+  go = () =&gt; {
+    this.props.history.go(2)
+  }
+  render() {
+    return (
+      &lt;div className=&quot;page-header&quot;&gt;
+        &lt;button onClick={this.back}&gt; 回退&lt;/button&gt;
+        &lt;button onClick={this.forward}&gt; 前进 &lt;/button&gt;
+        &lt;button onClick={this.go}&gt; 前进两页 &lt;/button&gt;
+        &lt;h2&gt;React Router Demo&lt;/h2&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+export default withRouter(Header)
+</code></pre>
 
         </div>
         
@@ -743,6 +850,9 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
 <div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
     <div>
         
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/" class="block">react之 UI 组件库</a>
+        
     </div>
     <div class="md:text-right mt-4 md:mt-0">
         
@@ -765,6 +875,12 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
     <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
     <div class="content">
         
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/8-redux/">react之 第三方 redux 的使用</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/">react之 UI 组件库</a>
+        <br />
         
         <a href="/posts/%E7%A7%91%E6%8A%80/react/6-%E8%B7%AF%E7%94%B1/">react之 初识路由</a>
         <br />
@@ -808,7 +924,7 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
         <li><a href="#路由组件与普通组件">路由组件与普通组件</a>
           <ul>
             <li><a href="#普通组件">普通组件</a></li>
-            <li><a href="#路由组件">路由组件</a></li>
+            <li><a href="#路由组件对象的内容">路由组件对象的内容</a></li>
           </ul>
         </li>
         <li><a href="#navlink-的使用和封装">NavLink 的使用和封装</a>
@@ -836,8 +952,12 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
           <ul>
             <li><a href="#向路由组件传递-params-参数">向路由组件传递 params 参数</a></li>
             <li><a href="#向路由组件传递-serach-参数">向路由组件传递 serach 参数</a></li>
+            <li><a href="#向路由组建传递-state-参数">向路由组建传递 state 参数</a></li>
           </ul>
         </li>
+        <li><a href="#push与-replace-的区别">push与 replace 的区别</a></li>
+        <li><a href="#编程式路由导航">编程式路由导航</a></li>
+        <li><a href="#withrouter-的使用">withRouter 的使用</a></li>
       </ul>
     </li>
   </ul>
@@ -859,6 +979,9 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
         <h2 class="text-lg font-semibold mb-4">See Also</h2>
         <div class="content">
             
+            <a href="/posts/%E7%A7%91%E6%8A%80/react/7-ui%E7%BB%84%E4%BB%B6%E5%BA%93/">react之 UI 组件库</a>
+            <br />
+            
             <a href="/posts/%E7%A7%91%E6%8A%80/react/5-ajax/">react之 AJAX</a>
             <br />
             
@@ -872,9 +995,6 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
             <br />
             
             <a href="/posts/%E7%A7%91%E6%8A%80/react/1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">react之基本语法</a>
-            <br />
-            
-            <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/">小米首页的模拟</a>
             <br />
             
         </div>
