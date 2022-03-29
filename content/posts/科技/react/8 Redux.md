@@ -155,3 +155,82 @@ draft: false
       ```
 
    3. 在 UI 组件中通过 this.props.xxx  来读写状态
+
+### 数据共享
+
+1. 定义一个 Person 组件, 和 Count 组件通过 redux 共享数据
+2. 为 Person 组件同样写一套 reducer, action, 并配置 constant 常量
+3. 重点: Person 的 reducer 和 Count 的 Reducer 要使用 combineReducer 进行合并, 合并后的总状态是一个对象.
+4. 交给 store 的是 reducer, 最后注意在组件去除状态的时候, 状态为一个对象, 所以要取到位.
+
+### reducer 必须是纯函数
+
+纯函数就是说同样的输入必须得到同样的输出.
+
+	1. 函数体内不能改写参数;
+
+```js
+// 不纯
+function demo(a) {
+  a = 9
+}
+```
+
+2. 不能有网络请求和 IO.
+3. 不能调用 Date.now()或者 Math.random()等不纯的方法.
+4. redux 的 reducer 函数必须是一个纯函数.
+
+关于 prestate 数组的更新, 返回的 state 必须有一个新的数组.
+
+```jsx
+swith(type) {
+  case ADD_PERSON:
+  	return [data, ...prestate]
+}
+```
+
+js 的数组应该是一个地址, 指向堆的存储区域. 如果 prestate 更改前后, 只是数值边了, 地址没变. store 识别不出来, 页面不重新渲染. 
+
+一个数组 arr 直接往里推一个单位, arr 的地址是不变的.
+
+```js
+let arr = [1,3,5,7,9]
+arr.push(10)
+```
+
+### 最终版
+
+需要把所有 reducer 先引入到 reducer 文件夹下的 index.js, 然后在 store 中引入 index.js
+
+### [查看项目请点击](/react-redux/)
+
+## Redux 开发者工具
+
+1. 先在 Chrome 安装扩展
+2. 在 react 开发目录下, `yarn add redux-devtools-extension`.
+
+3. 在 store.js 中编写
+
+```jsx
+//创建 rudux 中最为核心的 store 对象
+import {createStore, applyMiddleware, combineReducers} from 'redux'
+//不加花括号是因为默认暴露了
+import countReducer from './reducers/count'
+import personReducer from './reducers/person'
+//引入 redux-thunk 用于支持异步 action
+ import thunk from 'redux-thunk'
+ //引入 redux 开发者工具
+ import {composeWithDevTools} from 'redux-devtools-extension'
+
+//汇总所有 reducer
+const allReducer = combineReducers({
+   count:countReducer,
+   person:personReducer
+})
+//默认暴露一个 store, 注意使用 redux开发者工具的调用方式
+export default createStore(allReducer,composeWithDevTools(applyMiddleware(thunk)))
+
+
+```
+
+### 
