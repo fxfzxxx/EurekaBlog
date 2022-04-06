@@ -202,7 +202,7 @@ arr.push(10)
 
 需要把所有 reducer 先引入到 reducer 文件夹下的 index.js, 然后在 store 中引入 index.js
 
-### [查看项目请点击](/react-redux/)
+### [查看项目请点击](/react-redux/index.html)
 
 ## Redux 开发者工具
 

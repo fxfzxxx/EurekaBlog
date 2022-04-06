@@ -8,14 +8,23 @@
     <language>en</language>
     <copyright>&amp;copy; 2021 Aaron Fan
 </copyright>
-    <lastBuildDate>Tue, 08 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="/series/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/series/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%B1%95%E7%A4%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ES6 模块化开发的谈吃蛇小游戏</title>
-      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</link>
+      <title>An example program of react-redux implement</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/react-redux-example-program/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/react-redux-example-program/</guid>
+      <description>Project Features States are managed by redux. UI components are sealed in containers without data proceed. Two components can communicate though react-redux. Project&amp;rsquo;s technology stack html + CSS + JavaScript + React + react-redux + redux Project source code The source code can be found in Github repo react-redux demo. Please click to check the</description>
+    </item>
+    
+    <item>
+      <title>Greedy Snake mini-game developed by ES6 modularly</title>
+      <link>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E8%B4%AA%E5%90%83%E8%9B%87/</link>
       <pubDate>Tue, 08 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc%E7%9A%84%E5%89%AF%E6%9C%AC/</guid>
-      <description>项目特点 原生 js 实现的交互功能 ES6 模块化开发 分成四个类 食物类: 生成一个食物, 随机位置. 蛇类: 生成一个蛇, 给蛇加一节</description>
+      <guid>/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E8%B4%AA%E5%90%83%E8%9B%87/</guid>
+      <description>Project Features Interactive functions implemented by native js ES6 modular development Divided into four classes Food Class: generate a food with random position. Snake Class: initialize a snake, add one unit of lenth, enable movement and moniter if the sanke is dead. Rules Class: set up the speed, score, when to start and end, rules</description>
     </item>
     
     <item>

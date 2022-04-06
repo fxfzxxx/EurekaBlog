@@ -89,7 +89,7 @@
     "image": "/images/react-logo.jpeg",
     "datePublished": "2022-03-15T00:00:00+00:00",
     "dateModified": "2022-03-15T00:00:00+00:00",
-    "wordCount":  2561 ,
+    "wordCount":  2557 ,
     "author": {
         "@type": "Person",
         "name": ["Aaron"]
@@ -148,6 +148,10 @@
 
 
 
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/react/9-hooks-%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%89%A9%E5%B1%95/" />
 
 
 
@@ -368,7 +372,7 @@
 <li>首先引入 <code>import {Link} from 'react-router-dom'</code></li>
 <li>在需要点击跳转的地方编写路由链接</li>
 </ol>
-<pre><code class="language-react">{/* 原生 js 靠 a 标签路由 */}
+<pre><code class="language-jsx">{/* 原生 js 靠 a 标签路由 */}
 {/* &lt;a className=&quot;list-group-item&quot; href=&quot;./about.html&quot;&gt;
   About
 &lt;/a&gt;
@@ -390,7 +394,7 @@
 <li>首先引入 <code>import {Route} from 'react-router-dom'</code></li>
 <li>在需要渲染地方注册路由</li>
 </ol>
-<pre><code class="language-react">{/* 注册路由 */}
+<pre><code class="language-jsx">{/* 注册路由 */}
   &lt;Route path=&quot;/about&quot; component={About}/&gt;
   &lt;Route path=&quot;/home&quot; component={Home}/&gt;
 </code></pre>
@@ -466,7 +470,7 @@
 </li>
 <li>
 <p>如果说使用的 CSS UI 库对应的高亮显示类不是 <code>active</code> 就可以在 <code>NavLink</code> 内来单独设置高亮显示的类名. 比如高亮显示类名是<code>highlight </code>, 就可以写 <code>activeClassName=&quot;highlight&quot;</code>.</p>
-<pre><code class="language-react">&lt;NavLink className=&quot;list-group-item&quot; to=&quot;/about&quot;&gt;About&lt;/Link&gt;
+<pre><code class="language-jsx">&lt;NavLink className=&quot;list-group-item&quot; to=&quot;/about&quot;&gt;About&lt;/Link&gt;
 &lt;NavLink className=&quot;list-group-item&quot; to=&quot;/home&quot;&gt;Home&lt;/Link&gt;
 </code></pre>
 </li>
@@ -486,7 +490,7 @@
 </li>
 <li>
 <p>创建一个新的一般组件 <code>MyNavLink</code> , 需要引入<code>import { NavLink } from &quot;react-router-dom&quot;</code>, 同时渲染<code>NavLink</code>. 通过 <code>{...this.props}</code> 来把 <code>MyNavLink</code> 收到的 props 传到 <code>NavLink</code> 的 props 中去.</p>
-<pre><code class="language-react">render() {
+<pre><code class="language-jsx">render() {
   return (
     &lt;NavLink className=&quot;list-group-item&quot; {...this.props} /&gt;
   )
@@ -505,7 +509,7 @@
 </ol>
 <h3 id="switch-的作用">Switch 的作用</h3>
 <p>注册路由的时候, 可以引入 <code>import {Switch} from &quot;react-router-dom&quot;</code> 包裹在所有 <code>&lt;Route&gt;</code> 标签的外侧.</p>
-<pre><code class="language-react">&lt;Switch&gt;
+<pre><code class="language-jsx">&lt;Switch&gt;
   &lt;Route path=&quot;/about&quot; component={About} /&gt;
   &lt;Route path=&quot;/home&quot; component={Home} /&gt;
   &lt;Route path=&quot;/home&quot; component={About} /&gt;
@@ -555,15 +559,15 @@
 <h3 id="路由的模糊匹配和精准匹配">路由的模糊匹配和精准匹配</h3>
 <h4 id="模糊匹配">模糊匹配</h4>
 <p>如果编写的路由链接大于或者说包含注册路由, 则跳转到包含的注册路由.</p>
-<pre><code class="language-react">{/* 编写路由链接 */}
-&lt;MyNavLink to=&quot;/fanxuan/about&quot; title=&quot;About&quot;&gt;
+<pre><code class="language-jsx">{/* 编写路由链接 */}
+&lt;MyNavLink to=&quot;/fanxuan/about&quot;&gt;
   About
 &lt;/MyNavLink&gt;
-&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot; title=&quot;Home&quot;&gt;
+&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot;&gt;
   Home
 &lt;/MyNavLink&gt;
 </code></pre>
-<pre><code class="language-react">{/* 注册路由 */}
+<pre><code class="language-jsx">{/* 注册路由 */}
 &lt;Switch&gt;
   &lt;Route path=&quot;/fanxuan/about&quot; component={About} /&gt;
   &lt;Route path=&quot;/fanxuan/home&quot; component={Home} /&gt;
@@ -571,15 +575,15 @@
 </code></pre>
 <h4 id="精准匹配">精准匹配</h4>
 <p>正常来说不开启精准匹配, 有时候开启无法继续匹配二级路由.</p>
-<pre><code class="language-react">{/* 编写路由链接 */}
-&lt;MyNavLink to=&quot;/fanxuan/about&quot; title=&quot;About&quot;&gt;
+<pre><code class="language-jsx">{/* 编写路由链接 */}
+&lt;MyNavLink to=&quot;/fanxuan/about&quot;&gt;
   About
 &lt;/MyNavLink&gt;
-&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot; title=&quot;Home&quot;&gt;
+&lt;MyNavLink to=&quot;/fanxuan/home/a/b&quot;&gt;
   Home
 &lt;/MyNavLink&gt;
 </code></pre>
-<pre><code class="language-react">{/* 注册路由 */}
+<pre><code class="language-jsx">{/* 注册路由 */}
 &lt;Switch&gt;
   &lt;Route exact path=&quot;/fanxuan/about&quot; component={About} /&gt;
   &lt;Route exact path=&quot;/fanxuan/home&quot; component={Home} /&gt;
@@ -587,7 +591,7 @@
 </code></pre>
 <h3 id="rediect-的使用">Rediect 的使用</h3>
 <p>在没有匹配到任何路由链接时, 比如直接输入网站地址需要跳转的情况下. 就可以设置 <code>&lt;Redirect&gt;</code> 标签进行跳转.</p>
-<pre><code class="language-react">{/* 注册路由 */}
+<pre><code class="language-jsx">{/* 注册路由 */}
 &lt;Switch&gt;
   &lt;Route path=&quot;/about&quot; component={About} /&gt;
   &lt;Route path=&quot;/home&quot; component={Home} /&gt;
@@ -607,7 +611,7 @@
 </li>
 </ol>
 <h4 id="一级路由">一级路由</h4>
-<pre><code class="language-react">{/* 编写路由链接 */}
+<pre><code class="language-jsx">{/* 编写路由链接 */}
 &lt;MyNavLink to=&quot;/about&quot; &gt;
   About
 &lt;/MyNavLink&gt;
@@ -624,7 +628,7 @@
 
 </code></pre>
 <h4 id="二级路由">二级路由</h4>
-<pre><code class="language-react">&lt;ul className=&quot;nav nav-tabs&quot;&gt;
+<pre><code class="language-jsx">&lt;ul className=&quot;nav nav-tabs&quot;&gt;
     &lt;li&gt;
       &lt;MyNavLink to=&quot;/home/news&quot;&gt; News &lt;/MyNavLink&gt;
     &lt;/li&gt;
@@ -644,7 +648,7 @@
 <ol>
 <li>传递</li>
 </ol>
-<pre><code class="language-react">{/* 向路由组建传递 params 参数 */}
+<pre><code class="language-jsx">{/* 向路由组建传递 params 参数 */}
 &lt;Link to={`/home/messages/details/${message.id}/${message.title}`}&gt;
   {message.title}
 &lt;/Link&gt;
@@ -652,20 +656,20 @@
 <ol start="2">
 <li>声明接收</li>
 </ol>
-<pre><code class="language-react">{/*  声明接收 params 参数 */}
+<pre><code class="language-jsx">{/*  声明接收 params 参数 */}
 &lt;Route path=&quot;/home/messages/details/:id/:title&quot; component={Details} /&gt;
 </code></pre>
 <ol start="3">
 <li>接收</li>
 </ol>
-<pre><code class="language-react">//接收 params 参数
+<pre><code class="language-jsx">//接收 params 参数
 const {id, title} = this.props.match.params
 </code></pre>
 <h4 id="向路由组件传递-serach-参数">向路由组件传递 serach 参数</h4>
 <ol>
 <li>传递</li>
 </ol>
-<pre><code class="language-react">{/* 向路由组建传递 serach 参数 */}
+<pre><code class="language-jsx">{/* 向路由组建传递 serach 参数 */}
 &lt;Link to={`/home/messages/details/?id=${message.id}&amp;title=${message.title}`}&gt;
 {message.title}
 &lt;/Link&gt;
@@ -673,7 +677,7 @@ const {id, title} = this.props.match.params
 <ol start="2">
 <li>无需声明接收</li>
 </ol>
-<pre><code class="language-react">{/*  search 参数无需声明接收 */}
+<pre><code class="language-jsx">{/*  search 参数无需声明接收 */}
 &lt;Route path=&quot;/home/messages/details&quot; component={Details} /&gt;
 </code></pre>
 <ol start="3">
@@ -684,7 +688,7 @@ const {id, title} = this.props.match.params
 </ol>
 </li>
 </ol>
-<pre><code class="language-react">const {search} = this.props.location
+<pre><code class="language-jsx">const {search} = this.props.location
 const result = qs.parse(search.slice(1))
 const {id, title} = result
 const findRes = DetialData.find((item) =&gt; item.id === id)
@@ -694,7 +698,7 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
 <ol>
 <li>传递</li>
 </ol>
-<pre><code class="language-react">{/* 向路由组建传递 state 参数 */}
+<pre><code class="language-jsx">{/* 向路由组建传递 state 参数 */}
 &lt;Link to={{pathname:'/home/messages/details',state:{id:message.id,title:message.title}}}&gt;
 	{message.title}
 &lt;/Link&gt;
@@ -702,23 +706,23 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
 <ol start="2">
 <li>声明接收</li>
 </ol>
-<pre><code class="language-react">{/*  state 参数无需声明接收 */}
+<pre><code class="language-jsx">{/*  state 参数无需声明接收 */}
 &lt;Route path=&quot;/home/messages/details&quot; component={Details} /&gt;
 </code></pre>
 <ol start="3">
 <li>接收</li>
 </ol>
-<pre><code class="language-react">const {id, title} = this.props.location.state
+<pre><code class="language-jsx">const {id, title} = this.props.location.state
 const findRes = DetialData.find((item) =&gt; item.id === id)
 </code></pre>
 <h3 id="push与-replace-的区别">push与 replace 的区别</h3>
 <p>在编写路由连接的时候, 可以加 <code>replace=true</code> 来标识路由为 replace 模式. replace 模式不会将访问存在于历史记录, 后退函数也拿不到历史记录. 历史记录类似于一个栈结构, replace 是直接换栈顶的内容.</p>
-<pre><code class="language-react">//replace=true 可直接简写为 true
+<pre><code class="language-jsx">//replace=true 可直接简写为 true
 &lt;MyNavLink replace to=&quot;/home/messages&quot;&gt; Messages &lt;/MyNavLink&gt;
 </code></pre>
 <h3 id="编程式路由导航">编程式路由导航</h3>
 <p>编程式就是直接调用 props.history 中的函数api前进或者后退.</p>
-<pre><code class="language-react">pushClick = (id,title) =&gt; {
+<pre><code class="language-jsx">pushClick = (id,title) =&gt; {
     this.props.history.push('/home/messages/details',{ id, title })
   }
   replaceClick = (id,title) =&gt; {
@@ -763,7 +767,7 @@ const findRes = DetialData.find((item) =&gt; item.id === id)
 </code></pre>
 <h3 id="withrouter-的使用">withRouter 的使用</h3>
 <p><code>withRouter</code> 函数可以接收一个一般组件, 将其转化为带有路由属性的组件(props 里有 history,match,location)</p>
-<pre><code class="language-react">import React, { Component } from &quot;react&quot;
+<pre><code class="language-jsx">import React, { Component } from &quot;react&quot;
 import { withRouter } from &quot;react-router-dom&quot;
 class Header extends Component {
   forward = () =&gt; {
@@ -875,6 +879,9 @@ export default withRouter(Header)
     <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
     <div class="content">
         
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/react/9-hooks-%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%89%A9%E5%B1%95/">react之 Hooks 和一些扩展</a>
+        <br />
         
         <a href="/posts/%E7%A7%91%E6%8A%80/react/8-redux/">react之 第三方 redux 的使用</a>
         <br />

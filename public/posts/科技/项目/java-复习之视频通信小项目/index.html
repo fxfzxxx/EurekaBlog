@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang='en' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Java 复习之视频通信小项目 | Aaron 的博客</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/dart.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+    });
+  });
+</script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@8.9.2/dist/mermaid.min.js" 
+  integrity="sha256-Zmpaaj&#43;GXFsPF5WdPArSrnW3b30dovldeKsW00xBVwE="  crossorigin></script>
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_32x32_fill_q75_box_center.jpeg">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/avatar2_hu52d3fe48894cf8fcda41fb21046661cf_14320_180x180_fill_q75_box_center.jpeg">
+
+<meta name="description"
+  content="通过 Java 实现的一格视频通信软件">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"所有文章",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"Java 复习之视频通信小项目",
+      "item":"/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/java-%E5%A4%8D%E4%B9%A0%E4%B9%8B%E8%A7%86%E9%A2%91%E9%80%9A%E4%BF%A1%E5%B0%8F%E9%A1%B9%E7%9B%AE/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/java-%E5%A4%8D%E4%B9%A0%E4%B9%8B%E8%A7%86%E9%A2%91%E9%80%9A%E4%BF%A1%E5%B0%8F%E9%A1%B9%E7%9B%AE/"
+    },
+    "headline": "Java 复习之视频通信小项目 | Aaron 的博客",
+    "image": "/images/java-logo.png",
+    "datePublished": "2022-01-17T00:00:00+00:00",
+    "dateModified": "2022-01-17T00:00:00+00:00",
+    "wordCount":  1863 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Aaron"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Aaron Fan",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/avatar2.jpeg"
+        }
+        },
+    "description": "通过 Java 实现的一格视频通信软件"
+}
+</script><meta property="og:title" content="Java 复习之视频通信小项目 | Aaron 的博客" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/avatar2.jpeg">
+
+
+<meta property="og:url" content="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/java-%E5%A4%8D%E4%B9%A0%E4%B9%8B%E8%A7%86%E9%A2%91%E9%80%9A%E4%BF%A1%E5%B0%8F%E9%A1%B9%E7%9B%AE/" />
+
+
+
+<meta property="og:description" content="通过 Java 实现的一格视频通信软件" />
+
+
+
+<meta property="og:locale" content="en" />
+
+
+
+
+<meta property="og:site_name" content="Aaron 的博客" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2022-01-17T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2022-01-17T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+<meta property="article:tag" content="项目" />
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:see_also" content="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/" />
+
+
+
+<meta property="og:see_also" content="/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/" />
+
+
+
+
+ 
+
+<style>
+  #google_translate_element {
+    margin: 0 0 0 10px;
+  } 
+  #google_translate_element img {
+    display: inline;
+  }
+  .skiptranslate {
+    
+  }
+</style>
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">Aaron 的博客</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/categories/technology" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">科技</a>
+            <a href="/categories/politics" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">政经</a>
+            <a href="/categories/arts" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">艺术</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文档</a>
+            <a href="/series" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">系列</a>
+            <a href="/categories/projects" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode" style="padding-top:8px;">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">Light</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">Dark</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">Auto</span>
+                </div>
+            </div>
+            <div style="width: 150;display: inline-block;" id="google_translate_element"></div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ch'}, 'google_translate_element');
+    }
+</script>
+    
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">Java 复习之视频通信小项目</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2022-01-17</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>4 min read</span>
+    </div>
+    
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-folder mr-1"></i>
+        
+        <a href="/categories/technology/" class="hover:text-eureka">科技</a>
+        
+        
+        <span>, </span>
+        <a href="/categories/projects/" class="hover:text-eureka">项目</a>
+        
+    </div>
+    
+
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/%E9%A1%B9%E7%9B%AE/" class="hover:text-eureka">项目</a>
+        
+    </div>
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="/images/java-logo.png" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="1-简单的服务器与客户端">1. 简单的服务器与客户端</h2>
+<h3 id="11-建立-tcp-连接">1.1 建立 TCP 连接</h3>
+<ul>
+<li>服务端需要有一个 <code>ServerSocket</code> 对象, 通过他的 <code>accept</code> 方法监听客户端的 <code>socket</code> 请求并且返回一个<code>socket</code>来与客户端的 <code>socket</code> 建立连接.</li>
+</ul>
+<h3 id="12-发信息">1.2 发信息</h3>
+<h4 id="最基础的写法">最基础的写法</h4>
+<ul>
+<li>服务端</li>
+</ul>
+<pre><code class="language-java">Socket socket = serverSocket.accept();
+OutputStream ous = serverSocket.getOutputStream();
+String msg = &quot;hello \r\n&quot;;
+byte[] data = msg.getBytes();
+ous.write(data);
+</code></pre>
+<p>这个基础的写法目前还只是用于了解发送的 基本原理, 没有继续研究如何发送中文.</p>
+<ul>
+<li>
+<p>发信息的一方需要有一个输出流对象 <code>OutputStream</code> , 可以通过 <code>Socket</code> 对象的 <code>getOutputStream</code> 方法返回.</p>
+</li>
+<li>
+<p>创建一个 <code>String</code> 对象存储所发的消息</p>
+</li>
+<li>
+<p>使用 <code>getByte</code> 方法将字符创存入一个 <code>Byte</code> 型的数组.</p>
+<ul>
+<li>
+<p>查了源码后发现, String 类有一个静态的 <code>value</code> 属性, 是一个 <code>byte</code> 类型的数组, 字符串的每个字符都相应存在数组里面. 通过在 SringUTF16 的类里面如下方法</p>
+</li>
+<li>
+<pre><code class="language-java">public static byte[] toBytes(char[] value, int off, int len) {
+        byte[] val = newBytesFor(len);
+        for (int i = 0; i &lt; len; i++) {
+          // 3个参数依次是 byte[],int,int
+            putChar(val, i, value[off]);
+            off++;
+        }
+        return val;
+    }
+</code></pre>
+</li>
+<li>
+<p>这里实际上是把 <code>char</code> 数组里面的 <code>char</code> 直接通过 <code>int c</code> 传入到以下方法</p>
+</li>
+<li>
+<p><strong>因为 <code>char</code> 实际上存储的是一个整数: 0~65535(2^16), 是字符在字符编码表中的位置.</strong></p>
+</li>
+<li>
+<p>我经过测试发现实际上 <code>char</code> 字符可以直接转换成 <code>int</code> 变量. 输出的话会得到对应的 ASCII 码.</p>
+<pre><code class="language-java"> static void putChar(byte[] val, int index, int c) {
+        assert index &gt;= 0 &amp;&amp; index &lt; length(val) : &quot;Trusted caller missed bounds check&quot;;
+        index &lt;&lt;= 1;
+   // 这里证实是相邻的两个byte位置存储了一个 char 类型
+        val[index++] = (byte)(c &gt;&gt; HI_BYTE_SHIFT);
+        val[index]   = (byte)(c &gt;&gt; LO_BYTE_SHIFT);
+    }
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>用输出流对象 <code> OutputStream</code> 的 <code>write</code> 方法把 <code>byte</code> 数组传进去</p>
+<ul>
+<li>所有的输入输出流都是基于字节的.</li>
+</ul>
+</li>
+</ul>
+<h5 id="注意-write-方法的参数值问题"><strong>注意: <code>write</code> 方法的参数值问题</strong></h5>
+<ul>
+<li><code>write</code> 方法其实是接受一个 <code>int</code> 变量, 但是 <code>int</code> 的前八位会被读取,也就是每次读取一个 <strong>字节</strong>. 后面的 24 位会被忽略. 所以, 可以往里进的数据可以是, <code>int</code> , <code>char</code>,等等值类型. 但不能是字符串, 用字符串, 必须要先把字符串通过 <code>getByte</code> 的方法存进一个 <code>byte</code> 数组.</li>
+</ul>
+<h4 id="简化版写法">简化版写法</h4>
+<ul>
+<li>服务端</li>
+</ul>
+<pre><code class="language-java">Socket socket = serverSocket.accept();
+DataOutputStream out = new DataOutputStream(serverSocket.getOutputStream);
+out.writeUTF(&quot;这里可以直接写中文&quot;);
+</code></pre>
+<h3 id="13-收信息">1.3 收信息</h3>
+<h4 id="最基础的写法-1">最基础的写法</h4>
+<ul>
+<li>客户端</li>
+</ul>
+<pre><code class="language-java">Socket socket = new Socket(&quot;localhost&quot;, 50000);
+InputStream in = socket.getInputStream();
+int readMsg = 0;
+while(true) {
+  readMsg = in.read()// 这里有的 read 每次读取一个字节, 所以得到的取值范围是 0~255 的 ASC 码, 并且由于字符串正常情况下是一个 char 数组,发送的时候使用 getByte 转化成 Byte 数组. 发送 ASC 码内字符的时候, 只会占用 char 的前 8 位, 后八位是 0, 这样按理说 byte 数组每隔一个位置会有一个空.
+  if(readMsg == -1) break; //意思是读到末尾了
+  }
+	System.out.println((char)readMsg);
+}
+</code></pre>
+<h4 id="简单写法">简单写法</h4>
+<pre><code class="language-java">Socket socket = new Socket(&quot;localhost&quot;, 50000);
+DataInputStream in = new DataInputSteam(socket.getInputStream);
+Sting inMsg = in.readUTF();
+</code></pre>
+<p>到这里, 已经能够做到一个客户端和服务端的简单通讯了. 但是有一定限制:</p>
+<ul>
+<li>基本的 <code>write</code> 和 <code>read</code> 只能传输 ASC 码内的内容</li>
+<li>只能实现服务端和客户端一对一通讯</li>
+</ul>
+<h2 id="2-服务端和客户端复杂通讯的准备工作">2. 服务端和客户端复杂通讯的准备工作</h2>
+<h3 id="21-通过-write-和-read-实现的写入和读取-int-数据类型的方法">2.1 通过 <code>write</code> 和 <code>read</code> 实现的写入和读取 <code>Int</code> 数据类型的方法</h3>
+<h4 id="思路">思路</h4>
+<ul>
+<li><code>write</code> 和 <code>read</code> 只能写入和读取单个字节, 而 <code>int</code> 型有四个字节</li>
+<li>如果直接用 <code>write</code> 和 <code>read</code> 直接来传输 <code>int</code> 会出现后三个字节丢失的情况</li>
+<li>所以, 需要一次读取和写入四个字节, 可以封装一个函数, 来做这个事情.</li>
+</ul>
+<pre><code class="language-java">//将 int 拆分成四个字节并且写入 os 中
+public static void writeInt(OutputStream os, int value) throws IOException {
+        int[] intValues = new int[4];
+        intValues[0] = (value &gt;&gt; 24) &amp; 0xFF; //注意移位后, value 仍然是整型, 只是前面补零, 并且 java 整型第一位永远是留作符号位.
+        intValues[1] = (value &gt;&gt; 16) &amp; 0xFF; //其实也可以用不同的掩码, 将在下面一个方法内尝试实现, 后来想了下不行, 因为读取是度前 8 位
+        intValues[2] = (value &gt;&gt; 8) &amp; 0xFF;
+        intValues[3] = value  &amp; 0xFF;
+        for (int i = 0; i &lt; 4; i++) {
+            os.write(intValues[i]);
+        }
+    }
+//将 int 依次从 is 中拿出并且拼接
+public static int readInt(InputStream os) throws IOException {
+        int intValues[] = new int[4];
+        for(int i =0;i&lt;4;i++) {
+            intValues[i] = os.read();
+        }
+        int value = intValues[0] &lt;&lt; 24 | intValues[1] &lt;&lt; 16 | intValues[2] &lt;&lt; 8 | intValues[3];
+        return value;
+    }
+</code></pre>
+<h4 id="注意">注意</h4>
+<ul>
+<li>因为想要恰好读取到发送的四个字节, 并整合到一个整型中, 就需要严格指定一套 <strong>通信协议</strong>, 确保收发不会发生错位.</li>
+<li>所以, 一旦涉及到基于字节的其他类型的传输, 就需要收发端书写一套相同的通信协议.</li>
+</ul>
+<h3 id="22-通过-write-和-read-实现的写入和读取-string-数据类型的方法">2.2 通过 <code>write</code> 和 <code>read</code> 实现的写入和读取 <code>String</code> 数据类型的方法</h3>
+<h4 id="思路-1">思路</h4>
+<ul>
+<li><code>write</code> 端
+<ul>
+<li>先把想要传输的字符串转换成字节数组, 可利用<code>String</code> 类自带的  <code>getbytes</code> 的方法直接获得.</li>
+<li>获取 <code> byte</code> 数组的长度, 先通过写入 <code>int</code> 的方法把长度发出.</li>
+<li>再直接发送这个字节数组.</li>
+</ul>
+</li>
+<li><code>read</code> 端</li>
+<li>先读取 <code>byte</code> 数组的长度 <code>int</code>.</li>
+<li>接着创建一个相同长度的 <code>byte</code> 数组, 防止多读取数据.</li>
+<li>最会通过 <code>String</code> 的构造函数把 <code>byte</code> 数组传进去, 直接创建字符串.</li>
+</ul>
+<pre><code class="language-java">public static void writeString(OutputStream os, String value) throws IOException {
+    byte[] bytes = value.getBytes();
+    int length = bytes.length;
+    System.out.println(&quot;Write Length: &quot; + length);
+    byte[] byteValues = value.getBytes();
+    IOUtils.writeInt(os,length);
+    os.write(byteValues);
+}
+public static String readString(InputStream is) throws IOException {
+    int length = IOUtils.readInt(is);
+    System.out.println(&quot;Read Length: &quot; + length);
+    byte[] bytes = new byte[length];
+    is.read(bytes);
+    String value = new String(bytes);//每两字节转换成一个 char 然后组合成一个字符串
+    return value;
+}
+</code></pre>
+<h3 id="23-多线程">2.3 多线程</h3>
+<h4 id="多线程的原因">多线程的原因</h4>
+<ul>
+<li>
+<p>多线程在这个项目里主要是运用在服务端, 因为服务端要保持监听, 而不是从上到下运行完后退出监听.</p>
+<ul>
+<li>客户端同样需要一个死循环来保持监听输入和持续输出, 但是不需要做其他事情, 所以每个客户端只需要一个线程就足够了</li>
+</ul>
+</li>
+<li>
+<p>因此会存在两种死循环来让服务端保持持续监听,</p>
+<ul>
+<li>死循环下来 <code>accept</code> 新的 <code>socket</code></li>
+<li>死循环下来处理 <code>InputStream</code> 和 <code>OutputStream</code> , 即收发流 .</li>
+</ul>
+</li>
+<li>
+<p>死循环状态下, 程序就会阻塞, 无法运行循环后面的代码</p>
+</li>
+<li>
+<p>所以需要多线程去处理这种阻塞问题</p>
+<ul>
+<li>服务类需要做的就是一个 <code>accept</code> 死循环来创建新的 线程类</li>
+<li>每一个连接的 <code>socket</code> 都需要传一个线程类里, 在新的线程类里开始运行死循环, 来处理他们独自的收发流</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="my-4">
+    
+    <a href="/tags/%E9%A1%B9%E7%9B%AE/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 mr-2 hover:text-eureka">#项目</a>
+    
+</div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/aaron/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar2.jpeg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/aaron/" class="block font-bold text-lg pb-1 mb-2 border-b">Aaron Fan</a>
+            <span class="block pb-2">My research interests include machine learning, signal processing, web development and robotics.</span>
+            
+            
+            
+            
+            
+            <a href="mailto:example@example.com" class="mr-1">
+                <i class="fas fa-envelope"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-twitter"></i>
+            </a>
+            
+            
+            
+            
+            
+            <a href="https://example.com/" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold">Previous</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/todomvc/" class="block">ToDo 待办事项项目</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold">Next</span>
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/" class="block">小米首页的模拟</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">Series of Posts</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/java-%E5%A4%8D%E4%B9%A0%E4%B9%8B%E8%A7%86%E9%A2%91%E9%80%9A%E4%BF%A1%E5%B0%8F%E9%A1%B9%E7%9B%AE/">Java 复习之视频通信小项目</a>
+        <br />
+        
+        <a href="/posts/%E7%A7%91%E6%8A%80/%E9%A1%B9%E7%9B%AE/%E5%B0%8F%E7%B1%B3%E9%A6%96%E9%A1%B5%E6%A8%A1%E4%BB%BF/">小米首页的模拟</a>
+        <br />
+        
+        <a href="/docs/java-basics/%E4%BA%94%E5%AD%90%E6%A3%8B%E6%B8%B8%E6%88%8F/">小项目 五子棋游戏</a>
+        <br />
+        
+        
+    </div>
+</div>
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">On This Page</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-简单的服务器与客户端">1. 简单的服务器与客户端</a>
+      <ul>
+        <li><a href="#11-建立-tcp-连接">1.1 建立 TCP 连接</a></li>
+        <li><a href="#12-发信息">1.2 发信息</a>
+          <ul>
+            <li><a href="#最基础的写法">最基础的写法</a>
+              <ul>
+                <li><a href="#注意-write-方法的参数值问题"><strong>注意: <code>write</code> 方法的参数值问题</strong></a></li>
+              </ul>
+            </li>
+            <li><a href="#简化版写法">简化版写法</a></li>
+          </ul>
+        </li>
+        <li><a href="#13-收信息">1.3 收信息</a>
+          <ul>
+            <li><a href="#最基础的写法-1">最基础的写法</a></li>
+            <li><a href="#简单写法">简单写法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#2-服务端和客户端复杂通讯的准备工作">2. 服务端和客户端复杂通讯的准备工作</a>
+      <ul>
+        <li><a href="#21-通过-write-和-read-实现的写入和读取-int-数据类型的方法">2.1 通过 <code>write</code> 和 <code>read</code> 实现的写入和读取 <code>Int</code> 数据类型的方法</a>
+          <ul>
+            <li><a href="#思路">思路</a></li>
+            <li><a href="#注意">注意</a></li>
+          </ul>
+        </li>
+        <li><a href="#22-通过-write-和-read-实现的写入和读取-string-数据类型的方法">2.2 通过 <code>write</code> 和 <code>read</code> 实现的写入和读取 <code>String</code> 数据类型的方法</a>
+          <ul>
+            <li><a href="#思路-1">思路</a></li>
+          </ul>
+        </li>
+        <li><a href="#23-多线程">2.3 多线程</a>
+          <ul>
+            <li><a href="#多线程的原因">多线程的原因</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 Aaron Fan
+ &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

@@ -27,7 +27,7 @@ draft: false
 
 2. 基本使用
 
-   ```react
+   ```jsx
    import React, { Component } from "react"
    import { Button } from "antd"
    import { WechatOutlined } from '@ant-design/icons'
