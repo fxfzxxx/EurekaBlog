@@ -1,5 +1,5 @@
 ---
-title: An example program of react-redux implement
+title: An example program of react-redux implementation
 description: Using react-redux to manage state and communication between components.
 authors:
   - Aaron
