@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>520 loves</title>
+   <style>
+      html {
+         perspective: 800px;
+      }
+
+      .cube {
+         width: 200px;
+         height: 200px;
+         margin: 0% auto;
+         /* 使用动画效果 */
+         animation: rotate 20s infinite linear;
+
+         /* 设置3d变形效果 */
+         transform-style: preserve-3d;
+
+      }
+
+      #heartCanvas {}
+
+      .cube>div {
+         width: 200px;
+         height: 200px;
+         /* 为元素设置透明效果 */
+         opacity: 0.7;
+         /* 设置元素绝对定位 */
+         position: absolute;
+      }
+
+      img {
+         /* 垂直对齐方式 */
+         vertical-align: top;
+         object-fit: cover;
+         width: 100%;
+         height: 100%;
+      }
+
+      .box1 {
+         transform: rotateY(90deg) translateZ(100px);
+      }
+
+      .box2 {
+         transform: rotateY(-90deg) translateZ(100px);
+      }
+
+      .box3 {
+         transform: rotateX(90deg) translateZ(100px);
+      }
+
+      .box4 {
+         transform: rotateX(-90deg) translateZ(100px);
+      }
+
+      .box5 {
+         transform: rotateY(180deg) translateZ(100px);
+      }
+
+      .box6 {
+         transform: rotateY(0deg) translateZ(100px);
+      }
+
+      @keyframes rotate {
+         form {
+            transform: rotateX(0) rotateZ(0);
+         }
+
+         to {
+            transform: rotateX(1turn) rotateZ(1turn);
+         }
+      }
+
+      .centered-text {
+         text-align: center;
+         color: #8a1717;
+      }
+
+      .centered-text2 {
+         text-align: center;
+         color: #bc3e3e;
+      }
+
+      .btn {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+      }
+   </style>
+</head>
+
+<body>
+   <div class="words"></div>
+   <div class="moreWords"></div>
+   <button class="btn">点击看到祝福</button>
+   <button class="btn" id="secondBtn" style="margin-top: 20px; display: none;">点击看到更多祝福</button>
+   <canvas id="heartCanvas"></canvas>
+   <!-- 创建一个外部的容器 -->
+   <div class="cube">
+      <!-- 引入图片 -->
+      <div class="box1">
+         <img src="./img/14/1.jpg" alt="">
+      </div>
+
+      <div class="box2">
+         <img src="./img/14/2.jpg" alt="">
+      </div>
+
+      <div class="box3">
+         <img src="./img/14/3.jpg" alt="">
+      </div>
+
+      <div class="box4">
+         <img src="./img/14/4.jpg" alt="">
+      </div>
+
+      <div class="box5">
+         <img src="./img/14/5.jpg" alt="">
+      </div>
+
+      <div class="box6">
+         <img src="./img/14/6.jpg" alt="">
+      </div>
+   </div>
+</body>
+<script>
+   // 获取元素
+   var btn = document.querySelector('.btn');
+   const moreWords = document.querySelector('.moreWords');
+   let secondBtn = document.getElementById('secondBtn');
+   var words = document.querySelector('.words');
+
+   // 点击按钮显示祝福
+   btn.onclick = function () {
+      words.innerHTML = '<h2 class="centered-text">我爱你</h2>';
+      btn.style.display = 'none';
+      secondBtn.style.display = 'block';
+   }
+
+   secondBtn.onclick = function () {
+      btn.style.display = 'none';
+      moreWords.innerHTML = '<h3 class="centered-text2">在这个特殊的节日, 祝福我们能相爱到永远!</h3>';
+      }
+
+</script>
+
+</html>
