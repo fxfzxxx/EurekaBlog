@@ -10,6 +10,23 @@
          perspective: 800px;
       }
 
+      .nav {
+         width: 100%;
+         background-color: #ff69b4;
+         display: flex;
+         justify-content: center;
+         padding: 10px 0;
+      }
+
+      .nav a {
+         color: white;
+         text-decoration: none;
+         padding: 10px 20px;
+         margin: 0 10px;
+         border-radius: 5px;
+         transition: background-color 0.3s;
+      }
+
       .cube {
          width: 200px;
          height: 200px;
@@ -21,8 +38,6 @@
          transform-style: preserve-3d;
 
       }
-
-      #heartCanvas {}
 
       .cube>div {
          width: 200px;
@@ -94,58 +109,40 @@
 </head>
 
 <body>
-   <div class="words"></div>
-   <div class="moreWords"></div>
-   <button class="btn">点击看到祝福</button>
-   <button class="btn" id="secondBtn" style="margin-top: 20px; display: none;">点击看到更多祝福</button>
-   <canvas id="heartCanvas"></canvas>
-   <!-- 创建一个外部的容器 -->
-   <div class="cube">
-      <!-- 引入图片 -->
-      <div class="box1">
-         <img src="./img/14/1.jpg" alt="">
-      </div>
-
-      <div class="box2">
-         <img src="./img/14/2.jpg" alt="">
-      </div>
-
-      <div class="box3">
-         <img src="./img/14/3.jpg" alt="">
-      </div>
-
-      <div class="box4">
-         <img src="./img/14/4.jpg" alt="">
-      </div>
-
-      <div class="box5">
-         <img src="./img/14/5.jpg" alt="">
-      </div>
-
-      <div class="box6">
-         <img src="./img/14/6.jpg" alt="">
-      </div>
+   <div class="nav">
+      <a href="#tab1" class="loveTab">520 祝福</a>
+      <a href="#tab2" class="birthdayTab">生日祝福</a>
+      <a href="#tab3" class="aboutTab">关于</a>
    </div>
+   <div class="love"></div>
+   <div class="birthday centered-text2"></div>
+   <div class="about centered-text2"></div>
 </body>
+<script src="./520.js"></script>
 <script>
-   // 获取元素
-   var btn = document.querySelector('.btn');
-   const moreWords = document.querySelector('.moreWords');
-   let secondBtn = document.getElementById('secondBtn');
-   var words = document.querySelector('.words');
+   const tab1 = document.querySelector('.loveTab');
+   const tab2 = document.querySelector('.birthdayTab');
+   const tab3 = document.querySelector('.aboutTab');
+
+   tab1.addEventListener('click', function () {
+      deleteBirthday();
+      deleteAbout();
+      create520();
+   });
+   tab2.addEventListener('click', function () {
+      delete520();
+      deleteAbout();
+      createBirthday();
+   });
+   tab3.addEventListener('click', function () {
+      delete520();
+      deleteBirthday();
+      createAbout();
+   });
+
 
    // 点击按钮显示祝福
-   btn.onclick = function () {
-      words.innerHTML = '<h2 class="centered-text">我爱你</h2>';
-      btn.style.display = 'none';
-      secondBtn.style.display = 'block';
-   }
 
-   secondBtn.onclick = function () {
-      btn.style.display = 'none';
-      moreWords.innerHTML = '<h3 class="centered-text2">在这个特殊的节日, 祝福我们能相爱到永远!</h3>';
-            secondBtn.textContent = "点不动了, 520快乐!"
-      }
 
 </script>
 
