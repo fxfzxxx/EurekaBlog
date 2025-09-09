@@ -117,6 +117,11 @@
          max-width: 600px;
          width: 100%;
       }
+      .Jinjin .letter-content {
+         text-align: center;
+         margin-left: auto;
+         margin-right: auto;
+      }
    </style>
 </head>
 
@@ -126,11 +131,13 @@
       <a href="#tab2" class="birthdayTab">生日祝福</a>
       <a href="#tab3" class="aboutTab">关于</a>
       <a href="#tab4" class="letterTab">信件</a>
+      <a href="#tab5" class="JinjinTab">给金金</a>
    </div>
    <div class="love"></div>
    <div class="birthday centered-text2"></div>
    <div class="about centered-text2"></div>
    <div class="letter centered-text2"></div>
+   <div class="Jinjin centered-text2"></div>
 </body>
 <script src="./520.js"></script>
 <script>
@@ -138,30 +145,43 @@
    const tab2 = document.querySelector('.birthdayTab');
    const tab3 = document.querySelector('.aboutTab');
    const tab4 = document.querySelector('.letterTab');
+   const tab5 = document.querySelector('.JinjinTab');
 
    tab1.addEventListener('click', function () {
       deleteBirthday();
       deleteAbout();
       deleteLetter();
+      deleteJinjin();
       create520();
    });
    tab2.addEventListener('click', function () {
       delete520();
       deleteAbout();
       deleteLetter();
+      deleteJinjin();
       createBirthday();
    });
    tab3.addEventListener('click', function () {
       delete520();
       deleteBirthday();
       deleteLetter();
+      deleteJinjin();
       createAbout();
    });
    tab4.addEventListener('click', function () {
       delete520();
       deleteBirthday();
       deleteAbout();
+      deleteJinjin();
       createLetter();
+   });
+
+   tab5.addEventListener('click', function () {
+      delete520();
+      deleteBirthday();
+      deleteAbout();
+      deleteLetter();
+      createJinjin();
    });
 
    // 点击按钮显示祝福
@@ -197,6 +217,26 @@
    function deleteLetter() {
       document.querySelector('.letter').innerHTML = '';
    }
+      function deleteJinjin() {
+         document.querySelector('.Jinjin').innerHTML = '';
+      }
+      // 给金金tab的内容
+      function createJinjin() {
+            const jinjinDiv = document.querySelector('.Jinjin');
+            jinjinDiv.innerHTML = `
+               <div class="letter-content">
+                  <h2>给老头的信</h2>
+                  <p>亲爱的老头，</p>
+                  <p>今天我想给你写一封信，我想告诉你，我知道你的犹豫，我也懂你的担心，我也很害怕，但是我希望我们能一直坚定的站在一起，面对未来的挑战，我们两个都一样，是喜欢迎接挑战的，只是不同程度的，在不同方面的，我相信我们，会一直是我们。</p>
+                  <p>刚发现怀孕的那一周，是煎熬的，我是不断想退缩的，也可能有激素的影响，情绪变得极度暴躁低落不耐烦，重复回忆起曾经的创伤，对于未知未来的迷茫与恐惧，对你打骂，破坏我们两个人的关系，但是你还是给了我力量，你告诉我，有你在，你会一直陪着我，我想，我是可以依靠你的，我是可以相信你的。</p>
+                  <p>但是后来，你迟迟做不了决定，也因为你看待问题面面俱到，觉得这不是一个可以草率的事情，而我那时候已经决定想要和你稳定的生活了，并不是你所说的凑合过日子，我是需要你的，我需要一个人在我迷茫无助的时候能稳住我，就算你同时也在经历着煎熬，也能稳住自己稳住我，你哭了好几次，你说你感觉要撑不下去了，我是心疼的，我是爱你的，为什么我不能再坚强一点。这也是为什么每次我们剧烈争吵以后我又把你哄回来，我觉得，我再怎么闹，我也不能把我们闹得那么僵，我也要考虑一下后果，只要我还有想和你在一起的念头，我就不要让我们的裂痕变得无可挽回。在一次又一次的争吵中，我都更坚定的确定自己的心意。我会再努努力，稳定自己的情绪，充实自己的生活。</p>
+                  <p>我现在能力不足，不能帮到你什么，可是我也希望有一天我能成为你的依靠，成为你的庇护伞，我希望我能保护你，不管是幼稚的你，亦或是迷茫的你，这样会让我觉得，我存在可能还有一些意义。</p>
+                  <p>我知道你爱我，爱我的稳定，我也知道你不爱我，不爱我的意气用事，我懂你的难处，你也知道我的我心慌。愿我们不忘初心。</p>
+                  <p>期待团团/粒粒，可以把我们包裹的更加紧密。</p>
+                  <p>爱你的盈盈</p>
+               </div>
+            `;
+      }
 </script>
 
 </html>
